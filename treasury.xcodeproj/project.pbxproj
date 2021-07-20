@@ -20,6 +20,10 @@
 		BCA334B326A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334AF26A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift */; };
 		BCA334B426A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334B026A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift */; };
 		BCA334B526A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334B126A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift */; };
+		BCA334B826A6C9EA0039D4E3 /* CoreDataStorageEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334B726A6C9EA0039D4E3 /* CoreDataStorageEngine.swift */; };
+		BCA334BA26A6CA200039D4E3 /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334B926A6CA200039D4E3 /* Logs.swift */; };
+		BCA334BD26A6CAC20039D4E3 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334BC26A6CAC20039D4E3 /* Exceptions.swift */; };
+		BCA334BF26A6CB910039D4E3 /* Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334BE26A6CB910039D4E3 /* Unwrap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		BCA334AF26A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCA334B026A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataPurchase+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BCA334B126A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataPurchase+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCA334B726A6C9EA0039D4E3 /* CoreDataStorageEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageEngine.swift; sourceTree = "<group>"; };
+		BCA334B926A6CA200039D4E3 /* Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
+		BCA334BC26A6CAC20039D4E3 /* Exceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
+		BCA334BE26A6CB910039D4E3 /* Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unwrap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +101,12 @@
 		BCA334A326A6B7060039D4E3 /* Toolkit */ = {
 			isa = PBXGroup;
 			children = (
+				BCA334B626A6C9D70039D4E3 /* CoreData */,
 				BCA334A426A6B7180039D4E3 /* Arrays.swift */,
 				BCA334AB26A6C7FE0039D4E3 /* Dates.swift */,
+				BCA334B926A6CA200039D4E3 /* Logs.swift */,
+				BCA334BC26A6CAC20039D4E3 /* Exceptions.swift */,
+				BCA334BE26A6CB910039D4E3 /* Unwrap.swift */,
 			);
 			path = Toolkit;
 			sourceTree = "<group>";
@@ -126,6 +138,14 @@
 				BCA334B126A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift */,
 			);
 			path = CoreDataEntities;
+			sourceTree = "<group>";
+		};
+		BCA334B626A6C9D70039D4E3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BCA334B726A6C9EA0039D4E3 /* CoreDataStorageEngine.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,10 +217,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA334BF26A6CB910039D4E3 /* Unwrap.swift in Sources */,
 				BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */,
+				BCA334BD26A6CAC20039D4E3 /* Exceptions.swift in Sources */,
 				BCA334B526A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift in Sources */,
 				BCA334B426A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift in Sources */,
 				BCA3349326A6A5410039D4E3 /* ContentView.swift in Sources */,
+				BCA334BA26A6CA200039D4E3 /* Logs.swift in Sources */,
+				BCA334B826A6C9EA0039D4E3 /* CoreDataStorageEngine.swift in Sources */,
 				BCA334AA26A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld in Sources */,
 				BCA3349126A6A5410039D4E3 /* treasuryApp.swift in Sources */,
 				BCA334B226A6C9570039D4E3 /* CoreDataCategory+CoreDataClass.swift in Sources */,
