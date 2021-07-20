@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class Category {
+final class Category : ObservableObject {
     
     let name: String
-    private(set) var plan: Decimal
-    private(set) var fact: Decimal
+    @Published private(set) var plan: Decimal
+    @Published private(set) var fact: Decimal
     
     init(_ name: String, _ plan: Decimal, _ fact: Decimal) {
         self.name = name
