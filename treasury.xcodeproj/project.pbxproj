@@ -24,6 +24,9 @@
 		BCA334BA26A6CA200039D4E3 /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334B926A6CA200039D4E3 /* Logs.swift */; };
 		BCA334BD26A6CAC20039D4E3 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334BC26A6CAC20039D4E3 /* Exceptions.swift */; };
 		BCA334BF26A6CB910039D4E3 /* Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334BE26A6CB910039D4E3 /* Unwrap.swift */; };
+		BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334C026A6CBE80039D4E3 /* CentralDatabase.swift */; };
+		BCA334C326A6CC8C0039D4E3 /* CategoryFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334C226A6CC8C0039D4E3 /* CategoryFields.swift */; };
+		BCA334C526A6CD6D0039D4E3 /* PurchaseFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334C426A6CD6D0039D4E3 /* PurchaseFields.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		BCA334B926A6CA200039D4E3 /* Logs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
 		BCA334BC26A6CAC20039D4E3 /* Exceptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exceptions.swift; sourceTree = "<group>"; };
 		BCA334BE26A6CB910039D4E3 /* Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unwrap.swift; sourceTree = "<group>"; };
+		BCA334C026A6CBE80039D4E3 /* CentralDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralDatabase.swift; sourceTree = "<group>"; };
+		BCA334C226A6CC8C0039D4E3 /* CategoryFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFields.swift; sourceTree = "<group>"; };
+		BCA334C426A6CD6D0039D4E3 /* PurchaseFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseFields.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 		BCA334A726A6C2D60039D4E3 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				BCA334C026A6CBE80039D4E3 /* CentralDatabase.swift */,
 				BCA334A826A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld */,
 				BCA334AD26A6C9340039D4E3 /* CoreDataEntities */,
 			);
@@ -136,6 +143,8 @@
 				BCA334AF26A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift */,
 				BCA334B026A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift */,
 				BCA334B126A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift */,
+				BCA334C226A6CC8C0039D4E3 /* CategoryFields.swift */,
+				BCA334C426A6CD6D0039D4E3 /* PurchaseFields.swift */,
 			);
 			path = CoreDataEntities;
 			sourceTree = "<group>";
@@ -218,9 +227,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA334BF26A6CB910039D4E3 /* Unwrap.swift in Sources */,
+				BCA334C326A6CC8C0039D4E3 /* CategoryFields.swift in Sources */,
 				BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */,
 				BCA334BD26A6CAC20039D4E3 /* Exceptions.swift in Sources */,
 				BCA334B526A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift in Sources */,
+				BCA334C526A6CD6D0039D4E3 /* PurchaseFields.swift in Sources */,
 				BCA334B426A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift in Sources */,
 				BCA3349326A6A5410039D4E3 /* ContentView.swift in Sources */,
 				BCA334BA26A6CA200039D4E3 /* Logs.swift in Sources */,
@@ -231,6 +242,7 @@
 				BCA334AC26A6C7FE0039D4E3 /* Dates.swift in Sources */,
 				BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */,
 				BCA334A526A6B7180039D4E3 /* Arrays.swift in Sources */,
+				BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */,
 				BCA334B326A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
