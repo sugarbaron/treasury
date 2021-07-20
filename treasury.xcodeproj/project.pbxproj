@@ -14,6 +14,12 @@
 		BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA3349F26A6A6F90039D4E3 /* Category.swift */; };
 		BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334A126A6B2BF0039D4E3 /* Purchase.swift */; };
 		BCA334A526A6B7180039D4E3 /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334A426A6B7180039D4E3 /* Arrays.swift */; };
+		BCA334AA26A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCA334A826A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld */; };
+		BCA334AC26A6C7FE0039D4E3 /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334AB26A6C7FE0039D4E3 /* Dates.swift */; };
+		BCA334B226A6C9570039D4E3 /* CoreDataCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334AE26A6C9570039D4E3 /* CoreDataCategory+CoreDataClass.swift */; };
+		BCA334B326A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334AF26A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift */; };
+		BCA334B426A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334B026A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift */; };
+		BCA334B526A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334B126A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		BCA3349F26A6A6F90039D4E3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BCA334A126A6B2BF0039D4E3 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		BCA334A426A6B7180039D4E3 /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
+		BCA334A926A6C35D0039D4E3 /* CentralDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CentralDatabase.xcdatamodel; sourceTree = "<group>"; };
+		BCA334AB26A6C7FE0039D4E3 /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
+		BCA334AE26A6C9570039D4E3 /* CoreDataCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCA334AF26A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCA334B026A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataPurchase+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BCA334B126A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataPurchase+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +72,8 @@
 			children = (
 				BCA3349026A6A5410039D4E3 /* treasuryApp.swift */,
 				BCA3349226A6A5410039D4E3 /* ContentView.swift */,
-				BCA3349F26A6A6F90039D4E3 /* Category.swift */,
-				BCA334A126A6B2BF0039D4E3 /* Purchase.swift */,
+				BCA334A626A6C1A90039D4E3 /* Model */,
+				BCA334A726A6C2D60039D4E3 /* Storage */,
 				BCA334A326A6B7060039D4E3 /* Toolkit */,
 				BCA3349426A6A5420039D4E3 /* Assets.xcassets */,
 				BCA3349926A6A5420039D4E3 /* Info.plist */,
@@ -82,8 +94,38 @@
 			isa = PBXGroup;
 			children = (
 				BCA334A426A6B7180039D4E3 /* Arrays.swift */,
+				BCA334AB26A6C7FE0039D4E3 /* Dates.swift */,
 			);
 			path = Toolkit;
+			sourceTree = "<group>";
+		};
+		BCA334A626A6C1A90039D4E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCA3349F26A6A6F90039D4E3 /* Category.swift */,
+				BCA334A126A6B2BF0039D4E3 /* Purchase.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCA334A726A6C2D60039D4E3 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				BCA334A826A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld */,
+				BCA334AD26A6C9340039D4E3 /* CoreDataEntities */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		BCA334AD26A6C9340039D4E3 /* CoreDataEntities */ = {
+			isa = PBXGroup;
+			children = (
+				BCA334AE26A6C9570039D4E3 /* CoreDataCategory+CoreDataClass.swift */,
+				BCA334AF26A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift */,
+				BCA334B026A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift */,
+				BCA334B126A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift */,
+			);
+			path = CoreDataEntities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,10 +198,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */,
+				BCA334B526A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift in Sources */,
+				BCA334B426A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift in Sources */,
 				BCA3349326A6A5410039D4E3 /* ContentView.swift in Sources */,
+				BCA334AA26A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld in Sources */,
 				BCA3349126A6A5410039D4E3 /* treasuryApp.swift in Sources */,
+				BCA334B226A6C9570039D4E3 /* CoreDataCategory+CoreDataClass.swift in Sources */,
+				BCA334AC26A6C7FE0039D4E3 /* Dates.swift in Sources */,
 				BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */,
 				BCA334A526A6B7180039D4E3 /* Arrays.swift in Sources */,
+				BCA334B326A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +396,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BCA334A826A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BCA334A926A6C35D0039D4E3 /* CentralDatabase.xcdatamodel */,
+			);
+			currentVersion = BCA334A926A6C35D0039D4E3 /* CentralDatabase.xcdatamodel */;
+			path = CentralDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BCA3348526A6A5410039D4E3 /* Project object */;
 }
