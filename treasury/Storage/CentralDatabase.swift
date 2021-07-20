@@ -9,12 +9,12 @@ import CoreData
 
 final class CentralDatabase {
     
-    private let modelName: String = "TasksDatabase"
+    private let modelName: String = "CentralDatabase"
     private let coreData: CoreDataStorageEngine
     
     init?() {
         guard let coreData: CoreDataStorageEngine = try? CoreDataStorageEngine(modelName: modelName)
-        else { Log(error: "[TasksStorage] unable to construct"); return nil }
+        else { Log(error: "[CentralStorage] unable to construct"); return nil }
         self.coreData = coreData
     }
     

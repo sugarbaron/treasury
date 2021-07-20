@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,10 @@
 		BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334C026A6CBE80039D4E3 /* CentralDatabase.swift */; };
 		BCA334C326A6CC8C0039D4E3 /* CategoryFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334C226A6CC8C0039D4E3 /* CategoryFields.swift */; };
 		BCA334C526A6CD6D0039D4E3 /* PurchaseFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334C426A6CD6D0039D4E3 /* PurchaseFields.swift */; };
+		BCA334C826A6CEA80039D4E3 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = BCA334C726A6CEA80039D4E3 /* Swinject */; };
+		BCA334CA26A6CF0F0039D4E3 /* Di.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334C926A6CF0F0039D4E3 /* Di.swift */; };
+		BCA334CD26A6CF8E0039D4E3 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334CC26A6CF8E0039D4E3 /* DependencyInjection.swift */; };
+		BCA334CF26A6D0180039D4E3 /* CentralStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334CE26A6D0180039D4E3 /* CentralStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,9 @@
 		BCA334C026A6CBE80039D4E3 /* CentralDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralDatabase.swift; sourceTree = "<group>"; };
 		BCA334C226A6CC8C0039D4E3 /* CategoryFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFields.swift; sourceTree = "<group>"; };
 		BCA334C426A6CD6D0039D4E3 /* PurchaseFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseFields.swift; sourceTree = "<group>"; };
+		BCA334C926A6CF0F0039D4E3 /* Di.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Di.swift; sourceTree = "<group>"; };
+		BCA334CC26A6CF8E0039D4E3 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
+		BCA334CE26A6D0180039D4E3 /* CentralStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA334C826A6CEA80039D4E3 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +92,7 @@
 		BCA3348F26A6A5410039D4E3 /* treasury */ = {
 			isa = PBXGroup;
 			children = (
+				BCA334CB26A6CF570039D4E3 /* Initiallization */,
 				BCA3349026A6A5410039D4E3 /* treasuryApp.swift */,
 				BCA3349226A6A5410039D4E3 /* ContentView.swift */,
 				BCA334A626A6C1A90039D4E3 /* Model */,
@@ -113,6 +122,7 @@
 				BCA334B926A6CA200039D4E3 /* Logs.swift */,
 				BCA334BC26A6CAC20039D4E3 /* Exceptions.swift */,
 				BCA334BE26A6CB910039D4E3 /* Unwrap.swift */,
+				BCA334C926A6CF0F0039D4E3 /* Di.swift */,
 			);
 			path = Toolkit;
 			sourceTree = "<group>";
@@ -129,6 +139,7 @@
 		BCA334A726A6C2D60039D4E3 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				BCA334CE26A6D0180039D4E3 /* CentralStorage.swift */,
 				BCA334C026A6CBE80039D4E3 /* CentralDatabase.swift */,
 				BCA334A826A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld */,
 				BCA334AD26A6C9340039D4E3 /* CoreDataEntities */,
@@ -157,6 +168,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		BCA334CB26A6CF570039D4E3 /* Initiallization */ = {
+			isa = PBXGroup;
+			children = (
+				BCA334CC26A6CF8E0039D4E3 /* DependencyInjection.swift */,
+			);
+			path = Initiallization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,6 +192,9 @@
 			dependencies = (
 			);
 			name = treasury;
+			packageProductDependencies = (
+				BCA334C726A6CEA80039D4E3 /* Swinject */,
+			);
 			productName = treasury;
 			productReference = BCA3348D26A6A5410039D4E3 /* treasury.app */;
 			productType = "com.apple.product-type.application";
@@ -200,6 +222,9 @@
 				Base,
 			);
 			mainGroup = BCA3348426A6A5410039D4E3;
+			packageReferences = (
+				BCA334C626A6CEA80039D4E3 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = BCA3348E26A6A5410039D4E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -228,6 +253,7 @@
 			files = (
 				BCA334BF26A6CB910039D4E3 /* Unwrap.swift in Sources */,
 				BCA334C326A6CC8C0039D4E3 /* CategoryFields.swift in Sources */,
+				BCA334CD26A6CF8E0039D4E3 /* DependencyInjection.swift in Sources */,
 				BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */,
 				BCA334BD26A6CAC20039D4E3 /* Exceptions.swift in Sources */,
 				BCA334B526A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift in Sources */,
@@ -238,11 +264,13 @@
 				BCA334B826A6C9EA0039D4E3 /* CoreDataStorageEngine.swift in Sources */,
 				BCA334AA26A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld in Sources */,
 				BCA3349126A6A5410039D4E3 /* treasuryApp.swift in Sources */,
+				BCA334CF26A6D0180039D4E3 /* CentralStorage.swift in Sources */,
 				BCA334B226A6C9570039D4E3 /* CoreDataCategory+CoreDataClass.swift in Sources */,
 				BCA334AC26A6C7FE0039D4E3 /* Dates.swift in Sources */,
 				BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */,
 				BCA334A526A6B7180039D4E3 /* Arrays.swift in Sources */,
 				BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */,
+				BCA334CA26A6CF0F0039D4E3 /* Di.swift in Sources */,
 				BCA334B326A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BCA334C626A6CEA80039D4E3 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BCA334C726A6CEA80039D4E3 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCA334C626A6CEA80039D4E3 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		BCA334A826A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld */ = {
