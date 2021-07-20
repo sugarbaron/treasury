@@ -13,6 +13,7 @@
 		BCA3349826A6A5420039D4E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA3349726A6A5420039D4E3 /* Preview Assets.xcassets */; };
 		BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA3349F26A6A6F90039D4E3 /* Category.swift */; };
 		BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334A126A6B2BF0039D4E3 /* Purchase.swift */; };
+		BCA334A526A6B7180039D4E3 /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334A426A6B7180039D4E3 /* Arrays.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BCA3349926A6A5420039D4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCA3349F26A6A6F90039D4E3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BCA334A126A6B2BF0039D4E3 /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		BCA334A426A6B7180039D4E3 /* Arrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrays.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				BCA3349226A6A5410039D4E3 /* ContentView.swift */,
 				BCA3349F26A6A6F90039D4E3 /* Category.swift */,
 				BCA334A126A6B2BF0039D4E3 /* Purchase.swift */,
+				BCA334A326A6B7060039D4E3 /* Toolkit */,
 				BCA3349426A6A5420039D4E3 /* Assets.xcassets */,
 				BCA3349926A6A5420039D4E3 /* Info.plist */,
 				BCA3349626A6A5420039D4E3 /* Preview Content */,
@@ -73,6 +76,14 @@
 				BCA3349726A6A5420039D4E3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCA334A326A6B7060039D4E3 /* Toolkit */ = {
+			isa = PBXGroup;
+			children = (
+				BCA334A426A6B7180039D4E3 /* Arrays.swift */,
+			);
+			path = Toolkit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 				BCA3349326A6A5410039D4E3 /* ContentView.swift in Sources */,
 				BCA3349126A6A5410039D4E3 /* treasuryApp.swift in Sources */,
 				BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */,
+				BCA334A526A6B7180039D4E3 /* Arrays.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,10 +10,10 @@ import Foundation
 final class Purchase {
     
     let price: Decimal
-    let category: Category
+    let category: String
     let name: String?
     
-    init(_ price: Decimal, _ category: Category, _ name: String? = nil) {
+    init(_ price: Decimal, _ category: String, _ name: String? = nil) {
         self.price = price
         self.category = category
         self.name = name
