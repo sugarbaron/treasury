@@ -15,23 +15,25 @@ struct CategoryCell : View {
     
     var body: some View {
         VStack {
-            Text(category.name)
+            Text(category.name).font(.title2)
                 .frame(maxWidth: .infinity)
-                .background(Color(red: 0.85, green: 0.8, blue: 0.65))
+                .padding(5)
+                .background(Colors.blue)
+                .foregroundColor(.white)
                 .cornerRadius(5)
             
             HStack {
-                AmountCard("total:", category.plan.int)
+                AmountCard("total:", category.plan.int, Colors.green)
                     .frame(maxWidth: .infinity)
-                    .background(Color(red: 0.85, green: 0.8, blue: 0.65))
+                    .background(Colors.yellow)
                     .cornerRadius(5)
-                AmountCard("spent:", category.fact.int)
+                AmountCard("spent:", category.fact.int, Colors.red)
                     .frame(maxWidth: .infinity)
-                    .background(Color(red: 0.85, green: 0.8, blue: 0.65))
+                    .background(Colors.yellow)
                     .cornerRadius(5)
                 AmountCard("left:", category.plan.int - category.fact.int)
                     .frame(maxWidth: .infinity)
-                    .background(Color(red: 0.85, green: 0.8, blue: 0.65))
+                    .background(Colors.yellow)
                     .cornerRadius(5)
             }
             .frame(maxWidth: .infinity)

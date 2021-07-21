@@ -34,6 +34,7 @@
 		BCA334D626A6D3160039D4E3 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334D526A6D3160039D4E3 /* CategoryCell.swift */; };
 		BCA334D826A6D6C30039D4E3 /* Decimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334D726A6D6C30039D4E3 /* Decimals.swift */; };
 		BCA334DA26A6DE160039D4E3 /* AmountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334D926A6DE160039D4E3 /* AmountCard.swift */; };
+		BCC7A14E26A7ECCB00A21C5D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC7A14D26A7ECCB00A21C5D /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		BCA334D526A6D3160039D4E3 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		BCA334D726A6D6C30039D4E3 /* Decimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimals.swift; sourceTree = "<group>"; };
 		BCA334D926A6DE160039D4E3 /* AmountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountCard.swift; sourceTree = "<group>"; };
+		BCC7A14D26A7ECCB00A21C5D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				BCA334BE26A6CB910039D4E3 /* Unwrap.swift */,
 				BCA334C926A6CF0F0039D4E3 /* Di.swift */,
 				BCA334D726A6D6C30039D4E3 /* Decimals.swift */,
+				BCC7A14D26A7ECCB00A21C5D /* Colors.swift */,
 			);
 			path = Toolkit;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				BCA334CD26A6CF8E0039D4E3 /* DependencyInjection.swift in Sources */,
 				BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */,
 				BCA334BD26A6CAC20039D4E3 /* Exceptions.swift in Sources */,
+				BCC7A14E26A7ECCB00A21C5D /* Colors.swift in Sources */,
 				BCA334B526A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift in Sources */,
 				BCA334C526A6CD6D0039D4E3 /* PurchaseFields.swift in Sources */,
 				BCA334B426A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift in Sources */,

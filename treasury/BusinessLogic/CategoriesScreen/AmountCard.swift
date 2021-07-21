@@ -9,19 +9,27 @@ import SwiftUI
 
 struct AmountCard : View {
     
-    let name: String
-    let amount: Int
+    private let name: String
+    private let amount: Int
+    private let highlight: Color
     
-    init(_ name: String, _ amount: Int) {
+    init(_ name: String, _ amount: Int, _ color: Color = Colors.black) {
         self.name = name
         self.amount = amount
+        self.highlight = color
     }
     
     var body: some View {
         VStack {
             Text(name)
-            Text("\(amount)")
-        }.padding()
+                .font(.title3)
+            Text(verbatim: "\(amount)")
+                .font(.title)
+                .bold()
+                .foregroundColor(highlight)
+                
+        }
+        .padding()
         //.background(Color.green)
     }
     
@@ -29,7 +37,7 @@ struct AmountCard : View {
 
 struct AmountCard_Previews : PreviewProvider {
     static var previews: some View {
-        AmountCard("dinners", 1500)
+        AmountCard("total", 1500, Colors.green)
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }
