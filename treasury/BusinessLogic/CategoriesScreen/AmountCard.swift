@@ -24,7 +24,7 @@ struct AmountCard : View {
             Text(name)
                 .font(.title3)
             Text(verbatim: "\(amount)")
-                .font(.title)
+                .font(.title2)
                 .bold()
                 .foregroundColor(highlight)
                 

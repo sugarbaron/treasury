@@ -23,7 +23,7 @@ struct CategoryCell : View {
                 .cornerRadius(5)
             
             HStack {
-                AmountCard("total:", category.plan.int, Colors.green)
+                AmountCard("total:", category.plan.int)
                     .frame(maxWidth: .infinity)
                     .background(Colors.yellow)
                     .cornerRadius(5)
@@ -31,13 +31,20 @@ struct CategoryCell : View {
                     .frame(maxWidth: .infinity)
                     .background(Colors.yellow)
                     .cornerRadius(5)
-                AmountCard("left:", category.plan.int - category.fact.int)
+                AmountCard("left:", category.plan.int - category.fact.int, warningColor)
                     .frame(maxWidth: .infinity)
                     .background(Colors.yellow)
                     .cornerRadius(5)
             }
             .frame(maxWidth: .infinity)
         }
+        
+    }
+    
+    private var warningColor: Color {
+        (category.plan.int - category.fact.int) < 0
+            ? Colors.red
+            : Colors.green
         
     }
     
