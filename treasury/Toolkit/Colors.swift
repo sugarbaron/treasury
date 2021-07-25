@@ -14,6 +14,7 @@ final class Colors {
     static let yellow: Color = .yellow
     static let biege: Color = .init(red: 0.85, green: 0.8, blue: 0.65)
     static let black: Color = .black
+    static let white: Color = .white
     static let green: Color = .init(red: 0.0, green: 0.5, blue: 0.0)
     static let red: Color = .red
     

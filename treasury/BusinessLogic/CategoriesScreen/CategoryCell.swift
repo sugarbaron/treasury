@@ -15,11 +15,11 @@ struct CategoryCell : View {
     
     var body: some View {
         VStack {
-            Text(category.name).font(.title2)
+            Text(category.name).font(.title2).bold()
                 .frame(maxWidth: .infinity)
                 .padding(5)
                 .background(Colors.blue)
-                .foregroundColor(.white)
+                .foregroundColor(Colors.white)
                 .cornerRadius(5)
             
             HStack {
