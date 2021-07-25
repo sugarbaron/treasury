@@ -9,10 +9,10 @@ protocol CentralStorage {
     
     func save(_ category: Category)
     
-    func load() -> [Category]
+    func loadAllCategories() -> [Category]
     
-    func save(_ purchase: Purchase)
+    // todo: func save(_ purchase: Purchase)
     
-    func load() -> [Purchase]
+    // todo: func loadAllPurchases() -> [Purchase]
     
 }

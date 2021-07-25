@@ -11,4 +11,6 @@ extension Decimal {
     
     var int: Int { NSDecimalNumber(decimal: self).intValue }
     
+    var nsDecimal: NSDecimalNumber { NSDecimalNumber(decimal: self) }
+    
 }

@@ -25,6 +25,7 @@ class DiAssembly : Assembly {
 
     fileprivate static let assemblages: [Assembly] = [
         DiAssembly(),
+        CentralDatabase.Assembly()
     ]
 
     func assemble(container: Container) { container.register(Di.self) { _ in DiToolkit.di } }

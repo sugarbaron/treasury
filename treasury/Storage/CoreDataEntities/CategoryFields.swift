@@ -5,7 +5,7 @@
 //  Created by sugarbaron on 20.07.2021.
 //
 
-extension CoreDataCategory { static let entityName: String = "Category" }
+extension CoreDataCategory : CoreDataEntity { public static let entityName: String = "Category" }
 
 final class CategoryFields {
     

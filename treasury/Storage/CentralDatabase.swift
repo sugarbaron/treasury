@@ -7,7 +7,7 @@
 
 import CoreData
 
-final class CentralDatabase {
+final class CentralDatabase : CentralStorage {
     
     private let modelName: String = "CentralDatabase"
     private let coreData: CoreDataStorageEngine
@@ -17,6 +17,28 @@ final class CentralDatabase {
         else { Log(error: "[CentralStorage] unable to construct"); return nil }
         self.coreData = coreData
     }
+    
+    func save(_ category: Category) {
+        context.performAndWait {
+            guard let newEmpty: CoreDataCategory = newEmptyCategory() else { return }
+            newEmpty.fill(with: category)
+            context.saveChanges()
+        }
+    }
+    
+    func loadAllCategories() -> [Category] {
+        var all: [CoreDataCategory] = []
+        context.performAndWait {
+            let byPlan: NSSortDescriptor = .init(key: CategoryFields.plan, ascending: true)
+            let request: FetchRequest<CoreDataCategory> = .init(context, sort: [byPlan])
+            all = request.execute()
+        }
+        return all.compactMap { Category.construct(from: $0) }
+    }
+    
+}
+
+extension CentralDatabase {
     
     // short-name way of NSEntityDescription.insertNewObject(...) as? ...
     private func newEmptyCategory() -> CoreDataCategory? {
