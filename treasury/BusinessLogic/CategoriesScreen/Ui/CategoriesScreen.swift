@@ -27,6 +27,7 @@ extension Categories {
                         .cornerRadius(5)
                     Spacer().frame(width: Layout.xSpace)
                 }
+                ForEach(viewModel.categories) { category in Categories.Cell(category) }
                 Spacer()
             }
             .background(Colors.background)

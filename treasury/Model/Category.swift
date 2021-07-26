@@ -24,3 +24,5 @@ final class Category : ObservableObject {
     func deposit(_ amount: Decimal) { plan += amount }
     
 }
+
+extension Category : Identifiable { var id: String { name } }
