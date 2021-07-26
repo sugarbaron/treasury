@@ -11,7 +11,7 @@ extension Categories {
     
     struct Cell : View {
         
-        @ObservedObject var category: Category
+        var category: Category
         
         init(_ category: Category) { self.category = category }
         
