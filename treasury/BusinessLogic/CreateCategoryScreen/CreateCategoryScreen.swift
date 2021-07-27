@@ -7,13 +7,18 @@
 
 import SwiftUI
 
+// MARK: Screen
+
 extension CreateCategory {
     
     struct Screen : View {
         
-        private let viewModel: ViewModel
+        @SwiftUI.Environment(\.presentationMode)
+        private var presentationMode: Binding<PresentationMode>
+
+        @StateObject private var viewModel: ViewModel = .init()
         
-        init() { self.viewModel = .init() }
+        init() { UITextField.appearance().backgroundColor = .clear }
         
         var body: some View {
             VStack {
@@ -29,18 +34,18 @@ extension CreateCategory {
                         Spacer().frame(height: Layout.ySpace)
                         Text("plan:").adjust()
                         Spacer().frame(height: Layout.ySpace)
-                        Text("fact:").adjust()
+                        Text("spent:").adjust()
                     }
                     VStack {
                         Spacer().frame(height: Layout.ySpace)
-                        TextField("enter category name", text: viewModel.$name)
+                        TextField("enter category name", text: $viewModel.name)
                             .adjust()
                         Spacer().frame(height: Layout.ySpace)
-                        TextField("enter plan amount", text: viewModel.$plan)
+                        TextField("enter plan amount", text: $viewModel.plan)
                             .adjust()
                             .keyboardType(.numberPad)
                         Spacer().frame(height: Layout.ySpace)
-                        TextField("enter fact amount", text: viewModel.$fact)
+                        TextField("enter already spent amount", text: $viewModel.fact)
                             .adjust()
                             .keyboardType(.numberPad)
                     }
@@ -52,10 +57,15 @@ extension CreateCategory {
                     CreateCategory.Button("xmark")
                         .background(Colors.red)
                         .cornerRadius(5)
+                        .onTapGesture { presentationMode.wrappedValue.dismiss() }
                     Spacer().frame(maxWidth: .infinity)
                     CreateCategory.Button("checkmark")
                         .background(Colors.yellow)
                         .cornerRadius(5)
+                        .onTapGesture {
+                            viewModel.createCategory()
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     Spacer().frame(width: Layout.xSpace)
                 }
                 Spacer().frame(height: Layout.ySpace)
@@ -66,6 +76,8 @@ extension CreateCategory {
     }
     
 }
+
+// MARK: Button
 
 extension CreateCategory {
     
@@ -86,11 +98,16 @@ extension CreateCategory {
     
 }
 
+// MARK: Tools
+
 private extension TextField {
     
     func adjust() -> some View {
+        
         font(.title2)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .padding(.vertical, 5)
+        .background(Colors.biege)
+        .cornerRadius(5)
     }
     
 }
@@ -99,11 +116,13 @@ private extension Text {
     
     func adjust() -> some View {
         font(.title2)
-            .padding(5)
-            .foregroundColor(Colors.yellow)
+        .padding(5)
+        .foregroundColor(Colors.yellow)
     }
     
 }
+
+// MARK: Layout
 
 extension CreateCategory.Screen {
     

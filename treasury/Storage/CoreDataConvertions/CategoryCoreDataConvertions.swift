@@ -12,7 +12,7 @@ extension CoreDataCategory {
     func fill(with category: Category) {
         self.name = category.name
         self.plan = category.plan.nsDecimal
-        self.fact = category.fact.nsDecimal
+        self.fact = category.spent.nsDecimal
     }
     
 }

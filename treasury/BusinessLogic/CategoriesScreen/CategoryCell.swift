@@ -11,13 +11,17 @@ extension Categories {
     
     struct Cell : View {
         
-        var category: Category
+        private let category: Category
+        private var width: Binding<CGFloat>
         
-        init(_ category: Category) { self.category = category }
+        init(_ category: Category, _ width: Binding<CGFloat>) {
+            self.category = category
+            self.width = width
+        }
         
         var body: some View {
             VStack {
-                Text(category.name).font(.title2).bold()
+                Text(category.name).font(.title2)
                     .frame(maxWidth: .infinity)
                     .padding(5)
                     .background(Colors.blue)
@@ -27,27 +31,30 @@ extension Categories {
                 HStack {
                     AmountCard("total:", category.plan.int)
                         .frame(maxWidth: .infinity)
-                        .background(Colors.yellow)
+                        .background(Colors.biege)
                         .cornerRadius(5)
-                    AmountCard("spent:", category.fact.int, Colors.red)
+                    AmountCard("spent:", category.spent.int)
                         .frame(maxWidth: .infinity)
-                        .background(Colors.yellow)
+                        .background(Colors.biege)
                         .cornerRadius(5)
-                    AmountCard("left:", category.plan.int - category.fact.int, warningColor)
+                    AmountCard("left:", category.plan.int - category.spent.int)
                         .frame(maxWidth: .infinity)
-                        .background(Colors.yellow)
+                        .background(warningColor)
                         .cornerRadius(5)
                 }
                 .frame(maxWidth: .infinity)
             }
-            
+            .background(GeometryReader { geometry in Colors.background.onAppear {
+                width.wrappedValue = geometry.size.width
+            } }.frame(maxWidth: .infinity))
         }
         
         private var warningColor: Color {
-            (category.plan.int - category.fact.int) < 0
-                ? Colors.red
-                : Colors.green
-            
+            switch (Double(category.spent.int) / Double(category.plan.int)) {
+            case let ratio where ratio < 0.25: return Colors.green
+            case let ratio where ratio > 0.75: return Colors.red
+            default:                           return Colors.biege
+            }
         }
         
     }
@@ -56,7 +63,7 @@ extension Categories {
 
 struct CategoryCell_Previews : PreviewProvider {
     static var previews: some View {
-        Categories.Cell(.init("taxi", 2000, 150))
+        Categories.Cell(.init("taxi", 2000, 150), .constant(350))
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

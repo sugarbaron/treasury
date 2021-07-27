@@ -11,15 +11,15 @@ final class Category {
     
     let name: String
     private(set) var plan: Decimal
-    private(set) var fact: Decimal
+    private(set) var spent: Decimal
     
-    init(_ name: String, _ plan: Decimal, _ fact: Decimal) {
+    init(_ name: String, _ plan: Decimal, _ spent: Decimal) {
         self.name = name
         self.plan = plan
-        self.fact = fact
+        self.spent = spent
     }
     
-    func purchase(_ purchase: Purchase) { fact -= purchase.price }
+    func purchase(_ purchase: Purchase) { spent -= purchase.price }
     
     func deposit(_ amount: Decimal) { plan += amount }
     

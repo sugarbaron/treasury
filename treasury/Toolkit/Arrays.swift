@@ -7,3 +7,9 @@
 
 func +=<E>(array: inout Array<E>, _ element: E) { array.append(element) }
 
+extension Array {
+    
+    var isNotEmpty: Bool { isEmpty == false }
+    
+}
+

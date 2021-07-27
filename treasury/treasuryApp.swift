@@ -11,7 +11,7 @@ import SwiftUI
 struct treasuryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Categories.Screen()
         }
     }
 }

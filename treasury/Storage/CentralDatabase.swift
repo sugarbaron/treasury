@@ -26,14 +26,9 @@ final class CentralDatabase : CentralStorage {
         }
     }
     
-    func loadAllCategories() -> [Category] {
-        var all: [CoreDataCategory] = []
-        context.performAndWait {
-            let byPlan: NSSortDescriptor = .init(key: CategoryFields.plan, ascending: true)
-            let request: FetchRequest<CoreDataCategory> = .init(context, sort: [byPlan])
-            all = request.execute()
-        }
-        return all.compactMap { Category.construct(from: $0) }
+    func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)
+    -> Storage.Updates<Subscriber> {
+        .init(context, updates)
     }
     
 }

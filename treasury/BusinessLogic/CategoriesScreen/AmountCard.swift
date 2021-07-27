@@ -11,12 +11,10 @@ struct AmountCard : View {
     
     private let name: String
     private let amount: Int
-    private let highlight: Color
     
-    init(_ name: String, _ amount: Int, _ color: Color = Colors.black) {
+    init(_ name: String, _ amount: Int) {
         self.name = name
         self.amount = amount
-        self.highlight = color
     }
     
     var body: some View {
@@ -25,19 +23,15 @@ struct AmountCard : View {
                 .font(.title3)
             Text(verbatim: "\(amount)")
                 .font(.title2)
-                .bold()
-                .foregroundColor(highlight)
-                
         }
         .padding()
-        //.background(Color.green)
     }
     
 }
 
 struct AmountCard_Previews : PreviewProvider {
     static var previews: some View {
-        AmountCard("total", 1500, Colors.green)
+        AmountCard("total", 1500)
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

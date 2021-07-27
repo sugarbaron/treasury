@@ -9,7 +9,8 @@ protocol CentralStorage {
     
     func save(_ category: Category)
     
-    func loadAllCategories() -> [Category]
+    func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)
+    -> Storage.Updates<Subscriber>
     
     // todo: func save(_ purchase: Purchase)
     
