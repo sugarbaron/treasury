@@ -24,8 +24,8 @@ extension Categories {
                 Text(category.name).font(.title2)
                     .frame(maxWidth: .infinity)
                     .padding(5)
-                    .background(Colors.blue)
-                    .foregroundColor(Colors.white)
+                    .background(Colors.gray)
+                    .foregroundColor(Colors.black)
                     .cornerRadius(5)
                 
                 HStack {

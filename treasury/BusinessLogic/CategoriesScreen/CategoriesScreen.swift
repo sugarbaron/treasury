@@ -23,7 +23,8 @@ extension Categories {
                 ScrollView { ForEach(viewModel.categories) { category in
                     HStack { Layout.xSpace; Categories.Cell(category, $cellWidth); Layout.xSpace }
                 } }
-                Spacer()
+                FooterPanel()
+                Layout.ySpace
             }
             .background(Colors.background)
             .frame(maxWidth: .infinity)
@@ -53,23 +54,57 @@ extension Categories.Screen {
         
     }
     
+    private struct PlusButton : View {
+        
+        @State private var isPressed: Bool
+        
+        init() { self.isPressed = false }
+        
+        var body: some View {
+            Image(systemName: "plus")
+                .font(.title2)
+                .foregroundColor(Colors.black)
+                .padding()
+                .fullScreenCover(isPresented: $isPressed) { CreateCategory.Screen() }
+                .onTapGesture { isPressed.toggle() }
+        }
+        
+    }
+    
 }
+// MARK: FooterPanel
 
-// MARK: PlusButton
-
-private struct PlusButton : View {
+extension Categories.Screen {
     
-    @State private var isPressed: Bool
+    private struct FooterPanel : View {
+        
+        var body: some View {
+            HStack(alignment: .top) {
+                Spacer().frame(maxWidth: .infinity)
+                PurchaseButton()
+                    .background(Colors.yellow)
+                    .cornerRadius(5)
+                Layout.xSpace
+            }
+        }
+        
+    }
     
-    init() { self.isPressed = false }
-    
-    var body: some View {
-        Image(systemName: "plus")
-            .font(.title2)
-            .foregroundColor(Colors.black)
-            .padding()
-            .fullScreenCover(isPresented: $isPressed) { CreateCategory.Screen() }
-            .onTapGesture { isPressed.toggle() }
+    private struct PurchaseButton : View {
+        
+        @State private var isPressed: Bool
+        
+        init() { self.isPressed = false }
+        
+        var body: some View {
+            Image(systemName: "dollarsign.circle")
+                .font(.largeTitle)
+                .foregroundColor(Colors.black)
+                .padding(10)
+                .fullScreenCover(isPresented: $isPressed) { CreateCategory.Screen() }
+                .onTapGesture { isPressed.toggle() }
+        }
+        
     }
     
 }
