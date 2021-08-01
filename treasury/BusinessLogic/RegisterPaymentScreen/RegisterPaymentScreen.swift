@@ -21,9 +21,9 @@ extension RegisterPayment {
         var body: some View {
             VStack {
                 // title
-                Spacer().frame(height: Layout.ySpace)
+                Layout.ySpace
                 HStack {
-                    Spacer().frame(width: Layout.xSpace)
+                    Layout.xSpace
                     Text("register  payment")
                         .font(.title)
                         .foregroundColor(Colors.yellow)
@@ -31,43 +31,43 @@ extension RegisterPayment {
                 }
                 // fields
                 HStack {
-                    Spacer().frame(width: Layout.xSpace)
+                    Layout.xSpace
                     VStack(alignment: .leading) {
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         Text("category:").adjust()
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         Text("price:").adjust()
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         Text("comment:").adjust()
                     }
                     VStack(alignment: .leading) {
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         CategoriesMenu(viewModel.categoriesList, $viewModel.category) { choice in
                             viewModel.category = choice
                         }
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         TextField("enter price", text: $viewModel.price)
                             .adjust()
                             .keyboardType(.numberPad)
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         TextField("enter comment", text: $viewModel.comment)
                             .adjust()
                     }
-                    Spacer().frame(width: Layout.xSpace)
+                    Layout.xSpace
                 }
                 // ok, cancel buttons
                 Spacer().frame(maxHeight: .infinity)
                 HStack {
-                    Spacer().frame(width: Layout.xSpace)
+                    Layout.xSpace
                     YesButton().onTapGesture {
                         viewModel.registerPayment()
                         presentationMode.wrappedValue.dismiss()
                     }
                     Spacer().frame(maxWidth: .infinity)
                     NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
-                    Spacer().frame(width: Layout.xSpace)
+                    Layout.xSpace
                 }
-                Spacer().frame(height: Layout.ySpace)
+                Layout.ySpace
             }
             .background(Colors.background)
             
@@ -164,8 +164,11 @@ extension RegisterPayment.Screen {
     
     final class Layout {
         
-        static let xSpace: CGFloat = 10
-        static let ySpace: CGFloat = 20
+        private static let xSpaceSize: CGFloat = 10
+        private static let ySpaceSize: CGFloat = 10
+        
+        static var xSpace: some View { Spacer().frame(width: xSpaceSize) }
+        static var ySpace: some View { Spacer().frame(height: ySpaceSize) }
         
     }
     

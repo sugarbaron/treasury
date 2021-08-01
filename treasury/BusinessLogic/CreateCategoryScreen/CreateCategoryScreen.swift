@@ -22,51 +22,51 @@ extension CreateCategory {
         
         var body: some View {
             VStack {
-                Spacer().frame(height: Layout.ySpace)
+                Layout.ySpace
                 HStack {
-                    Spacer().frame(width: Layout.xSpace)
+                    Layout.xSpace
                     Text("new category")
                         .font(.title)
                         .foregroundColor(Colors.yellow)
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                 }
                 HStack {
-                    Spacer().frame(width: Layout.xSpace)
+                    Layout.xSpace
                     VStack(alignment: .leading) {
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         Text("name:").adjust()
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         Text("plan:").adjust()
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         Text("spent:").adjust()
                     }
                     VStack {
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         TextField("enter category name", text: $viewModel.name)
                             .adjust()
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         TextField("enter plan amount", text: $viewModel.plan)
                             .adjust()
                             .keyboardType(.numberPad)
-                        Spacer().frame(height: Layout.ySpace)
+                        Layout.ySpace
                         TextField("enter already spent amount", text: $viewModel.fact)
                             .adjust()
                             .keyboardType(.numberPad)
                     }
-                    Spacer().frame(width: Layout.xSpace)
+                    Layout.xSpace
                 }
                 Spacer().frame(maxHeight: .infinity)
                 HStack {
-                    Spacer().frame(width: Layout.xSpace)
+                    Layout.xSpace
                     YesButton().onTapGesture {
                         viewModel.createCategory()
                         presentationMode.wrappedValue.dismiss()
                     }
                     Spacer().frame(maxWidth: .infinity)
                     NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
-                    Spacer().frame(width: Layout.xSpace)
+                    Layout.xSpace
                 }
-                Spacer().frame(height: Layout.ySpace)
+                Layout.ySpace
             }
             .background(Colors.background)
         }
@@ -125,8 +125,11 @@ extension CreateCategory.Screen {
     
     final class Layout {
         
-        static let xSpace: CGFloat = 10
-        static let ySpace: CGFloat = 20
+        private static let xSpaceSize: CGFloat = 10
+        private static let ySpaceSize: CGFloat = 10
+        
+        static var xSpace: some View { Spacer().frame(width: xSpaceSize) }
+        static var ySpace: some View { Spacer().frame(height: ySpaceSize) }
         
     }
     
