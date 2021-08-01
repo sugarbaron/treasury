@@ -10,6 +10,8 @@
 		BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */; };
 		BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */; };
 		BC7CD9AF26AEC63D00FB1EA7 /* CreateCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AE26AEC63D00FB1EA7 /* CreateCategory.swift */; };
+		BC7F9DBD26B6FE42004247EF /* CategoryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7F9DBC26B6FE42004247EF /* CategoryDetails.swift */; };
+		BC7F9DBF26B6FE6B004247EF /* CategoryDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7F9DBE26B6FE6B004247EF /* CategoryDetailsScreen.swift */; };
 		BC814EF526A944E60031896C /* CategoriesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC814EF426A944E60031896C /* CategoriesScreen.swift */; };
 		BC8B1FBE26B6817200D5976C /* PurchaseCoreDataConvertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */; };
 		BC9443BA26B3111D0056D341 /* RegisterPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443B926B3111D0056D341 /* RegisterPayment.swift */; };
@@ -59,6 +61,8 @@
 		BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreen.swift; sourceTree = "<group>"; };
 		BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewModel.swift; sourceTree = "<group>"; };
 		BC7CD9AE26AEC63D00FB1EA7 /* CreateCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategory.swift; sourceTree = "<group>"; };
+		BC7F9DBC26B6FE42004247EF /* CategoryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetails.swift; sourceTree = "<group>"; };
+		BC7F9DBE26B6FE6B004247EF /* CategoryDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsScreen.swift; sourceTree = "<group>"; };
 		BC814EF426A944E60031896C /* CategoriesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesScreen.swift; sourceTree = "<group>"; };
 		BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCoreDataConvertions.swift; sourceTree = "<group>"; };
 		BC9443B926B3111D0056D341 /* RegisterPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPayment.swift; sourceTree = "<group>"; };
@@ -125,6 +129,15 @@
 				BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */,
 			);
 			path = CreateCategoryScreen;
+			sourceTree = "<group>";
+		};
+		BC7F9DBB26B6FE25004247EF /* CategoryDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BC7F9DBC26B6FE42004247EF /* CategoryDetails.swift */,
+				BC7F9DBE26B6FE6B004247EF /* CategoryDetailsScreen.swift */,
+			);
+			path = CategoryDetailsScreen;
 			sourceTree = "<group>";
 		};
 		BC9443B826B310F80056D341 /* RegisterPaymentScreen */ = {
@@ -261,6 +274,7 @@
 		BCA334D026A6D2510039D4E3 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				BC7F9DBB26B6FE25004247EF /* CategoryDetailsScreen */,
 				BCA334D126A6D25D0039D4E3 /* CategoriesScreen */,
 				BC7CD9A926AEC41F00FB1EA7 /* CreateCategoryScreen */,
 				BC9443B826B310F80056D341 /* RegisterPaymentScreen */,
@@ -381,6 +395,7 @@
 				BCA334DA26A6DE160039D4E3 /* AmountCard.swift in Sources */,
 				BCA334C326A6CC8C0039D4E3 /* CategoryFields.swift in Sources */,
 				BCB1197226AD795100426BA7 /* CategoryCoreDataConvertions.swift in Sources */,
+				BC7F9DBD26B6FE42004247EF /* CategoryDetails.swift in Sources */,
 				BCA334CD26A6CF8E0039D4E3 /* DependencyInjection.swift in Sources */,
 				BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */,
 				BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */,
@@ -415,6 +430,7 @@
 				BCA334D626A6D3160039D4E3 /* CategoryCell.swift in Sources */,
 				BCB1197526AD7B1F00426BA7 /* CoreDataContexts.swift in Sources */,
 				BCB1196A26AD769400426BA7 /* CategoriesViewModel.swift in Sources */,
+				BC7F9DBF26B6FE6B004247EF /* CategoryDetailsScreen.swift in Sources */,
 				BC814EF526A944E60031896C /* CategoriesScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

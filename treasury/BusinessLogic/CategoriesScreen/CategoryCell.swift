@@ -12,11 +12,9 @@ extension Categories {
     struct Cell : View {
         
         private let category: Category
-        private var width: Binding<CGFloat>
         
-        init(_ category: Category, _ width: Binding<CGFloat>) {
+        init(_ category: Category) {
             self.category = category
-            self.width = width
         }
         
         var body: some View {
@@ -44,9 +42,6 @@ extension Categories {
                 }
                 .frame(maxWidth: .infinity)
             }
-            .background(GeometryReader { geometry in Colors.background.onAppear {
-                width.wrappedValue = geometry.size.width
-            } }.frame(maxWidth: .infinity))
         }
         
         private var warningColor: Color {
@@ -63,7 +58,7 @@ extension Categories {
 
 struct CategoryCell_Previews : PreviewProvider {
     static var previews: some View {
-        Categories.Cell(.init("taxi", 2000, 150), .constant(350))
+        Categories.Cell(.init("taxi", 2000, 150))
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

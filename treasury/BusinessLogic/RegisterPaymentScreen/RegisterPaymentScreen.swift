@@ -122,14 +122,12 @@ extension RegisterPayment {
                 Menu(label) {
                     ForEach(categories) { category in
                         Button(category) { onTap(category) }
-                        //CustomButton(category).onTapGesture { onTap(category) }
                     }
                 }
                 .font(.title2)
                 .foregroundColor(Colors.blue)
                 .padding(5)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                //Spacer().frame(maxWidth: .infinity)
             }
             .background(Colors.biege)
             .cornerRadius(5)
@@ -140,14 +138,6 @@ extension RegisterPayment {
             else { return choice.wrappedValue }
         }
         
-    }
-    
-}
-
-private extension CustomButton {
-    
-    func adjust() -> some View {
-        background(Colors.biege)
     }
     
 }

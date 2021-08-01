@@ -14,14 +14,13 @@ extension Categories {
     struct Screen : View {
         
         @ObservedObject private var viewModel: ViewModel = .init()
-        @State private var cellWidth: CGFloat = .zero
         
         var body: some View {
             VStack {
                 Layout.ySpace
                 TitlePanel()
                 ScrollView { ForEach(viewModel.categories) { category in
-                    HStack { Layout.xSpace; Categories.Cell(category, $cellWidth); Layout.xSpace }
+                    HStack { Layout.xSpace; Categories.Cell(category); Layout.xSpace }
                 } }
                 FooterPanel()
                 Layout.ySpace
