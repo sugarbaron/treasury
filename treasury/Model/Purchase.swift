@@ -12,13 +12,13 @@ final class Purchase {
     let price: Decimal
     let date: Date
     let category: String
-    let name: String?
+    let comment: String
     
-    init(_ price: Decimal, _ category: String, _ name: String? = nil) {
+    init(_ price: Decimal, _ category: String, date: Date = Date.now, _ comment: String = "") {
         self.price = price
-        self.date = Date.now
+        self.date = date
         self.category = category
-        self.name = name
+        self.comment = comment
     }
     
 }

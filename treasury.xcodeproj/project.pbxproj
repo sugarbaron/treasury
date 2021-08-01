@@ -11,6 +11,11 @@
 		BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */; };
 		BC7CD9AF26AEC63D00FB1EA7 /* CreateCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AE26AEC63D00FB1EA7 /* CreateCategory.swift */; };
 		BC814EF526A944E60031896C /* CategoriesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC814EF426A944E60031896C /* CategoriesScreen.swift */; };
+		BC8B1FBE26B6817200D5976C /* PurchaseCoreDataConvertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */; };
+		BC9443BA26B3111D0056D341 /* RegisterPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443B926B3111D0056D341 /* RegisterPayment.swift */; };
+		BC9443BC26B3114C0056D341 /* RegisterPaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BB26B3114C0056D341 /* RegisterPaymentScreen.swift */; };
+		BC9443BE26B313C30056D341 /* RegisterPaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BD26B313C30056D341 /* RegisterPaymentViewModel.swift */; };
+		BC9443C126B3147F0056D341 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443C026B3147F0056D341 /* Buttons.swift */; };
 		BCA3349126A6A5410039D4E3 /* treasuryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA3349026A6A5410039D4E3 /* treasuryApp.swift */; };
 		BCA3349526A6A5420039D4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA3349426A6A5420039D4E3 /* Assets.xcassets */; };
 		BCA3349826A6A5420039D4E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA3349726A6A5420039D4E3 /* Preview Assets.xcassets */; };
@@ -55,6 +60,11 @@
 		BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewModel.swift; sourceTree = "<group>"; };
 		BC7CD9AE26AEC63D00FB1EA7 /* CreateCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategory.swift; sourceTree = "<group>"; };
 		BC814EF426A944E60031896C /* CategoriesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesScreen.swift; sourceTree = "<group>"; };
+		BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCoreDataConvertions.swift; sourceTree = "<group>"; };
+		BC9443B926B3111D0056D341 /* RegisterPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPayment.swift; sourceTree = "<group>"; };
+		BC9443BB26B3114C0056D341 /* RegisterPaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPaymentScreen.swift; sourceTree = "<group>"; };
+		BC9443BD26B313C30056D341 /* RegisterPaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPaymentViewModel.swift; sourceTree = "<group>"; };
+		BC9443C026B3147F0056D341 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		BCA3348D26A6A5410039D4E3 /* treasury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = treasury.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA3349026A6A5410039D4E3 /* treasuryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treasuryApp.swift; sourceTree = "<group>"; };
 		BCA3349426A6A5420039D4E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +127,24 @@
 			path = CreateCategoryScreen;
 			sourceTree = "<group>";
 		};
+		BC9443B826B310F80056D341 /* RegisterPaymentScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BC9443B926B3111D0056D341 /* RegisterPayment.swift */,
+				BC9443BB26B3114C0056D341 /* RegisterPaymentScreen.swift */,
+				BC9443BD26B313C30056D341 /* RegisterPaymentViewModel.swift */,
+			);
+			path = RegisterPaymentScreen;
+			sourceTree = "<group>";
+		};
+		BC9443BF26B314660056D341 /* Ui */ = {
+			isa = PBXGroup;
+			children = (
+				BC9443C026B3147F0056D341 /* Buttons.swift */,
+			);
+			path = Ui;
+			sourceTree = "<group>";
+		};
 		BCA3348426A6A5410039D4E3 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +188,7 @@
 		BCA334A326A6B7060039D4E3 /* Toolkit */ = {
 			isa = PBXGroup;
 			children = (
+				BC9443BF26B314660056D341 /* Ui */,
 				BCB5E79D26AEEBAE00727DF7 /* Storage */,
 				BCA334B626A6C9D70039D4E3 /* CoreData */,
 				BCA334A426A6B7180039D4E3 /* Arrays.swift */,
@@ -234,6 +263,7 @@
 			children = (
 				BCA334D126A6D25D0039D4E3 /* CategoriesScreen */,
 				BC7CD9A926AEC41F00FB1EA7 /* CreateCategoryScreen */,
+				BC9443B826B310F80056D341 /* RegisterPaymentScreen */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -254,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				BCB1197126AD795100426BA7 /* CategoryCoreDataConvertions.swift */,
+				BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */,
 			);
 			path = CoreDataConvertions;
 			sourceTree = "<group>";
@@ -346,6 +377,7 @@
 				BCB1197726AD7D1F00426BA7 /* FetchRequest.swift in Sources */,
 				BCA334BF26A6CB910039D4E3 /* Unwrap.swift in Sources */,
 				BCB1196E26AD76DF00426BA7 /* Categories.swift in Sources */,
+				BC9443C126B3147F0056D341 /* Buttons.swift in Sources */,
 				BCA334DA26A6DE160039D4E3 /* AmountCard.swift in Sources */,
 				BCA334C326A6CC8C0039D4E3 /* CategoryFields.swift in Sources */,
 				BCB1197226AD795100426BA7 /* CategoryCoreDataConvertions.swift in Sources */,
@@ -354,12 +386,14 @@
 				BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */,
 				BCA334BD26A6CAC20039D4E3 /* Exceptions.swift in Sources */,
 				BCC7A14E26A7ECCB00A21C5D /* Colors.swift in Sources */,
+				BC8B1FBE26B6817200D5976C /* PurchaseCoreDataConvertions.swift in Sources */,
 				BCA334B526A6C9570039D4E3 /* CoreDataPurchase+CoreDataProperties.swift in Sources */,
 				BCA334C526A6CD6D0039D4E3 /* PurchaseFields.swift in Sources */,
 				BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */,
 				BCB1197926AD7D5300426BA7 /* CoreDataEntity.swift in Sources */,
 				BCA334B426A6C9570039D4E3 /* CoreDataPurchase+CoreDataClass.swift in Sources */,
 				BC7CD9AF26AEC63D00FB1EA7 /* CreateCategory.swift in Sources */,
+				BC9443BE26B313C30056D341 /* RegisterPaymentViewModel.swift in Sources */,
 				BCA334BA26A6CA200039D4E3 /* Logs.swift in Sources */,
 				BCA334B826A6C9EA0039D4E3 /* CoreDataStorageEngine.swift in Sources */,
 				BCB5E7A126AEEC1200727DF7 /* StorageSubscription.swift in Sources */,
@@ -369,11 +403,13 @@
 				BCA334CF26A6D0180039D4E3 /* CentralStorage.swift in Sources */,
 				BCA334B226A6C9570039D4E3 /* CoreDataCategory+CoreDataClass.swift in Sources */,
 				BCA334D826A6D6C30039D4E3 /* Decimals.swift in Sources */,
+				BC9443BA26B3111D0056D341 /* RegisterPayment.swift in Sources */,
 				BCB1197026AD789B00426BA7 /* CentralStorageAssembly.swift in Sources */,
 				BCA334AC26A6C7FE0039D4E3 /* Dates.swift in Sources */,
 				BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */,
 				BCA334A526A6B7180039D4E3 /* Arrays.swift in Sources */,
 				BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */,
+				BC9443BC26B3114C0056D341 /* RegisterPaymentScreen.swift in Sources */,
 				BCA334CA26A6CF0F0039D4E3 /* Di.swift in Sources */,
 				BCA334B326A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift in Sources */,
 				BCA334D626A6D3160039D4E3 /* CategoryCell.swift in Sources */,

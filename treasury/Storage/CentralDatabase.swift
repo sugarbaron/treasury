@@ -20,8 +20,34 @@ final class CentralDatabase : CentralStorage {
     
     func save(_ category: Category) {
         context.performAndWait {
-            guard let newEmpty: CoreDataCategory = newEmptyCategory() else { return }
+            guard let newEmpty: CoreDataCategory = loadCategory(category.name) ?? newEmptyCategory()
+            else { return }
             newEmpty.fill(with: category)
+            context.saveChanges()
+        }
+    }
+    
+    private func loadCategory(_ name: String) -> CoreDataCategory? {
+        let certainName: NSPredicate = .init(format: "\(CategoryFields.name) == %@", name)
+        let request = FetchRequest<CoreDataCategory>(context, predicate: certainName)
+        return request.execute().first
+    }
+    
+    func loadAllCategories() -> [Category] {
+        var all: [Category] = [ ]
+        context.performAndWait {
+            let expensiveFirst: NSSortDescriptor = .init(key: CategoryFields.plan, ascending: false)
+            let abc: NSSortDescriptor = .init(key: CategoryFields.name, ascending: true)
+            let request: FetchRequest<CoreDataCategory> = .init(context, sort: [expensiveFirst, abc])
+            all = request.execute().compactMap { Category.construct(from: $0) }
+        }
+        return all
+    }
+    
+    func save(_ purchase: Purchase) {
+        context.performAndWait {
+            guard let newEmpty: CoreDataPurchase = newEmptyPurchase() else { return }
+            newEmpty.fill(with: purchase)
             context.saveChanges()
         }
     }

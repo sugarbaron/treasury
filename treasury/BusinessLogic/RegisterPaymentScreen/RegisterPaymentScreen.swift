@@ -1,17 +1,15 @@
 //
-//  CategoriesCreateScreen.swift
+//  RegisterPaymentScreen.swift
 //  treasury
 //
-//  Created by sugarbaron on 26.07.2021.
+//  Created by sugarbaron on 29.07.2021.
 //
 
 import SwiftUI
 
-// MARK: Screen
-
-extension CreateCategory {
+extension RegisterPayment {
     
-    struct Screen : View {
+    struct Screen: View {
         
         @SwiftUI.Environment(\.presentationMode)
         private var presentationMode: Binding<PresentationMode>
@@ -22,44 +20,47 @@ extension CreateCategory {
         
         var body: some View {
             VStack {
+                // title
                 Spacer().frame(height: Layout.ySpace)
                 HStack {
                     Spacer().frame(width: Layout.xSpace)
-                    Text("new category")
+                    Text("register  payment")
                         .font(.title)
                         .foregroundColor(Colors.yellow)
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                // fields
                 HStack {
                     Spacer().frame(width: Layout.xSpace)
                     VStack(alignment: .leading) {
                         Spacer().frame(height: Layout.ySpace)
-                        Text("name:").adjust()
+                        Text("category:").adjust()
                         Spacer().frame(height: Layout.ySpace)
-                        Text("plan:").adjust()
+                        Text("price:").adjust()
                         Spacer().frame(height: Layout.ySpace)
-                        Text("spent:").adjust()
+                        Text("comment:").adjust()
                     }
-                    VStack {
+                    VStack(alignment: .leading) {
                         Spacer().frame(height: Layout.ySpace)
-                        TextField("enter category name", text: $viewModel.name)
-                            .adjust()
+                        CategoriesMenu(viewModel.categoriesList, $viewModel.category) { choice in
+                            viewModel.category = choice
+                        }
                         Spacer().frame(height: Layout.ySpace)
-                        TextField("enter plan amount", text: $viewModel.plan)
-                            .adjust()
-                            .keyboardType(.numberPad)
-                        Spacer().frame(height: Layout.ySpace)
-                        TextField("enter already spent amount", text: $viewModel.fact)
+                        TextField("enter price", text: $viewModel.price)
                             .adjust()
                             .keyboardType(.numberPad)
+                        Spacer().frame(height: Layout.ySpace)
+                        TextField("enter comment", text: $viewModel.comment)
+                            .adjust()
                     }
                     Spacer().frame(width: Layout.xSpace)
                 }
+                // ok, cancel buttons
                 Spacer().frame(maxHeight: .infinity)
                 HStack {
                     Spacer().frame(width: Layout.xSpace)
                     YesButton().onTapGesture {
-                        viewModel.createCategory()
+                        viewModel.registerPayment()
                         presentationMode.wrappedValue.dismiss()
                     }
                     Spacer().frame(maxWidth: .infinity)
@@ -69,27 +70,8 @@ extension CreateCategory {
                 Spacer().frame(height: Layout.ySpace)
             }
             .background(Colors.background)
-        }
-        
-    }
-    
-}
-
-// MARK: Button
-
-extension CreateCategory {
-    
-    private struct Button : View {
-        
-        private let imageName: String
-        
-        init(_ imageName: String) { self.imageName = imageName }
-        
-        var body: some View {
-            Image(systemName: imageName)
-                .font(.title2)
-                .foregroundColor(Colors.black)
-                .padding()
+            
+            
         }
         
     }
@@ -119,9 +101,66 @@ private extension Text {
     
 }
 
+extension RegisterPayment {
+    
+    struct CategoriesMenu : View {
+        
+        private let categories: [String]
+        private var choice: Binding<String>
+        private let onTap: (String) -> Void
+        
+        init(_ categories: [String],
+             _ choice: Binding<String>,
+             _ onTap: @escaping (String) -> Void) {
+            self.categories = categories
+            self.choice = choice
+            self.onTap = onTap
+        }
+        
+        var body: some View {
+            HStack {
+                Menu(label) {
+                    ForEach(categories) { category in
+                        Button(category) { onTap(category) }
+                        //CustomButton(category).onTapGesture { onTap(category) }
+                    }
+                }
+                .font(.title2)
+                .foregroundColor(Colors.blue)
+                .padding(5)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                //Spacer().frame(maxWidth: .infinity)
+            }
+            .background(Colors.biege)
+            .cornerRadius(5)
+        }
+        
+        private var label: String {
+            if choice.wrappedValue.isEmpty { return "choose category" }
+            else { return choice.wrappedValue }
+        }
+        
+    }
+    
+}
+
+private extension CustomButton {
+    
+    func adjust() -> some View {
+        background(Colors.biege)
+    }
+    
+}
+
+extension String : Identifiable {
+    
+    public var id: String { self }
+    
+}
+
 // MARK: Layout
 
-extension CreateCategory.Screen {
+extension RegisterPayment.Screen {
     
     final class Layout {
         
@@ -132,9 +171,9 @@ extension CreateCategory.Screen {
     
 }
 
-struct NewCategoryScreen_Previews: PreviewProvider {
+struct RegisterPaymentScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CreateCategory.Screen()
+        RegisterPayment.Screen()
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

@@ -19,7 +19,7 @@ final class Category {
         self.spent = spent
     }
     
-    func purchase(_ purchase: Purchase) { spent -= purchase.price }
+    func purchase(_ price: Decimal) { spent += price }
     
     func deposit(_ amount: Decimal) { plan += amount }
     

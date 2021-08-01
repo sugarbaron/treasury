@@ -18,7 +18,7 @@ extension CoreDataPurchase {
 
     @NSManaged public var price: NSDecimalNumber?
     @NSManaged public var date: Date?
-    @NSManaged public var name: String?
+    @NSManaged public var comment: String?
     @NSManaged public var category: String?
 
 }

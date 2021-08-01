@@ -80,11 +80,11 @@ extension Categories.Screen {
         
         var body: some View {
             HStack(alignment: .top) {
-                Spacer().frame(maxWidth: .infinity)
+                Layout.xSpace
                 PurchaseButton()
                     .background(Colors.yellow)
                     .cornerRadius(5)
-                Layout.xSpace
+                Spacer().frame(maxWidth: .infinity)
             }
         }
         
@@ -101,7 +101,7 @@ extension Categories.Screen {
                 .font(.largeTitle)
                 .foregroundColor(Colors.black)
                 .padding(10)
-                .fullScreenCover(isPresented: $isPressed) { CreateCategory.Screen() }
+                .fullScreenCover(isPresented: $isPressed) { RegisterPayment.Screen() }
                 .onTapGesture { isPressed.toggle() }
         }
         

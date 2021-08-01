@@ -7,12 +7,12 @@
     </entity>
     <entity name="Purchase" representedClassName="CoreDataPurchase" syncable="YES">
         <attribute name="category" attributeType="String"/>
+        <attribute name="comment" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="name" attributeType="String"/>
         <attribute name="price" attributeType="Decimal" defaultValueString="0.0"/>
     </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="-18" width="128" height="14"/>
-        <element name="Purchase" positionX="-54" positionY="18" width="128" height="14"/>
+        <element name="Purchase" positionX="-54" positionY="18" width="128" height="89"/>
     </elements>
 </model>
