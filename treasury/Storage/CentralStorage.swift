@@ -11,6 +11,8 @@ protocol CentralStorage {
     
     func loadAllCategories() -> [Category]
     
+    func removeCategory(_ categoryName: String)
+    
     func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)
     -> Storage.Updates<Subscriber>
     

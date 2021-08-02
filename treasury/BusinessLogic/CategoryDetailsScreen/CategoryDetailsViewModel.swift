@@ -21,6 +21,8 @@ extension CategoryDetails {
             self.purshases = (self.storage?.loadPurchases(for: category)) ?? [ ]
         }
         
+        func removeCategory() { storage?.removeCategory(category.name) }
+        
     }
     
 }

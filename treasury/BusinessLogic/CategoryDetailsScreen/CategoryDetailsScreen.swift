@@ -16,6 +16,8 @@ extension CategoryDetails {
         
         private let viewModel: ViewModel
         
+        @State private var isDeleteTapped: Bool = false
+        
         init(_ category: Category) { self.viewModel = ViewModel(category) }
         
         var body: some View {
@@ -24,7 +26,7 @@ extension CategoryDetails {
                 VStack {
                     Layout.ySpace
                     HStack(alignment: .top) {
-                        BackButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
+                        BackButton().onTapGesture { dismiss() }
                         Spacer().frame(maxWidth: .infinity)
                     }
                     CategoryCard(viewModel.category)
@@ -34,7 +36,13 @@ extension CategoryDetails {
                     } }
                     HStack(alignment: .top) {
                         Spacer().frame(maxWidth: .infinity)
-                        DeleteButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
+                        RemoveButton()
+                            .onTapGesture { isDeleteTapped.toggle() }
+                            .alert(isPresented: $isDeleteTapped) {
+                                Alert(title: Text("remove category?"),
+                                      primaryButton: .default(Text("cancel")),
+                                      secondaryButton: .destructive(Text("remove"), action: removeCategory))
+                            }
                     }
                     Layout.ySpace
                 }
@@ -52,6 +60,9 @@ extension CategoryDetails {
                 .cornerRadius(5)
         }
         
+        private func dismiss() { presentationMode.wrappedValue.dismiss() }
+        
+        private func removeCategory() { dismiss(); viewModel.removeCategory() }
         
     }
     

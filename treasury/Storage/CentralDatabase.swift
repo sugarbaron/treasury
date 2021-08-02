@@ -44,6 +44,16 @@ final class CentralDatabase : CentralStorage {
         return all
     }
     
+    func removeCategory(_ categoryName: String) {
+        context.performAndWait {
+            let certainCategory: NSPredicate = .init(format: "\(CategoryFields.name) == %@", categoryName)
+            let request: FetchRequest<CoreDataCategory> = .init(context, predicate: certainCategory)
+            let requiredCategories: [CoreDataCategory] = request.execute()
+            requiredCategories.forEach { context.delete($0) }
+            context.saveChanges()
+        }
+    }
+    
     func loadPurchases(for category: Category) -> [Purchase] {
         var purchases: [Purchase] = [ ]
         context.performAndWait {

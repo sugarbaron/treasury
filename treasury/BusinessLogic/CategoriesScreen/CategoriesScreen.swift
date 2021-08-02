@@ -22,7 +22,7 @@ extension Categories {
                 ScrollView { ForEach(viewModel.categories) { category in
                     HStack { Layout.xSpace; Cell(category); Layout.xSpace }
                 } }
-                FooterPanel()
+                FooterPanel(viewModel.categories.isNotEmpty)
                 Layout.ySpace
             }
             .background(Colors.background)
@@ -77,12 +77,18 @@ extension Categories.Screen {
     
     private struct FooterPanel : View {
         
+        private var unlocked: Bool
+        
+        init(_ unlocked: Bool) { self.unlocked = unlocked }
+        
         var body: some View {
             HStack(alignment: .top) {
                 Layout.xSpace
-                PurchaseButton()
-                    .background(Colors.yellow)
-                    .cornerRadius(5)
+                if unlocked {
+                    PurchaseButton()
+                        .background(Colors.yellow)
+                        .cornerRadius(5)
+                }
                 Spacer().frame(maxWidth: .infinity)
             }
         }

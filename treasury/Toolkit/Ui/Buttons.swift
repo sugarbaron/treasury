@@ -37,7 +37,7 @@ struct BackButton : View {
     
 }
 
-struct DeleteButton : View {
+struct RemoveButton : View {
     
     var body: some View {
         CustomButton(image: "trash")
