@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: Screen
+
 extension CategoryDetails {
     
     struct Screen: View {
@@ -27,15 +29,18 @@ extension CategoryDetails {
                     Layout.ySpace
                     HStack(alignment: .top) {
                         BackButton().onTapGesture { dismiss() }
-                        Spacer().frame(maxWidth: .infinity)
-                    }
-                    CategoryCard(viewModel.category)
-                    if viewModel.purshases.isNotEmpty { purchasesTitle }
-                    ScrollView { ForEach(viewModel.purshases) { purchase in
-                        PurchaseCell(purchase)
-                    } }
-                    HStack(alignment: .top) {
-                        Spacer().frame(maxWidth: .infinity)
+                        Layout.xSpace
+                        VStack {
+                            Text("\(viewModel.category.name)")
+                                .font(.title)
+                                .frame(height: 33)
+                                .foregroundColor(Colors.yellow)
+                            Text("15.05 - 15.06")
+                                .font(.title2)
+                                .frame(height: 22)
+                                .foregroundColor(Colors.yellow)
+                        }.frame(maxWidth: .infinity)
+                        Layout.xSpace
                         RemoveButton()
                             .onTapGesture { isDeleteTapped.toggle() }
                             .alert(isPresented: $isDeleteTapped) {
@@ -43,6 +48,16 @@ extension CategoryDetails {
                                       primaryButton: .default(Text("cancel")),
                                       secondaryButton: .destructive(Text("remove"), action: removeCategory))
                             }
+                    }
+                    if viewModel.purshases.isNotEmpty { purchasesTitle }
+                    ScrollView { ForEach(viewModel.purshases) { purchase in
+                        PurchaseCell(purchase)
+                    } }
+                    Layout.ySpace
+                    CategoryMetrics(viewModel.category)
+                    HStack(alignment: .top) {
+                        EditButton()
+                        Spacer().frame(maxWidth: .infinity)
                     }
                     Layout.ySpace
                 }

@@ -23,22 +23,7 @@ struct CategoryCard : View {
                 .background(Colors.gray)
                 .foregroundColor(Colors.black)
                 .cornerRadius(5)
-            
-            HStack {
-                AmountCard("total:", category.plan.int)
-                    .frame(maxWidth: .infinity)
-                    .background(Colors.biege)
-                    .cornerRadius(5)
-                AmountCard("spent:", category.spent.int)
-                    .frame(maxWidth: .infinity)
-                    .background(Colors.biege)
-                    .cornerRadius(5)
-                AmountCard("left:", category.plan.int - category.spent.int)
-                    .frame(maxWidth: .infinity)
-                    .background(warningColor)
-                    .cornerRadius(5)
-            }
-            .frame(maxWidth: .infinity)
+            CategoryMetrics(category)
         }
     }
     

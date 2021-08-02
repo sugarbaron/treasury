@@ -1,5 +1,5 @@
 //
-//  RegisterPaymentScreen.swift
+//  RegisterPurchaseScreen.swift
 //  treasury
 //
 //  Created by sugarbaron on 29.07.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension RegisterPayment {
+extension RegisterPurchase {
     
     struct Screen: View {
         
@@ -24,7 +24,7 @@ extension RegisterPayment {
                 Layout.ySpace
                 HStack(spacing: 0) {
                     Layout.xSpace
-                    Text("register  payment")
+                    Text("register purchase")
                         .font(.title)
                         .foregroundColor(Colors.yellow)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -101,7 +101,7 @@ private extension Text {
     
 }
 
-extension RegisterPayment {
+extension RegisterPurchase {
     
     struct CategoriesMenu : View {
         
@@ -150,7 +150,7 @@ extension String : Identifiable {
 
 // MARK: Layout
 
-extension RegisterPayment.Screen {
+extension RegisterPurchase.Screen {
     
     final class Layout {
         
@@ -164,9 +164,9 @@ extension RegisterPayment.Screen {
     
 }
 
-struct RegisterPaymentScreen_Previews: PreviewProvider {
+struct RegisterPurchaseScreen_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterPayment.Screen()
+        RegisterPurchase.Screen()
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

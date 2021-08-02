@@ -1,5 +1,5 @@
 //
-//  RegisterPaymentViewModel.swift
+//  RegisterPurchaseViewModel.swift
 //  treasury
 //
 //  Created by sugarbaron on 29.07.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension RegisterPayment {
+extension RegisterPurchase {
     
     final class ViewModel : ObservableObject {
         

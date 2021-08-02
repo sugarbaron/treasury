@@ -1,8 +1,8 @@
 //
-//  RegisterPayment.swift
+//  RegisterPurchase.swift
 //  treasury
 //
 //  Created by sugarbaron on 29.07.2021.
 //
 
-final class RegisterPayment { }
+final class RegisterPurchase { }

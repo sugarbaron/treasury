@@ -27,6 +27,36 @@ struct NoButton : View {
     
 }
 
+struct RemoveButton : View {
+    
+    var body: some View {
+        CustomButton(image: "trash")
+            .background(Colors.red)
+            .cornerRadius(5)
+    }
+    
+}
+
+struct PlusButton : View {
+    
+    var body: some View {
+        CustomButton(image: "plus")
+            .background(Colors.yellow)
+            .cornerRadius(5)
+    }
+    
+}
+
+struct EditButton : View {
+    
+    var body: some View {
+        CustomButton(image: "pencil")
+            .background(Colors.yellow)
+            .cornerRadius(5)
+    }
+    
+}
+
 struct BackButton : View {
     
     var body: some View {
@@ -37,11 +67,11 @@ struct BackButton : View {
     
 }
 
-struct RemoveButton : View {
+struct PurchaseButton : View {
     
     var body: some View {
-        CustomButton(image: "trash")
-            .background(Colors.red)
+        CustomButton(image: "cart.badge.plus")
+            .background(Colors.yellow)
             .cornerRadius(5)
     }
     
@@ -61,7 +91,7 @@ struct CustomButton : View {
             Image(systemName: name)
                 .font(.title2)
                 .foregroundColor(Colors.black)
-                .padding()
+                .frame(width: 55, height: 55)
         } else {
             Text(name)
                 .font(.title2)

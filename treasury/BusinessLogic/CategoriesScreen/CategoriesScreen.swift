@@ -39,6 +39,8 @@ extension Categories.Screen {
     
     private struct TitlePanel : View {
         
+        @State private var isCreatePressed: Bool = false
+        
         var body: some View {
             HStack(alignment: .top) {
                 Layout.xSpace
@@ -47,25 +49,10 @@ extension Categories.Screen {
                 PlusButton()
                     .background(Colors.yellow)
                     .cornerRadius(5)
+                    .fullScreenCover(isPresented: $isCreatePressed) { CreateCategory.Screen() }
+                    .onTapGesture { isCreatePressed.toggle() }
                 Layout.xSpace
             }
-        }
-        
-    }
-    
-    private struct PlusButton : View {
-        
-        @State private var isPressed: Bool
-        
-        init() { self.isPressed = false }
-        
-        var body: some View {
-            Image(systemName: "plus")
-                .font(.title2)
-                .foregroundColor(Colors.black)
-                .padding()
-                .fullScreenCover(isPresented: $isPressed) { CreateCategory.Screen() }
-                .onTapGesture { isPressed.toggle() }
         }
         
     }
@@ -79,6 +66,8 @@ extension Categories.Screen {
         
         private var unlocked: Bool
         
+        @State private var isPurchaseTapped: Bool = false
+        
         init(_ unlocked: Bool) { self.unlocked = unlocked }
         
         var body: some View {
@@ -88,26 +77,11 @@ extension Categories.Screen {
                     PurchaseButton()
                         .background(Colors.yellow)
                         .cornerRadius(5)
+                        .fullScreenCover(isPresented: $isPurchaseTapped) { RegisterPurchase.Screen() }
+                        .onTapGesture { isPurchaseTapped.toggle() }
                 }
                 Spacer().frame(maxWidth: .infinity)
             }
-        }
-        
-    }
-    
-    private struct PurchaseButton : View {
-        
-        @State private var isPressed: Bool
-        
-        init() { self.isPressed = false }
-        
-        var body: some View {
-            Image(systemName: "dollarsign.circle")
-                .font(.largeTitle)
-                .foregroundColor(Colors.black)
-                .padding(10)
-                .fullScreenCover(isPresented: $isPressed) { RegisterPayment.Screen() }
-                .onTapGesture { isPressed.toggle() }
         }
         
     }
