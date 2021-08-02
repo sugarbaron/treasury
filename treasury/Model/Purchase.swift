@@ -22,3 +22,20 @@ final class Purchase {
     }
     
 }
+
+extension Purchase : Identifiable {
+    
+    public var id: Date { date }
+    
+}
+
+extension Purchase : Equatable {
+    
+    static func == (lhs: Purchase, rhs: Purchase) -> Bool {
+        lhs.price == rhs.price
+            && lhs.date == rhs.date
+            && lhs.category == rhs.category
+            && lhs.comment == rhs.comment
+    }
+    
+}

@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0900E126B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0900E026B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift */; };
 		BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */; };
 		BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */; };
 		BC7CD9AF26AEC63D00FB1EA7 /* CreateCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AE26AEC63D00FB1EA7 /* CreateCategory.swift */; };
 		BC7F9DBD26B6FE42004247EF /* CategoryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7F9DBC26B6FE42004247EF /* CategoryDetails.swift */; };
 		BC7F9DBF26B6FE6B004247EF /* CategoryDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7F9DBE26B6FE6B004247EF /* CategoryDetailsScreen.swift */; };
+		BC7F9DC126B70FE2004247EF /* CategoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7F9DC026B70FE2004247EF /* CategoryDetailsViewModel.swift */; };
+		BC7F9DC426B710D1004247EF /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7F9DC326B710D1004247EF /* CategoryCard.swift */; };
+		BC7F9DC626B71506004247EF /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7F9DC526B71506004247EF /* CategoriesCell.swift */; };
 		BC814EF526A944E60031896C /* CategoriesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC814EF426A944E60031896C /* CategoriesScreen.swift */; };
 		BC8B1FBE26B6817200D5976C /* PurchaseCoreDataConvertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */; };
 		BC9443BA26B3111D0056D341 /* RegisterPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443B926B3111D0056D341 /* RegisterPayment.swift */; };
@@ -41,7 +45,6 @@
 		BCA334CA26A6CF0F0039D4E3 /* Di.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334C926A6CF0F0039D4E3 /* Di.swift */; };
 		BCA334CD26A6CF8E0039D4E3 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334CC26A6CF8E0039D4E3 /* DependencyInjection.swift */; };
 		BCA334CF26A6D0180039D4E3 /* CentralStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334CE26A6D0180039D4E3 /* CentralStorage.swift */; };
-		BCA334D626A6D3160039D4E3 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334D526A6D3160039D4E3 /* CategoryCell.swift */; };
 		BCA334D826A6D6C30039D4E3 /* Decimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334D726A6D6C30039D4E3 /* Decimals.swift */; };
 		BCA334DA26A6DE160039D4E3 /* AmountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA334D926A6DE160039D4E3 /* AmountCard.swift */; };
 		BCB1196A26AD769400426BA7 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1196926AD769400426BA7 /* CategoriesViewModel.swift */; };
@@ -58,11 +61,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC0900E026B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsPurchaseCell.swift; sourceTree = "<group>"; };
 		BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreen.swift; sourceTree = "<group>"; };
 		BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewModel.swift; sourceTree = "<group>"; };
 		BC7CD9AE26AEC63D00FB1EA7 /* CreateCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategory.swift; sourceTree = "<group>"; };
 		BC7F9DBC26B6FE42004247EF /* CategoryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetails.swift; sourceTree = "<group>"; };
 		BC7F9DBE26B6FE6B004247EF /* CategoryDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsScreen.swift; sourceTree = "<group>"; };
+		BC7F9DC026B70FE2004247EF /* CategoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewModel.swift; sourceTree = "<group>"; };
+		BC7F9DC326B710D1004247EF /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
+		BC7F9DC526B71506004247EF /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
 		BC814EF426A944E60031896C /* CategoriesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesScreen.swift; sourceTree = "<group>"; };
 		BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCoreDataConvertions.swift; sourceTree = "<group>"; };
 		BC9443B926B3111D0056D341 /* RegisterPayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPayment.swift; sourceTree = "<group>"; };
@@ -93,7 +100,6 @@
 		BCA334C926A6CF0F0039D4E3 /* Di.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Di.swift; sourceTree = "<group>"; };
 		BCA334CC26A6CF8E0039D4E3 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		BCA334CE26A6D0180039D4E3 /* CentralStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralStorage.swift; sourceTree = "<group>"; };
-		BCA334D526A6D3160039D4E3 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		BCA334D726A6D6C30039D4E3 /* Decimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimals.swift; sourceTree = "<group>"; };
 		BCA334D926A6DE160039D4E3 /* AmountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountCard.swift; sourceTree = "<group>"; };
 		BCB1196926AD769400426BA7 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
@@ -136,8 +142,18 @@
 			children = (
 				BC7F9DBC26B6FE42004247EF /* CategoryDetails.swift */,
 				BC7F9DBE26B6FE6B004247EF /* CategoryDetailsScreen.swift */,
+				BC0900E026B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift */,
+				BC7F9DC026B70FE2004247EF /* CategoryDetailsViewModel.swift */,
 			);
 			path = CategoryDetailsScreen;
+			sourceTree = "<group>";
+		};
+		BC7F9DC226B710B7004247EF /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				BC7F9DC326B710D1004247EF /* CategoryCard.swift */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		BC9443B826B310F80056D341 /* RegisterPaymentScreen */ = {
@@ -278,6 +294,7 @@
 				BCA334D126A6D25D0039D4E3 /* CategoriesScreen */,
 				BC7CD9A926AEC41F00FB1EA7 /* CreateCategoryScreen */,
 				BC9443B826B310F80056D341 /* RegisterPaymentScreen */,
+				BC7F9DC226B710B7004247EF /* Reusable */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -287,9 +304,9 @@
 			children = (
 				BCB1196D26AD76DF00426BA7 /* Categories.swift */,
 				BC814EF426A944E60031896C /* CategoriesScreen.swift */,
-				BCA334D526A6D3160039D4E3 /* CategoryCell.swift */,
-				BCA334D926A6DE160039D4E3 /* AmountCard.swift */,
 				BCB1196926AD769400426BA7 /* CategoriesViewModel.swift */,
+				BC7F9DC526B71506004247EF /* CategoriesCell.swift */,
+				BCA334D926A6DE160039D4E3 /* AmountCard.swift */,
 			);
 			path = CategoriesScreen;
 			sourceTree = "<group>";
@@ -398,6 +415,7 @@
 				BC7F9DBD26B6FE42004247EF /* CategoryDetails.swift in Sources */,
 				BCA334CD26A6CF8E0039D4E3 /* DependencyInjection.swift in Sources */,
 				BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */,
+				BC7F9DC126B70FE2004247EF /* CategoryDetailsViewModel.swift in Sources */,
 				BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */,
 				BCA334BD26A6CAC20039D4E3 /* Exceptions.swift in Sources */,
 				BCC7A14E26A7ECCB00A21C5D /* Colors.swift in Sources */,
@@ -419,7 +437,9 @@
 				BCA334B226A6C9570039D4E3 /* CoreDataCategory+CoreDataClass.swift in Sources */,
 				BCA334D826A6D6C30039D4E3 /* Decimals.swift in Sources */,
 				BC9443BA26B3111D0056D341 /* RegisterPayment.swift in Sources */,
+				BC0900E126B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift in Sources */,
 				BCB1197026AD789B00426BA7 /* CentralStorageAssembly.swift in Sources */,
+				BC7F9DC626B71506004247EF /* CategoriesCell.swift in Sources */,
 				BCA334AC26A6C7FE0039D4E3 /* Dates.swift in Sources */,
 				BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */,
 				BCA334A526A6B7180039D4E3 /* Arrays.swift in Sources */,
@@ -427,7 +447,7 @@
 				BC9443BC26B3114C0056D341 /* RegisterPaymentScreen.swift in Sources */,
 				BCA334CA26A6CF0F0039D4E3 /* Di.swift in Sources */,
 				BCA334B326A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift in Sources */,
-				BCA334D626A6D3160039D4E3 /* CategoryCell.swift in Sources */,
+				BC7F9DC426B710D1004247EF /* CategoryCard.swift in Sources */,
 				BCB1197526AD7B1F00426BA7 /* CoreDataContexts.swift in Sources */,
 				BCB1196A26AD769400426BA7 /* CategoriesViewModel.swift in Sources */,
 				BC7F9DBF26B6FE6B004247EF /* CategoryDetailsScreen.swift in Sources */,

@@ -16,6 +16,8 @@ protocol CentralStorage {
     
     func save(_ purchase: Purchase)
     
+    func loadPurchases(for category: Category) -> [Purchase]
+    
     // todo: func loadAllPurchases() -> [Purchase]
     
 }

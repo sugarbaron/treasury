@@ -19,10 +19,8 @@ struct AmountCard : View {
     
     var body: some View {
         VStack {
-            Text(name)
-                .font(.title3)
-            Text(verbatim: "\(amount)")
-                .font(.title2)
+            Text(name).font(.title3)
+            Text(verbatim: "\(amount)").font(.title2)
         }
         .padding()
     }

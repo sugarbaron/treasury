@@ -20,7 +20,7 @@ extension Categories {
                 Layout.ySpace
                 TitlePanel()
                 ScrollView { ForEach(viewModel.categories) { category in
-                    HStack { Layout.xSpace; Categories.Cell(category); Layout.xSpace }
+                    HStack { Layout.xSpace; Cell(category); Layout.xSpace }
                 } }
                 FooterPanel()
                 Layout.ySpace

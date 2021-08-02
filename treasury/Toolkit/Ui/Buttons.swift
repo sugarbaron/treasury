@@ -27,6 +27,26 @@ struct NoButton : View {
     
 }
 
+struct BackButton : View {
+    
+    var body: some View {
+        CustomButton(image: "arrow.left")
+            .background(Colors.yellow)
+            .cornerRadius(5)
+    }
+    
+}
+
+struct DeleteButton : View {
+    
+    var body: some View {
+        CustomButton(image: "trash")
+            .background(Colors.red)
+            .cornerRadius(5)
+    }
+    
+}
+
 struct CustomButton : View {
     
     private let name: String

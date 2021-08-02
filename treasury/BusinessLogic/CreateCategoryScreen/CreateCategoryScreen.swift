@@ -23,7 +23,7 @@ extension CreateCategory {
         var body: some View {
             VStack {
                 Layout.ySpace
-                HStack {
+                HStack(spacing: 0) {
                     Layout.xSpace
                     Text("new category")
                         .font(.title)
@@ -32,14 +32,14 @@ extension CreateCategory {
                 }
                 HStack {
                     Layout.xSpace
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 0) {
                         Layout.ySpace
                         Text("name:").adjust()
                         Layout.ySpace
                         Text("plan:").adjust()
                         Layout.ySpace
                         Text("spent:").adjust()
-                    }
+                    }.frame(alignment: .leading)
                     VStack {
                         Layout.ySpace
                         TextField("enter category name", text: $viewModel.name)
@@ -113,7 +113,8 @@ private extension Text {
     
     func adjust() -> some View {
         font(.title2)
-        .padding(5)
+        .frame(alignment: .trailing)
+        .padding(.vertical, 5)
         .foregroundColor(Colors.yellow)
     }
     

@@ -22,7 +22,7 @@ extension RegisterPayment {
             VStack {
                 // title
                 Layout.ySpace
-                HStack {
+                HStack(spacing: 0) {
                     Layout.xSpace
                     Text("register  payment")
                         .font(.title)
@@ -95,7 +95,7 @@ private extension Text {
     
     func adjust() -> some View {
         font(.title2)
-        .padding(5)
+        .padding(.vertical, 5)
         .foregroundColor(Colors.yellow)
     }
     

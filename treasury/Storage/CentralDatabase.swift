@@ -44,6 +44,19 @@ final class CentralDatabase : CentralStorage {
         return all
     }
     
+    func loadPurchases(for category: Category) -> [Purchase] {
+        var purchases: [Purchase] = [ ]
+        context.performAndWait {
+            let youngestFirst: NSSortDescriptor = .init(key: PurchaseFields.date, ascending: false)
+            let certainCategory: NSPredicate = .init(format: "\(PurchaseFields.category) == %@", category.name)
+            let request: FetchRequest<CoreDataPurchase> = .init(context,
+                                                                predicate: certainCategory,
+                                                                sort: [youngestFirst])
+            purchases = request.execute().compactMap { Purchase.construct(from: $0) }
+        }
+        return purchases
+    }
+    
     func save(_ purchase: Purchase) {
         context.performAndWait {
             guard let newEmpty: CoreDataPurchase = newEmptyPurchase() else { return }
