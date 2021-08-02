@@ -148,22 +148,6 @@ extension String : Identifiable {
     
 }
 
-// MARK: Layout
-
-extension RegisterPurchase.Screen {
-    
-    final class Layout {
-        
-        private static let xSpaceSize: CGFloat = 10
-        private static let ySpaceSize: CGFloat = 10
-        
-        static var xSpace: some View { Spacer().frame(width: xSpaceSize) }
-        static var ySpace: some View { Spacer().frame(height: ySpaceSize) }
-        
-    }
-    
-}
-
 struct RegisterPurchaseScreen_Previews: PreviewProvider {
     static var previews: some View {
         RegisterPurchase.Screen()

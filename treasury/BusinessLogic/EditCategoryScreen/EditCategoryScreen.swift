@@ -1,31 +1,36 @@
 //
-//  CategoriesCreateScreen.swift
+//  EditCategoryScreen.swift
 //  treasury
 //
-//  Created by sugarbaron on 26.07.2021.
+//  Created by sugarbaron on 02.08.2021.
 //
 
 import SwiftUI
 
 // MARK: Screen
 
-extension CreateCategory {
+extension EditCategory {
     
     struct Screen : View {
         
         @SwiftUI.Environment(\.presentationMode)
         private var presentationMode: Binding<PresentationMode>
-
-        @StateObject private var viewModel: ViewModel = .init()
         
-        init() { UITextField.appearance().backgroundColor = .clear }
+        private let category: Category
+        
+        @ObservedObject private var viewModel: ViewModel
+        
+        init(_ category: Category) {
+            self.category = category
+            self.viewModel = .init(category)
+        }
         
         var body: some View {
             VStack {
                 Layout.ySpace
                 HStack(spacing: 0) {
                     Layout.xSpace
-                    Text("new category")
+                    Text("edit category")
                         .font(.title)
                         .foregroundColor(Colors.yellow)
                         .frame(maxWidth: .infinity, alignment: .topLeading)
@@ -34,22 +39,11 @@ extension CreateCategory {
                     Layout.xSpace
                     VStack(alignment: .leading, spacing: 0) {
                         Layout.ySpace
-                        Text("name:").adjust()
-                        Layout.ySpace
                         Text("plan:").adjust()
-                        Layout.ySpace
-                        Text("spent:").adjust()
                     }.frame(alignment: .leading)
                     VStack {
                         Layout.ySpace
-                        TextField("enter category name", text: $viewModel.name)
-                            .adjust()
-                        Layout.ySpace
                         TextField("enter plan amount", text: $viewModel.plan)
-                            .adjust()
-                            .keyboardType(.numberPad)
-                        Layout.ySpace
-                        TextField("enter already spent amount", text: $viewModel.fact)
                             .adjust()
                             .keyboardType(.numberPad)
                     }
@@ -59,7 +53,7 @@ extension CreateCategory {
                 HStack {
                     Layout.xSpace
                     YesButton().onTapGesture {
-                        viewModel.createCategory()
+                        viewModel.editCategory()
                         presentationMode.wrappedValue.dismiss()
                     }
                     Spacer().frame(maxWidth: .infinity)
@@ -69,27 +63,6 @@ extension CreateCategory {
                 Layout.ySpace
             }
             .background(Colors.background)
-        }
-        
-    }
-    
-}
-
-// MARK: Button
-
-extension CreateCategory {
-    
-    private struct Button : View {
-        
-        private let imageName: String
-        
-        init(_ imageName: String) { self.imageName = imageName }
-        
-        var body: some View {
-            Image(systemName: imageName)
-                .font(.title2)
-                .foregroundColor(Colors.black)
-                .padding()
         }
         
     }
@@ -120,9 +93,8 @@ private extension Text {
     
 }
 
-struct NewCategoryScreen_Previews: PreviewProvider {
+struct EditCategoryScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CreateCategory.Screen()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+        EditCategory.Screen(.init("phone", 600, 150))
     }
 }

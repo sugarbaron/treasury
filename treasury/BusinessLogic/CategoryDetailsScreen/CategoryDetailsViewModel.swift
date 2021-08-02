@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+final class CategoryDetails { }
+
 extension CategoryDetails {
     
     final class ViewModel : ObservableObject {

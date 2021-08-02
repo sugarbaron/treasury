@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+final class RegisterPurchase { }
+
 extension RegisterPurchase {
     
     final class ViewModel : ObservableObject {

@@ -19,6 +19,7 @@ extension CategoryDetails {
         private let viewModel: ViewModel
         
         @State private var isDeleteTapped: Bool = false
+        @State private var isEditTapped: Bool = false
         
         init(_ category: Category) { self.viewModel = ViewModel(category) }
         
@@ -57,6 +58,10 @@ extension CategoryDetails {
                     CategoryMetrics(viewModel.category)
                     HStack(alignment: .top) {
                         EditButton()
+                            .onTapGesture { isEditTapped.toggle() }
+                            .fullScreenCover(isPresented: $isEditTapped) {
+                                EditCategory.Screen(viewModel.category)
+                            }
                         Spacer().frame(maxWidth: .infinity)
                     }
                     Layout.ySpace
@@ -78,22 +83,6 @@ extension CategoryDetails {
         private func dismiss() { presentationMode.wrappedValue.dismiss() }
         
         private func removeCategory() { dismiss(); viewModel.removeCategory() }
-        
-    }
-    
-}
-
-// MARK: Layout
-
-extension CategoryDetails.Screen {
-    
-    final class Layout {
-        
-        private static let xSpaceSize: CGFloat = 10
-        private static let ySpaceSize: CGFloat = 10
-        
-        static var xSpace: some View { Spacer().frame(width: xSpaceSize) }
-        static var ySpace: some View { Spacer().frame(height: ySpaceSize) }
         
     }
     
