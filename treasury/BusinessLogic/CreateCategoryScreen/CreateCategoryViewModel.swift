@@ -26,10 +26,11 @@ extension CreateCategory {
         func createCategory() {
             guard let storage: CentralStorage = try? Di.inject(CentralStorage?.self),
                   name.isNotEmpty,
-                  let plan: Int = Int(self.plan)
+                  let plan: Int = Int(self.plan),
+                  let currentPeriod: PlanningPeriod = storage.loadCurrentPeriod()
             else { Log(error: "[CreateCategory.ViewModel] unable to create category"); return }
             let fact: Int = Int(self.fact) ?? 0
-            let newCategory: Category = .init(name, Decimal(plan), Decimal(fact))
+            let newCategory: Category = .init(name, Decimal(plan), Decimal(fact), currentPeriod.id)
             storage.save(newCategory)
         }
         
