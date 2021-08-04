@@ -9,14 +9,23 @@ import CoreData
 
 final class CentralDatabase : CentralStorage {
     
+    // MARK: initialization
+    
     private let modelName: String = "CentralDatabase"
     private let coreData: CoreDataStorageEngine
+    private let periodId: PlanningPeriodId
     
     init?() {
         guard let coreData: CoreDataStorageEngine = try? CoreDataStorageEngine(modelName: modelName)
         else { Log(error: "[CentralStorage] unable to construct"); return nil }
         self.coreData = coreData
+        self.periodId = .init()
+        
+        let lastPeriod: CoreDataPlanningPeriod? = loadLastPeriod()
+        self.periodId.setLastId(lastPeriod?.id?.intValue)
     }
+    
+    // MARK: categories
     
     func save(_ category: Category) {
         context.performAndWait {
@@ -54,6 +63,8 @@ final class CentralDatabase : CentralStorage {
         }
     }
     
+    // MARK: purchases
+    
     func loadPurchases(for category: Category) -> [Purchase] {
         var purchases: [Purchase] = [ ]
         context.performAndWait {
@@ -75,12 +86,54 @@ final class CentralDatabase : CentralStorage {
         }
     }
     
+    // MARK: planning periods
+    
+    func save(planningPeriod: Date.Range) {
+        context.performAndWait {
+            guard let empty: CoreDataPeriod = newEmptyPeriod() else { return }
+            empty.id = NSNumber(value: periodId.nextId)
+            empty.start = planningPeriod.from
+            empty.end = planningPeriod.to
+            context.saveChanges()
+        }
+    }
+    
+    func loadLastPlanningPeriod() -> PlanningPeriod? {
+        guard let coreDataPeriod: CoreDataPeriod = loadLastPeriod() else { return nil }
+        return PlanningPeriod.construct(from: coreDataPeriod)
+    }
+    
+    private func loadLastPeriod() -> CoreDataPlanningPeriod? {
+        var period: CoreDataPlanningPeriod? = nil
+        context.performAndWait {
+            let descendingIds: NSSortDescriptor = .init(key: PlanningPeriodFields.id, ascending: false)
+            let request: FetchRequest<CoreDataPlanningPeriod> = .init(context, sort: [descendingIds], limit: 1)
+            period = request.execute().first
+        }
+        return period
+    }
+    
+    func loadAllPlanningPeriods() -> [PlanningPeriod] {
+        var periods: [PlanningPeriod] = [ ]
+        context.performAndWait {
+            let descendingIds: NSSortDescriptor = .init(key: PlanningPeriodFields.id, ascending: false)
+            let request: FetchRequest<CoreDataPlanningPeriod> = .init(context, sort: [descendingIds])
+            let coreDataPeriods: [CoreDataPeriod] = request.execute()
+            periods = coreDataPeriods.compactMap { PlanningPeriod.construct(from: $0) }
+        }
+        return periods
+    }
+    
+    // MARK: subscription
+    
     func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)
     -> Storage.Updates<Subscriber> {
         .init(context, updates)
     }
     
 }
+
+// MARK: toolkit
 
 extension CentralDatabase {
     
@@ -93,8 +146,13 @@ extension CentralDatabase {
         Description.insertNewObject(forEntityName: CoreDataPurchase.entityName, into: context) as? CoreDataPurchase
     }
     
+    private func newEmptyPeriod() -> CoreDataPeriod? {
+        Description.insertNewObject(forEntityName: CoreDataPeriod.entityName, into: context) as? CoreDataPeriod
+    }
+    
     private var context: NSManagedObjectContext { coreData.context }
     
     private typealias Description = NSEntityDescription
+    private typealias CoreDataPeriod = CoreDataPlanningPeriod
     
 }
