@@ -55,7 +55,8 @@ extension CategoryDetails {
                         PurchaseCell(purchase)
                     } }
                     Layout.ySpace
-                    CategoryMetrics(viewModel.category)
+                    Summary(viewModel.category)
+                    Layout.ySpace
                     HStack(alignment: .top) {
                         EditButton()
                             .onTapGesture { isEditTapped.toggle() }
