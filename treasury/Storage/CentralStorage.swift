@@ -24,10 +24,12 @@ protocol CentralStorage {
     
     // todo: func loadAllPurchases() -> [Purchase]
     
-    func save(planningPeriod: Date.Range)
+    func saveNew(period: Date.Range)
     
-    func loadLastPlanningPeriod() -> PlanningPeriod?
+    func update(_ period: PlanningPeriod)
     
-    func loadAllPlanningPeriods() -> [PlanningPeriod]
+    func loadCurrentPeriod() -> PlanningPeriod?
+    
+    func loadAllPeriods() -> [PlanningPeriod]
     
 }

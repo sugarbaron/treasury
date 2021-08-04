@@ -12,6 +12,7 @@ final class Category {
     let name: String
     private(set) var plan: Decimal
     private(set) var spent: Decimal
+    //let planningPeriod: Int 
     
     init(_ name: String, _ plan: Decimal, _ spent: Decimal) {
         self.name = name

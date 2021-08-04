@@ -26,6 +26,8 @@
 		BC8A8D0926BAB0CA000DE9CF /* CoreDataPlanningPeriod+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D0726BAB0CA000DE9CF /* CoreDataPlanningPeriod+CoreDataProperties.swift */; };
 		BC8A8D0E26BAB10D000DE9CF /* PLanningPeriodFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D0D26BAB10D000DE9CF /* PLanningPeriodFields.swift */; };
 		BC8A8D1026BAB37C000DE9CF /* CentralDatabasePlanningPeriodId.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D0F26BAB37C000DE9CF /* CentralDatabasePlanningPeriodId.swift */; };
+		BC8A8D1326BAC06D000DE9CF /* PlanningPeriodsInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D1226BAC06D000DE9CF /* PlanningPeriodsInspector.swift */; };
+		BC8A8D1526BAC12B000DE9CF /* Threads.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D1426BAC12B000DE9CF /* Threads.swift */; };
 		BC8B1FBE26B6817200D5976C /* PurchaseCoreDataConvertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */; };
 		BC9443BC26B3114C0056D341 /* RegisterPurchaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BB26B3114C0056D341 /* RegisterPurchaseScreen.swift */; };
 		BC9443BE26B313C30056D341 /* RegisterPurchasetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BD26B313C30056D341 /* RegisterPurchasetViewModel.swift */; };
@@ -87,6 +89,8 @@
 		BC8A8D0726BAB0CA000DE9CF /* CoreDataPlanningPeriod+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataPlanningPeriod+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC8A8D0D26BAB10D000DE9CF /* PLanningPeriodFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLanningPeriodFields.swift; sourceTree = "<group>"; };
 		BC8A8D0F26BAB37C000DE9CF /* CentralDatabasePlanningPeriodId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralDatabasePlanningPeriodId.swift; sourceTree = "<group>"; };
+		BC8A8D1226BAC06D000DE9CF /* PlanningPeriodsInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningPeriodsInspector.swift; sourceTree = "<group>"; };
+		BC8A8D1426BAC12B000DE9CF /* Threads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threads.swift; sourceTree = "<group>"; };
 		BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCoreDataConvertions.swift; sourceTree = "<group>"; };
 		BC9443BB26B3114C0056D341 /* RegisterPurchaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchaseScreen.swift; sourceTree = "<group>"; };
 		BC9443BD26B313C30056D341 /* RegisterPurchasetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchasetViewModel.swift; sourceTree = "<group>"; };
@@ -162,13 +166,6 @@
 			path = CategoryDetailsScreen;
 			sourceTree = "<group>";
 		};
-		BC7F9DC226B710B7004247EF /* Reusable */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Reusable;
-			sourceTree = "<group>";
-		};
 		BC84FA1326B825610010078B /* EditCategoryScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +203,14 @@
 				BCA334C226A6CC8C0039D4E3 /* CategoryFields.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		BC8A8D1126BAC04F000DE9CF /* PlanningPeriodsInspector */ = {
+			isa = PBXGroup;
+			children = (
+				BC8A8D1226BAC06D000DE9CF /* PlanningPeriodsInspector.swift */,
+			);
+			path = PlanningPeriodsInspector;
 			sourceTree = "<group>";
 		};
 		BC9443B826B310F80056D341 /* RegisterPaymentScreen */ = {
@@ -283,6 +288,7 @@
 				BCC7A14D26A7ECCB00A21C5D /* Colors.swift */,
 				BCB1197426AD7B1F00426BA7 /* CoreDataContexts.swift */,
 				BCB5E79B26AEE99500727DF7 /* Strings.swift */,
+				BC8A8D1426BAC12B000DE9CF /* Threads.swift */,
 			);
 			path = Toolkit;
 			sourceTree = "<group>";
@@ -347,7 +353,7 @@
 				BC7CD9A926AEC41F00FB1EA7 /* CreateCategoryScreen */,
 				BC84FA1326B825610010078B /* EditCategoryScreen */,
 				BC9443B826B310F80056D341 /* RegisterPaymentScreen */,
-				BC7F9DC226B710B7004247EF /* Reusable */,
+				BC8A8D1126BAC04F000DE9CF /* PlanningPeriodsInspector */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -485,6 +491,7 @@
 				BCA334B826A6C9EA0039D4E3 /* CoreDataStorageEngine.swift in Sources */,
 				BC8A8D0E26BAB10D000DE9CF /* PLanningPeriodFields.swift in Sources */,
 				BCB5E7A126AEEC1200727DF7 /* StorageSubscription.swift in Sources */,
+				BC8A8D1526BAC12B000DE9CF /* Threads.swift in Sources */,
 				BCB5E79F26AEEBC300727DF7 /* StorageUpdatedContent.swift in Sources */,
 				BCA334AA26A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld in Sources */,
 				BCA3349126A6A5410039D4E3 /* treasuryApp.swift in Sources */,
@@ -502,6 +509,7 @@
 				BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */,
 				BC8A8D1026BAB37C000DE9CF /* CentralDatabasePlanningPeriodId.swift in Sources */,
 				BC9443BC26B3114C0056D341 /* RegisterPurchaseScreen.swift in Sources */,
+				BC8A8D1326BAC06D000DE9CF /* PlanningPeriodsInspector.swift in Sources */,
 				BCA334CA26A6CF0F0039D4E3 /* Di.swift in Sources */,
 				BCA334B326A6C9570039D4E3 /* CoreDataCategory+CoreDataProperties.swift in Sources */,
 				BC0900E326B817850029D11F /* CategoryDetailsSummary.swift in Sources */,

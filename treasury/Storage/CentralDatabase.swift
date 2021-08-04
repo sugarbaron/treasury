@@ -88,17 +88,27 @@ final class CentralDatabase : CentralStorage {
     
     // MARK: planning periods
     
-    func save(planningPeriod: Date.Range) {
+    func saveNew(period: Date.Range) {
         context.performAndWait {
             guard let empty: CoreDataPeriod = newEmptyPeriod() else { return }
             empty.id = NSNumber(value: periodId.nextId)
-            empty.start = planningPeriod.from
-            empty.end = planningPeriod.to
+            empty.start = period.from
+            empty.end = period.to
             context.saveChanges()
         }
     }
     
-    func loadLastPlanningPeriod() -> PlanningPeriod? {
+    func update(_ period: PlanningPeriod) {
+        context.performAndWait {
+            let certainId: NSPredicate = .init(format: "\(PlanningPeriodFields.id) == \(period.id)")
+            let request: FetchRequest<CoreDataPeriod> = .init(context, predicate: certainId)
+            guard let targetPeriod: CoreDataPeriod = request.execute().first else { return }
+            targetPeriod.start = period.start
+            targetPeriod.end = period.end
+        }
+    }
+    
+    func loadCurrentPeriod() -> PlanningPeriod? {
         guard let coreDataPeriod: CoreDataPeriod = loadLastPeriod() else { return nil }
         return PlanningPeriod.construct(from: coreDataPeriod)
     }
@@ -113,7 +123,7 @@ final class CentralDatabase : CentralStorage {
         return period
     }
     
-    func loadAllPlanningPeriods() -> [PlanningPeriod] {
+    func loadAllPeriods() -> [PlanningPeriod] {
         var periods: [PlanningPeriod] = [ ]
         context.performAndWait {
             let descendingIds: NSSortDescriptor = .init(key: PlanningPeriodFields.id, ascending: false)

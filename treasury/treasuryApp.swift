@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct treasuryApp: App {
-    var body: some Scene {
-        WindowGroup {
-            Categories.Screen()
-        }
+    
+    init() {
+        let inspector: PlanningPeriodsInspector? = try? Di.inject(PlanningPeriodsInspector?.self)
+        inspector?.start()
     }
+    
+    var body: some Scene {
+        WindowGroup { Categories.Screen() }
+    }
+    
 }
