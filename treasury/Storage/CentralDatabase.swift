@@ -42,12 +42,18 @@ final class CentralDatabase : CentralStorage {
         return request.execute().first
     }
     
-    func loadAllCategories() -> [Category] {
+    func loadCurrentPeriodCategories() -> [Category] {
         var all: [Category] = [ ]
         context.performAndWait {
+            guard let currentPeriod: CoreDataPeriod = loadLastPeriod(),
+                  let currentPeriodId: Int = currentPeriod.id?.intValue
+            else { return }
+            let forCurrentPeriod: NSPredicate = .init(format: "\(CategoryFields.periodId) == \(currentPeriodId)")
             let expensiveFirst: NSSortDescriptor = .init(key: CategoryFields.plan, ascending: false)
             let abc: NSSortDescriptor = .init(key: CategoryFields.name, ascending: true)
-            let request: FetchRequest<CoreDataCategory> = .init(context, sort: [expensiveFirst, abc])
+            let request: FetchRequest<CoreDataCategory> = .init(context,
+                                                                predicate: forCurrentPeriod,
+                                                                sort: [expensiveFirst, abc])
             all = request.execute().compactMap { Category.construct(from: $0) }
         }
         return all
@@ -109,17 +115,19 @@ final class CentralDatabase : CentralStorage {
     }
     
     func loadCurrentPeriod() -> PlanningPeriod? {
-        guard let coreDataPeriod: CoreDataPeriod = loadLastPeriod() else { return nil }
-        return PlanningPeriod.construct(from: coreDataPeriod)
+        var currentPeriod: PlanningPeriod? = nil
+        context.performAndWait {
+            guard let coreDataPeriod: CoreDataPeriod = loadLastPeriod() else { return }
+            currentPeriod = PlanningPeriod.construct(from: coreDataPeriod)
+        }
+        return currentPeriod
     }
     
     private func loadLastPeriod() -> CoreDataPlanningPeriod? {
         var period: CoreDataPlanningPeriod? = nil
-        context.performAndWait {
-            let descendingIds: NSSortDescriptor = .init(key: PlanningPeriodFields.id, ascending: false)
-            let request: FetchRequest<CoreDataPlanningPeriod> = .init(context, sort: [descendingIds], limit: 1)
-            period = request.execute().first
-        }
+        let descendingIds: NSSortDescriptor = .init(key: PlanningPeriodFields.id, ascending: false)
+        let request: FetchRequest<CoreDataPlanningPeriod> = .init(context, sort: [descendingIds], limit: 1)
+        period = request.execute().first
         return period
     }
     

@@ -51,8 +51,11 @@ final class PlanningPeriodsInspector {
         let calendar: Calendar = Calendar(identifier: .iso8601)
         var components: DateComponents = calendar.dateComponents([.year, .month, .day], from: Date.now)
         
-        guard let month: Int = components.month else { return almostNextMonthDate }
+        guard let month: Int = components.month,
+              let day: Int = components.day
+          else { return almostNextMonthDate }
         let nextMonth: Int = month + 1; components.month = nextMonth
+        let previousDay: Int = day - 1; components.day = previousDay
         
         var nextMonthDate: Date? = calendar.date(from: components)
         while (nextMonthDate == nil) {

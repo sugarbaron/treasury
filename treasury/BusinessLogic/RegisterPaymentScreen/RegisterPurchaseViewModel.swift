@@ -25,12 +25,7 @@ extension RegisterPurchase {
             self.price = ""
             self.comment = ""
             self.storage = try? Di.inject(CentralStorage?.self)
-            self.categories = storage?.loadAllCategories() ?? [ ]
-        }
-        
-        private func loadCategories() -> [String] {
-            let categories: [Category] = storage?.loadAllCategories() ?? [ ]
-            return categories.map { $0.name }
+            self.categories = storage?.loadCurrentPeriodCategories() ?? [ ]
         }
         
         var categoriesList: [String] { categories.map { $0.name } }

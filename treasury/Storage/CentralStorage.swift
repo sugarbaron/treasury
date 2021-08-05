@@ -11,7 +11,7 @@ protocol CentralStorage {
     
     func save(_ category: Category)
     
-    func loadAllCategories() -> [Category]
+    func loadCurrentPeriodCategories() -> [Category]
     
     func removeCategory(_ categoryName: String)
     

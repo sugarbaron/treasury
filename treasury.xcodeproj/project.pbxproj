@@ -34,7 +34,7 @@
 		BC8A8D1D26BB007B000DE9CF /* CoreDataCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D1B26BB007B000DE9CF /* CoreDataCategory+CoreDataProperties.swift */; };
 		BC8B1FBE26B6817200D5976C /* PurchaseCoreDataConvertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */; };
 		BC9443BC26B3114C0056D341 /* RegisterPurchaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BB26B3114C0056D341 /* RegisterPurchaseScreen.swift */; };
-		BC9443BE26B313C30056D341 /* RegisterPurchasetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BD26B313C30056D341 /* RegisterPurchasetViewModel.swift */; };
+		BC9443BE26B313C30056D341 /* RegisterPurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BD26B313C30056D341 /* RegisterPurchaseViewModel.swift */; };
 		BC9443C126B3147F0056D341 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443C026B3147F0056D341 /* Buttons.swift */; };
 		BCA3349126A6A5410039D4E3 /* treasuryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA3349026A6A5410039D4E3 /* treasuryApp.swift */; };
 		BCA3349526A6A5420039D4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA3349426A6A5420039D4E3 /* Assets.xcassets */; };
@@ -97,7 +97,7 @@
 		BC8A8D1B26BB007B000DE9CF /* CoreDataCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCoreDataConvertions.swift; sourceTree = "<group>"; };
 		BC9443BB26B3114C0056D341 /* RegisterPurchaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchaseScreen.swift; sourceTree = "<group>"; };
-		BC9443BD26B313C30056D341 /* RegisterPurchasetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchasetViewModel.swift; sourceTree = "<group>"; };
+		BC9443BD26B313C30056D341 /* RegisterPurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchaseViewModel.swift; sourceTree = "<group>"; };
 		BC9443C026B3147F0056D341 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		BCA3348D26A6A5410039D4E3 /* treasury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = treasury.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA3349026A6A5410039D4E3 /* treasuryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treasuryApp.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				BC9443BB26B3114C0056D341 /* RegisterPurchaseScreen.swift */,
-				BC9443BD26B313C30056D341 /* RegisterPurchasetViewModel.swift */,
+				BC9443BD26B313C30056D341 /* RegisterPurchaseViewModel.swift */,
 			);
 			path = RegisterPaymentScreen;
 			sourceTree = "<group>";
@@ -486,7 +486,7 @@
 				BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */,
 				BC8A8D1C26BB007B000DE9CF /* CoreDataCategory+CoreDataClass.swift in Sources */,
 				BCB1197926AD7D5300426BA7 /* CoreDataEntity.swift in Sources */,
-				BC9443BE26B313C30056D341 /* RegisterPurchasetViewModel.swift in Sources */,
+				BC9443BE26B313C30056D341 /* RegisterPurchaseViewModel.swift in Sources */,
 				BCA334BA26A6CA200039D4E3 /* Logs.swift in Sources */,
 				BCA334B826A6C9EA0039D4E3 /* CoreDataStorageEngine.swift in Sources */,
 				BC8A8D0E26BAB10D000DE9CF /* PLanningPeriodFields.swift in Sources */,
