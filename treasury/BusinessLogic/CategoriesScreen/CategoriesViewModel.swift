@@ -28,16 +28,20 @@ extension Categories {
             self.currentPeriodSubscriber = nil
             self.currentPeriod = nil
             self.categoriesUpdates = nil
-            self.currentPeriodSubscriber = .init() { [weak self] period in self?.currentPeriod = period }
-            guard let currentPeriod: PlanningPeriod = self.currentPeriod else { return }
-            
-            let ofCurrentPeriod: NSPredicate = .init(format: "\(CategoryFields.periodId) == \(currentPeriod.id)")
-            let expensiveFirst: NSSortDescriptor = .init(key: CategoryFields.plan, ascending: false)
-            let abc: NSSortDescriptor = .init(key: CategoryFields.name, ascending: true)
-            self.categoriesUpdates = storage?.adjustSubscription(.init(ofCurrentPeriod, sort:[expensiveFirst, abc]))
-            if let updates: Storage.Updates<ViewModel> = categoriesUpdates {
-                subscribe(to: updates)
-                self.categories = updates.updatedContent?.entities ?? [ ]
+            self.currentPeriodSubscriber = .init() { [weak self] period in
+                guard let this = self, period.isDifferent(than: this.currentPeriod) else { return }
+                Log(info: "[Categories.ViewModel] init!") /* fixme */
+                self?.currentPeriod = period
+                
+                let ofCurrentPeriod: NSPredicate = .init(format: "\(CategoryFields.periodId) == \(period.id)")
+                let expensiveFirst: NSSortDescriptor = .init(key: CategoryFields.plan, ascending: false)
+                let abc: NSSortDescriptor = .init(key: CategoryFields.name, ascending: true)
+                let config: Storage.SubscriptionConfig = .init(ofCurrentPeriod, sort:[expensiveFirst, abc])
+                this.categoriesUpdates = this.storage?.adjustSubscription(config)
+                if let updates: Storage.Updates<ViewModel> = this.categoriesUpdates {
+                    this.subscribe(to: updates)
+                    this.categories = updates.updatedContent?.entities ?? [ ]
+                }
             }
         }
         
@@ -48,7 +52,8 @@ extension Categories {
 extension Categories.ViewModel : StorageSubscriber {
     
     func storageContentUpdated(_ updatedContent: Storage.UpdatedContent<Category>) {
-        categories = updatedContent.entities
+        Log(info: "[Categories.ViewModel] callback!") /* fixme */
+        Threads.runOnMain { [weak self] in self?.categories = updatedContent.entities }
     }
     
 }
@@ -57,11 +62,11 @@ extension Categories {
     
     final class CurrentPeriodSubscriber : StorageSubscriber {
         
-        private let onUpdate: (PlanningPeriod?) -> Void
+        private let onUpdate: (PlanningPeriod) -> Void
         private let storage: CentralStorage
         private let storageUpdates: StorageUpdates
         
-        init?(_ onUpdate: @escaping (PlanningPeriod?) -> Void) {
+        init?(_ onUpdate: @escaping (PlanningPeriod) -> Void) {
             guard let storage: CentralStorage = try? Di.inject(CentralStorage?.self)
             else { Log(error: "[CurrentPeriodSubscriber] unable to construct"); return nil }
             
@@ -71,11 +76,17 @@ extension Categories {
             let updates: StorageUpdates = storage.adjustSubscription(.init(sort: [descendingIds]))
             self.storageUpdates = updates
             subscribe(to: updates)
-            Threads.runOnMain { [weak self] in self?.onUpdate(self?.storageUpdates.updatedContent?.entities.first) }
+            Threads.runOnMain { [weak self] in
+                guard let period: PlanningPeriod = self?.storageUpdates.updatedContent?.entities.first else { return }
+                self?.onUpdate(period)
+            }
         }
         
         func storageContentUpdated(_ updatedContent: Storage.UpdatedContent<PlanningPeriod>) {
-            Threads.runOnMain { [weak self] in self?.onUpdate(updatedContent.entities.first) }
+            Threads.runOnMain { [weak self] in
+                guard let period: PlanningPeriod = updatedContent.entities.first else { return }
+                self?.onUpdate(period)
+            }
         }
         
         private typealias StorageUpdates = Storage.Updates<CurrentPeriodSubscriber>

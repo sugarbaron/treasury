@@ -39,16 +39,22 @@ final class PlanningPeriodsInspector {
         
         let day: TimeInterval = 24 * 60 * 60
         if Date.now.timeIntervalSince(currentPeriod.end) > day {
-            //if try! Date.parse("2021-09-03 19:00:01").timeIntervalSince(currentPeriod.end) > 0 {
+        //if try! Date.parse("2021-09-04 19:00:01").timeIntervalSince(currentPeriod.end) > 0 {
             createPlanningPeriod(startDate: currentPeriod.end.addingTimeInterval(day)); return
         }
     }
     
     private func createPlanningPeriod(startDate: Date) {
-        let newPeriod: Date.Range = (startDate, getNextMonthDate(from: startDate))
-        Log(info: "[PlanningPeriodsInspector] period:[\(newPeriod.from.format()) - \(newPeriod.to.format())]") /* fixme */
-        storage.saveNew(period: newPeriod)
-        
+        let newPeriodRange: Date.Range = (startDate, getNextMonthDate(from: startDate))
+        Log(info: "[PlanningPeriodsInspector] period:[\(newPeriodRange.from.format()) - \(newPeriodRange.to.format())]") /* fixme */
+        let currentCategories: [Category] = storage.loadCurrentPeriodCategories()
+        storage.saveNew(period: newPeriodRange)
+        guard let newPeriod: PlanningPeriod = storage.loadCurrentPeriod()
+        else { Log(error: "[PlanningPeriodsInspector] unable to load new period"); return }
+        currentCategories.forEach {
+            let newPeriodCategory: Category = .init($0.name, $0.plan, 0, newPeriod.id)
+            storage.save(newPeriodCategory)
+        }
     }
     
     private func getNextMonthDate(from: Date) -> Date {

@@ -50,8 +50,8 @@ extension Categories.Screen {
         var body: some View {
             HStack(alignment: .top) {
                 EditPeriodButton()
-                    .fullScreenCover(isPresented: $isCreatePressed) { EditPlanningPeriod.Screen() }
-                    .onTapGesture { isCreatePressed.toggle() }
+                    .fullScreenCover(isPresented: $isEditPressed) { EditPlanningPeriod.Screen() }
+                    .onTapGesture { isEditPressed.toggle() }
                 Spacer()
                 Text("categories").font(.title).foregroundColor(Colors.yellow)
                 Spacer()

@@ -19,4 +19,9 @@ final class PlanningPeriod {
         self.end = range.to
     }
     
+    func isDifferent(than another: PlanningPeriod?) -> Bool {
+        guard let another: PlanningPeriod  = another else { return true }
+        return self.id != another.id
+    }
+    
 }

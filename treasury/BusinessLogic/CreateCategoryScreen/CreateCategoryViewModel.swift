@@ -30,6 +30,7 @@ extension CreateCategory {
                   let currentPeriod: PlanningPeriod = storage.loadCurrentPeriod()
             else { Log(error: "[CreateCategory.ViewModel] unable to create category"); return }
             let fact: Int = Int(self.fact) ?? 0
+            Log(info: "[CreateCategory.ViewModel] new category for period:[\(currentPeriod.id) \(currentPeriod.start.format()) \(currentPeriod.end.format())]") /* fixme */
             let newCategory: Category = .init(name, Decimal(plan), Decimal(fact), currentPeriod.id)
             storage.save(newCategory)
         }
