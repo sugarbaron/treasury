@@ -18,6 +18,8 @@
 		BC84FA1526B825E00010078B /* EditCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84FA1426B825E00010078B /* EditCategoryViewModel.swift */; };
 		BC84FA1726B845CC0010078B /* EditCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84FA1626B845CC0010078B /* EditCategoryScreen.swift */; };
 		BC84FA1926B846730010078B /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84FA1826B846730010078B /* Layout.swift */; };
+		BC8686FB26BBE9D400297F2E /* EditPlanningPeriodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8686FA26BBE9D400297F2E /* EditPlanningPeriodViewModel.swift */; };
+		BC8686FD26BBEA7100297F2E /* EditPlanningPeriodScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8686FC26BBEA7100297F2E /* EditPlanningPeriodScreen.swift */; };
 		BC8A8CF726BAAAD9000DE9CF /* CategoryDetailsAmountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8CF626BAAAD9000DE9CF /* CategoryDetailsAmountCard.swift */; };
 		BC8A8CF926BAADC3000DE9CF /* PlanningPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8CF826BAADC3000DE9CF /* PlanningPeriod.swift */; };
 		BC8A8CFB26BAAEFF000DE9CF /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8CFA26BAAEFF000DE9CF /* DateRange.swift */; };
@@ -81,6 +83,8 @@
 		BC84FA1426B825E00010078B /* EditCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryViewModel.swift; sourceTree = "<group>"; };
 		BC84FA1626B845CC0010078B /* EditCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryScreen.swift; sourceTree = "<group>"; };
 		BC84FA1826B846730010078B /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		BC8686FA26BBE9D400297F2E /* EditPlanningPeriodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlanningPeriodViewModel.swift; sourceTree = "<group>"; };
+		BC8686FC26BBEA7100297F2E /* EditPlanningPeriodScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlanningPeriodScreen.swift; sourceTree = "<group>"; };
 		BC8A8CF626BAAAD9000DE9CF /* CategoryDetailsAmountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsAmountCard.swift; sourceTree = "<group>"; };
 		BC8A8CF826BAADC3000DE9CF /* PlanningPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningPeriod.swift; sourceTree = "<group>"; };
 		BC8A8CFA26BAAEFF000DE9CF /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 				BC84FA1426B825E00010078B /* EditCategoryViewModel.swift */,
 			);
 			path = EditCategoryScreen;
+			sourceTree = "<group>";
+		};
+		BC8686F926BBE9B200297F2E /* EditPeriodScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BC8686FC26BBEA7100297F2E /* EditPlanningPeriodScreen.swift */,
+				BC8686FA26BBE9D400297F2E /* EditPlanningPeriodViewModel.swift */,
+			);
+			path = EditPeriodScreen;
 			sourceTree = "<group>";
 		};
 		BC8A8D0A26BAB0D4000DE9CF /* PlanningPeriod */ = {
@@ -349,10 +362,11 @@
 			isa = PBXGroup;
 			children = (
 				BCA334D126A6D25D0039D4E3 /* CategoriesScreen */,
-				BC7F9DBB26B6FE25004247EF /* CategoryDetailsScreen */,
 				BC7CD9A926AEC41F00FB1EA7 /* CreateCategoryScreen */,
-				BC84FA1326B825610010078B /* EditCategoryScreen */,
 				BC9443B826B310F80056D341 /* RegisterPaymentScreen */,
+				BC7F9DBB26B6FE25004247EF /* CategoryDetailsScreen */,
+				BC84FA1326B825610010078B /* EditCategoryScreen */,
+				BC8686F926BBE9B200297F2E /* EditPeriodScreen */,
 				BC8A8D1126BAC04F000DE9CF /* PlanningPeriodsInspector */,
 			);
 			path = BusinessLogic;
@@ -504,12 +518,14 @@
 				BC0900E126B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift in Sources */,
 				BCB1197026AD789B00426BA7 /* CentralStorageAssembly.swift in Sources */,
 				BC7F9DC626B71506004247EF /* CategoriesCell.swift in Sources */,
+				BC8686FD26BBEA7100297F2E /* EditPlanningPeriodScreen.swift in Sources */,
 				BCA334AC26A6C7FE0039D4E3 /* Dates.swift in Sources */,
 				BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */,
 				BCA334A526A6B7180039D4E3 /* Arrays.swift in Sources */,
 				BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */,
 				BC8A8D1026BAB37C000DE9CF /* CentralDatabasePlanningPeriodId.swift in Sources */,
 				BC9443BC26B3114C0056D341 /* RegisterPurchaseScreen.swift in Sources */,
+				BC8686FB26BBE9D400297F2E /* EditPlanningPeriodViewModel.swift in Sources */,
 				BC8A8D1326BAC06D000DE9CF /* PlanningPeriodsInspector.swift in Sources */,
 				BCA334CA26A6CF0F0039D4E3 /* Di.swift in Sources */,
 				BC0900E326B817850029D11F /* CategoryDetailsSummary.swift in Sources */,

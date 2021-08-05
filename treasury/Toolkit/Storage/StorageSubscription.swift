@@ -21,7 +21,7 @@ public extension Storage {
         public let sort: [NSSortDescriptor]
         public let sectionNameKey: String?
         
-        public init(_ predicate: NSPredicate = NSPredicate(value: true),
+        public init(_ predicate: NSPredicate = .init(value: true),
                     sort: [NSSortDescriptor] = [ ],
                     sectionNameKey: String? = nil) {
             self.predicate = predicate
