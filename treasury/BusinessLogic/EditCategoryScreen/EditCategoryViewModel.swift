@@ -26,7 +26,7 @@ extension EditCategory {
         
         func editCategory() {
             guard let plan: Int = Int(self.plan) else { return }
-            let editedCategory: Category = .init(category.name, Decimal(plan), category.spent)
+            let editedCategory: Category = .init(category.name, Decimal(plan), category.spent, category.planningPeriod)
             storage?.save(editedCategory)
         }
         

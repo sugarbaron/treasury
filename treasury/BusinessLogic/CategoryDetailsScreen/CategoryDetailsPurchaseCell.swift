@@ -26,7 +26,7 @@ extension CategoryDetails {
                             .foregroundColor(Colors.black)
                             .cornerRadius(5)
                         Layout.ySpace
-                        Text(purchase.date.shortDay)
+                        Text(purchase.date.ddMM)
                             .font(.title2)
                             .frame(width: 90, height: 40)
                             .background(Colors.biege)

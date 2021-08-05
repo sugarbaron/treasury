@@ -91,7 +91,7 @@ extension CategoryDetails {
 
 struct CategoryDetailsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryDetails.Screen(Category("<name>", 5000, 300))
+        CategoryDetails.Screen(Category("<name>", 5000, 300, 1))
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

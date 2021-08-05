@@ -2,7 +2,7 @@
 //  CoreDataCategory+CoreDataProperties.swift
 //  treasury
 //
-//  Created by sugarbaron on 20.07.2021.
+//  Created by sugarbaron on 04.08.2021.
 //
 //
 
@@ -16,9 +16,10 @@ extension CoreDataCategory {
         return NSFetchRequest<CoreDataCategory>(entityName: "Category")
     }
 
+    @NSManaged public var fact: NSDecimalNumber?
     @NSManaged public var name: String?
     @NSManaged public var plan: NSDecimalNumber?
-    @NSManaged public var fact: NSDecimalNumber?
+    @NSManaged public var periodId: NSNumber?
 
 }
 

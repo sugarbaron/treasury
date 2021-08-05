@@ -12,6 +12,7 @@ final class CategoryFields {
     static let name: String = "name"
     static let plan: String = "plan"
     static let fact: String = "fact"
+    static let periodId: String = "periodId"
     
 }
 

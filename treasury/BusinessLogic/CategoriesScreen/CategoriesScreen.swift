@@ -16,17 +16,28 @@ extension Categories {
         @ObservedObject private var viewModel: ViewModel = .init()
         
         var body: some View {
-            VStack {
-                Layout.ySpace
-                TitlePanel()
-                ScrollView { ForEach(viewModel.categories) { category in
-                    HStack { Layout.xSpace; Cell(category); Layout.xSpace }
-                } }
-                FooterPanel(viewModel.categories.isNotEmpty)
-                Layout.ySpace
+            HStack {
+                Layout.xSpace
+                VStack {
+                    Layout.ySpace
+                    TitlePanel()
+                    Layout.ySpace
+                    PeriodPanel(period)
+                    ScrollView { ForEach(viewModel.categories) { category in
+                        Cell(category)
+                    } }
+                    FooterPanel(viewModel.categories.isNotEmpty)
+                    Layout.ySpace
+                }
+                Layout.xSpace
             }
             .background(Colors.background)
             .frame(maxWidth: .infinity)
+        }
+        
+        private var period: String {
+            guard let currentPeriod: PlanningPeriod = viewModel.currentPeriod else { return "<period>" }
+            return "\(currentPeriod.start.ddMMyyyy) - \(currentPeriod.end.ddMMyyyy)"
         }
         
     }
@@ -43,7 +54,6 @@ extension Categories.Screen {
         
         var body: some View {
             HStack(alignment: .top) {
-                Layout.xSpace
                 Text("categories").font(.title).foregroundColor(Colors.yellow)
                 Spacer()
                 PlusButton()
@@ -51,13 +61,37 @@ extension Categories.Screen {
                     .cornerRadius(5)
                     .fullScreenCover(isPresented: $isCreatePressed) { CreateCategory.Screen() }
                     .onTapGesture { isCreatePressed.toggle() }
-                Layout.xSpace
             }
         }
         
     }
     
 }
+
+// MARK: period panel
+
+extension Categories.Screen {
+    
+    private struct PeriodPanel : View {
+        
+        private let periodLabel: String
+        
+        init(_ label: String) { self.periodLabel = label }
+        
+        var body: some View {
+            Text(periodLabel)
+                .font(.title2)
+                .frame(maxWidth: .infinity)
+                .padding(5)
+                .foregroundColor(Colors.white)
+                .background(Colors.blue)
+                .cornerRadius(5)
+        }
+        
+    }
+    
+}
+
 // MARK: FooterPanel
 
 extension Categories.Screen {
@@ -72,7 +106,6 @@ extension Categories.Screen {
         
         var body: some View {
             HStack(alignment: .top) {
-                Layout.xSpace
                 if unlocked {
                     PurchaseButton()
                         .background(Colors.yellow)

@@ -29,7 +29,8 @@ extension Date {
     
     public var string: String { formatDate(as: "yyyy-MM-dd HH:mm:ss", timeZone: TimeZoneId.current.secondsFromGMT) }
     
-    public var shortDay: String { formatDate(as: "dd.MM", timeZone: TimeZoneId.current.secondsFromGMT) }
+    public var ddMM: String { formatDate(as: "dd.MM", timeZone: TimeZoneId.current.secondsFromGMT) }
+    public var ddMMyyyy: String { formatDate(as: "dd.MM.yyyy", timeZone: TimeZoneId.current.secondsFromGMT) }
     
     public func format(as template: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZoneId = .utc) -> String {
         return formatDate(as: template, timeZone: timeZone.secondsFromGMT)

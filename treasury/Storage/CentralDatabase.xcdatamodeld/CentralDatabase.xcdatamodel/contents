@@ -3,6 +3,7 @@
     <entity name="Category" representedClassName="CoreDataCategory" syncable="YES">
         <attribute name="fact" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="periodId" attributeType="Integer 64" usesScalarValueType="NO"/>
         <attribute name="plan" attributeType="Decimal" defaultValueString="0.0"/>
     </entity>
     <entity name="PlanningPeriod" representedClassName="CoreDataPlanningPeriod" syncable="YES">
@@ -17,7 +18,7 @@
         <attribute name="price" attributeType="Decimal" defaultValueString="0.0"/>
     </entity>
     <elements>
-        <element name="Category" positionX="-63" positionY="-18" width="128" height="14"/>
+        <element name="Category" positionX="-63" positionY="-18" width="128" height="89"/>
         <element name="Purchase" positionX="-54" positionY="18" width="128" height="89"/>
         <element name="PlanningPeriod" positionX="-54" positionY="27" width="128" height="74"/>
     </elements>
