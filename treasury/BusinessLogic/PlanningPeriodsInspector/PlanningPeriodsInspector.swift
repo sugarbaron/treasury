@@ -35,21 +35,27 @@ final class PlanningPeriodsInspector {
     
     private func inspect() {
         guard let currentPeriod: PlanningPeriod = storage.loadCurrentPeriod()
-        else { createDefaultPlanningPeriod(); return }
+        else { createPlanningPeriod(startDate: Date.now); return }
         
-        if Date.now.timeIntervalSince(currentPeriod.end) > 0 { createDefaultPlanningPeriod(); return }
+        let day: TimeInterval = 24 * 60 * 60
+        if Date.now.timeIntervalSince(currentPeriod.end) > day {
+            //if try! Date.parse("2021-09-03 19:00:01").timeIntervalSince(currentPeriod.end) > 0 {
+            createPlanningPeriod(startDate: currentPeriod.end.addingTimeInterval(day)); return
+        }
     }
     
-    private func createDefaultPlanningPeriod() {
-        let defaultPeriod: Date.Range = (Date.now, getNextMonthDate())
-        storage.saveNew(period: defaultPeriod)
+    private func createPlanningPeriod(startDate: Date) {
+        let newPeriod: Date.Range = (startDate, getNextMonthDate(from: startDate))
+        Log(info: "[PlanningPeriodsInspector] period:[\(newPeriod.from.format()) - \(newPeriod.to.format())]") /* fixme */
+        storage.saveNew(period: newPeriod)
+        
     }
     
-    private func getNextMonthDate() -> Date {
-        let almostNextMonthDate: Date = Date.now.addingTimeInterval(30 * 24 * 60 * 60)
+    private func getNextMonthDate(from: Date) -> Date {
+        let almostNextMonthDate: Date = from.addingTimeInterval(30 * 24 * 60 * 60)
         
         let calendar: Calendar = Calendar(identifier: .iso8601)
-        var components: DateComponents = calendar.dateComponents([.year, .month, .day], from: Date.now)
+        var components: DateComponents = calendar.dateComponents([.year, .month, .day], from: from)
         
         guard let month: Int = components.month,
               let day: Int = components.day

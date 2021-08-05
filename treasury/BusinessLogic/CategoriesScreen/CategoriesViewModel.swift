@@ -71,11 +71,11 @@ extension Categories {
             let updates: StorageUpdates = storage.adjustSubscription(.init(sort: [descendingIds]))
             self.storageUpdates = updates
             subscribe(to: updates)
-            onUpdate(storageUpdates.updatedContent?.entities.first)
+            Threads.runOnMain { [weak self] in self?.onUpdate(self?.storageUpdates.updatedContent?.entities.first) }
         }
         
         func storageContentUpdated(_ updatedContent: Storage.UpdatedContent<PlanningPeriod>) {
-            onUpdate(updatedContent.entities.first)
+            Threads.runOnMain { [weak self] in self?.onUpdate(updatedContent.entities.first) }
         }
         
         private typealias StorageUpdates = Storage.Updates<CurrentPeriodSubscriber>

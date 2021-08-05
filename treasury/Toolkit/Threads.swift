@@ -7,6 +7,12 @@
 
 import Foundation
 
+final class Threads {
+    
+    static func runOnMain(_ code: @escaping () -> Void) { OperationQueue.main.addOperation { code() } }
+    
+}
+
 extension OperationQueue {
     
     public static func newSerial() -> OperationQueue {
