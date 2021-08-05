@@ -134,6 +134,17 @@ final class CentralDatabase : CentralStorage {
         return periods
     }
     
+    func loadPeriod(for category: Category) -> PlanningPeriod? {
+        var categoryPeriod: PlanningPeriod? = nil
+        context.performAndWait {
+            let certainId: NSPredicate = .init(format: "\(PlanningPeriodFields.id) == \(category.planningPeriod)")
+            let request: FetchRequest<CoreDataPeriod> = .init(context, predicate: certainId)
+            guard let coreDataPeriod: CoreDataPeriod = request.execute().first else { return }
+            categoryPeriod = PlanningPeriod.construct(from: coreDataPeriod)
+        }
+        return categoryPeriod
+    }
+    
     // MARK: subscription
     
     func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)

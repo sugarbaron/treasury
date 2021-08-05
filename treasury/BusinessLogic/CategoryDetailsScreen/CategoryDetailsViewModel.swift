@@ -15,12 +15,14 @@ extension CategoryDetails {
         
         @Published var category: Category
         @Published var purshases: [Purchase]
+        let categoryPeriod: PlanningPeriod?
         private let storage: CentralStorage?
         
         init(_ category: Category) {
             self.storage = try? Di.inject(CentralStorage?.self)
             self.category = category
             self.purshases = (self.storage?.loadPurchases(for: category)) ?? [ ]
+            self.categoryPeriod = self.storage?.loadPeriod(for: category)
         }
         
         func removeCategory() { storage?.removeCategory(category.name) }

@@ -36,7 +36,7 @@ extension CategoryDetails {
                                 .font(.title)
                                 .frame(height: 33)
                                 .foregroundColor(Colors.yellow)
-                            Text("15.05 - 15.06")
+                            Text(periodLabel)
                                 .font(.title2)
                                 .frame(height: 22)
                                 .foregroundColor(Colors.yellow)
@@ -79,6 +79,11 @@ extension CategoryDetails {
                 .background(Colors.blue)
                 .foregroundColor(Colors.white)
                 .cornerRadius(5)
+        }
+        
+        private var periodLabel: String {
+            guard let categoryPeriod: PlanningPeriod = viewModel.categoryPeriod else { return "<period>" }
+            return "\(categoryPeriod.start.ddMM) - \(categoryPeriod.end.ddMM)"
         }
         
         private func dismiss() { presentationMode.wrappedValue.dismiss() }

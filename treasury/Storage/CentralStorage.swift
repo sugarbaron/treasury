@@ -32,4 +32,6 @@ protocol CentralStorage {
     
     func loadAllPeriods() -> [PlanningPeriod]
     
+    func loadPeriod(for category: Category) -> PlanningPeriod?
+    
 }
