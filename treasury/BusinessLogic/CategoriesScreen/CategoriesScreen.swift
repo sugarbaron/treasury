@@ -23,9 +23,8 @@ extension Categories {
                     TitlePanel()
                     Layout.ySpace
                     PeriodPanel(period)
-                    ScrollView { ForEach(viewModel.categories) { category in
-                        Cell(category)
-                    } }
+                    ScrollView { ForEach(viewModel.categories) { category in Cell(category) } }
+                    Layout.ySpace
                     FooterPanel(viewModel.categories.isNotEmpty)
                     Layout.ySpace
                 }
@@ -54,11 +53,11 @@ extension Categories.Screen {
         
         var body: some View {
             HStack(alignment: .top) {
+                EditPeriodButton()
+                Spacer()
                 Text("categories").font(.title).foregroundColor(Colors.yellow)
                 Spacer()
                 PlusButton()
-                    .background(Colors.yellow)
-                    .cornerRadius(5)
                     .fullScreenCover(isPresented: $isCreatePressed) { CreateCategory.Screen() }
                     .onTapGesture { isCreatePressed.toggle() }
             }
@@ -108,8 +107,6 @@ extension Categories.Screen {
             HStack(alignment: .top) {
                 if unlocked {
                     PurchaseButton()
-                        .background(Colors.yellow)
-                        .cornerRadius(5)
                         .fullScreenCover(isPresented: $isPurchaseTapped) { RegisterPurchase.Screen() }
                         .onTapGesture { isPurchaseTapped.toggle() }
                 }

@@ -50,7 +50,7 @@ struct PlusButton : View {
 struct EditButton : View {
     
     var body: some View {
-        CustomButton(image: "pencil")
+        CustomButton(image: "gear")
             .background(Colors.yellow)
             .cornerRadius(5)
     }
@@ -71,6 +71,16 @@ struct PurchaseButton : View {
     
     var body: some View {
         CustomButton(image: "cart.badge.plus")
+            .background(Colors.yellow)
+            .cornerRadius(5)
+    }
+    
+}
+
+struct EditPeriodButton: View {
+    
+    var body: some View {
+        CustomButton(image: "stopwatch")
             .background(Colors.yellow)
             .cornerRadius(5)
     }
