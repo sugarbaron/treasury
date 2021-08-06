@@ -21,7 +21,8 @@ final class CentralDatabase : CentralStorage {
         self.coreData = coreData
         self.periodId = .init()
         
-        let lastPeriod: CoreDataPlanningPeriod? = loadLastPeriod()
+        var lastPeriod: CoreDataPlanningPeriod? = nil
+        context.performAndWait { lastPeriod = loadLastPeriod() }
         self.periodId.setLastId(lastPeriod?.id?.intValue)
     }
     
