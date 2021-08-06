@@ -13,6 +13,7 @@ extension EditCategory {
     
     final class ViewModel : ObservableObject {
         
+        @Published var name: String
         @Published var plan: String
         
         private let storage: CentralStorage?
@@ -20,6 +21,7 @@ extension EditCategory {
         
         init(_ category: Category) {
             self.storage = try? Di.inject(CentralStorage?.self)
+            self.name = category.name
             self.plan = String("\(category.plan.int)")
             self.category = category
         }
@@ -27,7 +29,7 @@ extension EditCategory {
         func editCategory() {
             guard let plan: Int = Int(self.plan) else { return }
             let editedCategory: Category = .init(category.id,
-                                                 category.name,
+                                                 name,
                                                  Decimal(plan),
                                                  category.spent,
                                                  category.planningPeriod)

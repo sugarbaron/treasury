@@ -39,9 +39,14 @@ extension EditCategory {
                     Layout.xSpace
                     VStack(alignment: .leading, spacing: 0) {
                         Layout.ySpace
+                        Text("name:").adjust()
+                        Layout.ySpace
                         Text("plan:").adjust()
                     }.frame(alignment: .leading)
                     VStack {
+                        Layout.ySpace
+                        TextField("enter category name", text: $viewModel.name)
+                            .adjust()
                         Layout.ySpace
                         TextField("enter plan amount", text: $viewModel.plan)
                             .adjust()
