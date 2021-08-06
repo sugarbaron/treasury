@@ -15,12 +15,10 @@ extension CreateCategory {
         
         @Published var name: String
         @Published var plan: String
-        @Published var fact: String
         
         init() {
             self.name = ""
             self.plan = ""
-            self.fact = ""
         }
         
         func createCategory() {
@@ -29,8 +27,7 @@ extension CreateCategory {
                   let plan: Int = Int(self.plan),
                   let currentPeriod: PlanningPeriod = storage.loadCurrentPeriod()
             else { Log(error: "[CreateCategory.ViewModel] unable to create category"); return }
-            let fact: Int = Int(self.fact) ?? 0
-            let newCategoryDraft: Category.Draft = .init(name, Decimal(plan), Decimal(fact), currentPeriod.id)
+            let newCategoryDraft: Category.Draft = .init(name, Decimal(plan), Decimal(0), currentPeriod.id)
             storage.create(from: newCategoryDraft)
         }
         

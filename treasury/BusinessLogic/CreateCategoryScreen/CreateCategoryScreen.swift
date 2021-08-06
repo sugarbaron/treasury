@@ -37,8 +37,6 @@ extension CreateCategory {
                         Text("name:").adjust()
                         Layout.ySpace
                         Text("plan:").adjust()
-                        Layout.ySpace
-                        Text("spent:").adjust()
                     }.frame(alignment: .leading)
                     VStack {
                         Layout.ySpace
@@ -46,10 +44,6 @@ extension CreateCategory {
                             .adjust()
                         Layout.ySpace
                         TextField("enter plan amount", text: $viewModel.plan)
-                            .adjust()
-                            .keyboardType(.numberPad)
-                        Layout.ySpace
-                        TextField("enter already spent amount", text: $viewModel.fact)
                             .adjust()
                             .keyboardType(.numberPad)
                     }
