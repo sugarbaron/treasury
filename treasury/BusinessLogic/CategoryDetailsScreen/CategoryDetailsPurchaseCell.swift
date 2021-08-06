@@ -12,8 +12,12 @@ extension CategoryDetails {
     struct PurchaseCell : View {
         
         private let purchase: Purchase
+        private let comment: String
         
-        init(_ purchase: Purchase) { self.purchase = purchase }
+        init(_ purchase: Purchase, _ comment: String) {
+            self.purchase = purchase
+            self.comment = comment
+        }
         
         var body: some View {
             VStack {
@@ -44,11 +48,6 @@ extension CategoryDetails {
             }.frame(maxWidth: .infinity)
         }
         
-        private var comment: String {
-            if purchase.comment.isEmpty { return purchase.category }
-            else { return purchase.comment }
-        }
-        
     }
     
 }
@@ -71,7 +70,7 @@ extension CategoryDetails.PurchaseCell {
 
 struct CategoryDetailsPurchaseCell_Previews : PreviewProvider {
     static var previews: some View {
-        CategoryDetails.PurchaseCell(.init(250, "dinner", "nigora"))
+        CategoryDetails.PurchaseCell(.init(1, 250, 1, "nigora"), "dinners")
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

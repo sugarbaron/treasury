@@ -30,7 +30,7 @@ extension Categories {
             self.categoriesUpdates = nil
             self.currentPeriodSubscriber = .init() { [weak self] period in
                 guard let this = self, period.isDifferent(than: this.currentPeriod) else { return }
-                Log(info: "[Categories.ViewModel] init!") /* fixme */
+                Log(info: "[Categories.ViewModel] period changed. re-adjusting subscription") /* fixme */
                 self?.currentPeriod = period
                 
                 let ofCurrentPeriod: NSPredicate = .init(format: "\(CategoryFields.periodId) == \(period.id)")
@@ -52,7 +52,6 @@ extension Categories {
 extension Categories.ViewModel : StorageSubscriber {
     
     func storageContentUpdated(_ updatedContent: Storage.UpdatedContent<Category>) {
-        Log(info: "[Categories.ViewModel] callback!") /* fixme */
         Threads.runOnMain { [weak self] in self?.categories = updatedContent.entities }
     }
     

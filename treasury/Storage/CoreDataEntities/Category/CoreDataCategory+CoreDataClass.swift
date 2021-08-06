@@ -2,7 +2,7 @@
 //  CoreDataCategory+CoreDataClass.swift
 //  treasury
 //
-//  Created by sugarbaron on 04.08.2021.
+//  Created by sugarbaron on 06.08.2021.
 //
 //
 

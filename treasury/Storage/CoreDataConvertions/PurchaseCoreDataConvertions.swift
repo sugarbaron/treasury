@@ -10,8 +10,9 @@ import Foundation
 extension CoreDataPurchase {
     
     func fill(with purchase: Purchase) {
+        self.id = NSNumber(value: purchase.id)
         self.price = purchase.price.nsDecimal
-        self.category = purchase.category
+        self.category = NSNumber(value: purchase.category)
         self.date = purchase.date
         self.comment = purchase.comment
     }
@@ -21,11 +22,12 @@ extension CoreDataPurchase {
 extension Purchase : CoreDataConvertible {
     
     static func construct(from coreDataEntity: CoreDataPurchase) -> Purchase? {
-        guard let price: Decimal = coreDataEntity.price?.decimalValue,
-              let category: String = coreDataEntity.category,
+        guard let id: Int = coreDataEntity.id?.intValue,
+              let price: Decimal = coreDataEntity.price?.decimalValue,
+              let category: Int = coreDataEntity.category?.intValue,
               let date: Date = coreDataEntity.date
         else { return nil }
-        return .init(price, category, date: date, coreDataEntity.comment ?? "")
+        return .init(id, price, category, date: date, coreDataEntity.comment ?? "")
     }
     
 }

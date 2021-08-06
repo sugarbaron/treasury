@@ -47,12 +47,10 @@ final class PlanningPeriodsInspector {
         let newPeriodRange: Date.Range = (startDate, getNextMonthDate(from: startDate))
         //Log(info: "[PlanningPeriodsInspector] creating period:[\(newPeriodRange.from.format()) - \(newPeriodRange.to.format())]") /* fixme */
         let currentCategories: [Category] = storage.loadCurrentPeriodCategories()
-        storage.saveNew(period: newPeriodRange)
-        guard let newPeriod: PlanningPeriod = storage.loadCurrentPeriod()
-        else { Log(error: "[PlanningPeriodsInspector] unable to load new period"); return }
+        let newPeriod: PlanningPeriod = storage.create(period: newPeriodRange)
         currentCategories.forEach {
-            let newPeriodCategory: Category = .init($0.name, $0.plan, 0, newPeriod.id)
-            storage.save(newPeriodCategory)
+            let newPeriodCategoryDraft: Category.Draft = .init($0.name, $0.plan, 0, newPeriod.id)
+            storage.create(from: newPeriodCategoryDraft)
         }
     }
     

@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName="CoreDataCategory" syncable="YES">
         <attribute name="fact" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="id" attributeType="Integer 64" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="periodId" attributeType="Integer 64" usesScalarValueType="NO"/>
         <attribute name="plan" attributeType="Decimal" defaultValueString="0.0"/>
@@ -12,14 +13,15 @@
         <attribute name="start" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="Purchase" representedClassName="CoreDataPurchase" syncable="YES">
-        <attribute name="category" attributeType="String"/>
+        <attribute name="category" attributeType="Integer 64" usesScalarValueType="NO"/>
         <attribute name="comment" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="Integer 64" usesScalarValueType="NO"/>
         <attribute name="price" attributeType="Decimal" defaultValueString="0.0"/>
     </entity>
     <elements>
-        <element name="Category" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="Purchase" positionX="-54" positionY="18" width="128" height="89"/>
+        <element name="Category" positionX="-63" positionY="-18" width="128" height="104"/>
         <element name="PlanningPeriod" positionX="-54" positionY="27" width="128" height="74"/>
+        <element name="Purchase" positionX="-54" positionY="18" width="128" height="104"/>
     </elements>
 </model>

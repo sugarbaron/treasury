@@ -9,6 +9,7 @@ extension CoreDataPurchase : CoreDataEntity { public static let entityName: Stri
 
 final class PurchaseFields {
     
+    static let id = "id"
     static let price: String = "price"
     static let date: String = "date"
     static let category: String = "category"

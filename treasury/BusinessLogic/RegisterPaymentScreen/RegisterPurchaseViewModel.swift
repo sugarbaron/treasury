@@ -34,10 +34,10 @@ extension RegisterPurchase {
             guard let price: Int = Int(self.price),
                   let category: Category = categories.first(where: { $0.name == category })
             else { return }
-            let purchase: Purchase = .init(Decimal(price), category.name, comment)
+            let purchaseDraft: Purchase.Draft = .init(Decimal(price), category.id, comment)
             category.purchase(Decimal(price))
-            storage?.save(category)
-            storage?.save(purchase)
+            storage?.update(category)
+            storage?.create(from: purchaseDraft)
         }
         
     }

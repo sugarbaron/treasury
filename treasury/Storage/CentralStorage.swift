@@ -9,22 +9,22 @@ import Foundation
 
 protocol CentralStorage {
     
-    func save(_ category: Category)
+    @discardableResult
+    func create(from draft: Category.Draft) -> Category
+    
+    func update(_ category: Category)
     
     func loadCurrentPeriodCategories() -> [Category]
     
-    func removeCategory(_ categoryName: String)
+    func removeCategory(_ id: Int)
     
-    func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)
-    -> Storage.Updates<Subscriber>
-    
-    func save(_ purchase: Purchase)
+    @discardableResult
+    func create(from draft: Purchase.Draft) -> Purchase
     
     func loadPurchases(for category: Category) -> [Purchase]
     
-    // todo: func loadAllPurchases() -> [Purchase]
-    
-    func saveNew(period: Date.Range)
+    @discardableResult
+    func create(period range: Date.Range) -> PlanningPeriod
     
     func update(_ period: PlanningPeriod)
     
@@ -33,5 +33,8 @@ protocol CentralStorage {
     func loadAllPeriods() -> [PlanningPeriod]
     
     func loadPeriod(for category: Category) -> PlanningPeriod?
+    
+    func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)
+    -> Storage.Updates<Subscriber>
     
 }

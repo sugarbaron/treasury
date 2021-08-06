@@ -2,7 +2,7 @@
 //  CoreDataPurchase+CoreDataProperties.swift
 //  treasury
 //
-//  Created by sugarbaron on 20.07.2021.
+//  Created by sugarbaron on 06.08.2021.
 //
 //
 
@@ -16,10 +16,11 @@ extension CoreDataPurchase {
         return NSFetchRequest<CoreDataPurchase>(entityName: "Purchase")
     }
 
-    @NSManaged public var price: NSDecimalNumber?
-    @NSManaged public var date: Date?
+    @NSManaged public var category: NSNumber?
     @NSManaged public var comment: String?
-    @NSManaged public var category: String?
+    @NSManaged public var date: Date?
+    @NSManaged public var price: NSDecimalNumber?
+    @NSManaged public var id: NSNumber?
 
 }
 

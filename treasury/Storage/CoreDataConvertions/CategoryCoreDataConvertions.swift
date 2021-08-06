@@ -10,6 +10,7 @@ import Foundation
 extension CoreDataCategory {
     
     func fill(with category: Category) {
+        self.id = NSNumber(value: category.id)
         self.name = category.name
         self.plan = category.plan.nsDecimal
         self.fact = category.spent.nsDecimal
@@ -21,12 +22,13 @@ extension CoreDataCategory {
 extension Category : CoreDataConvertible {
     
     static func construct(from coreDataEntity: CoreDataCategory) -> Category? {
-        guard let name: String = coreDataEntity.name,
+        guard let id: Int = coreDataEntity.id?.intValue,
+              let name: String = coreDataEntity.name,
               let plan: NSDecimalNumber = coreDataEntity.plan,
               let fact: NSDecimalNumber = coreDataEntity.fact,
               let periodId: Int = coreDataEntity.periodId?.intValue
         else { return nil }
-        return .init(name, plan.decimalValue, fact.decimalValue, periodId)
+        return .init(id, name, plan.decimalValue, fact.decimalValue, periodId)
     }
     
 }

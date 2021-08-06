@@ -95,6 +95,6 @@ private extension Text {
 
 struct EditCategoryScreen_Previews: PreviewProvider {
     static var previews: some View {
-        EditCategory.Screen(.init("phone", 600, 150, 1))
+        EditCategory.Screen(.init(1, "phone", 600, 150, 1))
     }
 }

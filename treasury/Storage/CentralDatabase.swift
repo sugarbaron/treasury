@@ -13,40 +13,69 @@ final class CentralDatabase : CentralStorage {
     
     private let modelName: String = "CentralDatabase"
     private let coreData: CoreDataStorageEngine
-    private let periodId: PlanningPeriodId
+    private let periodId: AutoincrementId
+    private let categoryId: AutoincrementId
+    private let purchaseId: AutoincrementId
     
     init?() {
         guard let coreData: CoreDataStorageEngine = try? CoreDataStorageEngine(modelName: modelName)
         else { Log(error: "[CentralStorage] unable to construct"); return nil }
         self.coreData = coreData
         self.periodId = .init()
+        self.categoryId = .init()
+        self.purchaseId = .init()
         
-        var lastPeriod: CoreDataPlanningPeriod? = nil
-        context.performAndWait { lastPeriod = loadLastPeriod() }
-        self.periodId.setLastId(lastPeriod?.id?.intValue)
+        configurePeriodIdProvider()
+        configureCategoryIdProvider()
+        configurePurchaseIdProvider()
+    }
+    
+    private func configurePeriodIdProvider() {
+        context.performAndWait {
+            let last: CoreDataPlanningPeriod? = loadLast()
+            periodId.setLastId(last?.id?.intValue)
+        }
+    }
+    
+    private func configureCategoryIdProvider() {
+        context.performAndWait {
+            let last: CoreDataCategory? = loadLast()
+            categoryId.setLastId(last?.id?.intValue)
+        }
+    }
+    
+    private func configurePurchaseIdProvider() {
+        context.performAndWait {
+            let last: CoreDataPurchase? = loadLast()
+            purchaseId.setLastId(last?.id?.intValue)
+        }
     }
     
     // MARK: categories
     
-    func save(_ category: Category) {
+    @discardableResult
+    func create(from draft: Category.Draft) -> Category {
+        let new: Category = .init(categoryId.next, draft)
         context.performAndWait {
-            guard let newEmpty: CoreDataCategory = loadCategory(category.name) ?? newEmptyCategory()
-            else { return }
-            newEmpty.fill(with: category)
+            guard let newEmpty: CoreDataCategory = newEmpty() else { return }
+            newEmpty.fill(with: new)
             context.saveChanges()
         }
+        return new
     }
     
-    private func loadCategory(_ name: String) -> CoreDataCategory? {
-        let certainName: NSPredicate = .init(format: "\(CategoryFields.name) == %@", name)
-        let request = FetchRequest<CoreDataCategory>(context, predicate: certainName)
-        return request.execute().first
+    func update(_ category: Category) {
+        context.performAndWait {
+            guard let stored: CoreDataCategory = load(for: category.id) else { return }
+            stored.fill(with: category)
+            context.saveChanges()
+        }
     }
     
     func loadCurrentPeriodCategories() -> [Category] {
         var all: [Category] = [ ]
         context.performAndWait {
-            guard let currentPeriod: CoreDataPeriod = loadLastPeriod(),
+            guard let currentPeriod: CoreDataPeriod = loadLast(),
                   let currentPeriodId: Int = currentPeriod.id?.intValue
             else { return }
             let forCurrentPeriod: NSPredicate = .init(format: "\(CategoryFields.periodId) == \(currentPeriodId)")
@@ -60,9 +89,9 @@ final class CentralDatabase : CentralStorage {
         return all
     }
     
-    func removeCategory(_ categoryName: String) {
+    func removeCategory(_ id: Int) {
         context.performAndWait {
-            let certainCategory: NSPredicate = .init(format: "\(CategoryFields.name) == %@", categoryName)
+            let certainCategory: NSPredicate = .init(format: "\(CategoryFields.id) == \(id)")
             let request: FetchRequest<CoreDataCategory> = .init(context, predicate: certainCategory)
             let requiredCategories: [CoreDataCategory] = request.execute()
             requiredCategories.forEach { context.delete($0) }
@@ -76,7 +105,7 @@ final class CentralDatabase : CentralStorage {
         var purchases: [Purchase] = [ ]
         context.performAndWait {
             let youngestFirst: NSSortDescriptor = .init(key: PurchaseFields.date, ascending: false)
-            let certainCategory: NSPredicate = .init(format: "\(PurchaseFields.category) == %@", category.name)
+            let certainCategory: NSPredicate = .init(format: "\(PurchaseFields.category) == \(category.id)")
             let request: FetchRequest<CoreDataPurchase> = .init(context,
                                                                 predicate: certainCategory,
                                                                 sort: [youngestFirst])
@@ -85,51 +114,46 @@ final class CentralDatabase : CentralStorage {
         return purchases
     }
     
-    func save(_ purchase: Purchase) {
+    @discardableResult
+    func create(from draft: Purchase.Draft) -> Purchase {
+        let new: Purchase = .init(purchaseId.next, draft)
         context.performAndWait {
-            guard let newEmpty: CoreDataPurchase = newEmptyPurchase() else { return }
-            newEmpty.fill(with: purchase)
+            guard let newEmpty: CoreDataPurchase = newEmpty() else { return }
+            newEmpty.fill(with: new)
             context.saveChanges()
         }
+        return new
     }
     
     // MARK: planning periods
     
-    func saveNew(period: Date.Range) {
+    @discardableResult
+    func create(period range: Date.Range) -> PlanningPeriod {
+        let new: PlanningPeriod = .init(periodId.next, range)
         context.performAndWait {
-            guard let empty: CoreDataPeriod = newEmptyPeriod() else { return }
-            empty.id = NSNumber(value: periodId.nextId)
-            empty.start = period.from
-            empty.end = period.to
+            guard let empty: CoreDataPeriod = newEmpty() else { return }
+            empty.fill(with: new)
             context.saveChanges()
         }
+        return new
     }
     
     func update(_ period: PlanningPeriod) {
         context.performAndWait {
-            let certainId: NSPredicate = .init(format: "\(PlanningPeriodFields.id) == \(period.id)")
-            let request: FetchRequest<CoreDataPeriod> = .init(context, predicate: certainId)
-            guard let targetPeriod: CoreDataPeriod = request.execute().first else { return }
+            guard let targetPeriod: CoreDataPeriod = load(for: period.id) else { return }
             targetPeriod.start = period.start
             targetPeriod.end = period.end
+            context.saveChanges()
         }
     }
     
     func loadCurrentPeriod() -> PlanningPeriod? {
         var currentPeriod: PlanningPeriod? = nil
         context.performAndWait {
-            guard let coreDataPeriod: CoreDataPeriod = loadLastPeriod() else { return }
+            guard let coreDataPeriod: CoreDataPeriod = loadLast() else { return }
             currentPeriod = PlanningPeriod.construct(from: coreDataPeriod)
         }
         return currentPeriod
-    }
-    
-    private func loadLastPeriod() -> CoreDataPlanningPeriod? {
-        var period: CoreDataPlanningPeriod? = nil
-        let descendingIds: NSSortDescriptor = .init(key: PlanningPeriodFields.id, ascending: false)
-        let request: FetchRequest<CoreDataPlanningPeriod> = .init(context, sort: [descendingIds], limit: 1)
-        period = request.execute().first
-        return period
     }
     
     func loadAllPeriods() -> [PlanningPeriod] {
@@ -146,9 +170,7 @@ final class CentralDatabase : CentralStorage {
     func loadPeriod(for category: Category) -> PlanningPeriod? {
         var categoryPeriod: PlanningPeriod? = nil
         context.performAndWait {
-            let certainId: NSPredicate = .init(format: "\(PlanningPeriodFields.id) == \(category.planningPeriod)")
-            let request: FetchRequest<CoreDataPeriod> = .init(context, predicate: certainId)
-            guard let coreDataPeriod: CoreDataPeriod = request.execute().first else { return }
+            guard let coreDataPeriod: CoreDataPeriod = load(for: category.planningPeriod) else { return }
             categoryPeriod = PlanningPeriod.construct(from: coreDataPeriod)
         }
         return categoryPeriod
@@ -167,17 +189,20 @@ final class CentralDatabase : CentralStorage {
 
 extension CentralDatabase {
     
+    private func loadLast<E:CoreDataEntity>() -> E? {
+        let request: FetchRequest<E> = .init(context, sort: [.init(key: "id", ascending: false)], limit: 1)
+        return request.execute().first
+    }
+    
+    private func load<E:CoreDataEntity>(for id: Int) -> E? {
+        let certainId: NSPredicate = .init(format: "id == \(id)")
+        let request: FetchRequest<E> = .init(context, predicate: certainId)
+        return request.execute().first
+    }
+    
     // short-name way of NSEntityDescription.insertNewObject(...) as? ...
-    private func newEmptyCategory() -> CoreDataCategory? {
-        Description.insertNewObject(forEntityName: CoreDataCategory.entityName, into: context) as? CoreDataCategory
-    }
-    
-    private func newEmptyPurchase() -> CoreDataPurchase? {
-        Description.insertNewObject(forEntityName: CoreDataPurchase.entityName, into: context) as? CoreDataPurchase
-    }
-    
-    private func newEmptyPeriod() -> CoreDataPeriod? {
-        Description.insertNewObject(forEntityName: CoreDataPeriod.entityName, into: context) as? CoreDataPeriod
+    private func newEmpty<E:CoreDataEntity>() -> E? {
+        Description.insertNewObject(forEntityName: E.entityName, into: context) as? E
     }
     
     private var context: NSManagedObjectContext { coreData.context }

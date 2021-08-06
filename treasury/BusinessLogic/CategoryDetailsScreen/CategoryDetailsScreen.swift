@@ -50,9 +50,9 @@ extension CategoryDetails {
                                       secondaryButton: .destructive(Text("remove"), action: removeCategory))
                             }
                     }
-                    if viewModel.purshases.isNotEmpty { purchasesTitle }
-                    ScrollView { ForEach(viewModel.purshases) { purchase in
-                        PurchaseCell(purchase)
+                    if viewModel.purchases.isNotEmpty { purchasesTitle }
+                    ScrollView { ForEach(viewModel.purchases) { purchase in
+                        PurchaseCell(purchase, viewModel.getComment(for: purchase))
                     } }
                     Layout.ySpace
                     Summary(viewModel.category)
@@ -96,7 +96,7 @@ extension CategoryDetails {
 
 struct CategoryDetailsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryDetails.Screen(Category("<name>", 5000, 300, 1))
+        CategoryDetails.Screen(Category(1, "<name>", 5000, 300, 1))
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }
