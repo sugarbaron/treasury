@@ -26,25 +26,22 @@ extension CreateCategory {
                 HStack(spacing: 0) {
                     Layout.xSpace
                     Text("new category")
-                        .font(.title)
-                        .foregroundColor(Colors.yellow)
+                        .titleStyle
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                 }
                 HStack {
                     Layout.xSpace
                     VStack(alignment: .leading, spacing: 0) {
                         Layout.ySpace
-                        Text("name:").adjust()
+                        Text("name:").labelStyle
                         Layout.ySpace
-                        Text("plan:").adjust()
+                        Text("plan:").labelStyle
                     }.frame(alignment: .leading)
                     VStack {
                         Layout.ySpace
-                        TextField("enter category name", text: $viewModel.name)
-                            .adjust()
+                        TextField("enter category name", text: $viewModel.name).fieldStyle
                         Layout.ySpace
-                        TextField("enter plan amount", text: $viewModel.plan)
-                            .adjust()
+                        TextField("enter plan amount", text: $viewModel.plan).fieldStyle
                             .keyboardType(.numberPad)
                     }
                     Layout.xSpace
@@ -69,50 +66,7 @@ extension CreateCategory {
     
 }
 
-// MARK: Button
-
-extension CreateCategory {
-    
-    private struct Button : View {
-        
-        private let imageName: String
-        
-        init(_ imageName: String) { self.imageName = imageName }
-        
-        var body: some View {
-            Image(systemName: imageName)
-                .font(.title2)
-                .foregroundColor(Colors.black)
-                .padding()
-        }
-        
-    }
-    
-}
-
 // MARK: Tools
-
-private extension TextField {
-    
-    func adjust() -> some View {
-        font(.title2)
-        .padding(.vertical, 5)
-        .background(Colors.biege)
-        .cornerRadius(5)
-    }
-    
-}
-
-private extension Text {
-    
-    func adjust() -> some View {
-        font(.title2)
-        .frame(alignment: .trailing)
-        .padding(.vertical, 5)
-        .foregroundColor(Colors.yellow)
-    }
-    
-}
 
 struct NewCategoryScreen_Previews: PreviewProvider {
     static var previews: some View {

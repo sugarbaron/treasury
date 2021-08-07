@@ -59,6 +59,7 @@
 		BCA68DF326BCFA7F00DCA704 /* CoreDataCategory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA68DEF26BCFA7F00DCA704 /* CoreDataCategory+CoreDataProperties.swift */; };
 		BCA68DF826BD3C3C00DCA704 /* CoreDataPurchase+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA68DF626BD3C3C00DCA704 /* CoreDataPurchase+CoreDataClass.swift */; };
 		BCA68DF926BD3C3C00DCA704 /* CoreDataPurchase+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA68DF726BD3C3C00DCA704 /* CoreDataPurchase+CoreDataProperties.swift */; };
+		BCAA5AD026BE62FA007A15E2 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAA5ACF26BE62FA007A15E2 /* Style.swift */; };
 		BCB1196A26AD769400426BA7 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1196926AD769400426BA7 /* CategoriesViewModel.swift */; };
 		BCB1197026AD789B00426BA7 /* CentralStorageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1196F26AD789B00426BA7 /* CentralStorageAssembly.swift */; };
 		BCB1197226AD795100426BA7 /* CategoryCoreDataConvertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1197126AD795100426BA7 /* CategoryCoreDataConvertions.swift */; };
@@ -125,6 +126,7 @@
 		BCA68DEF26BCFA7F00DCA704 /* CoreDataCategory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataCategory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BCA68DF626BD3C3C00DCA704 /* CoreDataPurchase+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataPurchase+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BCA68DF726BD3C3C00DCA704 /* CoreDataPurchase+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataPurchase+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BCAA5ACF26BE62FA007A15E2 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		BCB1196926AD769400426BA7 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		BCB1196F26AD789B00426BA7 /* CentralStorageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralStorageAssembly.swift; sourceTree = "<group>"; };
 		BCB1197126AD795100426BA7 /* CategoryCoreDataConvertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCoreDataConvertions.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			children = (
 				BC9443C026B3147F0056D341 /* Buttons.swift */,
 				BC84FA1826B846730010078B /* Layout.swift */,
+				BCAA5ACF26BE62FA007A15E2 /* Style.swift */,
 			);
 			path = Ui;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				BCC7A14E26A7ECCB00A21C5D /* Colors.swift in Sources */,
 				BCA68DF326BCFA7F00DCA704 /* CoreDataCategory+CoreDataProperties.swift in Sources */,
 				BC8B1FBE26B6817200D5976C /* PurchaseCoreDataConvertions.swift in Sources */,
+				BCAA5AD026BE62FA007A15E2 /* Style.swift in Sources */,
 				BCA334C526A6CD6D0039D4E3 /* PurchaseFields.swift in Sources */,
 				BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */,
 				BCA68DF226BCFA7F00DCA704 /* CoreDataCategory+CoreDataClass.swift in Sources */,

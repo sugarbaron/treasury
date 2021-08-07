@@ -34,11 +34,11 @@ extension RegisterPurchase {
                     Layout.xSpace
                     VStack(alignment: .leading) {
                         Layout.ySpace
-                        Text("category:").adjust()
+                        Text("category:").labelStyle
                         Layout.ySpace
-                        Text("price:").adjust()
+                        Text("price:").labelStyle
                         Layout.ySpace
-                        Text("comment:").adjust()
+                        Text("comment:").labelStyle
                     }
                     VStack(alignment: .leading) {
                         Layout.ySpace
@@ -46,12 +46,10 @@ extension RegisterPurchase {
                             viewModel.category = choice
                         }
                         Layout.ySpace
-                        TextField("enter price", text: $viewModel.price)
-                            .adjust()
+                        TextField("enter price", text: $viewModel.price).fieldStyle
                             .keyboardType(.numberPad)
                         Layout.ySpace
-                        TextField("enter comment", text: $viewModel.comment)
-                            .adjust()
+                        TextField("enter comment", text: $viewModel.comment).fieldStyle
                     }
                     Layout.xSpace
                 }
@@ -80,27 +78,6 @@ extension RegisterPurchase {
 
 // MARK: Tools
 
-private extension TextField {
-    
-    func adjust() -> some View {
-        font(.title2)
-        .padding(.vertical, 5)
-        .background(Colors.biege)
-        .cornerRadius(5)
-    }
-    
-}
-
-private extension Text {
-    
-    func adjust() -> some View {
-        font(.title2)
-        .padding(.vertical, 5)
-        .foregroundColor(Colors.yellow)
-    }
-    
-}
-
 extension RegisterPurchase {
     
     struct CategoriesMenu : View {
@@ -120,9 +97,7 @@ extension RegisterPurchase {
         var body: some View {
             HStack {
                 Menu(label) {
-                    ForEach(categories) { category in
-                        Button(category) { onTap(category) }
-                    }
+                    ForEach(categories) { category in Button(category) { onTap(category) } }
                 }
                 .font(.title2)
                 .foregroundColor(Colors.blue)

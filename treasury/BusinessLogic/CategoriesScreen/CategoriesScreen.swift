@@ -53,7 +53,7 @@ extension Categories.Screen {
                     .fullScreenCover(isPresented: $isEditPressed) { EditPlanningPeriod.Screen() }
                     .onTapGesture { isEditPressed.toggle() }
                 Spacer()
-                Text("categories").font(.title).foregroundColor(Colors.yellow)
+                Text("categories").titleStyle
                 Spacer()
                 PlusButton()
                     .fullScreenCover(isPresented: $isCreatePressed) { CreateCategory.Screen() }
@@ -113,7 +113,7 @@ extension Categories.Screen {
                         .fullScreenCover(isPresented: $isPurchaseTapped) { RegisterPurchase.Screen() }
                         .onTapGesture { isPurchaseTapped.toggle() }
                 }
-                Spacer().frame(maxWidth: .infinity)
+                Layout.xInfinite
             }
         }
         

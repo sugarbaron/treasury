@@ -50,7 +50,7 @@ struct PlusButton : View {
 struct EditButton : View {
     
     var body: some View {
-        CustomButton(image: "gear")
+        CustomButton(image: "square.and.pencil")
             .background(Colors.yellow)
             .cornerRadius(5)
     }

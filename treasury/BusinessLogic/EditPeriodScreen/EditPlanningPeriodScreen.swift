@@ -21,18 +21,16 @@ extension EditPlanningPeriod {
                 Layout.xSpace
                 VStack {
                     Layout.ySpace
-                    Text("edit period")
-                        .font(.title)
-                        .foregroundColor(Colors.yellow)
+                    Text("edit period").titleStyle
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                     
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("period start:").adjust()
+                            Text("period start:").labelStyle
                             Layout.ySpace
                             Layout.ySpace
                             Layout.ySpace
-                            Text("period end:").adjust()
+                            Text("period end:").labelStyle
                         }
                         Layout.xSpace
                         Layout.xSpace
@@ -59,17 +57,6 @@ extension EditPlanningPeriod {
             }.background(Colors.background)
         }
         
-    }
-    
-}
-
-private extension Text {
-    
-    func adjust() -> some View {
-        font(.title2)
-        .frame(alignment: .trailing)
-        .padding(.vertical, 5)
-        .foregroundColor(Colors.yellow)
     }
     
 }

@@ -32,10 +32,8 @@ extension CategoryDetails {
                         BackButton().onTapGesture { dismiss() }
                         Layout.xSpace
                         VStack {
-                            Text("\(viewModel.category.name)")
-                                .font(.title)
+                            Text("\(viewModel.category.name)").titleStyle
                                 .frame(height: 33)
-                                .foregroundColor(Colors.yellow)
                             Text(periodLabel)
                                 .font(.title2)
                                 .frame(height: 22)
