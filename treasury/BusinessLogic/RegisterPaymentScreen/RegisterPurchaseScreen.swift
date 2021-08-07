@@ -24,46 +24,58 @@ extension RegisterPurchase {
                 VStack {
                     // title
                     Layout.ySpace
-                    Text("register purchase")
-                        .font(.title)
-                        .foregroundColor(Colors.yellow)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    title
                     // fields
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Layout.ySpace
-                            Text("category:").labelStyle
-                            Layout.ySpace
-                            Text("price:").labelStyle
-                            Layout.ySpace
-                            Text("comment:").labelStyle
-                        }
-                        VStack(alignment: .leading) {
-                            Layout.ySpace
-                            CategoriesMenu(viewModel.categoriesList, $viewModel.category) { choice in
-                                viewModel.category = choice
-                            }
-                            Layout.ySpace
-                            TextField("enter price", text: $viewModel.price).fieldStyle
-                                .keyboardType(.numberPad)
-                            Layout.ySpace
-                            TextField("enter comment", text: $viewModel.comment).fieldStyle
-                        }
-                    }
+                    fields
                     // ok, cancel buttons
-                    Spacer().frame(maxHeight: .infinity)
-                    HStack {
-                        YesButton().onTapGesture {
-                            viewModel.registerPayment()
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                        Spacer().frame(maxWidth: .infinity)
-                        NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
-                    }
+                    Layout.xInfinite
+                    buttons
                     Layout.ySpace
                 }
                 Layout.xSpace
             }.background(Colors.background)
+        }
+        
+        private var title: some View {
+            Text("register purchase")
+                .font(.title)
+                .foregroundColor(Colors.yellow)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        
+        private var fields: some View {
+            HStack {
+                VStack(alignment: .leading) {
+                    Layout.ySpace
+                    Text("category:").labelStyle
+                    Layout.ySpace
+                    Text("price:").labelStyle
+                    Layout.ySpace
+                    Text("comment:").labelStyle
+                }
+                VStack(alignment: .leading) {
+                    Layout.ySpace
+                    CategoriesMenu(viewModel.categoriesList, $viewModel.category) { choice in
+                        viewModel.category = choice
+                    }
+                    Layout.ySpace
+                    TextField("enter price", text: $viewModel.price).fieldStyle
+                        .keyboardType(.numberPad)
+                    Layout.ySpace
+                    TextField("enter comment", text: $viewModel.comment).fieldStyle
+                }
+            }
+        }
+        
+        private var buttons: some View {
+            HStack {
+                YesButton().onTapGesture {
+                    viewModel.registerPayment()
+                    presentationMode.wrappedValue.dismiss()
+                }
+                Spacer().frame(maxWidth: .infinity)
+                NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
+            }
         }
         
     }
