@@ -165,9 +165,9 @@
 			children = (
 				BC7F9DBE26B6FE6B004247EF /* CategoryDetailsScreen.swift */,
 				BC0900E026B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift */,
-				BC7F9DC026B70FE2004247EF /* CategoryDetailsViewModel.swift */,
 				BC0900E226B817850029D11F /* CategoryDetailsSummary.swift */,
 				BC8A8CF626BAAAD9000DE9CF /* CategoryDetailsAmountCard.swift */,
+				BC7F9DC026B70FE2004247EF /* CategoryDetailsViewModel.swift */,
 			);
 			path = CategoryDetailsScreen;
 			sourceTree = "<group>";
