@@ -20,6 +20,7 @@ extension RegisterPurchase {
         
         var body: some View {
             HStack {
+                Layout.xSpace
                 VStack {
                     // title
                     Layout.ySpace
@@ -61,6 +62,7 @@ extension RegisterPurchase {
                     }
                     Layout.ySpace
                 }
+                Layout.xSpace
             }.background(Colors.background)
         }
         
