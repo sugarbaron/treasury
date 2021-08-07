@@ -28,26 +28,7 @@ extension CategoryDetails {
                 Layout.xSpace
                 VStack {
                     Layout.ySpace
-                    HStack(alignment: .top) {
-                        BackButton().onTapGesture { dismiss() }
-                        Layout.xSpace
-                        VStack {
-                            Text("\(viewModel.category.name)").titleStyle
-                                .frame(height: 33)
-                            Text(periodLabel)
-                                .font(.title2)
-                                .frame(height: 22)
-                                .foregroundColor(Colors.yellow)
-                        }.frame(maxWidth: .infinity)
-                        Layout.xSpace
-                        RemoveButton()
-                            .onTapGesture { isDeleteTapped.toggle() }
-                            .alert(isPresented: $isDeleteTapped) {
-                                Alert(title: Text("remove category?"),
-                                      primaryButton: .default(Text("cancel")),
-                                      secondaryButton: .destructive(Text("remove"), action: removeCategory))
-                            }
-                    }
+                    titlePanel
                     if viewModel.purchases.isNotEmpty { purchasesTitle }
                     ScrollView { ForEach(viewModel.purchases) { purchase in
                         PurchaseCell(purchase, viewModel.getComment(for: purchase))
@@ -55,18 +36,34 @@ extension CategoryDetails {
                     Layout.ySpace
                     Summary(viewModel.category)
                     Layout.ySpace
-                    HStack(alignment: .top) {
-                        EditButton()
-                            .onTapGesture { isEditTapped.toggle() }
-                            .fullScreenCover(isPresented: $isEditTapped) {
-                                EditCategory.Screen(viewModel.category)
-                            }
-                        Spacer().frame(maxWidth: .infinity)
-                    }
+                    footerPanel
                     Layout.ySpace
                 }
                 Layout.xSpace
             }.background(Colors.background)
+        }
+        
+        private var titlePanel: some View {
+            HStack(alignment: .top) {
+                BackButton().onTapGesture { dismiss() }
+                Layout.xSpace
+                VStack {
+                    Text("\(viewModel.category.name)").titleStyle
+                        .frame(height: 33)
+                    Text(periodLabel)
+                        .font(.title2)
+                        .frame(height: 22)
+                        .foregroundColor(Colors.yellow)
+                }.frame(maxWidth: .infinity)
+                Layout.xSpace
+                RemoveButton()
+                    .onTapGesture { isDeleteTapped.toggle() }
+                    .alert(isPresented: $isDeleteTapped) {
+                        Alert(title: Text("remove category?"),
+                              primaryButton: .default(Text("cancel")),
+                              secondaryButton: .destructive(Text("remove"), action: removeCategory))
+                    }
+            }
         }
         
         private var purchasesTitle: some View {
@@ -82,6 +79,17 @@ extension CategoryDetails {
         private var periodLabel: String {
             guard let categoryPeriod: PlanningPeriod = viewModel.categoryPeriod else { return "<period>" }
             return "\(categoryPeriod.start.ddMM) - \(categoryPeriod.end.ddMM)"
+        }
+        
+        private var footerPanel: some View {
+            HStack(alignment: .top) {
+                EditButton()
+                    .onTapGesture { isEditTapped.toggle() }
+                    .fullScreenCover(isPresented: $isEditTapped) {
+                        EditCategory.Screen(viewModel.category)
+                    }
+                Spacer().frame(maxWidth: .infinity)
+            }
         }
         
         private func dismiss() { presentationMode.wrappedValue.dismiss() }
