@@ -26,44 +26,40 @@ extension EditCategory {
         }
         
         var body: some View {
-            VStack {
-                Layout.ySpace
-                HStack(spacing: 0) {
-                    Layout.xSpace
+            HStack {
+                Layout.xSpace
+                VStack {
+                    Layout.ySpace
                     Text("edit category").titleStyle
                         .frame(maxWidth: .infinity, alignment: .topLeading)
-                }
-                HStack {
-                    Layout.xSpace
-                    VStack(alignment: .leading, spacing: 0) {
-                        Layout.ySpace
-                        Text("name:").labelStyle
-                        Layout.ySpace
-                        Text("plan:").labelStyle
-                    }.frame(alignment: .leading)
-                    VStack {
-                        Layout.ySpace
-                        TextField("enter category name", text: $viewModel.name).fieldStyle
-                        Layout.ySpace
-                        TextField("enter plan amount", text: $viewModel.plan).fieldStyle
-                            .keyboardType(.numberPad)
+                    HStack {
+                        VStack(alignment: .leading, spacing: 0) {
+                            Layout.ySpace
+                            Text("name:").labelStyle
+                            Layout.ySpace
+                            Text("plan:").labelStyle
+                        }.frame(alignment: .leading)
+                        VStack {
+                            Layout.ySpace
+                            TextField("enter category name", text: $viewModel.name).fieldStyle
+                            Layout.ySpace
+                            TextField("enter plan amount", text: $viewModel.plan).fieldStyle
+                                .keyboardType(.numberPad)
+                        }
                     }
-                    Layout.xSpace
-                }
-                Spacer().frame(maxHeight: .infinity)
-                HStack {
-                    Layout.xSpace
-                    YesButton().onTapGesture {
-                        viewModel.editCategory()
-                        presentationMode.wrappedValue.dismiss()
+                    Layout.xInfinite
+                    HStack {
+                        YesButton().onTapGesture {
+                            viewModel.editCategory()
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        Layout.xInfinite
+                        NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
                     }
-                    Spacer().frame(maxWidth: .infinity)
-                    NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
-                    Layout.xSpace
+                    Layout.ySpace
                 }
-                Layout.ySpace
-            }
-            .background(Colors.background)
+                Layout.xSpace
+            }.background(Colors.background)
         }
         
     }

@@ -25,8 +25,6 @@ final class Category {
     
     func purchase(_ price: Decimal) { spent += price }
     
-    func deposit(_ amount: Decimal) { plan += amount }
-    
     func rename(_ name: String) { self.name = name }
     
 }
