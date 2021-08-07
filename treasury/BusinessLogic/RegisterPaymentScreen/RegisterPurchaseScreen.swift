@@ -22,12 +22,10 @@ extension RegisterPurchase {
             HStack {
                 Layout.xSpace
                 VStack {
-                    // title
                     Layout.ySpace
                     title
-                    // fields
+                    Layout.yTitleSpace
                     fields
-                    // ok, cancel buttons
                     Layout.xInfinite
                     buttons
                     Layout.ySpace

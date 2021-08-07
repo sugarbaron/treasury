@@ -31,6 +31,7 @@ extension EditCategory {
                 VStack {
                     Layout.ySpace
                     titlePanel
+                    Layout.yTitleSpace
                     fields
                     Layout.xInfinite
                     buttons

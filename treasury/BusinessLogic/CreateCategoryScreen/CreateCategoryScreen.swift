@@ -26,6 +26,7 @@ extension CreateCategory {
                 VStack {
                     Layout.ySpace
                     title
+                    Layout.yTitleSpace
                     fields
                     Layout.yInfinite
                     buttons
