@@ -11,12 +11,78 @@ extension EditPlanningPeriod {
     
     struct Screen: View {
         
+        @SwiftUI.Environment(\.presentationMode)
+        private var presentationMode: Binding<PresentationMode>
+        
         @ObservedObject private var viewModel: ViewModel = .init()
         
         var body: some View {
-            DatePicker(selection: $viewModel.periodStart) {  }
+            HStack {
+                Layout.xSpace
+                VStack {
+                    Layout.ySpace
+                    Text("edit period")
+                        .font(.title)
+                        .foregroundColor(Colors.yellow)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                    
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("period start:").adjust()
+                            Layout.ySpace
+                            Layout.ySpace
+                            Layout.ySpace
+                            Text("period end:").adjust()
+                        }
+                        Layout.xSpace
+                        Layout.xSpace
+                        VStack {
+                            DatePicker("", selection: $viewModel.periodStart, displayedComponents: [.date]).adjust()
+                            Layout.ySpace
+                            Layout.ySpace
+                            DatePicker("", selection: $viewModel.periodEnd, displayedComponents: [.date]).adjust()
+                        }
+                        Spacer()
+                    }
+                    Spacer().frame(maxHeight: .infinity)
+                    HStack {
+                        YesButton().onTapGesture {
+                            viewModel.editPeriod()
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        Spacer().frame(maxWidth: .infinity)
+                        NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
+                    }
+                    Layout.ySpace
+                }
+                Layout.xSpace
+            }.background(Colors.background)
         }
         
+    }
+    
+}
+
+private extension Text {
+    
+    func adjust() -> some View {
+        font(.title2)
+        .frame(alignment: .trailing)
+        .padding(.vertical, 5)
+        .foregroundColor(Colors.yellow)
+    }
+    
+}
+
+private extension DatePicker {
+    
+    func adjust() -> some View {
+        datePickerStyle(CompactDatePickerStyle())
+            .frame(width:90, alignment: .center)
+            .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 15))
+            .background(Colors.biege)
+            .accentColor(Colors.black)
+            .cornerRadius(5)
     }
     
 }

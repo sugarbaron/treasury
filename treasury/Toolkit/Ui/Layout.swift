@@ -14,5 +14,7 @@ final class Layout {
     
     static var xSpace: some View { Spacer().frame(width: xSpaceSize) }
     static var ySpace: some View { Spacer().frame(height: ySpaceSize) }
+    static var xInfinite: some View { Spacer().frame(maxWidth: .infinity) }
+    static var yInfinite: some View { Spacer().frame(maxHeight: .infinity) }
     
 }
