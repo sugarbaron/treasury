@@ -72,7 +72,7 @@ extension EditPlanningPeriod {
 private extension DatePicker {
     
     func adjust() -> some View {
-        datePickerStyle(CompactDatePickerStyle())
+        datePickerStyle(DefaultDatePickerStyle())
             .frame(width:90, alignment: .center)
             .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 15))
             .background(Colors.biege)

@@ -29,7 +29,7 @@ extension CategoryDetails {
                 VStack {
                     Layout.ySpace
                     titlePanel
-                    if viewModel.purchases.isNotEmpty { purchasesTitle }
+                    periodPanel
                     ScrollView { ForEach(viewModel.purchases) { purchase in
                         PurchaseCell(purchase, viewModel.getComment(for: purchase))
                     } }
@@ -47,14 +47,7 @@ extension CategoryDetails {
             HStack(alignment: .top) {
                 BackButton().onTapGesture { dismiss() }
                 Layout.xSpace
-                VStack {
-                    Text("\(viewModel.category.name)").titleStyle
-                        .frame(height: 33)
-                    Text(periodLabel)
-                        .font(.title2)
-                        .frame(height: 22)
-                        .foregroundColor(Colors.yellow)
-                }.frame(maxWidth: .infinity)
+                Text("\(viewModel.category.name)").titleStyle.frame(maxWidth: .infinity)
                 Layout.xSpace
                 RemoveButton()
                     .onTapGesture { isDeleteTapped.toggle() }
@@ -66,8 +59,8 @@ extension CategoryDetails {
             }
         }
         
-        private var purchasesTitle: some View {
-            Text("purchases")
+        private var periodPanel: some View {
+            Text(periodLabel)
                 .font(.title2)
                 .frame(maxWidth: .infinity)
                 .padding(5)
@@ -78,7 +71,7 @@ extension CategoryDetails {
         
         private var periodLabel: String {
             guard let categoryPeriod: PlanningPeriod = viewModel.categoryPeriod else { return "<period>" }
-            return "\(categoryPeriod.start.ddMM) - \(categoryPeriod.end.ddMM)"
+            return "\(categoryPeriod.start.ddMMyyyy) - \(categoryPeriod.end.ddMMyyyy)"
         }
         
         private var footerPanel: some View {
