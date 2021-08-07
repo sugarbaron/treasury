@@ -30,7 +30,6 @@ extension Categories {
             self.categoriesUpdates = nil
             self.currentPeriodSubscriber = .init() { [weak self] period in
                 guard let this = self, period.isDifferent(than: this.currentPeriod) else { return }
-                Log(info: "[Categories.ViewModel] period changed. re-adjusting subscription") /* fixme */
                 self?.currentPeriod = period
                 
                 let ofCurrentPeriod: NSPredicate = .init(format: "\(CategoryFields.periodId) == \(period.id)")

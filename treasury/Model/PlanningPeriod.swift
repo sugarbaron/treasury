@@ -21,7 +21,9 @@ final class PlanningPeriod {
     
     func isDifferent(than another: PlanningPeriod?) -> Bool {
         guard let another: PlanningPeriod  = another else { return true }
-        return self.id != another.id
+        return (self.id != another.id)
+            || (self.start != another.start)
+            || (self.end != another.end)
     }
     
 }

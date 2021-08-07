@@ -38,7 +38,7 @@ extension EditPlanningPeriod {
             let allPeriods: [PlanningPeriod] = storage?.loadAllPeriods() ?? [ ]
             if allPeriods.count > 1 {
                 let previousPeriod: PlanningPeriod = allPeriods[allPeriods.count - 2]
-                guard periodStart.timeIntervalSince(previousPeriod.end) > 0 else { return }
+                if periodStart.timeIntervalSince(previousPeriod.end) < 0 { periodStart = previousPeriod.end }
             }
             let editedPeriod: PlanningPeriod = .init(currentPeriod.id, (periodStart, periodEnd))
             storage?.update(editedPeriod)
