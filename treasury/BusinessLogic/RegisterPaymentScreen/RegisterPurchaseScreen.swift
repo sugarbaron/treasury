@@ -19,57 +19,49 @@ extension RegisterPurchase {
         init() { UITextField.appearance().backgroundColor = .clear }
         
         var body: some View {
-            VStack {
-                // title
-                Layout.ySpace
-                HStack(spacing: 0) {
-                    Layout.xSpace
+            HStack {
+                VStack {
+                    // title
+                    Layout.ySpace
                     Text("register purchase")
                         .font(.title)
                         .foregroundColor(Colors.yellow)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                // fields
-                HStack {
-                    Layout.xSpace
-                    VStack(alignment: .leading) {
-                        Layout.ySpace
-                        Text("category:").labelStyle
-                        Layout.ySpace
-                        Text("price:").labelStyle
-                        Layout.ySpace
-                        Text("comment:").labelStyle
-                    }
-                    VStack(alignment: .leading) {
-                        Layout.ySpace
-                        CategoriesMenu(viewModel.categoriesList, $viewModel.category) { choice in
-                            viewModel.category = choice
+                    // fields
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Layout.ySpace
+                            Text("category:").labelStyle
+                            Layout.ySpace
+                            Text("price:").labelStyle
+                            Layout.ySpace
+                            Text("comment:").labelStyle
                         }
-                        Layout.ySpace
-                        TextField("enter price", text: $viewModel.price).fieldStyle
-                            .keyboardType(.numberPad)
-                        Layout.ySpace
-                        TextField("enter comment", text: $viewModel.comment).fieldStyle
+                        VStack(alignment: .leading) {
+                            Layout.ySpace
+                            CategoriesMenu(viewModel.categoriesList, $viewModel.category) { choice in
+                                viewModel.category = choice
+                            }
+                            Layout.ySpace
+                            TextField("enter price", text: $viewModel.price).fieldStyle
+                                .keyboardType(.numberPad)
+                            Layout.ySpace
+                            TextField("enter comment", text: $viewModel.comment).fieldStyle
+                        }
                     }
-                    Layout.xSpace
-                }
-                // ok, cancel buttons
-                Spacer().frame(maxHeight: .infinity)
-                HStack {
-                    Layout.xSpace
-                    YesButton().onTapGesture {
-                        viewModel.registerPayment()
-                        presentationMode.wrappedValue.dismiss()
+                    // ok, cancel buttons
+                    Spacer().frame(maxHeight: .infinity)
+                    HStack {
+                        YesButton().onTapGesture {
+                            viewModel.registerPayment()
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        Spacer().frame(maxWidth: .infinity)
+                        NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
                     }
-                    Spacer().frame(maxWidth: .infinity)
-                    NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
-                    Layout.xSpace
+                    Layout.ySpace
                 }
-                Layout.ySpace
-            }
-            .background(Colors.background)
-            
-            
+            }.background(Colors.background)
         }
         
     }
