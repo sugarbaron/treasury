@@ -25,37 +25,49 @@ extension CreateCategory {
                 Layout.xSpace
                 VStack {
                     Layout.ySpace
-                    Text("new category")
-                        .titleStyle
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                    HStack {
-                        VStack(alignment: .leading, spacing: 0) {
-                            Layout.ySpace
-                            Text("name:").labelStyle
-                            Layout.ySpace
-                            Text("plan:").labelStyle
-                        }.frame(alignment: .leading)
-                        VStack {
-                            Layout.ySpace
-                            TextField("enter category name", text: $viewModel.name).fieldStyle
-                            Layout.ySpace
-                            TextField("enter plan amount", text: $viewModel.plan).fieldStyle
-                                .keyboardType(.numberPad)
-                        }
-                    }
+                    title
+                    fields
                     Layout.yInfinite
-                    HStack {
-                        YesButton().onTapGesture {
-                            viewModel.createCategory()
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                        Layout.xInfinite
-                        NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
-                    }
+                    buttons
                     Layout.ySpace
                 }
                 Layout.xSpace
             }.background(Colors.background)
+        }
+        
+        private var title: some View {
+            Text("new category")
+                .titleStyle
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+        }
+        
+        private var fields: some View {
+            HStack {
+                VStack(alignment: .leading, spacing: 0) {
+                    Layout.ySpace
+                    Text("name:").labelStyle
+                    Layout.ySpace
+                    Text("plan:").labelStyle
+                }.frame(alignment: .leading)
+                VStack {
+                    Layout.ySpace
+                    TextField("enter category name", text: $viewModel.name).fieldStyle
+                    Layout.ySpace
+                    TextField("enter plan amount", text: $viewModel.plan).fieldStyle
+                        .keyboardType(.numberPad)
+                }
+            }
+        }
+        
+        private var buttons: some View {
+            HStack {
+                YesButton().onTapGesture {
+                    viewModel.createCategory()
+                    presentationMode.wrappedValue.dismiss()
+                }
+                Layout.xInfinite
+                NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
+            }
         }
         
     }
