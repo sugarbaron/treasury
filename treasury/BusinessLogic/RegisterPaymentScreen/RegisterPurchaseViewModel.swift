@@ -17,16 +17,24 @@ extension RegisterPurchase {
         @Published var price: String
         @Published var comment: String
         private let categories: [Category]
+        private(set) var mode: Mode
         
         private let storage: CentralStorage?
         
-        init() {
-            self.category = ""
+        init(_ category: Category? = nil) {
+            self.category = unwrap(category) { $0.name } ?? ""
             self.price = ""
             self.comment = ""
             self.storage = try? Di.inject(CentralStorage?.self)
             self.categories = storage?.loadCurrentPeriodCategories() ?? [ ]
+            self.mode = category == nil ? .currentPeriodCategories : .certainCategory
         }
+        
+        /* func setCertainCategoryMode(_ category: Category) -> Bool{
+            self.comment = category.name
+            self.mode = .certainCategory
+            return true
+        } */
         
         var categoriesList: [String] { categories.map { $0.name } }
         
@@ -41,5 +49,11 @@ extension RegisterPurchase {
         }
         
     }
+    
+}
+
+extension RegisterPurchase.ViewModel {
+    
+    enum Mode { case certainCategory; case currentPeriodCategories }
     
 }

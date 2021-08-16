@@ -20,6 +20,7 @@ extension CategoryDetails {
         
         @State private var isDeleteTapped: Bool = false
         @State private var isEditTapped: Bool = false
+        @State private var isPurchaseTapped: Bool = false
         
         init(_ category: Category) { self.viewModel = ViewModel(category) }
         
@@ -76,12 +77,17 @@ extension CategoryDetails {
         
         private var footerPanel: some View {
             HStack(alignment: .top) {
+                PurchaseButton()
+                    .onTapGesture { isPurchaseTapped.toggle() }
+                    .fullScreenCover(isPresented: $isPurchaseTapped) {
+                        RegisterPurchase.Screen(viewModel.category)
+                    }
+                Spacer()
                 EditButton()
                     .onTapGesture { isEditTapped.toggle() }
                     .fullScreenCover(isPresented: $isEditTapped) {
                         EditCategory.Screen(viewModel.category)
                     }
-                Spacer().frame(maxWidth: .infinity)
             }
         }
         

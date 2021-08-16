@@ -25,7 +25,7 @@ extension Categories {
                     .foregroundColor(Colors.black)
                     .cornerRadius(5)
                 HStack {
-                    AmountCard("total:", category.plan.int)
+                    AmountCard("limit:", category.plan.int)
                         .frame(maxWidth: .infinity)
                         .background(Colors.biege)
                         .cornerRadius(5)
@@ -33,7 +33,7 @@ extension Categories {
                         .frame(maxWidth: .infinity)
                         .background(Colors.biege)
                         .cornerRadius(5)
-                    AmountCard("left:", category.plan.int - category.spent.int)
+                    AmountCard("available:", category.plan.int - category.spent.int)
                         .frame(maxWidth: .infinity)
                         .background(warningColor)
                         .cornerRadius(5)

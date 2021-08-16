@@ -14,9 +14,16 @@ extension RegisterPurchase {
         @SwiftUI.Environment(\.presentationMode)
         private var presentationMode: Binding<PresentationMode>
 
-        @StateObject private var viewModel: ViewModel = .init()
+        @StateObject private var viewModel: ViewModel// = .init()
         
-        init() { UITextField.appearance().backgroundColor = .clear }
+        private var category: Category?
+        
+        //init() { UITextField.appearance().backgroundColor = .clear }
+        
+        init(_ category: Category? = nil) {
+            _viewModel = StateObject(wrappedValue: ViewModel(category))
+            UITextField.appearance().backgroundColor = .clear
+        }
         
         var body: some View {
             HStack {
@@ -35,28 +42,37 @@ extension RegisterPurchase {
         }
         
         private var title: some View {
-            Text("register purchase")
+            Text("new purchase\(certainCategoryName)")
                 .font(.title)
                 .foregroundColor(Colors.yellow)
                 .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        
+        private var certainCategoryName: String {
+            guard viewModel.mode == .certainCategory else { return "" }
+            return " for \(viewModel.category)"
         }
         
         private var fields: some View {
             HStack {
                 VStack(alignment: .leading) {
                     Layout.ySpace
-                    Text("category:").labelStyle
-                    Layout.ySpace
+                    if viewModel.mode == .currentPeriodCategories {
+                        Text("category:").labelStyle
+                        Layout.ySpace
+                    }
                     Text("price:").labelStyle
                     Layout.ySpace
                     Text("comment:").labelStyle
                 }
                 VStack(alignment: .leading) {
                     Layout.ySpace
-                    CategoriesMenu(viewModel.categoriesList, $viewModel.category) { choice in
-                        viewModel.category = choice
+                    if viewModel.mode == .currentPeriodCategories {
+                        CategoriesMenu(viewModel.categoriesList, $viewModel.category) { choice in
+                            viewModel.category = choice
+                        }
+                        Layout.ySpace
                     }
-                    Layout.ySpace
                     TextField("enter price", text: $viewModel.price).fieldStyle
                         .keyboardType(.numberPad)
                     Layout.ySpace
