@@ -9,6 +9,8 @@ import Foundation
 
 protocol CentralStorage {
     
+    // MARK: category
+    
     @discardableResult
     func create(from draft: Category.Draft) -> Category
     
@@ -18,10 +20,14 @@ protocol CentralStorage {
     
     func removeCategory(_ id: Int)
     
+    // MARK: purchase
+    
     @discardableResult
     func create(from draft: Purchase.Draft) -> Purchase
     
     func loadPurchases(for category: Category) -> [Purchase]
+    
+    // MARK: planning period
     
     @discardableResult
     func create(period range: Date.Range) -> PlanningPeriod
@@ -33,6 +39,8 @@ protocol CentralStorage {
     func loadAllPeriods() -> [PlanningPeriod]
     
     func loadPeriod(for category: Category) -> PlanningPeriod?
+    
+    // MARK: subscription
     
     func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)
     -> Storage.Updates<Subscriber>

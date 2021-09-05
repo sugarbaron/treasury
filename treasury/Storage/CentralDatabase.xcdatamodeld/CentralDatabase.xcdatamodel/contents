@@ -7,6 +7,12 @@
         <attribute name="periodId" attributeType="Integer 64" usesScalarValueType="NO"/>
         <attribute name="plan" attributeType="Decimal" defaultValueString="0.0"/>
     </entity>
+    <entity name="Income" representedClassName="CoreDataIncome" syncable="YES">
+        <attribute name="amount" attributeType="Decimal"/>
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="Integer 64" usesScalarValueType="NO"/>
+    </entity>
     <entity name="PlanningPeriod" representedClassName="CoreDataPlanningPeriod" syncable="YES">
         <attribute name="end" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="Integer 64" usesScalarValueType="NO"/>
@@ -23,5 +29,6 @@
         <element name="Category" positionX="-63" positionY="-18" width="128" height="104"/>
         <element name="PlanningPeriod" positionX="-54" positionY="27" width="128" height="74"/>
         <element name="Purchase" positionX="-54" positionY="18" width="128" height="104"/>
+        <element name="Income" positionX="-54" positionY="36" width="128" height="89"/>
     </elements>
 </model>

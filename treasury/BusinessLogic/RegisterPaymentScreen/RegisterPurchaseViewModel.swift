@@ -30,12 +30,6 @@ extension RegisterPurchase {
             self.mode = category == nil ? .currentPeriodCategories : .certainCategory
         }
         
-        /* func setCertainCategoryMode(_ category: Category) -> Bool{
-            self.comment = category.name
-            self.mode = .certainCategory
-            return true
-        } */
-        
         var categoriesList: [String] { categories.map { $0.name } }
         
         func registerPayment() {
