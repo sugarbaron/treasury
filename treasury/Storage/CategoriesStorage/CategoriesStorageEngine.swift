@@ -72,9 +72,14 @@ extension CategoriesStorageEngine : CategoriesStorage {
     
     func removeCategory(_ id: Int) {
         context.performAndWait {
+            let targetCategoryPurchases: NSPredicate = .init(format: "\(PurchaseFields.category) == \(id)")
+            let purchasesRequest: FetchRequest<CoreDataPurchase> = .init(context, predicate: targetCategoryPurchases)
+            let relatedPurchases: [CoreDataPurchase] = purchasesRequest.execute()
+            relatedPurchases.forEach { context.delete($0) }
+            
             let certainCategory: NSPredicate = .init(format: "\(CategoryFields.id) == \(id)")
-            let request: FetchRequest<CoreDataCategory> = .init(context, predicate: certainCategory)
-            let requiredCategories: [CoreDataCategory] = request.execute()
+            let categoriesRequest: FetchRequest<CoreDataCategory> = .init(context, predicate: certainCategory)
+            let requiredCategories: [CoreDataCategory] = categoriesRequest.execute()
             requiredCategories.forEach { context.delete($0) }
             context.saveChanges()
         }
