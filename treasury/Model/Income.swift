@@ -37,6 +37,10 @@ extension Income {
             self.comment = comment
         }
         
-}
+    }
+    
+    convenience init(_ id: Int, _ draft: Draft) {
+        self.init(id, draft.amount, draft.date, draft.comment)
+    }
     
 }
