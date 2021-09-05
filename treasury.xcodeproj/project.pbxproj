@@ -15,6 +15,15 @@
 		BC7D218E26E48979009CDBF3 /* IncomeFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D218D26E48979009CDBF3 /* IncomeFields.swift */; };
 		BC7D219526E489D6009CDBF3 /* CoreDataIncome+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D219326E489D6009CDBF3 /* CoreDataIncome+CoreDataClass.swift */; };
 		BC7D219626E489D6009CDBF3 /* CoreDataIncome+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D219426E489D6009CDBF3 /* CoreDataIncome+CoreDataProperties.swift */; };
+		BC7D219926E48C9B009CDBF3 /* CategoriesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D219826E48C9B009CDBF3 /* CategoriesStorage.swift */; };
+		BC7D219C26E48CAF009CDBF3 /* PurchasesStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D219B26E48CAF009CDBF3 /* PurchasesStorage.swift */; };
+		BC7D219F26E48CC3009CDBF3 /* PlanningPeriodsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D219E26E48CC3009CDBF3 /* PlanningPeriodsStorage.swift */; };
+		BC7D21A226E48CD5009CDBF3 /* IncomeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D21A126E48CD5009CDBF3 /* IncomeStorage.swift */; };
+		BC7D21A426E48DD3009CDBF3 /* CategoriesStorageEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D21A326E48DD3009CDBF3 /* CategoriesStorageEngine.swift */; };
+		BC7D21A626E4919E009CDBF3 /* BasicDatabaseOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D21A526E4919E009CDBF3 /* BasicDatabaseOperations.swift */; };
+		BC7D21A826E49405009CDBF3 /* PurchasesStorageEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D21A726E49405009CDBF3 /* PurchasesStorageEngine.swift */; };
+		BC7D21AA26E49624009CDBF3 /* PlanningPeriodsStorageEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D21A926E49624009CDBF3 /* PlanningPeriodsStorageEngine.swift */; };
+		BC7D21AC26E49A5A009CDBF3 /* IncomeStorageEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D21AB26E49A5A009CDBF3 /* IncomeStorageEngine.swift */; };
 		BC7F9DBF26B6FE6B004247EF /* CategoryDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7F9DBE26B6FE6B004247EF /* CategoryDetailsScreen.swift */; };
 		BC7F9DC126B70FE2004247EF /* CategoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7F9DC026B70FE2004247EF /* CategoryDetailsViewModel.swift */; };
 		BC7F9DC626B71506004247EF /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7F9DC526B71506004247EF /* CategoriesCell.swift */; };
@@ -85,6 +94,15 @@
 		BC7D218D26E48979009CDBF3 /* IncomeFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFields.swift; sourceTree = "<group>"; };
 		BC7D219326E489D6009CDBF3 /* CoreDataIncome+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataIncome+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BC7D219426E489D6009CDBF3 /* CoreDataIncome+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataIncome+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BC7D219826E48C9B009CDBF3 /* CategoriesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesStorage.swift; sourceTree = "<group>"; };
+		BC7D219B26E48CAF009CDBF3 /* PurchasesStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesStorage.swift; sourceTree = "<group>"; };
+		BC7D219E26E48CC3009CDBF3 /* PlanningPeriodsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningPeriodsStorage.swift; sourceTree = "<group>"; };
+		BC7D21A126E48CD5009CDBF3 /* IncomeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeStorage.swift; sourceTree = "<group>"; };
+		BC7D21A326E48DD3009CDBF3 /* CategoriesStorageEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesStorageEngine.swift; sourceTree = "<group>"; };
+		BC7D21A526E4919E009CDBF3 /* BasicDatabaseOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDatabaseOperations.swift; sourceTree = "<group>"; };
+		BC7D21A726E49405009CDBF3 /* PurchasesStorageEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesStorageEngine.swift; sourceTree = "<group>"; };
+		BC7D21A926E49624009CDBF3 /* PlanningPeriodsStorageEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningPeriodsStorageEngine.swift; sourceTree = "<group>"; };
+		BC7D21AB26E49A5A009CDBF3 /* IncomeStorageEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeStorageEngine.swift; sourceTree = "<group>"; };
 		BC7F9DBE26B6FE6B004247EF /* CategoryDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsScreen.swift; sourceTree = "<group>"; };
 		BC7F9DC026B70FE2004247EF /* CategoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewModel.swift; sourceTree = "<group>"; };
 		BC7F9DC526B71506004247EF /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
@@ -176,6 +194,42 @@
 				BC7D218D26E48979009CDBF3 /* IncomeFields.swift */,
 			);
 			path = Income;
+			sourceTree = "<group>";
+		};
+		BC7D219726E48C91009CDBF3 /* CategoriesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				BC7D219826E48C9B009CDBF3 /* CategoriesStorage.swift */,
+				BC7D21A326E48DD3009CDBF3 /* CategoriesStorageEngine.swift */,
+			);
+			path = CategoriesStorage;
+			sourceTree = "<group>";
+		};
+		BC7D219A26E48CA8009CDBF3 /* PurchasesStorage */ = {
+			isa = PBXGroup;
+			children = (
+				BC7D219B26E48CAF009CDBF3 /* PurchasesStorage.swift */,
+				BC7D21A726E49405009CDBF3 /* PurchasesStorageEngine.swift */,
+			);
+			path = PurchasesStorage;
+			sourceTree = "<group>";
+		};
+		BC7D219D26E48CB7009CDBF3 /* PlanningPeriodsStorage */ = {
+			isa = PBXGroup;
+			children = (
+				BC7D219E26E48CC3009CDBF3 /* PlanningPeriodsStorage.swift */,
+				BC7D21A926E49624009CDBF3 /* PlanningPeriodsStorageEngine.swift */,
+			);
+			path = PlanningPeriodsStorage;
+			sourceTree = "<group>";
+		};
+		BC7D21A026E48CCE009CDBF3 /* IncomeStorage */ = {
+			isa = PBXGroup;
+			children = (
+				BC7D21A126E48CD5009CDBF3 /* IncomeStorage.swift */,
+				BC7D21AB26E49A5A009CDBF3 /* IncomeStorageEngine.swift */,
+			);
+			path = IncomeStorage;
 			sourceTree = "<group>";
 		};
 		BC7F9DBB26B6FE25004247EF /* CategoryDetailsScreen */ = {
@@ -341,6 +395,10 @@
 		BCA334A726A6C2D60039D4E3 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				BC7D219726E48C91009CDBF3 /* CategoriesStorage */,
+				BC7D219A26E48CA8009CDBF3 /* PurchasesStorage */,
+				BC7D219D26E48CB7009CDBF3 /* PlanningPeriodsStorage */,
+				BC7D21A026E48CCE009CDBF3 /* IncomeStorage */,
 				BCA334CE26A6D0180039D4E3 /* CentralStorage.swift */,
 				BCA334C026A6CBE80039D4E3 /* CentralDatabase.swift */,
 				BCA334A826A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld */,
@@ -369,6 +427,7 @@
 				BCA334B726A6C9EA0039D4E3 /* CoreDataStorageEngine.swift */,
 				BCB1197626AD7D1F00426BA7 /* FetchRequest.swift */,
 				BCB1197826AD7D5300426BA7 /* CoreDataEntity.swift */,
+				BC7D21A526E4919E009CDBF3 /* BasicDatabaseOperations.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -510,6 +569,7 @@
 				BC8A8CFD26BAAFBE000DE9CF /* PlanningPeriodCoreDataConvertions.swift in Sources */,
 				BCB1197226AD795100426BA7 /* CategoryCoreDataConvertions.swift in Sources */,
 				BCA334CD26A6CF8E0039D4E3 /* DependencyInjection.swift in Sources */,
+				BC7D21AC26E49A5A009CDBF3 /* IncomeStorageEngine.swift in Sources */,
 				BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */,
 				BC7F9DC126B70FE2004247EF /* CategoryDetailsViewModel.swift in Sources */,
 				BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */,
@@ -534,12 +594,16 @@
 				BCB5E79F26AEEBC300727DF7 /* StorageUpdatedContent.swift in Sources */,
 				BCA334AA26A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld in Sources */,
 				BCA3349126A6A5410039D4E3 /* treasuryApp.swift in Sources */,
+				BC7D219C26E48CAF009CDBF3 /* PurchasesStorage.swift in Sources */,
+				BC7D219F26E48CC3009CDBF3 /* PlanningPeriodsStorage.swift in Sources */,
 				BCA334CF26A6D0180039D4E3 /* CentralStorage.swift in Sources */,
 				BC8A8CFB26BAAEFF000DE9CF /* DateRange.swift in Sources */,
+				BC7D219926E48C9B009CDBF3 /* CategoriesStorage.swift in Sources */,
 				BCA334D826A6D6C30039D4E3 /* Decimals.swift in Sources */,
 				BC8A8CF926BAADC3000DE9CF /* PlanningPeriod.swift in Sources */,
 				BC0900E126B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift in Sources */,
 				BCB1197026AD789B00426BA7 /* CentralStorageAssembly.swift in Sources */,
+				BC7D21A826E49405009CDBF3 /* PurchasesStorageEngine.swift in Sources */,
 				BC7F9DC626B71506004247EF /* CategoriesCell.swift in Sources */,
 				BC7D219526E489D6009CDBF3 /* CoreDataIncome+CoreDataClass.swift in Sources */,
 				BCA68DF826BD3C3C00DCA704 /* CoreDataPurchase+CoreDataClass.swift in Sources */,
@@ -547,10 +611,13 @@
 				BCA334AC26A6C7FE0039D4E3 /* Dates.swift in Sources */,
 				BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */,
 				BCA334A526A6B7180039D4E3 /* Arrays.swift in Sources */,
+				BC7D21A226E48CD5009CDBF3 /* IncomeStorage.swift in Sources */,
 				BCA68DF926BD3C3C00DCA704 /* CoreDataPurchase+CoreDataProperties.swift in Sources */,
 				BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */,
+				BC7D21A426E48DD3009CDBF3 /* CategoriesStorageEngine.swift in Sources */,
 				BC8A8D1026BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift in Sources */,
 				BC9443BC26B3114C0056D341 /* RegisterPurchaseScreen.swift in Sources */,
+				BC7D21AA26E49624009CDBF3 /* PlanningPeriodsStorageEngine.swift in Sources */,
 				BC8686FB26BBE9D400297F2E /* EditPlanningPeriodViewModel.swift in Sources */,
 				BC8A8D1326BAC06D000DE9CF /* PlanningPeriodsInspector.swift in Sources */,
 				BCA334CA26A6CF0F0039D4E3 /* Di.swift in Sources */,
@@ -560,6 +627,7 @@
 				BC84FA1726B845CC0010078B /* EditCategoryScreen.swift in Sources */,
 				BCB1196A26AD769400426BA7 /* CategoriesViewModel.swift in Sources */,
 				BC7D219626E489D6009CDBF3 /* CoreDataIncome+CoreDataProperties.swift in Sources */,
+				BC7D21A626E4919E009CDBF3 /* BasicDatabaseOperations.swift in Sources */,
 				BC7D218726E4851B009CDBF3 /* Income.swift in Sources */,
 				BC7F9DBF26B6FE6B004247EF /* CategoryDetailsScreen.swift in Sources */,
 				BC84FA1526B825E00010078B /* EditCategoryViewModel.swift in Sources */,

@@ -22,13 +22,15 @@ extension CreateCategory {
         }
         
         func createCategory() {
-            guard let storage: CentralStorage = try? Di.inject(CentralStorage?.self),
+            let storage: CentralStorage? = try? Di.inject(CentralStorage?.self)
+            guard let categoriesStorage: CategoriesStorage = storage?.categories,
                   name.isNotEmpty,
                   let plan: Int = Int(self.plan),
-                  let currentPeriod: PlanningPeriod = storage.loadCurrentPeriod()
+                  let currentPeriod: PlanningPeriod = storage?.periods.loadCurrentPeriod()
             else { Log(error: "[CreateCategory.ViewModel] unable to create category"); return }
+            
             let newCategoryDraft: Category.Draft = .init(name, Decimal(plan), Decimal(0), currentPeriod.id)
-            storage.create(from: newCategoryDraft)
+            categoriesStorage.create(from: newCategoryDraft)
         }
         
     }

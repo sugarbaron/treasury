@@ -26,7 +26,7 @@ extension RegisterPurchase {
             self.price = ""
             self.comment = ""
             self.storage = try? Di.inject(CentralStorage?.self)
-            self.categories = storage?.loadCurrentPeriodCategories() ?? [ ]
+            self.categories = storage?.categories.loadCurrentPeriodCategories() ?? [ ]
             self.mode = category == nil ? .currentPeriodCategories : .certainCategory
         }
         
@@ -38,8 +38,8 @@ extension RegisterPurchase {
             else { return }
             let purchaseDraft: Purchase.Draft = .init(Decimal(price), category.id, comment)
             category.purchase(Decimal(price))
-            storage?.update(category)
-            storage?.create(from: purchaseDraft)
+            storage?.categories.update(category)
+            storage?.purchases.create(from: purchaseDraft)
         }
         
     }

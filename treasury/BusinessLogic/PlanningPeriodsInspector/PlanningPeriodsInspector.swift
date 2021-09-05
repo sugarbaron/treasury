@@ -34,7 +34,7 @@ final class PlanningPeriodsInspector {
     func stop() { queue.cancelAllOperations() }
     
     private func inspect() {
-        guard let currentPeriod: PlanningPeriod = storage.loadCurrentPeriod()
+        guard let currentPeriod: PlanningPeriod = storage.periods.loadCurrentPeriod()
         else { createPlanningPeriod(startDate: Date.now); return }
         
         let day: TimeInterval = 24 * 60 * 60
@@ -46,11 +46,11 @@ final class PlanningPeriodsInspector {
     private func createPlanningPeriod(startDate: Date) {
         let newPeriodRange: Date.Range = (startDate, getNextMonthDate(from: startDate))
         //Log(info: "[PlanningPeriodsInspector] creating period:[\(newPeriodRange.from.format()) - \(newPeriodRange.to.format())]") /* fixme */
-        let currentCategories: [Category] = storage.loadCurrentPeriodCategories()
-        let newPeriod: PlanningPeriod = storage.create(period: newPeriodRange)
+        let currentCategories: [Category] = storage.categories.loadCurrentPeriodCategories()
+        let newPeriod: PlanningPeriod = storage.periods.create(period: newPeriodRange)
         currentCategories.forEach {
             let newPeriodCategoryDraft: Category.Draft = .init($0.name, $0.plan, 0, newPeriod.id)
-            storage.create(from: newPeriodCategoryDraft)
+            storage.categories.create(from: newPeriodCategoryDraft)
         }
     }
     

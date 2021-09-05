@@ -33,7 +33,7 @@ extension EditCategory {
                                                  Decimal(plan),
                                                  category.spent,
                                                  category.planningPeriod)
-            storage?.update(editedCategory)
+            storage?.categories.update(editedCategory)
         }
         
     }

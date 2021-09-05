@@ -36,7 +36,7 @@ extension Categories {
                 let expensiveFirst: NSSortDescriptor = .init(key: CategoryFields.plan, ascending: false)
                 let abc: NSSortDescriptor = .init(key: CategoryFields.name, ascending: true)
                 let config: Storage.SubscriptionConfig = .init(ofCurrentPeriod, sort:[expensiveFirst, abc])
-                this.categoriesUpdates = this.storage?.adjustSubscription(config)
+                this.categoriesUpdates = this.storage?.categories.adjustSubscription(config)
                 if let updates: Storage.Updates<ViewModel> = this.categoriesUpdates {
                     this.subscribe(to: updates)
                     this.categories = updates.updatedContent?.entities ?? [ ]
@@ -71,7 +71,7 @@ extension Categories {
             self.storage = storage
             self.onUpdate = onUpdate
             let descendingIds: NSSortDescriptor = .init(key: PlanningPeriodFields.id, ascending: false)
-            let updates: StorageUpdates = storage.adjustSubscription(.init(sort: [descendingIds]))
+            let updates: StorageUpdates = storage.periods.adjustSubscription(.init(sort: [descendingIds]))
             self.storageUpdates = updates
             subscribe(to: updates)
             Threads.runOnMain { [weak self] in

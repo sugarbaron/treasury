@@ -9,40 +9,12 @@ import Foundation
 
 protocol CentralStorage {
     
-    // MARK: category
+    var categories: CategoriesStorage { get }
     
-    @discardableResult
-    func create(from draft: Category.Draft) -> Category
+    var purchases: PurchasesStorage { get }
     
-    func update(_ category: Category)
+    var periods: PlanningPeriodsStorage { get }
     
-    func loadCurrentPeriodCategories() -> [Category]
-    
-    func removeCategory(_ id: Int)
-    
-    // MARK: purchase
-    
-    @discardableResult
-    func create(from draft: Purchase.Draft) -> Purchase
-    
-    func loadPurchases(for category: Category) -> [Purchase]
-    
-    // MARK: planning period
-    
-    @discardableResult
-    func create(period range: Date.Range) -> PlanningPeriod
-    
-    func update(_ period: PlanningPeriod)
-    
-    func loadCurrentPeriod() -> PlanningPeriod?
-    
-    func loadAllPeriods() -> [PlanningPeriod]
-    
-    func loadPeriod(for category: Category) -> PlanningPeriod?
-    
-    // MARK: subscription
-    
-    func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)
-    -> Storage.Updates<Subscriber>
+    var income: IncomeStorage { get }
     
 }

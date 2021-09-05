@@ -21,11 +21,11 @@ extension CategoryDetails {
         init(_ category: Category) {
             self.storage = try? Di.inject(CentralStorage?.self)
             self.category = category
-            self.purchases = (self.storage?.loadPurchases(for: category)) ?? [ ]
-            self.categoryPeriod = self.storage?.loadPeriod(for: category)
+            self.purchases = (self.storage?.purchases.loadPurchases(for: category)) ?? [ ]
+            self.categoryPeriod = self.storage?.periods.loadPeriod(for: category)
         }
         
-        func removeCategory() { storage?.removeCategory(category.id) }
+        func removeCategory() { storage?.categories.removeCategory(category.id) }
         
         func getComment(for purchase: Purchase) -> String {
             if purchase.comment.isNotEmpty { return purchase.comment }
