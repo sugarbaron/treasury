@@ -12,7 +12,7 @@ extension CentralDatabase {
     final class Assembly : Swinject.Assembly {
         
         func assemble(container: Container) {
-            container.register(CentralStorage?.self) { _ in CentralDatabase() }.singleton()
+            container.singleton(CentralStorage?.self) { _ in CentralDatabase() }
         }
         
     }

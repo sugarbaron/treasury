@@ -15,14 +15,14 @@ final class PlanningPeriodsInspector {
     private var lastInspection: Date?
     
     init?() {
-        guard let storage: CentralStorage = try? Di.inject(CentralStorage?.self)
+        guard let storage: CentralStorage = Di.inject(CentralStorage?.self)
         else { Log(error: "[PlanningPeriodsInspector] unable to construct"); return nil }
         
         self.queue = OperationQueue.newSerial()
         self.storage = storage
     }
     
-    func start() { queue.addCancellable { [weak self] isCancelled in
+    func start() { queue.execute { [weak self] isCancelled in
         let inspectionPeriod: TimeInterval = 60
         while(isCancelled() == false) {
             guard let this = self else { Log(error: "[PlanningPeriodsInspector] suddenly deallocated"); return }
@@ -82,7 +82,7 @@ extension PlanningPeriodsInspector {
     final class Assembly : Swinject.Assembly {
         
         func assemble(container: Container) {
-            container.register(PlanningPeriodsInspector?.self) { _ in PlanningPeriodsInspector() }.singleton()
+            container.singleton(PlanningPeriodsInspector?.self) { _ in PlanningPeriodsInspector() }
         }
         
     }

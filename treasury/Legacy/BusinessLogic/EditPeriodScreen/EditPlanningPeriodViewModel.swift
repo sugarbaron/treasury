@@ -20,7 +20,7 @@ extension EditPlanningPeriod {
         private let currentPeriod: PlanningPeriod?
         
         init() {
-            self.storage = try? Di.inject(CentralStorage?.self)
+            self.storage = Di.inject(CentralStorage?.self)
             self.currentPeriod = storage?.periods.loadCurrentPeriod()
             guard let start: Date = currentPeriod?.start, let end: Date = currentPeriod?.end
             else { Log(error: "[EditPlanningPeriod.ViewModel] unable to load current period"); return }
@@ -47,3 +47,5 @@ extension EditPlanningPeriod {
     }
     
 }
+
+private extension Date { static let invalid: Date = .init(since1970: 0) }
