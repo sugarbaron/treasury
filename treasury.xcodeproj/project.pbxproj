@@ -48,7 +48,7 @@
 		BC9443BC26B3114C0056D341 /* RegisterPurchaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BB26B3114C0056D341 /* RegisterPurchaseScreen.swift */; };
 		BC9443BE26B313C30056D341 /* RegisterPurchaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BD26B313C30056D341 /* RegisterPurchaseViewModel.swift */; };
 		BC9443C126B3147F0056D341 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443C026B3147F0056D341 /* Buttons.swift */; };
-		BCA3349126A6A5410039D4E3 /* treasuryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA3349026A6A5410039D4E3 /* treasuryApp.swift */; };
+		BCA3349126A6A5410039D4E3 /* Treasury.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA3349026A6A5410039D4E3 /* Treasury.swift */; };
 		BCA3349526A6A5420039D4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA3349426A6A5420039D4E3 /* Assets.xcassets */; };
 		BCA3349826A6A5420039D4E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA3349726A6A5420039D4E3 /* Preview Assets.xcassets */; };
 		BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA3349F26A6A6F90039D4E3 /* Category.swift */; };
@@ -129,7 +129,7 @@
 		BC9443BD26B313C30056D341 /* RegisterPurchaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchaseViewModel.swift; sourceTree = "<group>"; };
 		BC9443C026B3147F0056D341 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		BCA3348D26A6A5410039D4E3 /* treasury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = treasury.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCA3349026A6A5410039D4E3 /* treasuryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = treasuryApp.swift; sourceTree = "<group>"; };
+		BCA3349026A6A5410039D4E3 /* Treasury.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treasury.swift; sourceTree = "<group>"; };
 		BCA3349426A6A5420039D4E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCA3349726A6A5420039D4E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCA3349926A6A5420039D4E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -268,6 +268,26 @@
 			path = EditPeriodScreen;
 			sourceTree = "<group>";
 		};
+		BC89D51E29853BD5005AE1BB /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				BCA334CB26A6CF570039D4E3 /* Initiallization */,
+				BCA334D026A6D2510039D4E3 /* BusinessLogic */,
+				BCA334A626A6C1A90039D4E3 /* Model */,
+				BCA334A726A6C2D60039D4E3 /* Storage */,
+				BCA334A326A6B7060039D4E3 /* Toolkit */,
+			);
+			path = Legacy;
+			sourceTree = "<group>";
+		};
+		BC89D51F29853CE1005AE1BB /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				BCA3349026A6A5410039D4E3 /* Treasury.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
 		BC8A8D0A26BAB0D4000DE9CF /* PlanningPeriod */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,12 +364,8 @@
 		BCA3348F26A6A5410039D4E3 /* treasury */ = {
 			isa = PBXGroup;
 			children = (
-				BCA3349026A6A5410039D4E3 /* treasuryApp.swift */,
-				BCA334CB26A6CF570039D4E3 /* Initiallization */,
-				BCA334D026A6D2510039D4E3 /* BusinessLogic */,
-				BCA334A626A6C1A90039D4E3 /* Model */,
-				BCA334A726A6C2D60039D4E3 /* Storage */,
-				BCA334A326A6B7060039D4E3 /* Toolkit */,
+				BC89D51F29853CE1005AE1BB /* Launch */,
+				BC89D51E29853BD5005AE1BB /* Legacy */,
 				BCA3349426A6A5420039D4E3 /* Assets.xcassets */,
 				BCA3349926A6A5420039D4E3 /* Info.plist */,
 				BCA3349626A6A5420039D4E3 /* Preview Content */,
@@ -588,7 +604,7 @@
 				BC7D218E26E48979009CDBF3 /* IncomeFields.swift in Sources */,
 				BCB5E79F26AEEBC300727DF7 /* StorageUpdatedContent.swift in Sources */,
 				BCA334AA26A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld in Sources */,
-				BCA3349126A6A5410039D4E3 /* treasuryApp.swift in Sources */,
+				BCA3349126A6A5410039D4E3 /* Treasury.swift in Sources */,
 				BC7D219C26E48CAF009CDBF3 /* PurchasesStorage.swift in Sources */,
 				BC7D219F26E48CC3009CDBF3 /* PlanningPeriodsStorage.swift in Sources */,
 				BCA334CF26A6D0180039D4E3 /* CentralStorage.swift in Sources */,
@@ -757,10 +773,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"treasury/Preview Content\"";
-				DEVELOPMENT_TEAM = 6427J754M8;
+				DEVELOPMENT_TEAM = 7PLHSB647R;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = treasury/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -779,10 +796,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"treasury/Preview Content\"";
-				DEVELOPMENT_TEAM = 6427J754M8;
+				DEVELOPMENT_TEAM = 7PLHSB647R;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = treasury/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
