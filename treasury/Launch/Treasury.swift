@@ -10,10 +10,7 @@ import SwiftUI
 @main
 struct Treasury : App {
     
-    init() {
-        let inspector: PlanningPeriodsInspector? = try? Di.inject(PlanningPeriodsInspector?.self)
-        inspector?.start()
-    }
+    init() { Starter.run() }
     
     var body: some Scene {
         WindowGroup { Categories.Screen() }

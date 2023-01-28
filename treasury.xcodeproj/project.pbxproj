@@ -33,6 +33,7 @@
 		BC52369B29854A5B00045014 /* DateContributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52369829854A5B00045014 /* DateContributions.swift */; };
 		BC52369C29854A5B00045014 /* DateFormatterAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52369929854A5B00045014 /* DateFormatterAdvanced.swift */; };
 		BC5236A02985534200045014 /* TreasuryDateAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52369F2985534200045014 /* TreasuryDateAdvanced.swift */; };
+		BC5236A2298554B600045014 /* Starter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5236A1298554B600045014 /* Starter.swift */; };
 		BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */; };
 		BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */; };
 		BC7D218726E4851B009CDBF3 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D218626E4851B009CDBF3 /* Income.swift */; };
@@ -130,6 +131,7 @@
 		BC52369829854A5B00045014 /* DateContributions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateContributions.swift; sourceTree = "<group>"; };
 		BC52369929854A5B00045014 /* DateFormatterAdvanced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterAdvanced.swift; sourceTree = "<group>"; };
 		BC52369F2985534200045014 /* TreasuryDateAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasuryDateAdvanced.swift; sourceTree = "<group>"; };
+		BC5236A1298554B600045014 /* Starter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starter.swift; sourceTree = "<group>"; };
 		BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreen.swift; sourceTree = "<group>"; };
 		BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewModel.swift; sourceTree = "<group>"; };
 		BC7D218626E4851B009CDBF3 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
@@ -355,6 +357,13 @@
 			path = Time;
 			sourceTree = "<group>";
 		};
+		BC5236A32985572700045014 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
 		BC7CD9A926AEC41F00FB1EA7 /* CreateCategoryScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +470,7 @@
 			children = (
 				BCA3349026A6A5410039D4E3 /* Treasury.swift */,
 				BCA334CC26A6CF8E0039D4E3 /* DependencyInjection.swift */,
+				BC5236A1298554B600045014 /* Starter.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -541,6 +551,7 @@
 		BCA3348F26A6A5410039D4E3 /* treasury */ = {
 			isa = PBXGroup;
 			children = (
+				BC5236A32985572700045014 /* BusinessLogic */,
 				BC89D51F29853CE1005AE1BB /* Launch */,
 				BC52369D298552B900045014 /* Toolkit */,
 				BC52364E29853E6A00045014 /* SdkToolkit */,
@@ -790,6 +801,7 @@
 				BC7D219526E489D6009CDBF3 /* CoreDataIncome+CoreDataClass.swift in Sources */,
 				BCA68DF826BD3C3C00DCA704 /* CoreDataPurchase+CoreDataClass.swift in Sources */,
 				BC523651298542C100045014 /* Di.swift in Sources */,
+				BC5236A2298554B600045014 /* Starter.swift in Sources */,
 				BC8686FD26BBEA7100297F2E /* EditPlanningPeriodScreen.swift in Sources */,
 				BC5236942985499400045014 /* DataAdvanced.swift in Sources */,
 				BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */,
