@@ -14,5 +14,17 @@ public extension Int {
     var double: Double { .init(self) }
 
     var cgFloat: CGFloat { .init(self) }
+    
+    func restrict(_ range: Range<Int>) -> Int {
+        if self < range.lowerBound { return range.lowerBound }
+        if self > range.upperBound { return range.upperBound }
+        return self
+    }
+    
+    func restrict(_ range: ClosedRange<Int>) -> Int {
+        if self < range.lowerBound { return range.lowerBound }
+        if self > range.upperBound { return range.upperBound }
+        return self
+    }
 
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension RegisterPurchase {
+extension RegisterPurchase1 {
     
     struct Screen: View {
         
@@ -98,7 +98,7 @@ extension RegisterPurchase {
 
 // MARK: Tools
 
-extension RegisterPurchase {
+extension RegisterPurchase1 {
     
     struct CategoriesMenu : View {
         
@@ -145,7 +145,7 @@ extension String : Identifiable {
 
 struct RegisterPurchaseScreen_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterPurchase.Screen()
+        RegisterPurchase1.Screen()
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

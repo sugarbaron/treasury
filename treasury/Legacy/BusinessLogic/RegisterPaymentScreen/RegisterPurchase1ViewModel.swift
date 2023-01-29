@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-final class RegisterPurchase { }
+final class RegisterPurchase1 { }
 
-extension RegisterPurchase {
+extension RegisterPurchase1 {
     
     final class ViewModel : ObservableObject {
         
@@ -46,7 +46,7 @@ extension RegisterPurchase {
     
 }
 
-extension RegisterPurchase.ViewModel {
+extension RegisterPurchase1.ViewModel {
     
     enum Mode { case certainCategory; case currentPeriodCategories }
     
