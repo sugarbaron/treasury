@@ -39,6 +39,9 @@
 		BC58CEC329864A480091D818 /* ResourcesColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CEC229864A480091D818 /* ResourcesColor.swift */; };
 		BC58CEC829864F3D0091D818 /* Rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CEC729864F3D0091D818 /* Rgb.swift */; };
 		BC58CECA29865D4B0091D818 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CEC929865D4B0091D818 /* Resources.swift */; };
+		BC58CECF29867DB40091D818 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CECE29867DB40091D818 /* ThemeService.swift */; };
+		BC58CED129867DC90091D818 /* ThemeServiceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CED029867DC90091D818 /* ThemeServiceEngine.swift */; };
+		BC58CED329867EB90091D818 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CED229867EB90091D818 /* Theme.swift */; };
 		BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */; };
 		BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */; };
 		BC7D218726E4851B009CDBF3 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D218626E4851B009CDBF3 /* Income.swift */; };
@@ -142,6 +145,9 @@
 		BC58CEC229864A480091D818 /* ResourcesColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesColor.swift; sourceTree = "<group>"; };
 		BC58CEC729864F3D0091D818 /* Rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rgb.swift; sourceTree = "<group>"; };
 		BC58CEC929865D4B0091D818 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		BC58CECE29867DB40091D818 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
+		BC58CED029867DC90091D818 /* ThemeServiceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeServiceEngine.swift; sourceTree = "<group>"; };
+		BC58CED229867EB90091D818 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreen.swift; sourceTree = "<group>"; };
 		BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewModel.swift; sourceTree = "<group>"; };
 		BC7D218626E4851B009CDBF3 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
@@ -411,6 +417,24 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BC58CECC29867D400091D818 /* SdkServices */ = {
+			isa = PBXGroup;
+			children = (
+				BC58CECD29867D880091D818 /* ThemeService */,
+			);
+			path = SdkServices;
+			sourceTree = "<group>";
+		};
+		BC58CECD29867D880091D818 /* ThemeService */ = {
+			isa = PBXGroup;
+			children = (
+				BC58CED229867EB90091D818 /* Theme.swift */,
+				BC58CECE29867DB40091D818 /* ThemeService.swift */,
+				BC58CED029867DC90091D818 /* ThemeServiceEngine.swift */,
+			);
+			path = ThemeService;
+			sourceTree = "<group>";
+		};
 		BC7CD9A926AEC41F00FB1EA7 /* CreateCategoryScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +625,7 @@
 				BC5236A32985572700045014 /* BusinessLogic */,
 				BC89D51F29853CE1005AE1BB /* Launch */,
 				BC52369D298552B900045014 /* Toolkit */,
+				BC58CECC29867D400091D818 /* SdkServices */,
 				BC52364E29853E6A00045014 /* SdkToolkit */,
 				BC58CEC1298646620091D818 /* Resources */,
 				BC89D51E29853BD5005AE1BB /* Legacy */,
@@ -823,6 +848,7 @@
 				BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */,
 				BCA68DF226BCFA7F00DCA704 /* CoreDataCategory+CoreDataClass.swift in Sources */,
 				BC5236692985438700045014 /* LogEngine.swift in Sources */,
+				BC58CED129867DC90091D818 /* ThemeServiceEngine.swift in Sources */,
 				BCB1197926AD7D5300426BA7 /* CoreDataEntity.swift in Sources */,
 				BC9443BE26B313C30056D341 /* RegisterPurchase1ViewModel.swift in Sources */,
 				BCA334B826A6C9EA0039D4E3 /* CoreDataStorageEngine.swift in Sources */,
@@ -837,6 +863,7 @@
 				BCB5E79F26AEEBC300727DF7 /* StorageUpdatedContent.swift in Sources */,
 				BCA334AA26A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld in Sources */,
 				BCA3349126A6A5410039D4E3 /* Treasury.swift in Sources */,
+				BC58CECF29867DB40091D818 /* ThemeService.swift in Sources */,
 				BC5236A82985598C00045014 /* RegisterPurchaseScreen.swift in Sources */,
 				BC5236912985499400045014 /* StringAdvanced.swift in Sources */,
 				BC7D219C26E48CAF009CDBF3 /* PurchasesStorage.swift in Sources */,
@@ -887,6 +914,7 @@
 				BC5236772985466E00045014 /* Semaphore.swift in Sources */,
 				BC84FA1526B825E00010078B /* EditCategoryViewModel.swift in Sources */,
 				BC814EF526A944E60031896C /* CategoriesScreen.swift in Sources */,
+				BC58CED329867EB90091D818 /* Theme.swift in Sources */,
 				BC5236922985499400045014 /* DoubleAdvanced.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
