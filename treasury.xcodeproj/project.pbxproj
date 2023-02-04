@@ -255,16 +255,8 @@
 		BC52364E29853E6A00045014 /* SdkToolkit */ = {
 			isa = PBXGroup;
 			children = (
-				BC5236892985499400045014 /* BaseDataTypes */,
-				BCAB283A298E193600B29EB0 /* Collections */,
-				BC5236712985466E00045014 /* Concurrency */,
-				BC58CEC629864F160091D818 /* Colors */,
-				BC52364F298542C100045014 /* DependencyInjection */,
-				BC5236552985438700045014 /* Logs */,
-				BC523652298542E800045014 /* Optionals */,
-				BC52367A298546F000045014 /* Operators */,
-				BC58CECB29865DBC0091D818 /* Resources */,
-				BC52369629854A5B00045014 /* Time */,
+				BCAB2866298E628500B29EB0 /* System */,
+				BCAB2867298E629700B29EB0 /* Ui */,
 			);
 			path = SdkToolkit;
 			sourceTree = "<group>";
@@ -833,6 +825,38 @@
 				BCAB2864298E4A5800B29EB0 /* RegisterPurchaseTextAssets.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BCAB2866298E628500B29EB0 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				BC5236892985499400045014 /* BaseDataTypes */,
+				BCAB283A298E193600B29EB0 /* Collections */,
+				BC5236712985466E00045014 /* Concurrency */,
+				BC58CEC629864F160091D818 /* Colors */,
+				BC52364F298542C100045014 /* DependencyInjection */,
+				BC5236552985438700045014 /* Logs */,
+				BC523652298542E800045014 /* Optionals */,
+				BC52367A298546F000045014 /* Operators */,
+				BC58CECB29865DBC0091D818 /* Resources */,
+				BC52369629854A5B00045014 /* Time */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		BCAB2867298E629700B29EB0 /* Ui */ = {
+			isa = PBXGroup;
+			children = (
+				BCAB2868298E62AE00B29EB0 /* SwiftUI */,
+			);
+			path = Ui;
+			sourceTree = "<group>";
+		};
+		BCAB2868298E62AE00B29EB0 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		BCB5E79D26AEEBAE00727DF7 /* Storage */ = {
