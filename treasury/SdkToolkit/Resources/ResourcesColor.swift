@@ -7,16 +7,16 @@
 
 import UIKit
 
-extension Resources { final class Color { } }
+extension Resources { public final class Color { } }
 
 extension Resources.Color {
     
-    final class Asset { let name: String; init(_ name: String) { self.name = name } }
+    public final class Asset { public let name: String; public init(_ name: String) { self.name = name } }
     
 }
 
 // MARK: contributions
-extension Rgb {
+public extension Rgb {
     
     static func rgb(_ asset: Resources.Color.Asset) -> Rgb { UIColor(named: asset.name)?.cgColor.rgb ?? .eyebleed }
     

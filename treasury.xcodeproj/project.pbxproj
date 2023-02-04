@@ -106,6 +106,11 @@
 		BCAB283F298E198C00B29EB0 /* DictionaryAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB283C298E198C00B29EB0 /* DictionaryAdvanced.swift */; };
 		BCAB2840298E198C00B29EB0 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB283D298E198C00B29EB0 /* Collections.swift */; };
 		BCAB2842298E2D7100B29EB0 /* ResourcesColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB2841298E2D7100B29EB0 /* ResourcesColor.swift */; };
+		BCAB2844298E33F600B29EB0 /* ResourcesText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB2843298E33F600B29EB0 /* ResourcesText.swift */; };
+		BCAB2846298E343100B29EB0 /* TextResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB2845298E343100B29EB0 /* TextResources.swift */; };
+		BCAB2858298E362A00B29EB0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCAB285A298E362A00B29EB0 /* Localizable.strings */; };
+		BCAB2862298E489600B29EB0 /* RegisterPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB2861298E489600B29EB0 /* RegisterPurchase.swift */; };
+		BCAB2865298E4A5900B29EB0 /* RegisterPurchaseTextAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB2864298E4A5800B29EB0 /* RegisterPurchaseTextAssets.swift */; };
 		BCB1196A26AD769400426BA7 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1196926AD769400426BA7 /* CategoriesViewModel.swift */; };
 		BCB1197026AD789B00426BA7 /* CentralStorageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1196F26AD789B00426BA7 /* CentralStorageAssembly.swift */; };
 		BCB1197226AD795100426BA7 /* CategoryCoreDataConvertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1197126AD795100426BA7 /* CategoryCoreDataConvertions.swift */; };
@@ -218,6 +223,12 @@
 		BCAB283C298E198C00B29EB0 /* DictionaryAdvanced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAdvanced.swift; sourceTree = "<group>"; };
 		BCAB283D298E198C00B29EB0 /* Collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collections.swift; sourceTree = "<group>"; };
 		BCAB2841298E2D7100B29EB0 /* ResourcesColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesColor.swift; sourceTree = "<group>"; };
+		BCAB2843298E33F600B29EB0 /* ResourcesText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesText.swift; sourceTree = "<group>"; };
+		BCAB2845298E343100B29EB0 /* TextResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextResources.swift; sourceTree = "<group>"; };
+		BCAB2859298E362A00B29EB0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BCAB2860298E381D00B29EB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BCAB2861298E489600B29EB0 /* RegisterPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchase.swift; sourceTree = "<group>"; };
+		BCAB2864298E4A5800B29EB0 /* RegisterPurchaseTextAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchaseTextAssets.swift; sourceTree = "<group>"; };
 		BCB1196926AD769400426BA7 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		BCB1196F26AD789B00426BA7 /* CentralStorageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralStorageAssembly.swift; sourceTree = "<group>"; };
 		BCB1197126AD795100426BA7 /* CategoryCoreDataConvertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCoreDataConvertions.swift; sourceTree = "<group>"; };
@@ -397,8 +408,10 @@
 		BC5236A42985584B00045014 /* RegisterPurchaseScreen */ = {
 			isa = PBXGroup;
 			children = (
+				BCAB2861298E489600B29EB0 /* RegisterPurchase.swift */,
 				BC5236A5298558A900045014 /* RegisterPurchaseViewModel.swift */,
 				BC5236A72985598C00045014 /* RegisterPurchaseScreen.swift */,
+				BCAB2863298E4A3B00B29EB0 /* Resources */,
 			);
 			path = RegisterPurchaseScreen;
 			sourceTree = "<group>";
@@ -406,8 +419,10 @@
 		BC58CEC1298646620091D818 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BCAB285D298E36E500B29EB0 /* Texts */,
+				BCAB285C298E36C600B29EB0 /* Colors */,
 				BCA3349426A6A5420039D4E3 /* Assets.xcassets */,
-				BC58CEC229864A480091D818 /* ColorResources.swift */,
+				BCA3349926A6A5420039D4E3 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -425,6 +440,7 @@
 			children = (
 				BC58CEC929865D4B0091D818 /* Resources.swift */,
 				BCAB2841298E2D7100B29EB0 /* ResourcesColor.swift */,
+				BCAB2843298E33F600B29EB0 /* ResourcesText.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -683,7 +699,6 @@
 				BC58CECC29867D400091D818 /* SdkServices */,
 				BC52364E29853E6A00045014 /* SdkToolkit */,
 				BC89D51E29853BD5005AE1BB /* Legacy */,
-				BCA3349926A6A5420039D4E3 /* Info.plist */,
 			);
 			path = treasury;
 			sourceTree = "<group>";
@@ -795,6 +810,31 @@
 			path = Collections;
 			sourceTree = "<group>";
 		};
+		BCAB285C298E36C600B29EB0 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				BC58CEC229864A480091D818 /* ColorResources.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		BCAB285D298E36E500B29EB0 /* Texts */ = {
+			isa = PBXGroup;
+			children = (
+				BCAB2845298E343100B29EB0 /* TextResources.swift */,
+				BCAB285A298E362A00B29EB0 /* Localizable.strings */,
+			);
+			path = Texts;
+			sourceTree = "<group>";
+		};
+		BCAB2863298E4A3B00B29EB0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BCAB2864298E4A5800B29EB0 /* RegisterPurchaseTextAssets.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BCB5E79D26AEEBAE00727DF7 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -847,6 +887,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 				Base,
 			);
 			mainGroup = BCA3348426A6A5410039D4E3;
@@ -868,6 +909,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA3349526A6A5420039D4E3 /* Assets.xcassets in Resources */,
+				BCAB2858298E362A00B29EB0 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,6 +942,7 @@
 				BCA334A226A6B2BF0039D4E3 /* Purchase.swift in Sources */,
 				BC8A8CF726BAAAD9000DE9CF /* CategoryDetailsAmountCard.swift in Sources */,
 				BC52369B29854A5B00045014 /* DateContributions.swift in Sources */,
+				BCAB2846298E343100B29EB0 /* TextResources.swift in Sources */,
 				BC8A8D0926BAB0CA000DE9CF /* CoreDataPlanningPeriod+CoreDataProperties.swift in Sources */,
 				BCA334BD26A6CAC20039D4E3 /* Exceptions.swift in Sources */,
 				BCC7A14E26A7ECCB00A21C5D /* Colors.swift in Sources */,
@@ -933,6 +976,7 @@
 				BC5236912985499400045014 /* StringAdvanced.swift in Sources */,
 				BCAB2842298E2D7100B29EB0 /* ResourcesColor.swift in Sources */,
 				BC7D219C26E48CAF009CDBF3 /* PurchasesStorage.swift in Sources */,
+				BCAB2844298E33F600B29EB0 /* ResourcesText.swift in Sources */,
 				BC7D219F26E48CC3009CDBF3 /* PlanningPeriodsStorage.swift in Sources */,
 				BCA334CF26A6D0180039D4E3 /* CentralStorage.swift in Sources */,
 				BC8A8CFB26BAAEFF000DE9CF /* DateRange.swift in Sources */,
@@ -948,6 +992,7 @@
 				BC523651298542C100045014 /* Di.swift in Sources */,
 				BC5236A2298554B600045014 /* Starter.swift in Sources */,
 				BC8686FD26BBEA7100297F2E /* EditPlanningPeriodScreen.swift in Sources */,
+				BCAB2865298E4A5900B29EB0 /* RegisterPurchaseTextAssets.swift in Sources */,
 				BC5236942985499400045014 /* DataAdvanced.swift in Sources */,
 				BCA334A026A6A6F90039D4E3 /* Category.swift in Sources */,
 				BC7D21A226E48CD5009CDBF3 /* IncomeStorage.swift in Sources */,
@@ -977,6 +1022,7 @@
 				BC7D219626E489D6009CDBF3 /* CoreDataIncome+CoreDataProperties.swift in Sources */,
 				BC7D21A626E4919E009CDBF3 /* BasicDatabaseOperations.swift in Sources */,
 				BC7D218726E4851B009CDBF3 /* Income.swift in Sources */,
+				BCAB2862298E489600B29EB0 /* RegisterPurchase.swift in Sources */,
 				BC7F9DBF26B6FE6B004247EF /* CategoryDetailsScreen.swift in Sources */,
 				BC5236772985466E00045014 /* Semaphore.swift in Sources */,
 				BCAB283E298E198C00B29EB0 /* ArrayAdvanced.swift in Sources */,
@@ -988,6 +1034,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BCAB285A298E362A00B29EB0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCAB2859298E362A00B29EB0 /* ru */,
+				BCAB2860298E381D00B29EB0 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BCA3349A26A6A5420039D4E3 /* Debug */ = {

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+ treasury
+
+ Created by sugarbaron on 04.02.2023.
+  
+*/
+
+// MARK: PurchaseScreen
+"purchase.available" = "available";
