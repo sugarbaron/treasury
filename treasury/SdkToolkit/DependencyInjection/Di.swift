@@ -14,7 +14,7 @@ public class Di {
     private let di: Resolver
     private let mutex: NSRecursiveLock
     
-    public init(_ assemblages: [Assembly]) {
+    public init(_ assemblages: [Swinject.Assembly]) {
         self.assembler = Assembler(assemblages)
         self.di = assembler.resolver
         self.mutex = .init()

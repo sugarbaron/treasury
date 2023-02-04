@@ -11,8 +11,6 @@ public extension Log { final class Assembly { } }
 
 extension Log.Assembly : Swinject.Assembly {
 
-    public func assemble(container: Container) {
-        container.singleton(Log.Engine?.self) { Log.constructEngine() }
-    }
+    public func assemble(container: Container) { container.singleton(Log.Engine?.self) { Log.constructEngine() } }
 
 }

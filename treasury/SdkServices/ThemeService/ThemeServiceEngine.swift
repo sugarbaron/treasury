@@ -6,17 +6,17 @@
 //
 
 // MARK: constructor
-public final class ThemeServiceEngine {
-    
-    // todo: internal core data storage
-    
-    private let dark: Theme
-    
-    public init() {
-        self.dark = Theme(-1, "dark", This.dark)
+    public final class ThemeServiceEngine {
+        
+        // todo: internal core data storage
+        
+        private let dark: Theme
+        
+        public init() {
+            self.dark = Theme(-1, "dark", This.dark)
+        }
+        
     }
-    
-}
 
 // MARK: interface
 extension ThemeServiceEngine : ThemeService {
@@ -37,18 +37,18 @@ extension ThemeServiceEngine : ThemeService {
 private extension ThemeServiceEngine {
     
     static var dark: Theme.ColorScheme {
-        .init(background: .gray,
-              foreground: .gray03,
-              accent1: .orange,
-              accent2: .yellow,
-              warning: .red,
-              success: .green,
-              uprised: .gray02,
-              lowered: .gray01,
-              regular: .gray03,
-              title: .gray04,
-              selected: .gray04,
-              disabled: .gray05)
+        .init(background: .rgb(.gray),
+              foreground: .rgb(.gray03),
+              accent1: .rgb(.orange),
+              accent2: .rgb(.yellow),
+              warning: .rgb(.red),
+              success: .rgb(.green),
+              uprised: .rgb(.gray02),
+              lowered: .rgb(.gray01),
+              regular: .rgb(.gray03),
+              title: .rgb(.gray04),
+              selected: .rgb(.gray04),
+              disabled: .rgb(.gray05))
     }
     
     typealias This = ThemeServiceEngine

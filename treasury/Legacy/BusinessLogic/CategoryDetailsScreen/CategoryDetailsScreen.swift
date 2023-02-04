@@ -80,7 +80,7 @@ extension CategoryDetails {
                 PurchaseButton()
                     .onTapGesture { isPurchaseTapped.toggle() }
                     .fullScreenCover(isPresented: $isPurchaseTapped) {
-                        RegisterPurchase.Screen(viewModel.category)
+                        RegisterPurchase1.Screen(viewModel.category)
                     }
                 Spacer()
                 EditButton()

@@ -57,9 +57,32 @@ extension Rgb : ExpressibleByIntegerLiteral, Equatable, Hashable {
     
     public func hash(into hasher: inout Hasher) { hasher.combine([r, g, b, a]) }
     
+    public static let eyebleed: Rgb = 0xFF10A0FF.rgb
+    
 }
 
 // MARK: contributions
+public extension Color {
+    
+    var rgb: Rgb { cgColor?.rgb ?? .eyebleed }
+    
+}
+
+public extension CGColor {
+    
+    var rgb: Rgb {
+        guard let decomposed: [CGFloat] = components,
+              let r: CGFloat = decomposed.at(0),
+              let g: CGFloat = decomposed.at(1),
+              let b: CGFloat = decomposed.at(2)
+        else { return Rgb(0xFF0000FF) }
+        
+        let a: CGFloat = decomposed.at(3) ?? 1.0
+        return Rgb(Int(r * 0xFF), Int(g * 0xFF), Int(b * 0xFF), alpha: Int(a * 0xFF))
+    }
+    
+}
+
 public extension Int {
     
     var rgb: Rgb {

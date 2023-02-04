@@ -143,7 +143,7 @@ extension String : Identifiable {
     
 }
 
-struct RegisterPurchaseScreen_Previews: PreviewProvider {
+struct RegisterPurchase1Screen_Previews: PreviewProvider {
     static var previews: some View {
         RegisterPurchase1.Screen()
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))

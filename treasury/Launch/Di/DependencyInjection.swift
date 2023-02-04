@@ -22,8 +22,9 @@ extension Di {
     static func inject() -> Di { di }
     
     private static let di: Di = .init([
-        DiAssembly(),
+        Di.Assembly(),
         Log.Assembly(),
+        Themes.Assembly(),
         /* fixme: legacy */
         CentralDatabase.Assembly(),
         PlanningPeriodsInspector.Assembly()
@@ -31,8 +32,10 @@ extension Di {
     
 }
 
-class DiAssembly : Assembly {
-
+private extension Di { final class Assembly { } }
+    
+extension Di.Assembly : Swinject.Assembly {
+    
     func assemble(container: Container) { container.register(Di?.self) { Di.inject() } }
-
+    
 }

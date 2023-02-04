@@ -26,31 +26,31 @@ extension Theme {
     
     public final class ColorScheme {
         
-        public let background: Resources.Color
-        public let foreground: Resources.Color
-        public let accent1: Resources.Color
-        public let accent2: Resources.Color
-        public let warning: Resources.Color
-        public let success: Resources.Color
-        public let uprised: Resources.Color
-        public let lowered: Resources.Color
-        public let regular: Resources.Color
-        public let title: Resources.Color
-        public let selected: Resources.Color
-        public let disabled: Resources.Color
+        public let background: Rgb
+        public let foreground: Rgb
+        public let accent1: Rgb
+        public let accent2: Rgb
+        public let warning: Rgb
+        public let success: Rgb
+        public let uprised: Rgb
+        public let lowered: Rgb
+        public let regular: Rgb
+        public let title: Rgb
+        public let selected: Rgb
+        public let disabled: Rgb
         
-        public init(background: Resources.Color,
-                    foreground: Resources.Color,
-                    accent1: Resources.Color,
-                    accent2: Resources.Color,
-                    warning: Resources.Color,
-                    success: Resources.Color,
-                    uprised: Resources.Color,
-                    lowered: Resources.Color,
-                    regular: Resources.Color,
-                    title: Resources.Color,
-                    selected: Resources.Color,
-                    disabled: Resources.Color) {
+        public init(background: Rgb,
+                    foreground: Rgb,
+                    accent1: Rgb,
+                    accent2: Rgb,
+                    warning: Rgb,
+                    success: Rgb,
+                    uprised: Rgb,
+                    lowered: Rgb,
+                    regular: Rgb,
+                    title: Rgb,
+                    selected: Rgb,
+                    disabled: Rgb) {
             self.background = background
             self.foreground = foreground
             self.accent1 = accent1

@@ -70,7 +70,7 @@ extension Categories {
         private var footerPanel: some View {
             HStack(alignment: .top) {
                 PurchaseButton()
-                    .fullScreenCover(isPresented: $isPurchaseTapped) { RegisterPurchase.Screen() }
+                    .fullScreenCover(isPresented: $isPurchaseTapped) { RegisterPurchase1.Screen() }
                     .onTapGesture { isPurchaseTapped.toggle() }
                 Layout.xInfinite
             }

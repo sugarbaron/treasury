@@ -12,8 +12,6 @@ struct Treasury : App {
     
     init() { Starter.run() }
     
-    var body: some Scene {
-        WindowGroup { Categories.Screen() }
-    }
+    var body: some Scene { WindowGroup { Categories.Screen() } }
     
 }
