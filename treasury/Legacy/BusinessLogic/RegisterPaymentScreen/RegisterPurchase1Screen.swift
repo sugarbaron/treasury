@@ -27,17 +27,17 @@ extension RegisterPurchase1 {
         
         var body: some View {
             HStack {
-                Layout.xSpace
+                Layout1.xSpace
                 VStack {
-                    Layout.ySpace
+                    Layout1.ySpace
                     title
-                    Layout.yTitleSpace
+                    Layout1.yTitleSpace
                     fields
-                    Layout.xInfinite
+                    Layout1.xInfinite
                     buttons
-                    Layout.ySpace
+                    Layout1.ySpace
                 }
-                Layout.xSpace
+                Layout1.xSpace
             }.background(Colors.background)
         }
         
@@ -56,26 +56,26 @@ extension RegisterPurchase1 {
         private var fields: some View {
             HStack {
                 VStack(alignment: .leading) {
-                    Layout.ySpace
+                    Layout1.ySpace
                     if viewModel.mode == .currentPeriodCategories {
                         Text("category:").labelStyle
-                        Layout.ySpace
+                        Layout1.ySpace
                     }
                     Text("price:").labelStyle
-                    Layout.ySpace
+                    Layout1.ySpace
                     Text("comment:").labelStyle
                 }
                 VStack(alignment: .leading) {
-                    Layout.ySpace
+                    Layout1.ySpace
                     if viewModel.mode == .currentPeriodCategories {
                         CategoriesMenu(viewModel.categoriesList, $viewModel.category) { choice in
                             viewModel.category = choice
                         }
-                        Layout.ySpace
+                        Layout1.ySpace
                     }
                     TextField("enter price", text: $viewModel.price).fieldStyle
                         .keyboardType(.numberPad)
-                    Layout.ySpace
+                    Layout1.ySpace
                     TextField("enter comment", text: $viewModel.comment).fieldStyle
                 }
             }

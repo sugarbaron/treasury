@@ -26,30 +26,30 @@ extension CategoryDetails {
         
         var body: some View {
             HStack {
-                Layout.xSpace
+                Layout1.xSpace
                 VStack {
-                    Layout.ySpace
+                    Layout1.ySpace
                     titlePanel
                     periodPanel
                     ScrollView { ForEach(viewModel.purchases) { purchase in
                         PurchaseCell(purchase, viewModel.getComment(for: purchase))
                     } }
-                    Layout.ySpace
+                    Layout1.ySpace
                     Summary(viewModel.category)
-                    Layout.ySpace
+                    Layout1.ySpace
                     footerPanel
-                    Layout.ySpace
+                    Layout1.ySpace
                 }
-                Layout.xSpace
+                Layout1.xSpace
             }.background(Colors.background)
         }
         
         private var titlePanel: some View {
             HStack(alignment: .top) {
                 BackButton().onTapGesture { dismiss() }
-                Layout.xSpace
+                Layout1.xSpace
                 Text("\(viewModel.category.name)").titleStyle.frame(maxWidth: .infinity)
-                Layout.xSpace
+                Layout1.xSpace
                 RemoveButton()
                     .onTapGesture { isDeleteTapped.toggle() }
                     .alert(isPresented: $isDeleteTapped) {

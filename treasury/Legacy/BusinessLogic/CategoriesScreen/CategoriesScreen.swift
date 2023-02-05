@@ -21,18 +21,18 @@ extension Categories {
         
         var body: some View {
             HStack {
-                Layout.xSpace
+                Layout1.xSpace
                 VStack {
-                    Layout.ySpace
+                    Layout1.ySpace
                     titlePanel
-                    Layout.ySpace
+                    Layout1.ySpace
                     periodPanel
                     ScrollView { ForEach(viewModel.categories) { category in Cell(category) } }
-                    Layout.ySpace
+                    Layout1.ySpace
                     if (viewModel.categories.isNotEmpty) { footerPanel }
-                    Layout.ySpace
+                    Layout1.ySpace
                 }
-                Layout.xSpace
+                Layout1.xSpace
             }
             .background(Colors.background)
             .frame(maxWidth: .infinity)
@@ -72,7 +72,7 @@ extension Categories {
                 PurchaseButton()
                     .fullScreenCover(isPresented: $isPurchaseTapped) { RegisterPurchase1.Screen() }
                     .onTapGesture { isPurchaseTapped.toggle() }
-                Layout.xInfinite
+                Layout1.xInfinite
             }
         }
         

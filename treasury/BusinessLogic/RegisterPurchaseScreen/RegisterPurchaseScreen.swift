@@ -7,14 +7,41 @@
 
 import SwiftUI
 
-struct RegisterPurchaseScreen: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+// MARK: constructor
+extension RegisterPurchase {
+    
+    struct Screen {
+        
     }
+    
+}
+// MARK: layout
+extension RegisterPurchase.Screen : View {
+    
+    var body: some View {
+        VStack {
+            VStack {
+                Color.background
+                keyboard.frame(w: .flexible(max: 500), h: .flexible(max: 300))
+            }
+            .edgesIgnoringSafeArea([.top, .leading, .trailing])
+            .background(Color.background.rounded(0))
+        }
+        .background(Color.uprised)
+    }
+    
 }
 
-struct RegisterPurchaseScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterPurchaseScreen()
+private extension RegisterPurchase.Screen {
+    
+    var keyboard: some View {
+        RegisterPurchase.Keyboard()
     }
+    
+    
+    
+}
+
+struct RegisterPurchaseScreen_Previews : PreviewProvider {
+    static var previews: some View { RegisterPurchase.Screen() }
 }

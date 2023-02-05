@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension Resources { public final class Text { } }
 
@@ -19,6 +20,12 @@ extension Resources.Text {
 public extension String {
     
     static func text(_ asset: Resources.Text.Asset) -> String { Resources.Text.translate(asset) }
+    
+}
+
+extension Text {
+    
+    init(_ asset: Resources.Text.Asset) { self.init(String.text(asset)) }
     
 }
 

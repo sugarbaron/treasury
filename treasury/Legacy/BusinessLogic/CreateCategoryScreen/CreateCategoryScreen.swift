@@ -22,17 +22,17 @@ extension CreateCategory {
         
         var body: some View {
             HStack {
-                Layout.xSpace
+                Layout1.xSpace
                 VStack {
-                    Layout.ySpace
+                    Layout1.ySpace
                     title
-                    Layout.yTitleSpace
+                    Layout1.yTitleSpace
                     fields
-                    Layout.yInfinite
+                    Layout1.yInfinite
                     buttons
-                    Layout.ySpace
+                    Layout1.ySpace
                 }
-                Layout.xSpace
+                Layout1.xSpace
             }.background(Colors.background)
         }
         
@@ -45,15 +45,15 @@ extension CreateCategory {
         private var fields: some View {
             HStack {
                 VStack(alignment: .leading, spacing: 0) {
-                    Layout.ySpace
+                    Layout1.ySpace
                     Text("name:").labelStyle
-                    Layout.ySpace
+                    Layout1.ySpace
                     Text("plan:").labelStyle
                 }.frame(alignment: .leading)
                 VStack {
-                    Layout.ySpace
+                    Layout1.ySpace
                     TextField("enter category name", text: $viewModel.name).fieldStyle
-                    Layout.ySpace
+                    Layout1.ySpace
                     TextField("enter plan amount", text: $viewModel.plan).fieldStyle
                         .keyboardType(.numberPad)
                 }
@@ -66,7 +66,7 @@ extension CreateCategory {
                     viewModel.createCategory()
                     presentationMode.wrappedValue.dismiss()
                 }
-                Layout.xInfinite
+                Layout1.xInfinite
                 NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
             }
         }

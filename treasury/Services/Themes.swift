@@ -20,17 +20,17 @@ private extension Theme.ColorScheme {
     
     static var `default`: Theme.ColorScheme {
         .init(background: .rgb(.gray),
-              foreground: .rgb(.gray03),
+              foreground: .rgb(.gray04),
               accent1: .rgb(.orange),
               accent2: .rgb(.yellow),
               warning: .rgb(.red),
               success: .rgb(.green),
               uprised: .rgb(.gray02),
               lowered: .rgb(.gray01),
-              regular: .rgb(.gray03),
-              title: .rgb(.gray04),
-              selected: .rgb(.gray04),
-              disabled: .rgb(.gray05))
+              regular: .rgb(.gray04),
+              title: .rgb(.white),
+              selected: .rgb(.white),
+              disabled: .rgb(.gray03))
     }
     
 }

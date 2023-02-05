@@ -27,17 +27,17 @@ extension EditCategory {
         
         var body: some View {
             HStack {
-                Layout.xSpace
+                Layout1.xSpace
                 VStack {
-                    Layout.ySpace
+                    Layout1.ySpace
                     titlePanel
-                    Layout.yTitleSpace
+                    Layout1.yTitleSpace
                     fields
-                    Layout.xInfinite
+                    Layout1.xInfinite
                     buttons
-                    Layout.ySpace
+                    Layout1.ySpace
                 }
-                Layout.xSpace
+                Layout1.xSpace
             }.background(Colors.background)
         }
         
@@ -49,15 +49,15 @@ extension EditCategory {
         private var fields: some View {
             HStack {
                 VStack(alignment: .leading, spacing: 0) {
-                    Layout.ySpace
+                    Layout1.ySpace
                     Text("name:").labelStyle
-                    Layout.ySpace
+                    Layout1.ySpace
                     Text("plan:").labelStyle
                 }.frame(alignment: .leading)
                 VStack {
-                    Layout.ySpace
+                    Layout1.ySpace
                     TextField("enter category name", text: $viewModel.name).fieldStyle
-                    Layout.ySpace
+                    Layout1.ySpace
                     TextField("enter plan amount", text: $viewModel.plan).fieldStyle
                         .keyboardType(.numberPad)
                 }
@@ -70,7 +70,7 @@ extension EditCategory {
                     viewModel.editCategory()
                     presentationMode.wrappedValue.dismiss()
                 }
-                Layout.xInfinite
+                Layout1.xInfinite
                 NoButton().onTapGesture { presentationMode.wrappedValue.dismiss() }
             }
         }

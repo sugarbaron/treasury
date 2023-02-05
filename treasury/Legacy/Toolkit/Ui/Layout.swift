@@ -1,5 +1,5 @@
 //
-//  Layout.swift
+//  Layout1.swift
 //  treasury
 //
 //  Created by sugarbaron on 02.08.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class Layout {
+final class Layout1 {
     
     private static let xSpaceSize: CGFloat = 10
     private static let ySpaceSize: CGFloat = 10

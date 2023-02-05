@@ -29,7 +29,7 @@ extension CategoryDetails {
                             .background(Colors.yellow)
                             .foregroundColor(Colors.black)
                             .cornerRadius(5)
-                        Layout.ySpace
+                        Layout1.ySpace
                         Text(purchase.date.ddMM)
                             .font(.title2)
                             .frame(width: 90, height: 40)
@@ -44,7 +44,7 @@ extension CategoryDetails {
                         .foregroundColor(Colors.black)
                         .cornerRadius(5)
                 }
-                Layout.ySpace
+                Layout1.ySpace
             }.frame(maxWidth: .infinity)
         }
         
@@ -52,11 +52,11 @@ extension CategoryDetails {
     
 }
 
-// MARK: Layout
+// MARK: Layout1
 
 extension CategoryDetails.PurchaseCell {
     
-    final class Layout {
+    final class Layout1 {
         
         private static let xSpaceSize: CGFloat = 10
         private static let ySpaceSize: CGFloat = 10

@@ -17,15 +17,15 @@ extension EditPlanningPeriod {
         @ObservedObject private var viewModel: ViewModel = .init()
         
         var body: some View {
-            HStack { Layout.xSpace; VStack {
-                Layout.ySpace
+            HStack { Layout1.xSpace; VStack {
+                Layout1.ySpace
                 title
-                Layout.yTitleSpace
+                Layout1.yTitleSpace
                 fields
-                Layout.yInfinite
+                Layout1.yInfinite
                 buttons
-                Layout.ySpace
-            }; Layout.xSpace }.background(Colors.background)
+                Layout1.ySpace
+            }; Layout1.xSpace }.background(Colors.background)
         }
         
         private var title: some View {
@@ -37,17 +37,17 @@ extension EditPlanningPeriod {
             HStack {
                 VStack(alignment: .leading) {
                     Text("period start:").labelStyle
-                    Layout.ySpace
-                    Layout.ySpace
-                    Layout.ySpace
+                    Layout1.ySpace
+                    Layout1.ySpace
+                    Layout1.ySpace
                     Text("period end:").labelStyle
                 }
-                Layout.xSpace
-                Layout.xSpace
+                Layout1.xSpace
+                Layout1.xSpace
                 VStack {
                     DatePicker("", selection: $viewModel.periodStart, displayedComponents: [.date]).adjust()
-                    Layout.ySpace
-                    Layout.ySpace
+                    Layout1.ySpace
+                    Layout1.ySpace
                     DatePicker("", selection: $viewModel.periodEnd, displayedComponents: [.date]).adjust()
                 }
                 Spacer()
