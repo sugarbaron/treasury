@@ -1,73 +1,11 @@
 //
-//  RegisterPurchaseKeyboard.swift
+//  DigitalKeyboardLayout.swift
 //  treasury
 //
-//  Created by sugarbaron on 04.02.2023.
+//  Created by sugarbaron on 11.02.2023.
 //
 
 import SwiftUI
-
-// MARK: constructor
-extension RegisterPurchase {
-    
-    struct Keyboard { }
-    
-}
-
-// MARK: layout
-extension RegisterPurchase.Keyboard : View {
-    
-    var body: some View {
-        VStack {
-            Spacer()
-            HStack { Spacer(); display; Spacer() }
-            HStack { Spacer(); keys; Spacer() }
-            Spacer()
-        }
-        .background(Color.uprised)
-        .rounded(10)
-    }
-    
-    private var display: some View {
-        HStack { Spacer(); Text("100500").title().foreground(.regular).lineLimit(1).padding() }
-            .background(Color.lowered)
-            .border(Color.black, width: 2, rounded: 10)
-    }
-    
-    private var keys: some View {
-        KeysLayout {
-            DigitKeysLayout {
-                key("1"); key("2"); key("3")
-                key("4"); key("5"); key("6")
-                key("7"); key("8"); key("9")
-                          key("0")
-            }
-            ControlKeysLayout {
-                key(undo)
-                key(".")
-                key(enter)
-            }
-        }
-    }
-    
-    private func key(_ label: String) -> some View {
-        key(Text(label).title().foreground(.regular).lineLimit(1))
-    }
-    
-    private func key(_ label: some View) -> some View {
-        Color.background
-            .overlay(label)
-            .border(Color.lowered, width: 3, rounded: 10)
-    }
-    
-    private var undo: some View {
-        Image(systemName: "delete.left").title().foreground(.regular)
-    }
-    
-    private var enter: some View {
-        Image(systemName: "arrow.uturn.right").big().rotationEffect(.degrees(180)).foreground(.accent1)
-    }
-}
 
 struct KeysLayout : Layout {
     
@@ -152,34 +90,4 @@ struct ControlKeysLayout : Layout {
         }
     }
     
-}
-
-private extension LayoutSubviews {
-    
-    var spacing: Layout.Spacing {
-        if count < 2 { return (0.0, 0.0) }
-        let item0: Element = self[0]
-        let item1: Element = self[1]
-        let x: CGFloat = item0.spacing.distance(to: item1.spacing, along: .horizontal)
-        let y: CGFloat = item0.spacing.distance(to: item1.spacing, along: .vertical)
-        return (x, y)
-    }
-    
-    var lastIndex: Int? { (count > 0) ? count - 1 : nil }
-    
-    func at(_ index: Int?) -> Element? { unwrap(index) { $0.isOne(of: indices) ? self[$0] : nil } }
-    
-}
-
-private extension ProposedViewSize {
-    
-    static func size(w: CGFloat, h: CGFloat) -> ProposedViewSize { .init(width: w, height: h) }
-    
-}
-
-private extension Layout { typealias Spacing = (x: CGFloat, y: CGFloat) }
-
-
-struct RegisterPurchaseKeyboard_Previews : PreviewProvider {
-    static var previews: some View { RegisterPurchase.Keyboard() }
 }

@@ -35,7 +35,7 @@ extension RegisterPurchase.Screen : View {
 private extension RegisterPurchase.Screen {
     
     var keyboard: some View {
-        RegisterPurchase.Keyboard()
+        DigitalKeyboard()
     }
     
     
