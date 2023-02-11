@@ -32,7 +32,9 @@ extension DigitalKeyboard.Key : View {
             .onTap {
                 scale = Scale.tapped
                 shading = Shading.tapped
-                withAnimation(.linear(duration: 0.05)) {
+            } onRelease: { 
+                Log("[Key] \($0)")
+                withAnimation(.linear(duration: 0.07)) {
                     scale = Scale.original
                     shading = Shading.original
                 }
@@ -54,5 +56,5 @@ private final class Shading {
 }
 
 struct DigitalKeyboardKey_Previews : PreviewProvider {
-    static var previews: some View { DigitalKeyboard.Key(Text("5")) }
+    static var previews: some View { DigitalKeyboard.Key(Text("5").title().foreground(.regular)) }
 }
