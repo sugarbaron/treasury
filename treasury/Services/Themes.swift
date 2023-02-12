@@ -21,7 +21,7 @@ private extension Theme.ColorScheme {
     static var `default`: Theme.ColorScheme {
         .init(background: .rgb(.gray),
               foreground: .rgb(.gray04),
-              accent1: .rgb(.orange),
+              accent1: .rgb(.orange01),
               accent2: .rgb(.yellow),
               warning: .rgb(.red),
               success: .rgb(.green),

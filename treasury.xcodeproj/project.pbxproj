@@ -82,6 +82,9 @@
 		BC8A8D1326BAC06D000DE9CF /* PlanningPeriodsInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D1226BAC06D000DE9CF /* PlanningPeriodsInspector.swift */; };
 		BC8ABFD329989EE500348425 /* ResponsiveTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFD229989EE500348425 /* ResponsiveTap.swift */; };
 		BC8ABFD529989F7A00348425 /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFD429989F7A00348425 /* Tap.swift */; };
+		BC8ABFD72998DF0800348425 /* DigitalKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFD62998DF0800348425 /* DigitalKeyboardViewModel.swift */; };
+		BC8ABFDC2998E24B00348425 /* CombineAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFDB2998E24B00348425 /* CombineAdvanced.swift */; };
+		BC8ABFDE2998E26200348425 /* PublisherAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFDD2998E26200348425 /* PublisherAdvanced.swift */; };
 		BC8B1FBE26B6817200D5976C /* PurchaseCoreDataConvertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */; };
 		BC9443BC26B3114C0056D341 /* RegisterPurchase1Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BB26B3114C0056D341 /* RegisterPurchase1Screen.swift */; };
 		BC9443BE26B313C30056D341 /* RegisterPurchase1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BD26B313C30056D341 /* RegisterPurchase1ViewModel.swift */; };
@@ -121,7 +124,7 @@
 		BCAB286D298E63A900B29EB0 /* ModifiersAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB286A298E63A900B29EB0 /* ModifiersAdvanced.swift */; };
 		BCAB286E298E63A900B29EB0 /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB286C298E63A900B29EB0 /* PropertyWrappers.swift */; };
 		BCAB2871298E65A100B29EB0 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB2870298E65A100B29EB0 /* Screen.swift */; };
-		BCAB2874298E69BA00B29EB0 /* DigitalKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB2873298E69BA00B29EB0 /* DigitalKeyboard.swift */; };
+		BCAB2874298E69BA00B29EB0 /* DigitalKeyboardUi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB2873298E69BA00B29EB0 /* DigitalKeyboardUi.swift */; };
 		BCAB2876298E700100B29EB0 /* FlexibleDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAB2875298E700100B29EB0 /* FlexibleDimension.swift */; };
 		BCB1196A26AD769400426BA7 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1196926AD769400426BA7 /* CategoriesViewModel.swift */; };
 		BCB1197026AD789B00426BA7 /* CentralStorageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB1196F26AD789B00426BA7 /* CentralStorageAssembly.swift */; };
@@ -210,6 +213,9 @@
 		BC8A8D1226BAC06D000DE9CF /* PlanningPeriodsInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningPeriodsInspector.swift; sourceTree = "<group>"; };
 		BC8ABFD229989EE500348425 /* ResponsiveTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveTap.swift; sourceTree = "<group>"; };
 		BC8ABFD429989F7A00348425 /* Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
+		BC8ABFD62998DF0800348425 /* DigitalKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboardViewModel.swift; sourceTree = "<group>"; };
+		BC8ABFDB2998E24B00348425 /* CombineAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineAdvanced.swift; sourceTree = "<group>"; };
+		BC8ABFDD2998E26200348425 /* PublisherAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherAdvanced.swift; sourceTree = "<group>"; };
 		BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCoreDataConvertions.swift; sourceTree = "<group>"; };
 		BC9443BB26B3114C0056D341 /* RegisterPurchase1Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchase1Screen.swift; sourceTree = "<group>"; };
 		BC9443BD26B313C30056D341 /* RegisterPurchase1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchase1ViewModel.swift; sourceTree = "<group>"; };
@@ -251,7 +257,7 @@
 		BCAB286A298E63A900B29EB0 /* ModifiersAdvanced.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifiersAdvanced.swift; sourceTree = "<group>"; };
 		BCAB286C298E63A900B29EB0 /* PropertyWrappers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyWrappers.swift; sourceTree = "<group>"; };
 		BCAB2870298E65A100B29EB0 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
-		BCAB2873298E69BA00B29EB0 /* DigitalKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboard.swift; sourceTree = "<group>"; };
+		BCAB2873298E69BA00B29EB0 /* DigitalKeyboardUi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboardUi.swift; sourceTree = "<group>"; };
 		BCAB2875298E700100B29EB0 /* FlexibleDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleDimension.swift; sourceTree = "<group>"; };
 		BCB1196926AD769400426BA7 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		BCB1196F26AD789B00426BA7 /* CentralStorageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralStorageAssembly.swift; sourceTree = "<group>"; };
@@ -605,7 +611,8 @@
 		BC83F01929977170008E70EF /* DigitalKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				BCAB2873298E69BA00B29EB0 /* DigitalKeyboard.swift */,
+				BC8ABFD62998DF0800348425 /* DigitalKeyboardViewModel.swift */,
+				BCAB2873298E69BA00B29EB0 /* DigitalKeyboardUi.swift */,
 				BC83F01A29977252008E70EF /* DigitalKeyboardLayout.swift */,
 				BC9F23832997769B00BB812E /* DigitalKeyboardKey.swift */,
 			);
@@ -688,6 +695,31 @@
 				BC8A8D1226BAC06D000DE9CF /* PlanningPeriodsInspector.swift */,
 			);
 			path = PlanningPeriodsInspector;
+			sourceTree = "<group>";
+		};
+		BC8ABFD82998E1D300348425 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				BC8ABFD92998E1DC00348425 /* EventStreamControl */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		BC8ABFD92998E1DC00348425 /* EventStreamControl */ = {
+			isa = PBXGroup;
+			children = (
+				BC8ABFDA2998E1EA00348425 /* Combine */,
+			);
+			path = EventStreamControl;
+			sourceTree = "<group>";
+		};
+		BC8ABFDA2998E1EA00348425 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				BC8ABFDB2998E24B00348425 /* CombineAdvanced.swift */,
+				BC8ABFDD2998E26200348425 /* PublisherAdvanced.swift */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 		BC9443B826B310F80056D341 /* RegisterPaymentScreen */ = {
@@ -884,6 +916,7 @@
 		BCAB2866298E628500B29EB0 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				BC8ABFD82998E1D300348425 /* Events */,
 				BC5236892985499400045014 /* BaseDataTypes */,
 				BCAB283A298E193600B29EB0 /* Collections */,
 				BC5236712985466E00045014 /* Concurrency */,
@@ -1101,7 +1134,7 @@
 				BC8A8CF926BAADC3000DE9CF /* PlanningPeriod.swift in Sources */,
 				BC0900E126B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift in Sources */,
 				BCB1197026AD789B00426BA7 /* CentralStorageAssembly.swift in Sources */,
-				BCAB2874298E69BA00B29EB0 /* DigitalKeyboard.swift in Sources */,
+				BCAB2874298E69BA00B29EB0 /* DigitalKeyboardUi.swift in Sources */,
 				BC7D21A826E49405009CDBF3 /* PurchasesStorageEngine.swift in Sources */,
 				BC7F9DC626B71506004247EF /* CategoriesCell.swift in Sources */,
 				BC7D219526E489D6009CDBF3 /* CoreDataIncome+CoreDataClass.swift in Sources */,
@@ -1119,6 +1152,8 @@
 				BC7D21AE26E4A500009CDBF3 /* IncomeCoreDataConvertions.swift in Sources */,
 				BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */,
 				BC8ABFD329989EE500348425 /* ResponsiveTap.swift in Sources */,
+				BC8ABFD72998DF0800348425 /* DigitalKeyboardViewModel.swift in Sources */,
+				BC8ABFDE2998E26200348425 /* PublisherAdvanced.swift in Sources */,
 				BC7D21A426E48DD3009CDBF3 /* CategoriesStorageEngine.swift in Sources */,
 				BC8A8D1026BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift in Sources */,
 				BC9443BC26B3114C0056D341 /* RegisterPurchase1Screen.swift in Sources */,
@@ -1146,6 +1181,7 @@
 				BC7F9DBF26B6FE6B004247EF /* CategoryDetailsScreen.swift in Sources */,
 				BC5236772985466E00045014 /* Semaphore.swift in Sources */,
 				BCAB283E298E198C00B29EB0 /* ArrayAdvanced.swift in Sources */,
+				BC8ABFDC2998E24B00348425 /* CombineAdvanced.swift in Sources */,
 				BC84FA1526B825E00010078B /* EditCategoryViewModel.swift in Sources */,
 				BC814EF526A944E60031896C /* CategoriesScreen.swift in Sources */,
 				BC58CED329867EB90091D818 /* Theme.swift in Sources */,

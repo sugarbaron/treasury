@@ -22,23 +22,13 @@ extension RegisterPurchase.Screen : View {
         VStack {
             VStack {
                 Color.background
-                keyboard.frame(w: .flexible(max: 500), h: .flexible(max: 300))
+                DigitalKeyboard.Ui().frame(w: .flexible(max: 500), h: .flexible(max: 300))
             }
             .edgesIgnoringSafeArea([.top, .leading, .trailing])
             .background(Color.background.rounded(0))
         }
         .background(Color.uprised)
     }
-    
-}
-
-private extension RegisterPurchase.Screen {
-    
-    var keyboard: some View {
-        DigitalKeyboard()
-    }
-    
-    
     
 }
 

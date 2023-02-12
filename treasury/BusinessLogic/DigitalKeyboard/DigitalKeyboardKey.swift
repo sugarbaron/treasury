@@ -7,33 +7,40 @@
 
 import SwiftUI
 
-extension DigitalKeyboard {
+extension DigitalKeyboard.Ui {
     
     struct Key<L:View> {
         
-        let label: L
+        var code: DigitalKeyboard.KeyCode
+        @Binding private var tapped: DigitalKeyboard.KeyCode
         
-        init(_ label: L) { self.label = label }
+        private let label: L
+        
+        init(_ label: L, _ code: DigitalKeyboard.KeyCode, _ tapped: Binding<DigitalKeyboard.KeyCode>) {
+            self.code = code
+            self.label = label
+            self._tapped = tapped
+        }
         
     }
     
 }
 
-extension DigitalKeyboard.Key : View {
+extension DigitalKeyboard.Ui.Key : View {
     
     var body: some View {
         Color.background
             .overlay(label)
-            .border(Color.lowered, width: 3.0, rounded: 10.0)
-            .onTap(effect: .border(color: .lowered, width: 4.0, rounded: 10.0)) {
-                
-            } onRelease: { Log("[Key] \($0)") }
+            .border(Color.lowered, width: 3.0, rounded: 8.0)
+            .onTap(effect: .border(color: .lowered, width: 4.0, rounded: 8.0)) { }
+             onRelease: { if $0 == .confirmed { tapped = code } }
     }
     
-    private typealias Key = DigitalKeyboard.Key
+    private typealias Key = DigitalKeyboard.Ui.Key
     
 }
 
 struct DigitalKeyboardKey_Previews : PreviewProvider {
-    static var previews: some View { DigitalKeyboard.Key(Text("5").title().foreground(.regular)) }
+    @State private static var key: DigitalKeyboard.KeyCode = .key5
+    static var previews: some View { DigitalKeyboard.Ui.Key(Text("5").title().foreground(.regular), .key5, $key) }
 }
