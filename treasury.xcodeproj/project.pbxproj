@@ -80,6 +80,8 @@
 		BC8A8D0E26BAB10D000DE9CF /* PlanningPeriodFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D0D26BAB10D000DE9CF /* PlanningPeriodFields.swift */; };
 		BC8A8D1026BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D0F26BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift */; };
 		BC8A8D1326BAC06D000DE9CF /* PlanningPeriodsInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D1226BAC06D000DE9CF /* PlanningPeriodsInspector.swift */; };
+		BC8ABFD329989EE500348425 /* ResponsiveTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFD229989EE500348425 /* ResponsiveTap.swift */; };
+		BC8ABFD529989F7A00348425 /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFD429989F7A00348425 /* Tap.swift */; };
 		BC8B1FBE26B6817200D5976C /* PurchaseCoreDataConvertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */; };
 		BC9443BC26B3114C0056D341 /* RegisterPurchase1Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BB26B3114C0056D341 /* RegisterPurchase1Screen.swift */; };
 		BC9443BE26B313C30056D341 /* RegisterPurchase1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BD26B313C30056D341 /* RegisterPurchase1ViewModel.swift */; };
@@ -206,6 +208,8 @@
 		BC8A8D0D26BAB10D000DE9CF /* PlanningPeriodFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningPeriodFields.swift; sourceTree = "<group>"; };
 		BC8A8D0F26BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralDatabaseAutoincrementId.swift; sourceTree = "<group>"; };
 		BC8A8D1226BAC06D000DE9CF /* PlanningPeriodsInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningPeriodsInspector.swift; sourceTree = "<group>"; };
+		BC8ABFD229989EE500348425 /* ResponsiveTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveTap.swift; sourceTree = "<group>"; };
+		BC8ABFD429989F7A00348425 /* Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
 		BC8B1FBD26B6817200D5976C /* PurchaseCoreDataConvertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCoreDataConvertions.swift; sourceTree = "<group>"; };
 		BC9443BB26B3114C0056D341 /* RegisterPurchase1Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchase1Screen.swift; sourceTree = "<group>"; };
 		BC9443BD26B313C30056D341 /* RegisterPurchase1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchase1ViewModel.swift; sourceTree = "<group>"; };
@@ -576,12 +580,14 @@
 			path = IncomeStorage;
 			sourceTree = "<group>";
 		};
-		BC7F74A22997BDD700F2185A /* GesturesModifiers */ = {
+		BC7F74A22997BDD700F2185A /* GestureModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				BC8ABFD429989F7A00348425 /* Tap.swift */,
 				BC7F74A02997BC0D00F2185A /* AdvancedTap.swift */,
+				BC8ABFD229989EE500348425 /* ResponsiveTap.swift */,
 			);
-			path = GesturesModifiers;
+			path = GestureModifiers;
 			sourceTree = "<group>";
 		};
 		BC7F9DBB26B6FE25004247EF /* CategoryDetailsScreen */ = {
@@ -914,7 +920,7 @@
 		BCAB2869298E63A900B29EB0 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				BC7F74A22997BDD700F2185A /* GesturesModifiers */,
+				BC7F74A22997BDD700F2185A /* GestureModifiers */,
 				BCAB286A298E63A900B29EB0 /* ModifiersAdvanced.swift */,
 			);
 			path = Modifiers;
@@ -1053,6 +1059,7 @@
 				BCA68DF326BCFA7F00DCA704 /* CoreDataCategory+CoreDataProperties.swift in Sources */,
 				BC5236792985466E00045014 /* Threads.swift in Sources */,
 				BC8B1FBE26B6817200D5976C /* PurchaseCoreDataConvertions.swift in Sources */,
+				BC8ABFD529989F7A00348425 /* Tap.swift in Sources */,
 				BCAA5AD026BE62FA007A15E2 /* Style1.swift in Sources */,
 				BC5236A6298558A900045014 /* RegisterPurchaseViewModel.swift in Sources */,
 				BCA334C526A6CD6D0039D4E3 /* PurchaseFields.swift in Sources */,
@@ -1111,6 +1118,7 @@
 				BC83F01B29977252008E70EF /* DigitalKeyboardLayout.swift in Sources */,
 				BC7D21AE26E4A500009CDBF3 /* IncomeCoreDataConvertions.swift in Sources */,
 				BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */,
+				BC8ABFD329989EE500348425 /* ResponsiveTap.swift in Sources */,
 				BC7D21A426E48DD3009CDBF3 /* CategoriesStorageEngine.swift in Sources */,
 				BC8A8D1026BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift in Sources */,
 				BC9443BC26B3114C0056D341 /* RegisterPurchase1Screen.swift in Sources */,

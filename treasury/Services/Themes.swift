@@ -52,3 +52,20 @@ extension Color {
     static var disabled: Color { Themes.current.disabled.ui }
     
 }
+
+extension Rgb {
+    
+    static var background: Rgb { Themes.current.background }
+    static var foreground: Rgb { Themes.current.foreground }
+    static var accent1: Rgb { Themes.current.accent1 }
+    static var accent2: Rgb { Themes.current.accent2 }
+    static var warning: Rgb { Themes.current.warning }
+    static var success: Rgb { Themes.current.success }
+    static var uprised: Rgb { Themes.current.uprised }
+    static var lowered: Rgb { Themes.current.lowered }
+    static var regular: Rgb { Themes.current.regular }
+    static var title: Rgb { Themes.current.title }
+    static var selected: Rgb { Themes.current.selected }
+    static var disabled: Rgb { Themes.current.disabled }
+    
+}

@@ -15,8 +15,6 @@ public extension View {
     
 }
 
-public final class Tap { public enum Confirmation { case confirmed; case rejected } }
-
 private struct AdvancedTap : ViewModifier {
     
     private let onTouch: () -> Void

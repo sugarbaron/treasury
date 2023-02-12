@@ -43,6 +43,8 @@ extension Rgb : ExpressibleByIntegerLiteral, Equatable, Hashable {
         return Color(red: r, green: g, blue: b, opacity: a)
     }
     
+    public convenience init(_ hex: Int) { self.init(integerLiteral: hex) }
+    
     public convenience init(integerLiteral hexCode: Int) {
         let color: Rgba = hexCode.color
         self.init(color.r, color.g, color.b, alpha: color.a)

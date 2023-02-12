@@ -57,6 +57,10 @@ public extension View {
         return clipShape(roundedRect).overlay(roundedRect.strokeBorder(color, lineWidth: width))
     }
     
+    @ViewBuilder func `if`<V:View>(_ condition: @autoclosure () -> Bool, transform: (Self) -> V) -> some View {
+        if condition() { transform(self) } else { self }
+    }
+    
 }
 
 public extension Text {

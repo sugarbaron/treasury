@@ -20,4 +20,7 @@ public extension Rgb {
     
     static func rgb(_ asset: Resources.Color.Asset) -> Rgb { UIColor(named: asset.name)?.cgColor.rgb ?? .eyebleed }
     
+    static let black: Rgb = .init(0x000000FF)
+    
+    static let white: Rgb = .init(0xFFFFFFFF)
 }
