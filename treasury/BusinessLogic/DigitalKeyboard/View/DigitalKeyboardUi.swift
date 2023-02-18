@@ -14,7 +14,10 @@ extension DigitalKeyboard {
         
         @StateObject private var viewModel: DigitalKeyboard.ViewModel
         
-        init() { self._viewModel = DigitalKeyboard.ViewModel().stateObject }
+        init(_ datastream: DigitalKeyboard.Datastream) {
+            Log("[DigitalKeyboard.Ui] reconstructing")
+            self._viewModel = DigitalKeyboard.ViewModel(datastream).stateObject
+        }
         
     }
     
@@ -31,13 +34,13 @@ extension DigitalKeyboard.Ui : View {
             Spacer()
         }
         .background(Color.uprised)
-        .rounded(8.0)
+        .rounded(8)
     }
     
     private var display: some View {
-        HStack { Spacer(); Text("100500").title().foreground(.regular).lineLimit(1).padding() }
+        HStack { Spacer(); Text(viewModel.displayed.string).title().foreground(.regular).lineLimit(1).padding() }
             .background(Color.lowered)
-            .border(Color.black, width: 2.0, rounded: 8.0)
+            .border(Color.black, width: 3, rounded: 8)
     }
     
     private var keys: some View {
@@ -50,7 +53,6 @@ extension DigitalKeyboard.Ui : View {
             }
             ControlKeysLayout {
                 key(undo, .keyUndo)
-                key(".", .keyDot)
                 key(enter, .keyEnter)
             }
         }
@@ -76,5 +78,5 @@ extension DigitalKeyboard.Ui : View {
 }
 
 struct DigitalKeyboard_Previews : PreviewProvider {
-    static var previews: some View { DigitalKeyboard.Ui() }
+    static var previews: some View { DigitalKeyboard.Ui(.init()) }
 }

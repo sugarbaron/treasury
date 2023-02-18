@@ -32,7 +32,7 @@ extension DigitalKeyboard.Ui.Key : View {
         Color.background
             .overlay(label)
             .border(Color.lowered, width: 3.0, rounded: 8.0)
-            .onTap(effect: .border(color: .lowered, width: 4.0, rounded: 8.0)) { }
+            .onTap(effect: .border(color: .lowered, width: 5.0, rounded: 8.0)) { }
              onRelease: { if $0 == .confirmed { tapped = code } }
     }
     

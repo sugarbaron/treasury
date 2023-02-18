@@ -15,6 +15,8 @@ public extension Int {
 
     var cgFloat: CGFloat { .init(self) }
     
+    var string: String { "\(self)" }
+    
     func restrict(_ range: Range<Int>) -> Int {
         if self < range.lowerBound { return range.lowerBound }
         if self > range.upperBound { return range.upperBound }

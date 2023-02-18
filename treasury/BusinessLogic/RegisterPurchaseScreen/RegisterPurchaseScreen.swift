@@ -12,6 +12,13 @@ extension RegisterPurchase {
     
     struct Screen {
         
+        @StateObject private var viewModel: RegisterPurchase.ViewModel
+        
+        init() {
+            Log("[RegisterPurchase.Screen] reconstructing")
+            self._viewModel = RegisterPurchase.ViewModel().stateObject
+        }
+        
     }
     
 }
@@ -20,14 +27,12 @@ extension RegisterPurchase.Screen : View {
     
     var body: some View {
         VStack {
-            VStack {
-                Color.background
-                DigitalKeyboard.Ui().frame(w: .flexible(max: 500), h: .flexible(max: 300))
-            }
-            .edgesIgnoringSafeArea([.top, .leading, .trailing])
-            .background(Color.background.rounded(0))
+            Spacer()
+            DigitalKeyboard.Ui(viewModel.keyboard)
+                .frame(w: .flexible(max: 500), h: .flexible(max: 300))
+                .background(Color.uprised.rounded(8).ignoresSafeArea(edges: .bottom))
         }
-        .background(Color.uprised)
+        .background(Color.background)
     }
     
 }
