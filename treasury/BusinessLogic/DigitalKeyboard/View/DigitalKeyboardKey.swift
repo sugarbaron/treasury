@@ -29,11 +29,15 @@ extension DigitalKeyboard.Ui {
 extension DigitalKeyboard.Ui.Key : View {
     
     var body: some View {
-        Color.background
-            .overlay(label)
-            .border(Color.lowered, width: 3.0, rounded: 8.0)
-            .onTap(effect: .border(color: .lowered, width: 5.0, rounded: 8.0)) { }
+        label
+            .padding([.leading, .trailing])
+            .padding([.top, .bottom], 5)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.background.border(Color.lowered, width: 1, rounded: 8).blur(radius: 1))
+            .border(Color.lowered, width: 1, rounded: 8)
+            .onTap(effect: .border(color: .lowered, width: 3, rounded: 8)) { }
              onRelease: { if $0 == .confirmed { tapped = code } }
+            
     }
     
     private typealias Key = DigitalKeyboard.Ui.Key

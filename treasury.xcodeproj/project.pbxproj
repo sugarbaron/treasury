@@ -136,6 +136,9 @@
 		BCB5E7A126AEEC1200727DF7 /* StorageSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB5E7A026AEEC1200727DF7 /* StorageSubscription.swift */; };
 		BCC7A14E26A7ECCB00A21C5D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC7A14D26A7ECCB00A21C5D /* Colors.swift */; };
 		BCE89F8929A0BB6600BE2C43 /* DigitalKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE89F8829A0BB6600BE2C43 /* DigitalKeyboard.swift */; };
+		BCE89F8B29A0ED4E00BE2C43 /* ResourcesImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE89F8A29A0ED4E00BE2C43 /* ResourcesImage.swift */; };
+		BCE89F8D29A0EE2C00BE2C43 /* RegisterPurchaseImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE89F8C29A0EE2C00BE2C43 /* RegisterPurchaseImageAssets.swift */; };
+		BCE89F9029A0EFC400BE2C43 /* ImageResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE89F8F29A0EFC400BE2C43 /* ImageResources.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +273,9 @@
 		BCB5E7A026AEEC1200727DF7 /* StorageSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageSubscription.swift; sourceTree = "<group>"; };
 		BCC7A14D26A7ECCB00A21C5D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BCE89F8829A0BB6600BE2C43 /* DigitalKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboard.swift; sourceTree = "<group>"; };
+		BCE89F8A29A0ED4E00BE2C43 /* ResourcesImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesImage.swift; sourceTree = "<group>"; };
+		BCE89F8C29A0EE2C00BE2C43 /* RegisterPurchaseImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchaseImageAssets.swift; sourceTree = "<group>"; };
+		BCE89F8F29A0EFC400BE2C43 /* ImageResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResources.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +450,7 @@
 		BC58CEC1298646620091D818 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BCE89F8E29A0EFB100BE2C43 /* Images */,
 				BCAB285D298E36E500B29EB0 /* Texts */,
 				BCAB285C298E36C600B29EB0 /* Colors */,
 				BCA3349426A6A5420039D4E3 /* Assets.xcassets */,
@@ -466,6 +473,7 @@
 				BC58CEC929865D4B0091D818 /* Resources.swift */,
 				BCAB2841298E2D7100B29EB0 /* ResourcesColor.swift */,
 				BCAB2843298E33F600B29EB0 /* ResourcesText.swift */,
+				BCE89F8A29A0ED4E00BE2C43 /* ResourcesImage.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -928,6 +936,7 @@
 			isa = PBXGroup;
 			children = (
 				BCAB2864298E4A5800B29EB0 /* RegisterPurchaseTextAssets.swift */,
+				BCE89F8C29A0EE2C00BE2C43 /* RegisterPurchaseImageAssets.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1002,6 +1011,14 @@
 				BCB5E7A026AEEC1200727DF7 /* StorageSubscription.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		BCE89F8E29A0EFB100BE2C43 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BCE89F8F29A0EFC400BE2C43 /* ImageResources.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1175,6 +1192,7 @@
 				BC8ABFDE2998E26200348425 /* PublisherAdvanced.swift in Sources */,
 				BC7D21A426E48DD3009CDBF3 /* CategoriesStorageEngine.swift in Sources */,
 				BC8A8D1026BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift in Sources */,
+				BCE89F9029A0EFC400BE2C43 /* ImageResources.swift in Sources */,
 				BC9443BC26B3114C0056D341 /* RegisterPurchase1Screen.swift in Sources */,
 				BC7D21AA26E49624009CDBF3 /* PlanningPeriodsStorageEngine.swift in Sources */,
 				BC5236652985438700045014 /* Logs.swift in Sources */,
@@ -1187,6 +1205,7 @@
 				BCB1197526AD7B1F00426BA7 /* CoreDataContexts.swift in Sources */,
 				BC52369C29854A5B00045014 /* DateFormatterAdvanced.swift in Sources */,
 				BC8A8D0826BAB0CA000DE9CF /* CoreDataPlanningPeriod+CoreDataClass.swift in Sources */,
+				BCE89F8B29A0ED4E00BE2C43 /* ResourcesImage.swift in Sources */,
 				BC52366E2985438700045014 /* LogRecordDraft.swift in Sources */,
 				BC84FA1726B845CC0010078B /* EditCategoryScreen.swift in Sources */,
 				BC52366A2985438700045014 /* LogRecordLevel.swift in Sources */,
@@ -1197,6 +1216,7 @@
 				BC7D219626E489D6009CDBF3 /* CoreDataIncome+CoreDataProperties.swift in Sources */,
 				BC7D21A626E4919E009CDBF3 /* BasicDatabaseOperations.swift in Sources */,
 				BC7D218726E4851B009CDBF3 /* Income.swift in Sources */,
+				BCE89F8D29A0EE2C00BE2C43 /* RegisterPurchaseImageAssets.swift in Sources */,
 				BCAB2862298E489600B29EB0 /* RegisterPurchase.swift in Sources */,
 				BC7F9DBF26B6FE6B004247EF /* CategoryDetailsScreen.swift in Sources */,
 				BC5236772985466E00045014 /* Semaphore.swift in Sources */,

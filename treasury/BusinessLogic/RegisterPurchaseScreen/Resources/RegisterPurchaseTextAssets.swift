@@ -8,5 +8,9 @@
 extension RegisterPurchase { final class TextAssets { } }
 
 extension RegisterPurchase.TextAssets {
-    static let available: Resources.Text.Asset = .init("purchase.available")
+    var title: Resources.Text.Asset { .init("purchase.title") }
+    var available: Resources.Text.Asset { .init("purchase.available") }
+    var category: Resources.Text.Asset { .init("purchase.category") }
+    var comment: Resources.Text.Asset { .init("purchase.comment") }
+    var price: Resources.Text.Asset { .init("purchase.price") }
 }

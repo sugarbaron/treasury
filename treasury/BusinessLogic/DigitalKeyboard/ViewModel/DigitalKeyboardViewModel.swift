@@ -14,25 +14,27 @@ extension DigitalKeyboard {
     final class ViewModel : ObservableObject {
         
         @Published var keyTapped: KeyCode
-        @Published var displayed: Int
         
+        private var datastream: DigitalKeyboard.Datastream?
         private var amount: Int
-        private var datastream: DigitalKeyboard.Datastream
         private var subscriptions: [AnyCancellable]
         
         deinit { Log("[DigitalKeyboard.ViewModel] deallocating") }
         
-        init(_ datastream: DigitalKeyboard.Datastream) {
+        init() {
             Log("[DigitalKeyboard.ViewModel] reconstructing")
             self.keyTapped = .keyNone
-            self.displayed = datastream.displayed
-            self.amount = datastream.displayed
-            self.datastream = datastream
+            self.datastream = nil
+            self.amount = 0
             self.subscriptions = [ ]
             
             $keyTapped
                 .subscribe { [weak self] in self?.react(to: $0) }
                 .store { subscriptions += $0 }
+        }
+        
+        func `set`(_ datastream: DigitalKeyboard.Datastream) {
+            if self.datastream == nil { self.datastream = datastream }
         }
         
     }
@@ -73,7 +75,7 @@ private extension DigitalKeyboard.ViewModel {
     }
     
     func reactToEnter() {
-        datastream.entered = amount
+        datastream?.entered = amount
         amount = 0
         display()
     }
@@ -99,6 +101,6 @@ private extension DigitalKeyboard.ViewModel {
         display()
     }
     
-    func display() { displayed = amount; datastream.displayed = amount }
+    func display() { datastream?.current = amount }
     
 }

@@ -14,12 +14,12 @@ extension DigitalKeyboard {
     
     final class Datastream : ObservableObject {
         
+        @Published var current: Int
         @Published var entered: Int
-        @Published var displayed: Int
         
-        init(entered: Int = 0, displayed: Int = 0) {
+        init(entered: Int = 0, current: Int = 0) {
             self.entered = entered
-            self.displayed = displayed
+            self.current = current
         }
         
     }

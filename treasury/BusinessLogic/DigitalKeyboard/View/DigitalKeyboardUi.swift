@@ -12,11 +12,11 @@ extension DigitalKeyboard {
     
     struct Ui {
         
-        @StateObject private var viewModel: DigitalKeyboard.ViewModel
+        @StateObject private var viewModel: DigitalKeyboard.ViewModel = .init()
+        @EnvironmentObject private var datastream: DigitalKeyboard.Datastream
         
-        init(_ datastream: DigitalKeyboard.Datastream) {
+        init() {
             Log("[DigitalKeyboard.Ui] reconstructing")
-            self._viewModel = DigitalKeyboard.ViewModel(datastream).stateObject
         }
         
     }
@@ -29,18 +29,12 @@ extension DigitalKeyboard.Ui : View {
     var body: some View {
         VStack {
             Spacer()
-            HStack { Spacer(); display; Spacer() }
             HStack { Spacer(); keys; Spacer() }
             Spacer()
         }
         .background(Color.uprised)
-        .rounded(8)
-    }
-    
-    private var display: some View {
-        HStack { Spacer(); Text(viewModel.displayed.string).title().foreground(.regular).lineLimit(1).padding() }
-            .background(Color.lowered)
-            .border(Color.black, width: 3, rounded: 8)
+        .frame(minHeight: 220)
+        .onAppear { viewModel.set(datastream) }
     }
     
     private var keys: some View {
@@ -59,7 +53,7 @@ extension DigitalKeyboard.Ui : View {
     }
     
     private func key(_ label: String, _ code: KeyCode) -> some View {
-        key(Text(label).title().foreground(.regular).lineLimit(1), code)
+        key(Text(label).title().foreground(.regular), code)
     }
     
     private func key(_ label: some View, _ code: KeyCode) -> some View {
@@ -78,5 +72,5 @@ extension DigitalKeyboard.Ui : View {
 }
 
 struct DigitalKeyboard_Previews : PreviewProvider {
-    static var previews: some View { DigitalKeyboard.Ui(.init()) }
+    static var previews: some View { DigitalKeyboard.Ui() }
 }
