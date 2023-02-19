@@ -7,7 +7,7 @@
 */
 
 // MARK: PurchaseScreen
-"purchase.title" = "записать покупку";
+"purchase.title" = "покупка";
 "purchase.available" = "доступно:";
 "purchase.category" = "категория:";
 "purchase.comment" = "комментарий:";

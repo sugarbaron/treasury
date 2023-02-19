@@ -7,7 +7,7 @@
 */
 
 // MARK: PurchaseScreen
-"purchase.title" = "record a purchase";
+"purchase.title" = "purchase";
 "purchase.available" = "available:";
 "purchase.category" = "category:";
 "purchase.comment" = "comment:";
