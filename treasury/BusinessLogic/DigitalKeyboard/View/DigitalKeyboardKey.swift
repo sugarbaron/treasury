@@ -33,7 +33,7 @@ extension DigitalKeyboard.Ui.Key : View {
             .padding([.leading, .trailing])
             .padding([.top, .bottom], 5)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.background.border(Color.lowered, width: 1, rounded: 8).blur(radius: 1))
+            .background(Color.background.border(Color.lowered, width: 2, rounded: 8).blur(radius: 1))
             .border(Color.lowered, width: 1, rounded: 8)
             .onTap(effect: .border(color: .lowered, width: 3, rounded: 8)) { }
              onRelease: { if $0 == .confirmed { tapped = code } }
