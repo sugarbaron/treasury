@@ -50,26 +50,48 @@ extension RegisterPurchase.Screen : View {
     private var primarySection: some View {
         VStack {
             Spacer()
-            availableAmountSection
-            display
-            Spacer()
-            detailSection
+            availableAmountDisplay
+            priceDisplay
+            categoryEditingButton
+            commentEditingButton
             Spacer()
         }.padding([.leading, .trailing])
     }
     
-    private var detailSection: some View {
+    private var availableAmountDisplay: some View {
         VStack {
-            categorySection
-            commentSection
+            todayAmountDetails.padding([.leading, .trailing, .top])
+            availableAmount.padding([.leading, .trailing, .bottom])
+        }
+        .background(Color.uprised.border(Color.lowered, width: 2, rounded: 8).blur(radius: 2))
+        .border(Color.lowered, width: 1, rounded: 8)
+    }
+    
+    private var todayAmountDetails: some View {
+        HStack {
+            VStack(alignment: .trailing) {
+                Text(.purchase.forToday).regular().foreground(.foreground).lineLimit(1)
+                Text(.purchase.saved).regular().foreground(.foreground).lineLimit(1)
+            }
+            VStack(alignment: .leading) {
+                Text("100000").regular().foreground(.foreground).lineLimit(1).layoutPriority(1)
+                Text("500").regular().foreground(.success1).lineLimit(1).layoutPriority(1)
+            }
+            Spacer()
         }
     }
     
-    private var availableAmountSection: some View {
-        section(.purchase.available, viewModel.available.string, .purchase.available)
+    private var availableAmount: some View {
+        HStack {
+            Spacer()
+            VStack(alignment: .trailing) {
+                Text(.purchase.available).regular().foreground(.foreground)
+                Text(viewModel.available.string).title().foreground(.foreground)
+            }
+        }
     }
     
-    private var display: some View {
+    private var priceDisplay: some View {
         HStack {
             Text(.purchase.price)
                 .regular()
@@ -85,7 +107,7 @@ extension RegisterPurchase.Screen : View {
         .border(.black, width: 1, rounded: 8)
     }
     
-    private var categorySection: some View {
+    private var categoryEditingButton: some View {
         HStack {
             Text(.purchase.category)
                 .regular()
@@ -102,7 +124,7 @@ extension RegisterPurchase.Screen : View {
         .shadow(color: Color.lowered, radius: 4)
     }
 
-    private var commentSection: some View {
+    private var commentEditingButton: some View {
         HStack {
             Text(.purchase.comment)
                 .regular()
@@ -124,25 +146,6 @@ extension RegisterPurchase.Screen : View {
             .environmentObject(viewModel.keyboard)
             .frame(maxHeight: 220)
             .background(Color.uprised.shadow(color: Color.lowered, radius: 4))
-    }
-    
-    private func section(_ title: Resources.Text.Asset, _ content: String, _ icon: Resources.Image.Asset) -> some View {
-        VStack {
-            HStack {
-                Spacer()
-                Text(title)
-                    .regular()
-                    .foreground(.foreground)
-                    .padding([.trailing])
-            }
-            HStack {
-                Spacer()
-                Text(content)
-                    .title()
-                    .foreground(.foreground)
-                    .padding(.trailing)
-            }
-        }
     }
     
 }

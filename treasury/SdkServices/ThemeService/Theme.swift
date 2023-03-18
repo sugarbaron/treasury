@@ -30,8 +30,10 @@ extension Theme {
         public let foreground: Rgb
         public let accent1: Rgb
         public let accent2: Rgb
-        public let warning: Rgb
-        public let success: Rgb
+        public let warning1: Rgb
+        public let warning2: Rgb
+        public let success1: Rgb
+        public let success2: Rgb
         public let uprised: Rgb
         public let lowered: Rgb
         public let regular: Rgb
@@ -43,8 +45,10 @@ extension Theme {
                     foreground: Rgb,
                     accent1: Rgb,
                     accent2: Rgb,
-                    warning: Rgb,
-                    success: Rgb,
+                    warning1: Rgb,
+                    warning2: Rgb,
+                    success1: Rgb,
+                    success2: Rgb,
                     uprised: Rgb,
                     lowered: Rgb,
                     regular: Rgb,
@@ -55,8 +59,10 @@ extension Theme {
             self.foreground = foreground
             self.accent1 = accent1
             self.accent2 = accent2
-            self.warning = warning
-            self.success = success
+            self.warning1 = warning1
+            self.warning2 = warning2
+            self.success1 = success1
+            self.success2 = success2
             self.uprised = uprised
             self.lowered = lowered
             self.regular = regular

@@ -9,6 +9,9 @@
 // MARK: PurchaseScreen
 "purchase.title" = "purchase";
 "purchase.available" = "available:";
+"purchase.forToday" = "for today:";
+"purchase.saved" = "saved:";
+"purchase.overspent" = "overspent:";
 "purchase.category" = "category:";
 "purchase.comment" = "comment:";
 "purchase.price" = "price:";

@@ -38,17 +38,19 @@ private extension ThemeServiceEngine {
     
     static var dark: Theme.ColorScheme {
         .init(background: .rgb(.gray),
-              foreground: .rgb(.gray03),
-              accent1: .rgb(.orange),
+              foreground: .rgb(.gray04),
+              accent1: .rgb(.orange01),
               accent2: .rgb(.yellow),
-              warning: .rgb(.red),
-              success: .rgb(.green),
+              warning1: .rgb(.red),
+              warning2: .rgb(.red02),
+              success1: .rgb(.green),
+              success2: .rgb(.green),
               uprised: .rgb(.gray02),
               lowered: .rgb(.gray01),
-              regular: .rgb(.gray03),
-              title: .rgb(.gray04),
-              selected: .rgb(.gray04),
-              disabled: .rgb(.gray05))
+              regular: .rgb(.gray04),
+              title: .rgb(.white),
+              selected: .rgb(.white),
+              disabled: .rgb(.gray03))
     }
     
     typealias This = ThemeServiceEngine

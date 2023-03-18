@@ -72,5 +72,5 @@ extension DigitalKeyboard.Ui : View {
 }
 
 struct DigitalKeyboard_Previews : PreviewProvider {
-    static var previews: some View { DigitalKeyboard.Ui() }
+    static var previews: some View { DigitalKeyboard.Ui().environmentObject(DigitalKeyboard.Datastream()) }
 }

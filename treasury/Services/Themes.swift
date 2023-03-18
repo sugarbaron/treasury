@@ -10,21 +10,23 @@ import SwiftUI
 /// namespace class
 final class Themes {
     
-    static var current: Theme = `default`
+    static var current: Theme = fallback
     
-    private static let `default`: Theme = .init(0, "default", .default)
+    private static let fallback: Theme = .init(0, "fallback", .fallback)
     
 }
 
 private extension Theme.ColorScheme {
     
-    static var `default`: Theme.ColorScheme {
+    static var fallback: Theme.ColorScheme {
         .init(background: .rgb(.gray),
               foreground: .rgb(.gray04),
               accent1: .rgb(.orange01),
               accent2: .rgb(.yellow),
-              warning: .rgb(.red),
-              success: .rgb(.green),
+              warning1: .rgb(.red02),
+              warning2: .rgb(.red),
+              success1: .rgb(.green01),
+              success2: .rgb(.green),
               uprised: .rgb(.gray02),
               lowered: .rgb(.gray01),
               regular: .rgb(.gray04),
@@ -42,8 +44,10 @@ extension Color {
     static var foreground: Color { Themes.current.foreground.ui }
     static var accent1: Color { Themes.current.accent1.ui }
     static var accent2: Color { Themes.current.accent2.ui }
-    static var warning: Color { Themes.current.warning.ui }
-    static var success: Color { Themes.current.success.ui }
+    static var warning1: Color { Themes.current.warning1.ui }
+    static var warning2: Color { Themes.current.warning2.ui }
+    static var success1: Color { Themes.current.success1.ui }
+    static var success2: Color { Themes.current.success2.ui }
     static var uprised: Color { Themes.current.uprised.ui }
     static var lowered: Color { Themes.current.lowered.ui }
     static var regular: Color { Themes.current.regular.ui }
@@ -59,8 +63,10 @@ extension Rgb {
     static var foreground: Rgb { Themes.current.foreground }
     static var accent1: Rgb { Themes.current.accent1 }
     static var accent2: Rgb { Themes.current.accent2 }
-    static var warning: Rgb { Themes.current.warning }
-    static var success: Rgb { Themes.current.success }
+    static var warning1: Rgb { Themes.current.warning1 }
+    static var warning2: Rgb { Themes.current.warning2 }
+    static var success1: Rgb { Themes.current.success1 }
+    static var success2: Rgb { Themes.current.success2 }
     static var uprised: Rgb { Themes.current.uprised }
     static var lowered: Rgb { Themes.current.lowered }
     static var regular: Rgb { Themes.current.regular }

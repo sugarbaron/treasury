@@ -9,6 +9,9 @@
 // MARK: PurchaseScreen
 "purchase.title" = "покупка";
 "purchase.available" = "доступно:";
+"purchase.forToday" = "на сегодня:";
+"purchase.saved" = "сэкономлено:";
+"purchase.overspent" = "перерасход:";
 "purchase.category" = "категория:";
 "purchase.comment" = "комментарий:";
 "purchase.price" = "стоимость:";
