@@ -16,9 +16,7 @@ public extension Tap {
     
     enum Effect {
         case scale
-        case border(color: Rgb = .black ,width: CGFloat = 2.0, rounded: CGFloat = 0.0)
-        
-        public typealias Border = (color: Rgb, width: CGFloat, rounded: CGFloat)
+        case border(color: Rgb = .black, line: CGFloat = 4, corners: CGFloat)
     }
     
 }

@@ -11,6 +11,8 @@ extension Resources.Color.Asset {
     static let red: Resources.Color.Asset = .init("red")
     static let red01: Resources.Color.Asset = .init("red01")
     static let red02: Resources.Color.Asset = .init("red02")
+    static let red03: Resources.Color.Asset = .init("red03")
+    static let red04: Resources.Color.Asset = .init("red04")
     static let orange: Resources.Color.Asset = .init("orange")
     static let orange01: Resources.Color.Asset = .init("orange01")
     static let yellow: Resources.Color.Asset = .init("yellow")

@@ -36,10 +36,10 @@ extension Theme {
         public let success2: Rgb
         public let uprised: Rgb
         public let lowered: Rgb
-        public let regular: Rgb
         public let title: Rgb
         public let selected: Rgb
-        public let disabled: Rgb
+        public let disabled1: Rgb
+        public let disabled2: Rgb
         
         public init(background: Rgb,
                     foreground: Rgb,
@@ -51,10 +51,10 @@ extension Theme {
                     success2: Rgb,
                     uprised: Rgb,
                     lowered: Rgb,
-                    regular: Rgb,
                     title: Rgb,
                     selected: Rgb,
-                    disabled: Rgb) {
+                    disabled1: Rgb,
+                    disabled2: Rgb) {
             self.background = background
             self.foreground = foreground
             self.accent1 = accent1
@@ -65,10 +65,10 @@ extension Theme {
             self.success2 = success2
             self.uprised = uprised
             self.lowered = lowered
-            self.regular = regular
             self.title = title
             self.selected = selected
-            self.disabled = disabled
+            self.disabled1 = disabled1
+            self.disabled2 = disabled2
         }
         
     }

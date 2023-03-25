@@ -40,9 +40,9 @@ extension DigitalKeyboard.Ui : View {
     private var keys: some View {
         KeysLayout {
             DigitKeysLayout {
-                key("1", .key1); key("2", .key2); key("3", .key3)
-                key("4", .key4); key("5", .key5); key("6", .key6)
                 key("7", .key7); key("8", .key8); key("9", .key9)
+                key("4", .key4); key("5", .key5); key("6", .key6)
+                key("1", .key1); key("2", .key2); key("3", .key3)
                           key("0", .key0)
             }
             ControlKeysLayout {
@@ -53,7 +53,7 @@ extension DigitalKeyboard.Ui : View {
     }
     
     private func key(_ label: String, _ code: KeyCode) -> some View {
-        key(Text(label).title().foreground(.regular), code)
+        key(Text(label).title().foreground(.foreground), code)
     }
     
     private func key(_ label: some View, _ code: KeyCode) -> some View {
@@ -61,7 +61,7 @@ extension DigitalKeyboard.Ui : View {
     }
     
     private var undo: some View {
-        Image(systemName: "delete.left").title().foreground(.regular)
+        Image(systemName: "delete.left").title().foreground(.foreground)
     }
     
     private var enter: some View {

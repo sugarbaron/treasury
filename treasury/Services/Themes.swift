@@ -20,19 +20,19 @@ private extension Theme.ColorScheme {
     
     static var fallback: Theme.ColorScheme {
         .init(background: .rgb(.gray),
-              foreground: .rgb(.gray04),
+              foreground: .rgb(.gray03),
               accent1: .rgb(.orange01),
               accent2: .rgb(.yellow),
-              warning1: .rgb(.red02),
-              warning2: .rgb(.red),
+              warning1: .rgb(.red03),
+              warning2: .rgb(.red02),
               success1: .rgb(.green01),
               success2: .rgb(.green),
               uprised: .rgb(.gray02),
               lowered: .rgb(.gray01),
-              regular: .rgb(.gray04),
-              title: .rgb(.white),
+              title: .rgb(.gray04),
               selected: .rgb(.white),
-              disabled: .rgb(.gray03))
+              disabled1: .rgb(.gray03),
+              disabled2: .rgb(.gray02))
     }
     
 }
@@ -50,10 +50,10 @@ extension Color {
     static var success2: Color { Themes.current.success2.ui }
     static var uprised: Color { Themes.current.uprised.ui }
     static var lowered: Color { Themes.current.lowered.ui }
-    static var regular: Color { Themes.current.regular.ui }
     static var title: Color { Themes.current.title.ui }
     static var selected: Color { Themes.current.selected.ui }
-    static var disabled: Color { Themes.current.disabled.ui }
+    static var disabled1: Color { Themes.current.disabled1.ui }
+    static var disabled2: Color { Themes.current.disabled2.ui }
     
 }
 
@@ -69,9 +69,9 @@ extension Rgb {
     static var success2: Rgb { Themes.current.success2 }
     static var uprised: Rgb { Themes.current.uprised }
     static var lowered: Rgb { Themes.current.lowered }
-    static var regular: Rgb { Themes.current.regular }
     static var title: Rgb { Themes.current.title }
     static var selected: Rgb { Themes.current.selected }
-    static var disabled: Rgb { Themes.current.disabled }
+    static var disabled1: Rgb { Themes.current.disabled1 }
+    static var disabled2: Rgb { Themes.current.disabled2 }
     
 }

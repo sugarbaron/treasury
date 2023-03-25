@@ -16,7 +16,7 @@ public extension View {
         onTapGesture(count: count, perform: action)
     }
     
-    func rounded(_ radius: CGFloat, antialiased: Bool = true) -> some View {
+    func corners(_ radius: CGFloat, antialiased: Bool = true) -> some View {
         cornerRadius(radius, antialiased: antialiased)
     }
     
@@ -52,14 +52,25 @@ public extension View {
              .overlay(self)
     }
     
-    func border<S>(_ color: S, width: CGFloat = 1, rounded r: CGFloat) -> some View where S : ShapeStyle {
-        let roundedRect = RoundedRectangle(cornerRadius: r)
-        return clipShape(roundedRect).overlay(roundedRect.strokeBorder(color, lineWidth: width))
+    func border(_ parameters: Border) -> some View {
+        border(parameters.color.ui, line: parameters.line, corners: parameters.corners)
+    }
+    
+    func border(_ color: Color, line: CGFloat = 1, corners: CGFloat) -> some View {
+        let color: some ShapeStyle = color
+        return border(color, line: line, corners: corners)
+    }
+    
+    func border<S>(_ color: S, line: CGFloat = 1, corners: CGFloat) -> some View where S : ShapeStyle {
+        let roundedRect = RoundedRectangle(cornerRadius: corners)
+        return clipShape(roundedRect).overlay(roundedRect.strokeBorder(color, lineWidth: line))
     }
     
     @ViewBuilder func `if`<V:View>(_ condition: @autoclosure () -> Bool, transform: (Self) -> V) -> some View {
         if condition() { transform(self) } else { self }
     }
+    
+    func log(_ record: String) -> some View { Log(record); return self }
     
 }
 

@@ -40,7 +40,7 @@ extension RegisterPurchase.Screen : View {
             Spacer()
             Text(.purchase.title)
             .title()
-            .foreground(.foreground)
+            .foreground(.title)
             .padding()
             Spacer()
         }
@@ -52,6 +52,7 @@ extension RegisterPurchase.Screen : View {
             Spacer()
             availableAmountDisplay
             priceDisplay
+            Spacer()
             categoryEditingButton
             commentEditingButton
             Spacer()
@@ -63,19 +64,19 @@ extension RegisterPurchase.Screen : View {
             todayAmountDetails.padding([.leading, .trailing, .top])
             availableAmount.padding([.leading, .trailing, .bottom])
         }
-        .background(Color.uprised.border(Color.lowered, width: 2, rounded: 8).blur(radius: 2))
-        .border(Color.lowered, width: 1, rounded: 8)
+        .background(Color.uprised.border(Color.lowered, line: 2, corners: 8).blur(radius: 2))
+        .border(Color.lowered, line: 1, corners: 8)
     }
     
     private var todayAmountDetails: some View {
         HStack {
             VStack(alignment: .trailing) {
                 Text(.purchase.forToday).regular().foreground(.foreground).lineLimit(1)
-                Text(.purchase.saved).regular().foreground(.foreground).lineLimit(1)
+                Text(.purchase.overspent).regular().foreground(.foreground).lineLimit(1)
             }
             VStack(alignment: .leading) {
                 Text("100000").regular().foreground(.foreground).lineLimit(1).layoutPriority(1)
-                Text("500").regular().foreground(.success1).lineLimit(1).layoutPriority(1)
+                Text("500").regular().foreground(.warning1).lineLimit(1).layoutPriority(1)
             }
             Spacer()
         }
@@ -86,7 +87,7 @@ extension RegisterPurchase.Screen : View {
             Spacer()
             VStack(alignment: .trailing) {
                 Text(.purchase.available).regular().foreground(.foreground)
-                Text(viewModel.available.string).title().foreground(.foreground)
+                Text(viewModel.available.string).title().foreground(.title)
             }
         }
     }
@@ -95,32 +96,32 @@ extension RegisterPurchase.Screen : View {
         HStack {
             Text(.purchase.price)
                 .regular()
-                .foreground(.disabled)
+                .foreground(.foreground)
                 .padding()
             Spacer()
             Text(viewModel.displayed.string)
                 .title()
-                .foreground(.foreground)
+                .foreground(.title)
                 .padding()
         }
-        .background(Color.lowered.border(.black, width: 2, rounded: 8).blur(radius: 2))
-        .border(.black, width: 1, rounded: 8)
+        .background(Color.lowered.border(.black, line: 2, corners: 8).blur(radius: 2))
+        .border(.black, line: 1, corners: 8)
     }
     
     private var categoryEditingButton: some View {
         HStack {
             Text(.purchase.category)
                 .regular()
-                .foreground(.disabled)
+                .foreground(.foreground)
                 .padding()
             Spacer()
             Text("bar")
                 .regular()
-                .foreground(.disabled)
+                .foreground(.foreground)
                 .padding()
         }
         .background(Color.uprised)
-        .rounded(8)
+        .corners(8)
         .shadow(color: Color.lowered, radius: 4)
     }
 
@@ -128,16 +129,16 @@ extension RegisterPurchase.Screen : View {
         HStack {
             Text(.purchase.comment)
                 .regular()
-                .foreground(.disabled)
+                .foreground(.foreground)
                 .padding()
             Spacer()
             Text("craft beer")
                 .regular()
-                .foreground(.disabled)
+                .foreground(.foreground)
                 .padding()
         }
         .background(Color.uprised)
-        .rounded(8)
+        .corners(8)
         .shadow(color: Color.lowered, radius: 4)
     }
     

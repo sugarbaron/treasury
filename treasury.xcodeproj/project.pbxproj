@@ -71,6 +71,8 @@
 		BC84FA1926B846730010078B /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84FA1826B846730010078B /* Layout.swift */; };
 		BC8686FB26BBE9D400297F2E /* EditPlanningPeriodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8686FA26BBE9D400297F2E /* EditPlanningPeriodViewModel.swift */; };
 		BC8686FD26BBEA7100297F2E /* EditPlanningPeriodScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8686FC26BBEA7100297F2E /* EditPlanningPeriodScreen.swift */; };
+		BC8A430529CEB352001BB462 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A430429CEB352001BB462 /* Sounds.swift */; };
+		BC8A430829CEDD3F001BB462 /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A430729CEDD3F001BB462 /* DataTypes.swift */; };
 		BC8A8CF726BAAAD9000DE9CF /* CategoryDetailsAmountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8CF626BAAAD9000DE9CF /* CategoryDetailsAmountCard.swift */; };
 		BC8A8CF926BAADC3000DE9CF /* PlanningPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8CF826BAADC3000DE9CF /* PlanningPeriod.swift */; };
 		BC8A8CFB26BAAEFF000DE9CF /* DateRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8CFA26BAAEFF000DE9CF /* DateRange.swift */; };
@@ -206,6 +208,8 @@
 		BC84FA1826B846730010078B /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		BC8686FA26BBE9D400297F2E /* EditPlanningPeriodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlanningPeriodViewModel.swift; sourceTree = "<group>"; };
 		BC8686FC26BBEA7100297F2E /* EditPlanningPeriodScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPlanningPeriodScreen.swift; sourceTree = "<group>"; };
+		BC8A430429CEB352001BB462 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
+		BC8A430729CEDD3F001BB462 /* DataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
 		BC8A8CF626BAAAD9000DE9CF /* CategoryDetailsAmountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsAmountCard.swift; sourceTree = "<group>"; };
 		BC8A8CF826BAADC3000DE9CF /* PlanningPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningPeriod.swift; sourceTree = "<group>"; };
 		BC8A8CFA26BAAEFF000DE9CF /* DateRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRange.swift; sourceTree = "<group>"; };
@@ -596,14 +600,14 @@
 			path = IncomeStorage;
 			sourceTree = "<group>";
 		};
-		BC7F74A22997BDD700F2185A /* GestureModifiers */ = {
+		BC7F74A22997BDD700F2185A /* Gestures */ = {
 			isa = PBXGroup;
 			children = (
 				BC8ABFD429989F7A00348425 /* Tap.swift */,
 				BC7F74A02997BC0D00F2185A /* AdvancedTap.swift */,
 				BC8ABFD229989EE500348425 /* ResponsiveTap.swift */,
 			);
-			path = GestureModifiers;
+			path = Gestures;
 			sourceTree = "<group>";
 		};
 		BC7F9DBB26B6FE25004247EF /* CategoryDetailsScreen */ = {
@@ -666,6 +670,22 @@
 				BC58CEDD2986B51A0091D818 /* Di */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		BC8A430329CEB339001BB462 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BC8A430429CEB352001BB462 /* Sounds.swift */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		BC8A430629CEDD0E001BB462 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC8A430729CEDD3F001BB462 /* DataTypes.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BC8A8D0A26BAB0D4000DE9CF /* PlanningPeriod */ = {
@@ -944,6 +964,7 @@
 		BCAB2866298E628500B29EB0 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				BC8A430329CEB339001BB462 /* Sounds */,
 				BC8ABFD82998E1D300348425 /* Events */,
 				BC5236892985499400045014 /* BaseDataTypes */,
 				BCAB283A298E193600B29EB0 /* Collections */,
@@ -971,8 +992,10 @@
 		BCAB2868298E62AE00B29EB0 /* SwiftUi */ = {
 			isa = PBXGroup;
 			children = (
+				BC8A430629CEDD0E001BB462 /* Views */,
 				BC9F2380299772F500BB812E /* Layout */,
 				BCAB2869298E63A900B29EB0 /* Modifiers */,
+				BC7F74A22997BDD700F2185A /* Gestures */,
 				BCAB286B298E63A900B29EB0 /* PropertyWrappers */,
 			);
 			path = SwiftUi;
@@ -981,7 +1004,6 @@
 		BCAB2869298E63A900B29EB0 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				BC7F74A22997BDD700F2185A /* GestureModifiers */,
 				BCAB286A298E63A900B29EB0 /* ModifiersAdvanced.swift */,
 			);
 			path = Modifiers;
@@ -1114,6 +1136,8 @@
 				BCAB2871298E65A100B29EB0 /* Screen.swift in Sources */,
 				BCB1197226AD795100426BA7 /* CategoryCoreDataConvertions.swift in Sources */,
 				BCA334CD26A6CF8E0039D4E3 /* DependencyInjection.swift in Sources */,
+				BC8A430529CEB352001BB462 /* Sounds.swift in Sources */,
+				BC8A430829CEDD3F001BB462 /* DataTypes.swift in Sources */,
 				BCE89F8929A0BB6600BE2C43 /* DigitalKeyboard.swift in Sources */,
 				BC7D21AC26E49A5A009CDBF3 /* IncomeStorageEngine.swift in Sources */,
 				BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */,
@@ -1366,7 +1390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PLHSB647R;
+				DEVELOPMENT_TEAM = M2XFZ46Y3X;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = treasury/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
@@ -1391,7 +1415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PLHSB647R;
+				DEVELOPMENT_TEAM = M2XFZ46Y3X;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = treasury/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";

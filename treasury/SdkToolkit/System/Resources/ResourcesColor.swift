@@ -23,4 +23,6 @@ public extension Rgb {
     static let black: Rgb = .init(0x000000FF)
     
     static let white: Rgb = .init(0xFFFFFFFF)
+    
+    static let clear: Rgb = .init(0xFFFFFF00)
 }

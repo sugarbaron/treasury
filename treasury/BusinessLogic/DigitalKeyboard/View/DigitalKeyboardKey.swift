@@ -33,9 +33,9 @@ extension DigitalKeyboard.Ui.Key : View {
             .padding([.leading, .trailing])
             .padding([.top, .bottom], 5)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.background.border(Color.lowered, width: 2, rounded: 8).blur(radius: 1))
-            .border(Color.lowered, width: 1, rounded: 8)
-            .onTap(effect: .border(color: .lowered, width: 3, rounded: 8)) { }
+            .background(Color.background.border(Color.lowered, line: 2, corners: 8).blur(radius: 1))
+            .border(.lowered, line: 1, corners: 8)
+            .onTap(effect: .border(corners: 8)) { }
              onRelease: { if $0 == .confirmed { tapped = code } }
             
     }
@@ -46,5 +46,5 @@ extension DigitalKeyboard.Ui.Key : View {
 
 struct DigitalKeyboardKey_Previews : PreviewProvider {
     @State private static var key: DigitalKeyboard.KeyCode = .key5
-    static var previews: some View { DigitalKeyboard.Ui.Key(Text("5").title().foreground(.regular), .key5, $key) }
+    static var previews: some View { DigitalKeyboard.Ui.Key(Text("5").title().foreground(.foreground), .key5, $key) }
 }
