@@ -38,10 +38,7 @@ extension RegisterPurchase.Screen : View {
     private var title: some View {
         HStack {
             Spacer()
-            Text(.purchase.title)
-            .title()
-            .foreground(.title)
-            .padding()
+            Text(.purchase.title).design(.title, .title).padding()
             Spacer()
         }
         .background(Color.uprised)
@@ -71,12 +68,12 @@ extension RegisterPurchase.Screen : View {
     private var todayAmountDetails: some View {
         HStack {
             VStack(alignment: .trailing) {
-                Text(.purchase.forToday).regular().foreground(.foreground).lineLimit(1)
-                Text(.purchase.overspent).regular().foreground(.foreground).lineLimit(1)
+                Text(.purchase.forToday).design(.regular).lineLimit(1)
+                Text(.purchase.overspent).design(.regular).lineLimit(1)
             }
             VStack(alignment: .leading) {
-                Text("100000").regular().foreground(.foreground).lineLimit(1).layoutPriority(1)
-                Text("500").regular().foreground(.warning1).lineLimit(1).layoutPriority(1)
+                Text("100000").design(.regular).lineLimit(1)
+                Text("500").design(.regular, .warning1).lineLimit(1)
             }
             Spacer()
         }
@@ -86,8 +83,8 @@ extension RegisterPurchase.Screen : View {
         HStack {
             Spacer()
             VStack(alignment: .trailing) {
-                Text(.purchase.available).regular().foreground(.foreground)
-                Text(viewModel.available.string).title().foreground(.title)
+                Text(.purchase.available).design(.regular)
+                Text(viewModel.available.string).design(.title, .title)
             }
         }
     }
@@ -95,13 +92,11 @@ extension RegisterPurchase.Screen : View {
     private var priceDisplay: some View {
         HStack {
             Text(.purchase.price)
-                .regular()
-                .foreground(.foreground)
+                .design(.regular)
                 .padding()
             Spacer()
             Text(viewModel.displayed.string)
-                .title()
-                .foreground(.title)
+                .design(.title, .title)
                 .padding()
         }
         .background(Color.lowered.border(.black, line: 2, corners: 8).blur(radius: 2))
@@ -111,13 +106,11 @@ extension RegisterPurchase.Screen : View {
     private var categoryEditingButton: some View {
         HStack {
             Text(.purchase.category)
-                .regular()
-                .foreground(.foreground)
+                .design(.regular)
                 .padding()
             Spacer()
             Text("bar")
-                .regular()
-                .foreground(.foreground)
+                .design(.regular)
                 .padding()
         }
         .background(Color.uprised)
@@ -128,13 +121,11 @@ extension RegisterPurchase.Screen : View {
     private var commentEditingButton: some View {
         HStack {
             Text(.purchase.comment)
-                .regular()
-                .foreground(.foreground)
+                .design(.regular)
                 .padding()
             Spacer()
             Text("craft beer")
-                .regular()
-                .foreground(.foreground)
+                .design(.regular)
                 .padding()
         }
         .background(Color.uprised)

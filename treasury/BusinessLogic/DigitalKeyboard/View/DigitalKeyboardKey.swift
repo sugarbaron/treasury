@@ -46,5 +46,5 @@ extension DigitalKeyboard.Ui.Key : View {
 
 struct DigitalKeyboardKey_Previews : PreviewProvider {
     @State private static var key: DigitalKeyboard.KeyCode = .key5
-    static var previews: some View { DigitalKeyboard.Ui.Key(Text("5").title().foreground(.foreground), .key5, $key) }
+    static var previews: some View { DigitalKeyboard.Ui.Key(Text("5").design(.title), .key5, $key) }
 }

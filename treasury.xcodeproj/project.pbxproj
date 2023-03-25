@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BC0900E126B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0900E026B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift */; };
 		BC0900E326B817850029D11F /* CategoryDetailsSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0900E226B817850029D11F /* CategoryDetailsSummary.swift */; };
+		BC37754229CF467A00EE084C /* TextDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC37754129CF467A00EE084C /* TextDesign.swift */; };
+		BC37754429CF468400EE084C /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC37754329CF468400EE084C /* Design.swift */; };
 		BC523651298542C100045014 /* Di.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC523650298542C100045014 /* Di.swift */; };
 		BC523654298542E800045014 /* Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC523653298542E800045014 /* Optionals.swift */; };
 		BC5236652985438700045014 /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5236562985438700045014 /* Logs.swift */; };
@@ -43,7 +45,6 @@
 		BC58CED129867DC90091D818 /* ThemeServiceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CED029867DC90091D818 /* ThemeServiceEngine.swift */; };
 		BC58CED329867EB90091D818 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CED229867EB90091D818 /* Theme.swift */; };
 		BC58CEDC2986B2390091D818 /* ThemeServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CEDB2986B2390091D818 /* ThemeServiceAssembly.swift */; };
-		BC58DE73298FD2F500AD31BE /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58DE72298FD2F500AD31BE /* Style.swift */; };
 		BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */; };
 		BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */; };
 		BC7D218726E4851B009CDBF3 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D218626E4851B009CDBF3 /* Income.swift */; };
@@ -146,6 +147,8 @@
 /* Begin PBXFileReference section */
 		BC0900E026B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsPurchaseCell.swift; sourceTree = "<group>"; };
 		BC0900E226B817850029D11F /* CategoryDetailsSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsSummary.swift; sourceTree = "<group>"; };
+		BC37754129CF467A00EE084C /* TextDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDesign.swift; sourceTree = "<group>"; };
+		BC37754329CF468400EE084C /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		BC523650298542C100045014 /* Di.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Di.swift; sourceTree = "<group>"; };
 		BC523653298542E800045014 /* Optionals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optionals.swift; sourceTree = "<group>"; };
 		BC5236562985438700045014 /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
@@ -180,7 +183,6 @@
 		BC58CED029867DC90091D818 /* ThemeServiceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeServiceEngine.swift; sourceTree = "<group>"; };
 		BC58CED229867EB90091D818 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BC58CEDB2986B2390091D818 /* ThemeServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeServiceAssembly.swift; sourceTree = "<group>"; };
-		BC58DE72298FD2F500AD31BE /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreen.swift; sourceTree = "<group>"; };
 		BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewModel.swift; sourceTree = "<group>"; };
 		BC7D218626E4851B009CDBF3 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
@@ -294,6 +296,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC37754029CF466600EE084C /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				BC37754329CF468400EE084C /* Design.swift */,
+				BC37754129CF467A00EE084C /* TextDesign.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		BC52364E29853E6A00045014 /* SdkToolkit */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,8 +514,8 @@
 		BC58CED62986AB320091D818 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BC37754029CF466600EE084C /* Design */,
 				BCAB2838298E146700B29EB0 /* Themes.swift */,
-				BC58DE72298FD2F500AD31BE /* Style.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1133,6 +1144,7 @@
 				BCAB283F298E198C00B29EB0 /* DictionaryAdvanced.swift in Sources */,
 				BCA334C326A6CC8C0039D4E3 /* CategoryFields.swift in Sources */,
 				BC8A8CFD26BAAFBE000DE9CF /* PlanningPeriodCoreDataConvertions.swift in Sources */,
+				BC37754229CF467A00EE084C /* TextDesign.swift in Sources */,
 				BCAB2871298E65A100B29EB0 /* Screen.swift in Sources */,
 				BCB1197226AD795100426BA7 /* CategoryCoreDataConvertions.swift in Sources */,
 				BCA334CD26A6CF8E0039D4E3 /* DependencyInjection.swift in Sources */,
@@ -1175,7 +1187,6 @@
 				BC5236662985438700045014 /* LogContributions.swift in Sources */,
 				BC7D218E26E48979009CDBF3 /* IncomeFields.swift in Sources */,
 				BC7F74A12997BC0D00F2185A /* AdvancedTap.swift in Sources */,
-				BC58DE73298FD2F500AD31BE /* Style.swift in Sources */,
 				BC5236932985499400045014 /* IntAdvanced.swift in Sources */,
 				BCB5E79F26AEEBC300727DF7 /* StorageUpdatedContent.swift in Sources */,
 				BCA334AA26A6C35D0039D4E3 /* CentralDatabase.xcdatamodeld in Sources */,
@@ -1224,6 +1235,7 @@
 				BC8686FB26BBE9D400297F2E /* EditPlanningPeriodViewModel.swift in Sources */,
 				BC8A8D1326BAC06D000DE9CF /* PlanningPeriodsInspector.swift in Sources */,
 				BC0900E326B817850029D11F /* CategoryDetailsSummary.swift in Sources */,
+				BC37754429CF468400EE084C /* Design.swift in Sources */,
 				BC5236A02985534200045014 /* TreasuryDateAdvanced.swift in Sources */,
 				BCAB2840298E198C00B29EB0 /* Collections.swift in Sources */,
 				BCB1197526AD7B1F00426BA7 /* CoreDataContexts.swift in Sources */,
