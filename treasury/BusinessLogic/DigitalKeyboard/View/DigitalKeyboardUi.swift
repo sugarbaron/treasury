@@ -53,7 +53,7 @@ extension DigitalKeyboard.Ui : View {
     }
     
     private func key(_ label: String, _ code: KeyCode) -> some View {
-        key(Text(label).design(.title), code)
+        key(Text(label).design(size: .title), code)
     }
     
     private func key(_ label: some View, _ code: KeyCode) -> some View {
@@ -61,11 +61,11 @@ extension DigitalKeyboard.Ui : View {
     }
     
     private var undo: some View {
-        Image(systemName: "delete.left").design(.title)
+        Image(systemName: "delete.left").design(size: .title)
     }
     
     private var enter: some View {
-        Image(systemName: "arrow.uturn.right").design(.large, .accent1).rotationEffect(.degrees(180))
+        Image(systemName: "arrow.uturn.right").design(size: .large, color: .accent1).rotationEffect(.degrees(180))
     }
     
     private typealias KeyCode = DigitalKeyboard.KeyCode

@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Text {
     
-    func design(_ size: Design.TextSize, _ color: Rgb = .foreground) -> some View {
+    func design(size: Design.TextSize, color: Rgb = .foreground) -> some View {
         self.font(.system(size.fontStyle, design: .monospaced, weight: .light))
             .foreground(color.ui)
     }
@@ -19,7 +19,7 @@ extension Text {
 /// for SFSymbols
 extension Image {
     
-    func design(_ size: Design.TextSize, _ color: Rgb = .foreground) -> some View {
+    func design(size: Design.TextSize, color: Rgb = .foreground) -> some View {
         self.font(.system(size.fontStyle, design: .monospaced, weight: .light))
             .foreground(color.ui)
     }

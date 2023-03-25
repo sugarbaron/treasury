@@ -32,16 +32,16 @@ extension RegisterPurchase.Screen : View {
             primarySection
             keyboard
         }
-        .background(Color.background)
+        .background(.background)
     }
     
     private var title: some View {
         HStack {
             Spacer()
-            Text(.purchase.title).design(.title, .title).padding()
+            Text(.purchase.title).design(size: .title, color: .title).padding()
             Spacer()
         }
-        .background(Color.uprised)
+        .background(Color.uprised, ignoresSafeAreaEdges: .top)
     }
     
     private var primarySection: some View {
@@ -61,19 +61,19 @@ extension RegisterPurchase.Screen : View {
             todayAmountDetails.padding([.leading, .trailing, .top])
             availableAmount.padding([.leading, .trailing, .bottom])
         }
-        .background(Color.uprised.border(Color.lowered, line: 2, corners: 8).blur(radius: 2))
-        .border(Color.lowered, line: 1, corners: 8)
+        .background(Color.uprised.design(.border(.lowered, line: 2)).blur(radius: 2))
+        .design(.border(.lowered))
     }
     
     private var todayAmountDetails: some View {
         HStack {
             VStack(alignment: .trailing) {
-                Text(.purchase.forToday).design(.regular).lineLimit(1)
-                Text(.purchase.overspent).design(.regular).lineLimit(1)
+                Text(.purchase.forToday).design(size: .regular)
+                Text(.purchase.overspent).design(size: .regular)
             }
             VStack(alignment: .leading) {
-                Text("100000").design(.regular).lineLimit(1)
-                Text("500").design(.regular, .warning1).lineLimit(1)
+                Text("100000").design(size: .regular)
+                Text("500").design(size: .regular, color: .warning1)
             }
             Spacer()
         }
@@ -83,8 +83,8 @@ extension RegisterPurchase.Screen : View {
         HStack {
             Spacer()
             VStack(alignment: .trailing) {
-                Text(.purchase.available).design(.regular)
-                Text(viewModel.available.string).design(.title, .title)
+                Text(.purchase.available).design(size: .regular)
+                Text(viewModel.available.string).design(size: .title, color: .title)
             }
         }
     }
@@ -92,52 +92,53 @@ extension RegisterPurchase.Screen : View {
     private var priceDisplay: some View {
         HStack {
             Text(.purchase.price)
-                .design(.regular)
+                .design(size: .regular)
                 .padding()
             Spacer()
             Text(viewModel.displayed.string)
-                .design(.title, .title)
+                .design(size: .title, color: .title)
                 .padding()
         }
-        .background(Color.lowered.border(.black, line: 2, corners: 8).blur(radius: 2))
-        .border(.black, line: 1, corners: 8)
+        .background(Color.lowered.design(.border(.black, line: 2)).blur(radius: 2))
+        .design(.border(.black))
     }
     
     private var categoryEditingButton: some View {
         HStack {
             Text(.purchase.category)
-                .design(.regular)
+                .design(size: .regular)
                 .padding()
             Spacer()
             Text("bar")
-                .design(.regular)
+                .design(size: .regular)
                 .padding()
         }
-        .background(Color.uprised)
-        .corners(8)
-        .shadow(color: Color.lowered, radius: 4)
+        .background(.uprised)
+        .design(.corners)
+        .design(.shadow)
     }
 
     private var commentEditingButton: some View {
         HStack {
             Text(.purchase.comment)
-                .design(.regular)
+                .design(size: .regular)
                 .padding()
             Spacer()
             Text("craft beer")
-                .design(.regular)
+                .design(size: .regular)
                 .padding()
         }
-        .background(Color.uprised)
-        .corners(8)
-        .shadow(color: Color.lowered, radius: 4)
+        .background(.uprised)
+        .design(.corners)
+        .design(.shadow)
     }
     
     private var keyboard: some View {
         DigitalKeyboard.Ui()
             .environmentObject(viewModel.keyboard)
             .frame(maxHeight: 220)
-            .background(Color.uprised.shadow(color: Color.lowered, radius: 4))
+            .background(Color.uprised.shadow(color: Color.lowered, radius: 4).ignoresSafeArea(edges: .bottom))
+            
     }
     
 }

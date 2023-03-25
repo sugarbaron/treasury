@@ -22,6 +22,8 @@ public extension View {
     
     func foreground(_ color: Color) -> some View { foregroundColor(color) }
     
+    func background(_ color: Color) -> some View { background(color, alignment: .center) }
+    
     func subscribe<P:Publisher>(to publisher: P, _ reaction: @escaping (P.Output) -> Void)
     -> some View where P.Failure == Never {
         onReceive(publisher, perform: reaction)
