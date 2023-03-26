@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 public extension Double {
 
     func isSame(as another: Double) -> Bool { fabs(self - another) < Double.ulpOfOne }
@@ -15,4 +16,10 @@ public extension Double {
 
     var string: String { .init(format: "%03.6f", self) }
 
+}
+
+public extension CGFloat {
+    
+    var string: String { .init(format: "%03.6f", self) }
+    
 }

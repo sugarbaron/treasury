@@ -15,9 +15,7 @@ extension DigitalKeyboard {
         @StateObject private var viewModel: DigitalKeyboard.ViewModel = .init()
         @EnvironmentObject private var datastream: DigitalKeyboard.Datastream
         
-        init() {
-            Log("[DigitalKeyboard.Ui] reconstructing")
-        }
+        init() { Log("[DigitalKeyboard.Ui] reconstructing") }
         
     }
     
@@ -27,11 +25,7 @@ extension DigitalKeyboard {
 extension DigitalKeyboard.Ui : View {
     
     var body: some View {
-        VStack {
-            Spacer()
-            HStack { Spacer(); keys; Spacer() }
-            Spacer()
-        }
+        keys
         .background(Color.uprised)
         .frame(minHeight: 220)
         .onAppear { viewModel.set(datastream) }
@@ -43,7 +37,7 @@ extension DigitalKeyboard.Ui : View {
                 key("7", .key7); key("8", .key8); key("9", .key9)
                 key("4", .key4); key("5", .key5); key("6", .key6)
                 key("1", .key1); key("2", .key2); key("3", .key3)
-                          key("0", .key0)
+                                 key("0", .key0)
             }
             ControlKeysLayout {
                 key(undo, .keyUndo)

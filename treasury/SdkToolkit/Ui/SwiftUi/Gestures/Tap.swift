@@ -9,14 +9,3 @@ import SwiftUI
 
 /// namespace class
 public final class Tap {  }
-
-public extension Tap {
-    
-    enum Confirmation { case confirmed; case rejected }
-    
-    enum Effect {
-        case scale
-        case border(color: Rgb = .black, line: CGFloat = 4, corners: CGFloat)
-    }
-    
-}

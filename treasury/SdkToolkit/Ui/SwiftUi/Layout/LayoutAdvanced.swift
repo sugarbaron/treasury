@@ -30,4 +30,4 @@ public extension ProposedViewSize {
     
 }
 
-public extension Layout { typealias Spacing = (x: CGFloat, y: CGFloat) }
+public extension Layout { typealias Spacing = (w: CGFloat, h: CGFloat) }

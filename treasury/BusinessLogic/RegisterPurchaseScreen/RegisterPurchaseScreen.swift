@@ -66,7 +66,7 @@ extension RegisterPurchase.Screen : View {
     }
     
     private var todayAmountDetails: some View {
-        HStack {
+        HStack(alignment: .top) {
             VStack(alignment: .trailing) {
                 Text(.purchase.forToday).design(size: .regular)
                 Text(.purchase.overspent).design(size: .regular)
@@ -76,6 +76,7 @@ extension RegisterPurchase.Screen : View {
                 Text("500").design(size: .regular, color: .warning1)
             }
             Spacer()
+            planBudgetButton
         }
     }
     
@@ -87,6 +88,16 @@ extension RegisterPurchase.Screen : View {
                 Text(viewModel.available.string).design(size: .title, color: .title)
             }
         }
+    }
+    
+    private var planBudgetButton: some View {
+        Image(systemName: "gearshape")
+            .design(size: .title)
+            .padding(7)
+            .background(.background)
+            .design(.corners)
+            .shadow(color: .black, radius: 2)
+            .button(effect: .scale(0.9)) { }
     }
     
     private var priceDisplay: some View {
@@ -116,6 +127,7 @@ extension RegisterPurchase.Screen : View {
         .background(.uprised)
         .design(.corners)
         .design(.shadow)
+        .button { }
     }
 
     private var commentEditingButton: some View {
@@ -131,13 +143,15 @@ extension RegisterPurchase.Screen : View {
         .background(.uprised)
         .design(.corners)
         .design(.shadow)
+        .button { }
     }
     
     private var keyboard: some View {
         DigitalKeyboard.Ui()
             .environmentObject(viewModel.keyboard)
             .frame(maxHeight: 220)
-            .background(Color.uprised.shadow(color: Color.lowered, radius: 4).ignoresSafeArea(edges: .bottom))
+            .background(Color.uprised.design(.shadow).ignoresSafeArea(edges: .bottom))
+            
             
     }
     

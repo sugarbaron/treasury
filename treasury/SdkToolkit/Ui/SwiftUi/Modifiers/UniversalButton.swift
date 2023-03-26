@@ -1,18 +1,24 @@
 //
-//  ResponsiveTap.swift
+//  UniversalButton.swift
 //  treasury
 //
-//  Created by sugarbaron on 12.02.2023.
+//  Created by sugarbaron on 26.03.2023.
 //
 
 import SwiftUI
 
 public extension View {
     
-    func onTap(effect: Tap.Effect,
-               _ onTap: @escaping () -> Void,
-               onRelease: @escaping (Tap.Confirmation) -> Void) -> some View {
-        modifier(ResponsiveTap(effect, onTap, onRelease))
+    func button(effect: Tap.Effect = .scale(),
+                action: @escaping (Tap.Confirmation) -> Void,
+                onTouch: @escaping () -> Void = {  }) -> some View {
+        modifier(ResponsiveTap(effect, onTouch, action))
+    }
+    
+    func button(effect: Tap.Effect = .scale(),
+                action: @escaping () -> Void,
+                onTouch: @escaping () -> Void = {  }) -> some View {
+        modifier(ResponsiveTap(effect, onTouch, { if $0 == .confirmed { action() } }))
     }
     
 }
@@ -22,7 +28,8 @@ public struct ResponsiveTap : ViewModifier {
     private let effect: Tap.Effect
     private let onTap: () -> Void
     private let onRelease: (Tap.Confirmation) -> Void
-    private var tappedBorder: Border
+    private let tappedBorder: Border
+    private let tappedScale: CGFloat
     
     @State private var released: Bool
     
@@ -36,6 +43,11 @@ public struct ResponsiveTap : ViewModifier {
             self.tappedBorder = Border(color: color, line: line, corners: corners)
         } else {
             self.tappedBorder = .noBorder
+        }
+        if case .scale(let scale) = effect {
+            self.tappedScale = scale
+        } else {
+            self.tappedScale = 1
         }
         self.released = true
     }
@@ -53,11 +65,7 @@ public struct ResponsiveTap : ViewModifier {
             }
     }
     
-    private var scale: CGFloat { released ? 1 : 0.96 }
-    
-    private var tapped: Bool { released == false }
-    
-    private var corners: CGFloat { borderEffect ? tappedBorder.corners : 0 }
+    private var scale: CGFloat { (scaleEffect && tapped) ? tappedScale : 1 }
     
     @ViewBuilder
     private var tapBorder: some View {
@@ -71,6 +79,21 @@ public struct ResponsiveTap : ViewModifier {
         }
     }
     
-    private var borderEffect: Bool { if case .border(_, _, _) = effect { return true } else { return false } }
+    private var tapped: Bool { released == false }
+    
+    private var corners: CGFloat { borderEffect ? tappedBorder.corners : 0 }
+    
+    private var borderEffect: Bool { if case .border = effect { return true } else { return false } }
+    
+    private var scaleEffect: Bool { if case .scale = effect { return true } else { return false } }
+    
+}
+
+public extension Tap {
+    
+    enum Effect {
+        case scale(_ factor: CGFloat = 0.96)
+        case border(color: Rgb = .black, line: CGFloat = 4, corners: CGFloat)
+    }
     
 }

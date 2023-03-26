@@ -33,11 +33,10 @@ extension DigitalKeyboard.Ui.Key : View {
             .padding([.leading, .trailing])
             .padding([.top, .bottom], 5)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.background.border(Color.lowered, line: 2, corners: 8).blur(radius: 1))
-            .border(.lowered, line: 1, corners: 8)
-            .onTap(effect: .border(corners: 8)) { }
-             onRelease: { if $0 == .confirmed { tapped = code } }
-            
+            .background(Color.background.design(.border(.lowered, line: 2)).blur(radius: 1))
+            .design(.border(.clear, line: 0))
+            .button(effect: Design.depth) { tapped = code }
+        
     }
     
     private typealias Key = DigitalKeyboard.Ui.Key

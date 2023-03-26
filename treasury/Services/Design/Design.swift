@@ -11,6 +11,12 @@ final class Design {
     
     static let corners: CGFloat = 8
     
+    static let depth: Tap.Effect = .border(color: .black, line: 4, corners: Design.corners)
+    
+    static func depth(_ color: Rgb, line: CGFloat = 4) -> Tap.Effect {
+        .border(color: color, line: line, corners: Design.corners)
+    }
+    
 }
 
 extension View {

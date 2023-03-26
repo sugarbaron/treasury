@@ -41,6 +41,12 @@ private struct AdvancedTap : ViewModifier {
     
 }
 
+public extension Tap {
+    
+    enum Confirmation { case confirmed; case rejected }
+    
+}
+
 private extension CGSize {
     
     var distance: CGFloat { sqrt(pow(width, 2) + pow(height, 2)) }

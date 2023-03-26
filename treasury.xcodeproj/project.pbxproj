@@ -45,6 +45,7 @@
 		BC58CED129867DC90091D818 /* ThemeServiceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CED029867DC90091D818 /* ThemeServiceEngine.swift */; };
 		BC58CED329867EB90091D818 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CED229867EB90091D818 /* Theme.swift */; };
 		BC58CEDC2986B2390091D818 /* ThemeServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC58CEDB2986B2390091D818 /* ThemeServiceAssembly.swift */; };
+		BC6E4F8729D0400E006E9554 /* UniversalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E4F8629D0400E006E9554 /* UniversalButton.swift */; };
 		BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */; };
 		BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */; };
 		BC7D218726E4851B009CDBF3 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D218626E4851B009CDBF3 /* Income.swift */; };
@@ -83,7 +84,6 @@
 		BC8A8D0E26BAB10D000DE9CF /* PlanningPeriodFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D0D26BAB10D000DE9CF /* PlanningPeriodFields.swift */; };
 		BC8A8D1026BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D0F26BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift */; };
 		BC8A8D1326BAC06D000DE9CF /* PlanningPeriodsInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8A8D1226BAC06D000DE9CF /* PlanningPeriodsInspector.swift */; };
-		BC8ABFD329989EE500348425 /* ResponsiveTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFD229989EE500348425 /* ResponsiveTap.swift */; };
 		BC8ABFD529989F7A00348425 /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFD429989F7A00348425 /* Tap.swift */; };
 		BC8ABFD72998DF0800348425 /* DigitalKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFD62998DF0800348425 /* DigitalKeyboardViewModel.swift */; };
 		BC8ABFDC2998E24B00348425 /* CombineAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8ABFDB2998E24B00348425 /* CombineAdvanced.swift */; };
@@ -183,6 +183,7 @@
 		BC58CED029867DC90091D818 /* ThemeServiceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeServiceEngine.swift; sourceTree = "<group>"; };
 		BC58CED229867EB90091D818 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BC58CEDB2986B2390091D818 /* ThemeServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeServiceAssembly.swift; sourceTree = "<group>"; };
+		BC6E4F8629D0400E006E9554 /* UniversalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalButton.swift; sourceTree = "<group>"; };
 		BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreen.swift; sourceTree = "<group>"; };
 		BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewModel.swift; sourceTree = "<group>"; };
 		BC7D218626E4851B009CDBF3 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
@@ -221,7 +222,6 @@
 		BC8A8D0D26BAB10D000DE9CF /* PlanningPeriodFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningPeriodFields.swift; sourceTree = "<group>"; };
 		BC8A8D0F26BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralDatabaseAutoincrementId.swift; sourceTree = "<group>"; };
 		BC8A8D1226BAC06D000DE9CF /* PlanningPeriodsInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningPeriodsInspector.swift; sourceTree = "<group>"; };
-		BC8ABFD229989EE500348425 /* ResponsiveTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveTap.swift; sourceTree = "<group>"; };
 		BC8ABFD429989F7A00348425 /* Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
 		BC8ABFD62998DF0800348425 /* DigitalKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboardViewModel.swift; sourceTree = "<group>"; };
 		BC8ABFDB2998E24B00348425 /* CombineAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineAdvanced.swift; sourceTree = "<group>"; };
@@ -616,7 +616,6 @@
 			children = (
 				BC8ABFD429989F7A00348425 /* Tap.swift */,
 				BC7F74A02997BC0D00F2185A /* AdvancedTap.swift */,
-				BC8ABFD229989EE500348425 /* ResponsiveTap.swift */,
 			);
 			path = Gestures;
 			sourceTree = "<group>";
@@ -1016,6 +1015,7 @@
 			isa = PBXGroup;
 			children = (
 				BCAB286A298E63A900B29EB0 /* ModifiersAdvanced.swift */,
+				BC6E4F8629D0400E006E9554 /* UniversalButton.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -1209,6 +1209,7 @@
 				BC7D21A826E49405009CDBF3 /* PurchasesStorageEngine.swift in Sources */,
 				BC7F9DC626B71506004247EF /* CategoriesCell.swift in Sources */,
 				BC7D219526E489D6009CDBF3 /* CoreDataIncome+CoreDataClass.swift in Sources */,
+				BC6E4F8729D0400E006E9554 /* UniversalButton.swift in Sources */,
 				BCA68DF826BD3C3C00DCA704 /* CoreDataPurchase+CoreDataClass.swift in Sources */,
 				BC523651298542C100045014 /* Di.swift in Sources */,
 				BC5236A2298554B600045014 /* Starter.swift in Sources */,
@@ -1222,7 +1223,6 @@
 				BC83F01B29977252008E70EF /* DigitalKeyboardLayout.swift in Sources */,
 				BC7D21AE26E4A500009CDBF3 /* IncomeCoreDataConvertions.swift in Sources */,
 				BCA334C126A6CBE80039D4E3 /* CentralDatabase.swift in Sources */,
-				BC8ABFD329989EE500348425 /* ResponsiveTap.swift in Sources */,
 				BC8ABFD72998DF0800348425 /* DigitalKeyboardViewModel.swift in Sources */,
 				BC8ABFDE2998E26200348425 /* PublisherAdvanced.swift in Sources */,
 				BC7D21A426E48DD3009CDBF3 /* CategoriesStorageEngine.swift in Sources */,
