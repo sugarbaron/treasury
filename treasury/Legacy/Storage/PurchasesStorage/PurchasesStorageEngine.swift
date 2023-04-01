@@ -34,22 +34,22 @@ final class PurchasesStorageEngine {
 
 extension PurchasesStorageEngine : PurchasesStorage {
     
-    func loadPurchases(for category: Category) -> [Purchase] {
-        var purchases: [Purchase] = [ ]
+    func loadPurchases(for category: Category1) -> [Purchase1] {
+        var purchases: [Purchase1] = [ ]
         context.performAndWait {
             let youngestFirst: NSSortDescriptor = .init(key: PurchaseFields.date, ascending: false)
             let certainCategory: NSPredicate = .init(format: "\(PurchaseFields.category) == \(category.id)")
             let request: FetchRequest<CoreDataPurchase> = .init(context,
                                                                 predicate: certainCategory,
                                                                 sort: [youngestFirst])
-            purchases = request.execute().compactMap { Purchase.construct(from: $0) }
+            purchases = request.execute().compactMap { Purchase1.construct(from: $0) }
         }
         return purchases
     }
     
     @discardableResult
-    func create(from draft: Purchase.Draft) -> Purchase {
-        let new: Purchase = .init(purchaseId.next, draft)
+    func create(from draft: Purchase1.Draft) -> Purchase1 {
+        let new: Purchase1 = .init(purchaseId.next, draft)
         context.performAndWait {
             guard let newEmpty: CoreDataPurchase = context.newEmpty() else { return }
             newEmpty.fill(with: new)

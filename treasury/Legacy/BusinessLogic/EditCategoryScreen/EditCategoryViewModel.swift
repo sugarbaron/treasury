@@ -17,9 +17,9 @@ extension EditCategory {
         @Published var plan: String
         
         private let storage: CentralStorage?
-        private let category: Category
+        private let category: Category1
         
-        init(_ category: Category) {
+        init(_ category: Category1) {
             self.storage = try? Di.inject(CentralStorage?.self)
             self.name = category.name
             self.plan = String("\(category.plan.int)")
@@ -28,7 +28,7 @@ extension EditCategory {
         
         func editCategory() {
             guard let plan: Int = Int(self.plan) else { return }
-            let editedCategory: Category = .init(category.id,
+            let editedCategory: Category1 = .init(category.id,
                                                  name,
                                                  Decimal(plan),
                                                  category.spent,

@@ -29,7 +29,7 @@ extension RegisterPurchase.Screen : View {
     var body: some View {
         VStack {
             title
-            primarySection
+            HStack { Spacer(); primarySection; Spacer() }
             keyboard
         }
         .background(.background)
@@ -53,7 +53,7 @@ extension RegisterPurchase.Screen : View {
             categoryEditingButton
             commentEditingButton
             Spacer()
-        }.padding([.leading, .trailing])
+        }
     }
     
     private var availableAmountDisplay: some View {

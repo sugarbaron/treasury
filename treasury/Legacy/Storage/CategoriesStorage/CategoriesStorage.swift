@@ -8,11 +8,11 @@
 protocol CategoriesStorage {
     
     @discardableResult
-    func create(from draft: Category.Draft) -> Category
+    func create(from draft: Category1.Draft) -> Category1
     
-    func update(_ category: Category)
+    func update(_ category: Category1)
     
-    func loadCurrentPeriodCategories() -> [Category]
+    func loadCurrentPeriodCategories() -> [Category1]
     
     func removeCategory(_ id: Int)
     

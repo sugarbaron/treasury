@@ -29,7 +29,7 @@ extension CreateCategory {
                   let currentPeriod: PlanningPeriod = storage?.periods.loadCurrentPeriod()
             else { Log(error: "[CreateCategory.ViewModel] unable to create category"); return }
             
-            let newCategoryDraft: Category.Draft = .init(name, Decimal(plan), Decimal(0), currentPeriod.id)
+            let newCategoryDraft: Category1.Draft = .init(name, Decimal(plan), Decimal(0), currentPeriod.id)
             categoriesStorage.create(from: newCategoryDraft)
         }
         

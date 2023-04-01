@@ -13,7 +13,7 @@ extension Categories {
     
     final class ViewModel : ObservableObject {
         
-        @Published var categories: [Category]
+        @Published var categories: [Category1]
         
         @Published var currentPeriod: PlanningPeriod?
         
@@ -50,7 +50,7 @@ extension Categories {
 
 extension Categories.ViewModel : StorageSubscriber {
     
-    func storageContentUpdated(_ updatedContent: Storage.UpdatedContent<Category>) {
+    func storageContentUpdated(_ updatedContent: Storage.UpdatedContent<Category1>) {
         Threads.runOnMain { [weak self] in self?.categories = updatedContent.entities }
     }
     

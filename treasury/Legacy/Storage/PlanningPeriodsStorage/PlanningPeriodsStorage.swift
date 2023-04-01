@@ -18,7 +18,7 @@ protocol PlanningPeriodsStorage {
     
     func loadAllPeriods() -> [PlanningPeriod]
     
-    func loadPeriod(for category: Category) -> PlanningPeriod?
+    func loadPeriod(for category: Category1) -> PlanningPeriod?
     
     func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)
     -> Storage.Updates<Subscriber>

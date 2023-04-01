@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Purchase {
+final class Purchase1 {
     
     let id: Int
     let price: Decimal
@@ -25,7 +25,7 @@ final class Purchase {
     
 }
 
-extension Purchase {
+extension Purchase1 {
     
     final class Draft {
         
@@ -49,11 +49,11 @@ extension Purchase {
     
 }
 
-extension Purchase : Identifiable { }
+extension Purchase1 : Identifiable { }
 
-extension Purchase : Equatable {
+extension Purchase1 : Equatable {
     
-    static func == (lhs: Purchase, rhs: Purchase) -> Bool {
+    static func == (lhs: Purchase1, rhs: Purchase1) -> Bool {
         lhs.id == rhs.id
             && lhs.price == rhs.price
             && lhs.date == rhs.date

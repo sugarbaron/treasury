@@ -12,9 +12,9 @@ extension Categories {
     struct Cell : View {
         
         @State private var isTapped: Bool
-        private let category: Category
+        private let category: Category1
         
-        init(_ category: Category) { self.category = category; self.isTapped = false }
+        init(_ category: Category1) { self.category = category; self.isTapped = false }
         
         var body: some View {
             VStack {

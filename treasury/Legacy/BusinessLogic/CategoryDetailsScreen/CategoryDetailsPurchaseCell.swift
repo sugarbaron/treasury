@@ -11,10 +11,10 @@ extension CategoryDetails {
     
     struct PurchaseCell : View {
         
-        private let purchase: Purchase
+        private let purchase: Purchase1
         private let comment: String
         
-        init(_ purchase: Purchase, _ comment: String) {
+        init(_ purchase: Purchase1, _ comment: String) {
             self.purchase = purchase
             self.comment = comment
         }

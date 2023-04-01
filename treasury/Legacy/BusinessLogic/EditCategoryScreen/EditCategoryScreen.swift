@@ -16,11 +16,11 @@ extension EditCategory {
         @SwiftUI.Environment(\.presentationMode)
         private var presentationMode: Binding<PresentationMode>
         
-        private let category: Category
+        private let category: Category1
         
         @ObservedObject private var viewModel: ViewModel
         
-        init(_ category: Category) {
+        init(_ category: Category1) {
             self.category = category
             self.viewModel = .init(category)
         }

@@ -8,9 +8,9 @@
 protocol PurchasesStorage {
     
     @discardableResult
-    func create(from draft: Purchase.Draft) -> Purchase
+    func create(from draft: Purchase1.Draft) -> Purchase1
     
-    func loadPurchases(for category: Category) -> [Purchase]
+    func loadPurchases(for category: Category1) -> [Purchase1]
     
     func adjustSubscription<Subscriber:Storage.Subscriber>(_ updates: Storage.SubscriptionConfig)
     -> Storage.Updates<Subscriber>

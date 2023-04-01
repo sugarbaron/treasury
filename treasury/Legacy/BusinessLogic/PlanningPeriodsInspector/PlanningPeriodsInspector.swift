@@ -46,10 +46,10 @@ final class PlanningPeriodsInspector {
     private func createPlanningPeriod(startDate: Date) {
         let newPeriodRange: Date.Range = (startDate, getNextMonthDate(from: startDate))
         //Log(info: "[PlanningPeriodsInspector] creating period:[\(newPeriodRange.from.format()) - \(newPeriodRange.to.format())]") /* fixme */
-        let currentCategories: [Category] = storage.categories.loadCurrentPeriodCategories()
+        let currentCategories: [Category1] = storage.categories.loadCurrentPeriodCategories()
         let newPeriod: PlanningPeriod = storage.periods.create(period: newPeriodRange)
         currentCategories.forEach {
-            let newPeriodCategoryDraft: Category.Draft = .init($0.name, $0.plan, 0, newPeriod.id)
+            let newPeriodCategoryDraft: Category1.Draft = .init($0.name, $0.plan, 0, newPeriod.id)
             storage.categories.create(from: newPeriodCategoryDraft)
         }
     }

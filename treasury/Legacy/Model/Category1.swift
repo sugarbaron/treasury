@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Category {
+final class Category1 {
     
     let id: Int
     private(set) var name: String
@@ -29,7 +29,7 @@ final class Category {
     
 }
 
-extension Category {
+extension Category1 {
     
     final class Draft {
         
@@ -53,4 +53,4 @@ extension Category {
     
 }
 
-extension Category : Identifiable {  }
+extension Category1 : Identifiable {  }

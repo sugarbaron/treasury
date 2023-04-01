@@ -11,9 +11,9 @@ extension CategoryDetails {
     
     struct Summary : View {
         
-        private let category: Category
+        private let category: Category1
         
-        init(_ category: Category) {
+        init(_ category: Category1) {
             self.category = category
         }
         

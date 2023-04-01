@@ -20,7 +20,7 @@ extension RegisterPurchase1 {
         
         //init() { UITextField.appearance().backgroundColor = .clear }
         
-        init(_ category: Category? = nil) {
+        init(_ category: Category1? = nil) {
             _viewModel = StateObject(wrappedValue: ViewModel(category))
             UITextField.appearance().backgroundColor = .clear
         }

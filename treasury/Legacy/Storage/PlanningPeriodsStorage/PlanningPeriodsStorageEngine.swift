@@ -74,7 +74,7 @@ extension PlanningPeriodsStorageEngine : PlanningPeriodsStorage {
         return periods
     }
     
-    func loadPeriod(for category: Category) -> PlanningPeriod? {
+    func loadPeriod(for category: Category1) -> PlanningPeriod? {
         var categoryPeriod: PlanningPeriod? = nil
         context.performAndWait {
             guard let coreDataPeriod: CoreDataPeriod = context.load(for: category.planningPeriod) else { return }

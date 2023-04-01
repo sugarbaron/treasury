@@ -22,7 +22,7 @@ extension CategoryDetails {
         @State private var isEditTapped: Bool = false
         @State private var isPurchaseTapped: Bool = false
         
-        init(_ category: Category) { self.viewModel = ViewModel(category) }
+        init(_ category: Category1) { self.viewModel = ViewModel(category) }
         
         var body: some View {
             HStack {
@@ -101,7 +101,7 @@ extension CategoryDetails {
 
 struct CategoryDetailsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryDetails.Screen(Category(1, "<name>", 5000, 300, 1))
+        CategoryDetails.Screen(Category1(1, "<name>", 5000, 300, 1))
             .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

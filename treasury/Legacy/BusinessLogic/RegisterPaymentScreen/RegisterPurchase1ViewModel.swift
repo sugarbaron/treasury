@@ -16,12 +16,12 @@ extension RegisterPurchase1 {
         @Published var category: String
         @Published var price: String
         @Published var comment: String
-        private let categories: [Category]
+        private let categories: [Category1]
         private(set) var mode: Mode
         
         private let storage: CentralStorage?
         
-        init(_ category: Category? = nil) {
+        init(_ category: Category1? = nil) {
             self.category = unwrap(category) { $0.name } ?? ""
             self.price = ""
             self.comment = ""
@@ -34,9 +34,9 @@ extension RegisterPurchase1 {
         
         func registerPayment() {
             guard let price: Int = Int(self.price),
-                  let category: Category = categories.first(where: { $0.name == category })
+                  let category: Category1 = categories.first(where: { $0.name == category })
             else { return }
-            let purchaseDraft: Purchase.Draft = .init(Decimal(price), category.id, comment)
+            let purchaseDraft: Purchase1.Draft = .init(Decimal(price), category.id, comment)
             category.purchase(Decimal(price))
             storage?.categories.update(category)
             storage?.purchases.create(from: purchaseDraft)

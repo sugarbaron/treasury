@@ -35,8 +35,8 @@ final class CategoriesStorageEngine {
 extension CategoriesStorageEngine : CategoriesStorage {
     
     @discardableResult
-    func create(from draft: Category.Draft) -> Category {
-        let new: Category = .init(categoryId.next, draft)
+    func create(from draft: Category1.Draft) -> Category1 {
+        let new: Category1 = .init(categoryId.next, draft)
         context.performAndWait {
             guard let newEmpty: CoreDataCategory = context.newEmpty() else { return }
             newEmpty.fill(with: new)
@@ -45,7 +45,7 @@ extension CategoriesStorageEngine : CategoriesStorage {
         return new
     }
     
-    func update(_ category: Category) {
+    func update(_ category: Category1) {
         context.performAndWait {
             guard let stored: CoreDataCategory = context.load(for: category.id) else { return }
             stored.fill(with: category)
@@ -53,8 +53,8 @@ extension CategoriesStorageEngine : CategoriesStorage {
         }
     }
     
-    func loadCurrentPeriodCategories() -> [Category] {
-        var all: [Category] = [ ]
+    func loadCurrentPeriodCategories() -> [Category1] {
+        var all: [Category1] = [ ]
         context.performAndWait {
             guard let currentPeriod: CoreDataPlanningPeriod = context.loadLast(),
                   let currentPeriodId: Int = currentPeriod.id?.intValue
@@ -65,7 +65,7 @@ extension CategoriesStorageEngine : CategoriesStorage {
             let request: FetchRequest<CoreDataCategory> = .init(context,
                                                                 predicate: forCurrentPeriod,
                                                                 sort: [expensiveFirst, abc])
-            all = request.execute().compactMap { Category.construct(from: $0) }
+            all = request.execute().compactMap { Category1.construct(from: $0) }
         }
         return all
     }

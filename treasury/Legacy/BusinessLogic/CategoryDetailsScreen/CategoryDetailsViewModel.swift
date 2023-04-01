@@ -13,12 +13,12 @@ extension CategoryDetails {
     
     final class ViewModel : ObservableObject {
         
-        @Published var category: Category
-        @Published var purchases: [Purchase]
+        @Published var category: Category1
+        @Published var purchases: [Purchase1]
         let categoryPeriod: PlanningPeriod?
         private let storage: CentralStorage?
         
-        init(_ category: Category) {
+        init(_ category: Category1) {
             self.storage = try? Di.inject(CentralStorage?.self)
             self.category = category
             self.purchases = (self.storage?.purchases.loadPurchases(for: category)) ?? [ ]
@@ -27,7 +27,7 @@ extension CategoryDetails {
         
         func removeCategory() { storage?.categories.removeCategory(category.id) }
         
-        func getComment(for purchase: Purchase) -> String {
+        func getComment(for purchase: Purchase1) -> String {
             if purchase.comment.isNotEmpty { return purchase.comment }
             else { return category.name }
         }
