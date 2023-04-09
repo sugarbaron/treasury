@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -100,6 +100,8 @@
 		BC9443BC26B3114C0056D341 /* RegisterPurchase1Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BB26B3114C0056D341 /* RegisterPurchase1Screen.swift */; };
 		BC9443BE26B313C30056D341 /* RegisterPurchase1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BD26B313C30056D341 /* RegisterPurchase1ViewModel.swift */; };
 		BC9443C126B3147F0056D341 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443C026B3147F0056D341 /* Buttons.swift */; };
+		BC99E0AE29E27970003E4C10 /* SingleRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99E0AD29E27970003E4C10 /* SingleRecord.swift */; };
+		BC99E0B129E27F99003E4C10 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99E0B029E27F99003E4C10 /* CoreDataStorage.swift */; };
 		BC9F23822997730B00BB812E /* LayoutAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F23812997730B00BB812E /* LayoutAdvanced.swift */; };
 		BCA3349126A6A5410039D4E3 /* Treasury.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA3349026A6A5410039D4E3 /* Treasury.swift */; };
 		BCA3349526A6A5420039D4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA3349426A6A5420039D4E3 /* Assets.xcassets */; };
@@ -244,6 +246,8 @@
 		BC9443BB26B3114C0056D341 /* RegisterPurchase1Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchase1Screen.swift; sourceTree = "<group>"; };
 		BC9443BD26B313C30056D341 /* RegisterPurchase1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchase1ViewModel.swift; sourceTree = "<group>"; };
 		BC9443C026B3147F0056D341 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		BC99E0AD29E27970003E4C10 /* SingleRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRecord.swift; sourceTree = "<group>"; };
+		BC99E0B029E27F99003E4C10 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		BC9F23812997730B00BB812E /* LayoutAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAdvanced.swift; sourceTree = "<group>"; };
 		BC9F23832997769B00BB812E /* DigitalKeyboardKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboardKey.swift; sourceTree = "<group>"; };
 		BCA3348D26A6A5410039D4E3 /* treasury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = treasury.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -843,6 +847,31 @@
 			path = Ui;
 			sourceTree = "<group>";
 		};
+		BC99E0AB29E277B8003E4C10 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				BC99E0AC29E2795A003E4C10 /* Record */,
+				BC99E0AF29E279FD003E4C10 /* CoreData */,
+			);
+			path = Storages;
+			sourceTree = "<group>";
+		};
+		BC99E0AC29E2795A003E4C10 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				BC99E0AD29E27970003E4C10 /* SingleRecord.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		BC99E0AF29E279FD003E4C10 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BC99E0B029E27F99003E4C10 /* CoreDataStorage.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		BC9F2380299772F500BB812E /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,9 +1048,8 @@
 		BCAB2866298E628500B29EB0 /* System */ = {
 			isa = PBXGroup;
 			children = (
-				BC8A430329CEB339001BB462 /* Sounds */,
-				BC8ABFD82998E1D300348425 /* Events */,
 				BC5236892985499400045014 /* BaseDataTypes */,
+				BC8ABFD82998E1D300348425 /* Events */,
 				BCAB283A298E193600B29EB0 /* Collections */,
 				BC5236712985466E00045014 /* Concurrency */,
 				BC58CEC629864F160091D818 /* Colors */,
@@ -1030,6 +1058,8 @@
 				BC523652298542E800045014 /* Optionals */,
 				BC52367A298546F000045014 /* Operators */,
 				BC58CECB29865DBC0091D818 /* Resources */,
+				BC99E0AB29E277B8003E4C10 /* Storages */,
+				BC8A430329CEB339001BB462 /* Sounds */,
 				BC52369629854A5B00045014 /* Time */,
 			);
 			path = System;
@@ -1128,8 +1158,9 @@
 		BCA3348526A6A5410039D4E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					BCA3348C26A6A5410039D4E3 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -1247,6 +1278,7 @@
 				BC7D219F26E48CC3009CDBF3 /* PlanningPeriodsStorage.swift in Sources */,
 				BCA334CF26A6D0180039D4E3 /* CentralStorage.swift in Sources */,
 				BC8A8CFB26BAAEFF000DE9CF /* DateRange.swift in Sources */,
+				BC99E0B129E27F99003E4C10 /* CoreDataStorage.swift in Sources */,
 				BC7D219926E48C9B009CDBF3 /* CategoriesStorage.swift in Sources */,
 				BC5E479A29D845A300989516 /* Plan.swift in Sources */,
 				BCA334D826A6D6C30039D4E3 /* Decimals.swift in Sources */,
@@ -1277,6 +1309,7 @@
 				BC8ABFDE2998E26200348425 /* PublisherAdvanced.swift in Sources */,
 				BC7D21A426E48DD3009CDBF3 /* CategoriesStorageEngine.swift in Sources */,
 				BC5E479E29D85F9800989516 /* CategoryDatabase.swift in Sources */,
+				BC99E0AE29E27970003E4C10 /* SingleRecord.swift in Sources */,
 				BC8A8D1026BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift in Sources */,
 				BC5E479129D83C3800989516 /* Category.swift in Sources */,
 				BCE89F9029A0EFC400BE2C43 /* ImageResources.swift in Sources */,
@@ -1336,6 +1369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1397,6 +1431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
