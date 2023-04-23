@@ -53,27 +53,29 @@ private extension NSPersistentContainer {
 // MARK: interface
 public extension CoreDataStorage.Engine {
     
-    func write(_ transaction: (Storage) -> Void, catch: () -> Void = { }) {
-        context.performAndWait { transaction(context.toolkit); do { try save() } catch { `catch`() } }
+    func write(_ transaction: (CoreDataAccess) -> Void, catch: () -> Void = { }) {
+        context.performAndWait { transaction(context.access); do { try save() } catch { `catch`() } }
     }
     
-    func read<R:CoreDataRecord>(_ transaction: (ReadonlyStorage) -> R?) -> R.DataClass? {
+    func read<R:CoreDataRecord>(_ transaction: (CoreDataRead) -> R?) -> R.DataClass? {
         var original: R.DataClass? = nil
-        context.performAndWait { let record: R? = transaction(context.toolkit); original = record?.original }
+        context.performAndWait { let record: R? = transaction(context.access); original = record?.original }
         return original
     }
     
-    func read<R:CoreDataRecord>(_ transaction: (ReadonlyStorage) -> [R]) -> [R.DataClass] {
+    func read<R:CoreDataRecord>(_ transaction: (CoreDataRead) -> [R]) -> [R.DataClass] {
         var original: [R.DataClass] = [ ]
         context.performAndWait {
-            let records: [R] = transaction(context.toolkit)
+            let records: [R] = transaction(context.access)
             original = records.compactMap { $0.original }
         }
         return original
     }
     
-    typealias Storage = CoreDataReadTools & CoreDataWriteTools
-    typealias ReadonlyStorage = CoreDataReadTools
+    func keepInformed<R:CoreDataRecord>(_ config: CoreDataStorage.DataStream<R>.Config)
+    -> CoreDataStorage.DataStream<R> {
+        .init(config, context)
+    }
     
 }
 

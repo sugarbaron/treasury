@@ -16,3 +16,15 @@ public protocol CoreDataRecord where Self : NSManagedObject {
     func fill(with original: DataClass)
     
 }
+
+public extension CoreDataRecord {
+    
+    static var recordName: String? {
+        if let name: String = entity().name {
+            return name
+        } else {
+            return Log.nil("[\(type(of: Self.self))] record name is missing")
+        }
+    }
+    
+}

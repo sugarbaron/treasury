@@ -1,12 +1,14 @@
 //
-//  CoreDataTools.swift
+//  CoreDataAccess.swift
 //  treasury
 //
 //  Created by sugarbaron on 09.04.2023.
 //
 
+public typealias CoreDataAccess = CoreDataRead & CoreDataWrite
+
 // MARK: read tools
-public protocol CoreDataReadTools {
+public protocol CoreDataRead {
     
     func loadAll<R:CoreDataRecord>() -> [R]
     
@@ -22,7 +24,7 @@ public protocol CoreDataReadTools {
     
 }
 
-public extension CoreDataReadTools {
+public extension CoreDataRead {
     
     func load<R:CoreDataRecord>(where predicate: Predicate, sort: [Sort] = [ ], limit: Int? = nil) -> [R] {
         load(where: predicate, sort, limit)
@@ -35,7 +37,7 @@ public extension CoreDataReadTools {
 }
 
 // MARK: write tools
-public protocol CoreDataWriteTools {
+public protocol CoreDataWrite {
     
     func save<R:CoreDataRecord>(_ original: R.DataClass, as record: R.Type, with id: Int)
     

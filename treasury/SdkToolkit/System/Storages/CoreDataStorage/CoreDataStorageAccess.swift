@@ -1,5 +1,5 @@
 //
-//  CoreDataToolkit.swift
+//  CoreDataAccessEngine.swift
 //  treasury
 //
 //  Created by sugarbaron on 09.04.2023.
@@ -8,18 +8,20 @@
 import CoreData
 
 // MARK: constructor
-internal final class CoreDataToolkit : CoreDataReadTools, CoreDataWriteTools {
+internal extension CoreDataStorage {
     
-    private var context: CoreDataStorage.Context
-    
-    internal init(_ context: CoreDataStorage.Context) { self.context = context }
+    final class Access : CoreDataRead, CoreDataWrite {
+        
+        private var context: CoreDataStorage.Context
+        
+        internal init(_ context: CoreDataStorage.Context) { self.context = context }
+        
+    }
     
 }
 
-internal extension CoreDataStorage { typealias Context = NSManagedObjectContext }
-
 // MARK: interface: save
-internal extension CoreDataToolkit {
+internal extension CoreDataStorage.Access {
     
     func save<R:CoreDataRecord>(_ original: R.DataClass, as record: R.Type, with id: Int) {
         guard let record: R = load(id) ?? create() else { return }
@@ -53,7 +55,7 @@ internal extension CoreDataToolkit {
 }
 
 // MARK: interface: load
-internal extension CoreDataToolkit {
+internal extension CoreDataStorage.Access {
     
     func loadAll<R:CoreDataRecord>() -> [R] { Request<R>(context, where: .all)?.execute() ?? [ ] }
     
@@ -89,7 +91,7 @@ internal extension CoreDataToolkit {
 }
 
 // MARK: interface: delete
-internal extension CoreDataToolkit {
+internal extension CoreDataStorage.Access {
     
     func delete<R:CoreDataRecord>(_ record: R.Type, with id: Int) {
         if let record: R = load(id) { context.delete(record) }
@@ -116,10 +118,12 @@ internal extension CoreDataToolkit {
     
 }
 
-internal extension CoreDataStorage.Context { var toolkit: CoreDataToolkit { .init(self) } }
+internal extension CoreDataStorage { typealias Context = NSManagedObjectContext }
+
+internal extension CoreDataStorage.Context { var access: CoreDataAccess { CoreDataStorage.Access(self) } }
 
 // MARK: tools
-private extension CoreDataToolkit {
+private extension CoreDataStorage.Access {
     
     func create<R:CoreDataRecord>() -> R? {
         guard let name: String = R.entity().name,

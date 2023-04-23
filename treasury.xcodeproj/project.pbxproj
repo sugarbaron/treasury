@@ -104,6 +104,9 @@
 		BC99E0AE29E27970003E4C10 /* SingleRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99E0AD29E27970003E4C10 /* SingleRecord.swift */; };
 		BC99E0B129E27F99003E4C10 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99E0B029E27F99003E4C10 /* CoreDataStorage.swift */; };
 		BC9F23822997730B00BB812E /* LayoutAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F23812997730B00BB812E /* LayoutAdvanced.swift */; };
+		BC9FF81C29F3EB6700BF5597 /* CoreDataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FF81B29F3EB6700BF5597 /* CoreDataStream.swift */; };
+		BC9FF81E29F3EF5200BF5597 /* CoreDataStreamUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FF81D29F3EF5200BF5597 /* CoreDataStreamUpdate.swift */; };
+		BC9FF82029F3F9D300BF5597 /* CoreDataStreamConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FF81F29F3F9D300BF5597 /* CoreDataStreamConfig.swift */; };
 		BCA3349126A6A5410039D4E3 /* Treasury.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA3349026A6A5410039D4E3 /* Treasury.swift */; };
 		BCA3349526A6A5420039D4E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA3349426A6A5420039D4E3 /* Assets.xcassets */; };
 		BCA334A026A6A6F90039D4E3 /* Category1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA3349F26A6A6F90039D4E3 /* Category1.swift */; };
@@ -148,7 +151,7 @@
 		BCB5E79F26AEEBC300727DF7 /* StorageUpdatedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB5E79E26AEEBC300727DF7 /* StorageUpdatedContent.swift */; };
 		BCB5E7A126AEEC1200727DF7 /* StorageSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB5E7A026AEEC1200727DF7 /* StorageSubscription.swift */; };
 		BCC7A14E26A7ECCB00A21C5D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC7A14D26A7ECCB00A21C5D /* Colors.swift */; };
-		BCDB86FF29E2F5730048A6A5 /* CoreDataTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB86FE29E2F5730048A6A5 /* CoreDataTools.swift */; };
+		BCDB86FF29E2F5730048A6A5 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDB86FE29E2F5730048A6A5 /* CoreDataAccess.swift */; };
 		BCE89F8929A0BB6600BE2C43 /* DigitalKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE89F8829A0BB6600BE2C43 /* DigitalKeyboard.swift */; };
 		BCE89F8B29A0ED4E00BE2C43 /* ResourcesImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE89F8A29A0ED4E00BE2C43 /* ResourcesImage.swift */; };
 		BCE89F8D29A0EE2C00BE2C43 /* RegisterPurchaseImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE89F8C29A0EE2C00BE2C43 /* RegisterPurchaseImageAssets.swift */; };
@@ -156,7 +159,7 @@
 		BCF48CA229E29894005DFA24 /* CoreDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF48CA129E29894005DFA24 /* CoreDataRequest.swift */; };
 		BCF48CA429E29D1F005DFA24 /* CoreDataContributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF48CA329E29D1F005DFA24 /* CoreDataContributions.swift */; };
 		BCF48CA729E2B60B005DFA24 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF48CA629E2B60B005DFA24 /* Types.swift */; };
-		BCF48CA929E2C000005DFA24 /* CoreDataToolkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF48CA829E2C000005DFA24 /* CoreDataToolkit.swift */; };
+		BCF48CA929E2C000005DFA24 /* CoreDataStorageAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF48CA829E2C000005DFA24 /* CoreDataStorageAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,6 +260,9 @@
 		BC99E0B029E27F99003E4C10 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		BC9F23812997730B00BB812E /* LayoutAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAdvanced.swift; sourceTree = "<group>"; };
 		BC9F23832997769B00BB812E /* DigitalKeyboardKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboardKey.swift; sourceTree = "<group>"; };
+		BC9FF81B29F3EB6700BF5597 /* CoreDataStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStream.swift; sourceTree = "<group>"; };
+		BC9FF81D29F3EF5200BF5597 /* CoreDataStreamUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStreamUpdate.swift; sourceTree = "<group>"; };
+		BC9FF81F29F3F9D300BF5597 /* CoreDataStreamConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStreamConfig.swift; sourceTree = "<group>"; };
 		BCA3348D26A6A5410039D4E3 /* treasury.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = treasury.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA3349026A6A5410039D4E3 /* Treasury.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treasury.swift; sourceTree = "<group>"; };
 		BCA3349426A6A5420039D4E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -303,7 +309,7 @@
 		BCB5E79E26AEEBC300727DF7 /* StorageUpdatedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageUpdatedContent.swift; sourceTree = "<group>"; };
 		BCB5E7A026AEEC1200727DF7 /* StorageSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageSubscription.swift; sourceTree = "<group>"; };
 		BCC7A14D26A7ECCB00A21C5D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		BCDB86FE29E2F5730048A6A5 /* CoreDataTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTools.swift; sourceTree = "<group>"; };
+		BCDB86FE29E2F5730048A6A5 /* CoreDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAccess.swift; sourceTree = "<group>"; };
 		BCE89F8829A0BB6600BE2C43 /* DigitalKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboard.swift; sourceTree = "<group>"; };
 		BCE89F8A29A0ED4E00BE2C43 /* ResourcesImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesImage.swift; sourceTree = "<group>"; };
 		BCE89F8C29A0EE2C00BE2C43 /* RegisterPurchaseImageAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchaseImageAssets.swift; sourceTree = "<group>"; };
@@ -311,7 +317,7 @@
 		BCF48CA129E29894005DFA24 /* CoreDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRequest.swift; sourceTree = "<group>"; };
 		BCF48CA329E29D1F005DFA24 /* CoreDataContributions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContributions.swift; sourceTree = "<group>"; };
 		BCF48CA629E2B60B005DFA24 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		BCF48CA829E2C000005DFA24 /* CoreDataToolkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataToolkit.swift; sourceTree = "<group>"; };
+		BCF48CA829E2C000005DFA24 /* CoreDataStorageAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -881,8 +887,11 @@
 			children = (
 				BC99E0B029E27F99003E4C10 /* CoreDataStorage.swift */,
 				BC6ABF2A29E28E210017E85B /* CoreDataRecord.swift */,
-				BCDB86FE29E2F5730048A6A5 /* CoreDataTools.swift */,
-				BCF48CA829E2C000005DFA24 /* CoreDataToolkit.swift */,
+				BC9FF81B29F3EB6700BF5597 /* CoreDataStream.swift */,
+				BC9FF81D29F3EF5200BF5597 /* CoreDataStreamUpdate.swift */,
+				BC9FF81F29F3F9D300BF5597 /* CoreDataStreamConfig.swift */,
+				BCDB86FE29E2F5730048A6A5 /* CoreDataAccess.swift */,
+				BCF48CA829E2C000005DFA24 /* CoreDataStorageAccess.swift */,
 				BCF48CA129E29894005DFA24 /* CoreDataRequest.swift */,
 				BCF48CA329E29D1F005DFA24 /* CoreDataContributions.swift */,
 			);
@@ -1236,6 +1245,7 @@
 				BC5236672985438700045014 /* LogAssembly.swift in Sources */,
 				BC5236682985438700045014 /* Log.swift in Sources */,
 				BC5236782985466E00045014 /* Operations.swift in Sources */,
+				BC9FF82029F3F9D300BF5597 /* CoreDataStreamConfig.swift in Sources */,
 				BCB1197726AD7D1F00426BA7 /* FetchRequest.swift in Sources */,
 				BC5236702985438700045014 /* LogStorage.swift in Sources */,
 				BCAB2839298E146700B29EB0 /* Themes.swift in Sources */,
@@ -1265,6 +1275,7 @@
 				BCA334BD26A6CAC20039D4E3 /* Exceptions.swift in Sources */,
 				BC5E479329D83E3500989516 /* Purchase.swift in Sources */,
 				BCC7A14E26A7ECCB00A21C5D /* Colors.swift in Sources */,
+				BC9FF81E29F3EF5200BF5597 /* CoreDataStreamUpdate.swift in Sources */,
 				BC6ABF2B29E28E210017E85B /* CoreDataRecord.swift in Sources */,
 				BC58CEC829864F3D0091D818 /* Rgb.swift in Sources */,
 				BCA68DF326BCFA7F00DCA704 /* CoreDataCategory+CoreDataProperties.swift in Sources */,
@@ -1311,7 +1322,7 @@
 				BC7D219926E48C9B009CDBF3 /* CategoriesStorage.swift in Sources */,
 				BC5E479A29D845A300989516 /* Plan.swift in Sources */,
 				BCA334D826A6D6C30039D4E3 /* Decimals.swift in Sources */,
-				BCF48CA929E2C000005DFA24 /* CoreDataToolkit.swift in Sources */,
+				BCF48CA929E2C000005DFA24 /* CoreDataStorageAccess.swift in Sources */,
 				BC8A8CF926BAADC3000DE9CF /* PlanningPeriod.swift in Sources */,
 				BC0900E126B7CA0F0029D11F /* CategoryDetailsPurchaseCell.swift in Sources */,
 				BCB1197026AD789B00426BA7 /* CentralStorageAssembly.swift in Sources */,
@@ -1321,6 +1332,7 @@
 				BC7D219526E489D6009CDBF3 /* CoreDataIncome+CoreDataClass.swift in Sources */,
 				BC6E4F8729D0400E006E9554 /* UniversalButton.swift in Sources */,
 				BC5E479729D8420E00989516 /* PredefinedCategories.swift in Sources */,
+				BC9FF81C29F3EB6700BF5597 /* CoreDataStream.swift in Sources */,
 				BCA68DF826BD3C3C00DCA704 /* CoreDataPurchase+CoreDataClass.swift in Sources */,
 				BC523651298542C100045014 /* Di.swift in Sources */,
 				BC5236A2298554B600045014 /* Starter.swift in Sources */,
@@ -1375,7 +1387,7 @@
 				BCAB283E298E198C00B29EB0 /* ArrayAdvanced.swift in Sources */,
 				BC8ABFDC2998E24B00348425 /* CombineAdvanced.swift in Sources */,
 				BC84FA1526B825E00010078B /* EditCategoryViewModel.swift in Sources */,
-				BCDB86FF29E2F5730048A6A5 /* CoreDataTools.swift in Sources */,
+				BCDB86FF29E2F5730048A6A5 /* CoreDataAccess.swift in Sources */,
 				BC814EF526A944E60031896C /* CategoriesScreen.swift in Sources */,
 				BC58CED329867EB90091D818 /* Theme.swift in Sources */,
 				BC5236922985499400045014 /* DoubleAdvanced.swift in Sources */,
