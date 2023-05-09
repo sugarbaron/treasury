@@ -57,34 +57,38 @@ internal extension CoreDataStorage.Access {
 // MARK: interface: load
 internal extension CoreDataStorage.Access {
     
-    func loadAll<R:CoreDataRecord>() -> [R] { Request<R>(context, where: .all)?.execute() ?? [ ] }
+    func loadAll<R:CoreDataRecord>(_ recordType: R.Type) -> [R] { Request<R>(context, where: .all)?.execute() ?? [ ] }
     
-    func load<R:CoreDataRecord>(_ id: Int) -> R? {
+    func load<R:CoreDataRecord>(_ id: Int, _ recordType: R.Type) -> R? {
         let certainId: Predicate = .init(format: "id == \(id)")
         let request: Request<R>? = .init(context, where: certainId)
         return request?.execute().first
     }
     
-    func load<R:CoreDataRecord>(_ id: String) -> R? {
+    func load<R:CoreDataRecord>(_ id: String, _ recordType: R.Type) -> R? {
         let certainId: Predicate = .init(format: "id == %@", id)
         let request: Request<R>? = .init(context, where: certainId)
         return request?.execute().first
     }
     
-    func load<R:CoreDataRecord>(_ ids: [Int]) -> [R] {
+    func load<R:CoreDataRecord>(_ ids: [Int], _ recordType: R.Type) -> [R] {
         let certainId: Predicate = .init(format: "id IN %@", ids)
         let request: Request<R>? = .init(context, where: certainId)
         return request?.execute() ?? [ ]
     }
     
-    func load<R:CoreDataRecord>(_ ids: [String]) -> [R] {
+    func load<R:CoreDataRecord>(_ ids: [String], _ recordType: R.Type) -> [R] {
         let certainId: Predicate = .init(format: "id IN %@", ids)
         let request: Request<R>? = .init(context, where: certainId)
         return request?.execute() ?? [ ]
     }
     
     
-    func load<R:CoreDataRecord>(where predicate: Predicate, _ sort: [Sort], _ limit: Int?) -> [R] {
+    func load<R:CoreDataRecord>(where predicate: Predicate,
+                                _ sort: [Sort],
+                                _ limit: Int?,
+                                _ recordType: R.Type)
+    -> [R] {
         Request<R>(context, where: predicate, sort: sort, limit: limit)?.execute() ?? [ ]
     }
     

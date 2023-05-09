@@ -10,28 +10,42 @@ public typealias CoreDataAccess = CoreDataRead & CoreDataWrite
 // MARK: read tools
 public protocol CoreDataRead {
     
-    func loadAll<R:CoreDataRecord>() -> [R]
+    func loadAll<R:CoreDataRecord>(_ recordType: R.Type) -> [R]
     
-    func load<R:CoreDataRecord>(_ id: Int) -> R?
+    func load<R:CoreDataRecord>(_ id: Int, _ recordType: R.Type) -> R?
     
-    func load<R:CoreDataRecord>(_ id: String) -> R?
+    func load<R:CoreDataRecord>(_ id: String, _ recordType: R.Type) -> R?
     
-    func load<R:CoreDataRecord>(_ ids: [Int]) -> [R]
+    func load<R:CoreDataRecord>(_ ids: [Int], _ recordType: R.Type) -> [R]
     
-    func load<R:CoreDataRecord>(_ ids: [String]) -> [R]
+    func load<R:CoreDataRecord>(_ ids: [String], _ recordType: R.Type) -> [R]
     
-    func load<R:CoreDataRecord>(where predicate: Predicate, _ sort: [Sort], _ limit: Int?) -> [R]
+    func load<R:CoreDataRecord>(where predicate: Predicate, _ sort: [Sort], _ limit: Int?, _ recordType: R.Type) -> [R]
     
 }
 
 public extension CoreDataRead {
     
+    func loadAll<R:CoreDataRecord>() -> [R] { loadAll(R.self) }
+    
+    func load<R:CoreDataRecord>(_ id: Int) -> R? { load(id, R.self) }
+    
+    func load<R:CoreDataRecord>(_ id: String) -> R? { load(id, R.self) }
+    
+    func load<R:CoreDataRecord>(_ ids: [Int]) -> [R] { load(ids, R.self) }
+    
+    func load<R:CoreDataRecord>(_ ids: [String]) -> [R] { load(ids, R.self) }
+    
+    func load<R:CoreDataRecord>(where predicate: Predicate, _ sort: [Sort], _ limit: Int?) -> [R] {
+        load(where: predicate, sort, limit, R.self)
+    }
+    
     func load<R:CoreDataRecord>(where predicate: Predicate, sort: [Sort] = [ ], limit: Int? = nil) -> [R] {
-        load(where: predicate, sort, limit)
+        load(where: predicate, sort, limit, R.self)
     }
     
     func load<R:CoreDataRecord>(where predicate: Predicate, sort: [Sort] = [ ], limit: Int? = nil) -> R? {
-        load(where: predicate, sort, limit).first
+        load(where: predicate, sort, limit, R.self).first
     }
     
 }

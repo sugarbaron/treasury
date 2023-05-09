@@ -7,7 +7,7 @@
 
 import CoreData
 
-// MARK: subscription
+// MARK: data stream
 public extension CoreDataStorage {
 
     final class DataStream<R:CoreDataRecord> : NSObject, NSFetchedResultsControllerDelegate {
@@ -43,4 +43,23 @@ public extension CoreDataStorage {
         
     }
 
+}
+
+// MARK: config
+public extension CoreDataStorage.DataStream {
+    
+    final class Config {
+        
+        public let predicate: Predicate
+        public let sort: [Sort]
+        public let sectionKey: String?
+        
+        public init(_ predicate: Predicate, sort: [Sort] = [ ], sectionKey: String? = nil) {
+            self.predicate = predicate
+            self.sort = sort
+            self.sectionKey = sectionKey
+        }
+        
+    }
+    
 }
