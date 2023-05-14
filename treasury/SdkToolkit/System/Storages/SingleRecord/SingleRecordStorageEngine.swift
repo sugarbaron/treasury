@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 public extension SingleRecord { typealias StorageEngine = SingleRecordStorageEngine }
 
@@ -16,6 +17,7 @@ where CoreDataRecordFields.DataClass : SingleRecordFields {
     private let storage: CoreDataStorage.Engine
     private var cache: RecordFields
     private let cacheAccess: NSRecursiveLock
+    private let downstream: CurrentValueSubject<RecordFields, Never>
     
     public init?(xcdatamodel fileName: String) {
         guard let storage: CoreDataStorage.Engine = .init(xcdatamodel: fileName)
@@ -24,6 +26,8 @@ where CoreDataRecordFields.DataClass : SingleRecordFields {
         self.storage = storage
         self.cache = storage.load(CoreDataRecordFields.self)
         self.cacheAccess = NSRecursiveLock()
+        self.downstream = CurrentValueSubject<RecordFields, Never>(cache)
+        downstream.send(cache)
     }
     
 }
@@ -34,6 +38,20 @@ public extension SingleRecord.StorageEngine {
     func load<T>(_ field: KeyPath<RecordFields, T>) -> T { readCache(field) }
     
     func save<T>(_ field: WritableKeyPath<RecordFields, T>, _ new: T) { update(field, with: new) }
+    
+    func keepInformed<T:Equatable>(about field: KeyPath<RecordFields, T>) -> AnyPublisher<T, Never> {
+        downstream
+            .compactMap { $0[keyPath: field] }
+            .removeDuplicates { new, old in new == old }
+            .anyPublisher
+    }
+    
+    func keepInformed<T>(about field: KeyPath<RecordFields, T>, skip: @escaping (T, T) -> Bool)
+    -> AnyPublisher<T, Never> {
+        downstream.compactMap { $0[keyPath: field] }
+            .removeDuplicates { skip($0, $1) }
+            .anyPublisher
+    }
     
     func erase() {
         cacheAccess.lock()
@@ -53,13 +71,14 @@ private extension SingleRecord.StorageEngine {
     
     func readCache<T>(_ fieldKey: KeyPath<RecordFields, T>) -> T {
         cacheAccess.lock()
-        var field: T = cache[keyPath: fieldKey]
+        let field: T = cache[keyPath: fieldKey]
         cacheAccess.unlock()
         return field
     }
     
     func update<T>(_ field: WritableKeyPath<RecordFields, T>, with new: T) {
         let updated: RecordFields = updateCache(field, with: new)
+        downstream.send(updated)
         storage.update(single: updated, as: CoreDataRecordFields.self)
     }
     
