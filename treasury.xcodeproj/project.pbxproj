@@ -54,7 +54,7 @@
 		BC5E47A029D8636D00989516 /* PlanDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E479F29D8636D00989516 /* PlanDatabase.swift */; };
 		BC6ABF2B29E28E210017E85B /* CoreDataRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6ABF2A29E28E210017E85B /* CoreDataRecord.swift */; };
 		BC6E4F8729D0400E006E9554 /* UniversalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6E4F8629D0400E006E9554 /* UniversalButton.swift */; };
-		BC7506D129F54145001B542F /* SingleRecordStorageEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7506D029F54145001B542F /* SingleRecordStorageEngine.swift */; };
+		BC7506D129F54145001B542F /* SingleRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7506D029F54145001B542F /* SingleRecord.swift */; };
 		BC7CD9AB26AEC44100FB1EA7 /* CreateCategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */; };
 		BC7CD9AD26AEC60400FB1EA7 /* CreateCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */; };
 		BC7D218726E4851B009CDBF3 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7D218626E4851B009CDBF3 /* Income.swift */; };
@@ -102,7 +102,6 @@
 		BC9443BC26B3114C0056D341 /* RegisterPurchase1Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BB26B3114C0056D341 /* RegisterPurchase1Screen.swift */; };
 		BC9443BE26B313C30056D341 /* RegisterPurchase1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443BD26B313C30056D341 /* RegisterPurchase1ViewModel.swift */; };
 		BC9443C126B3147F0056D341 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9443C026B3147F0056D341 /* Buttons.swift */; };
-		BC99E0AE29E27970003E4C10 /* SingleRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99E0AD29E27970003E4C10 /* SingleRecord.swift */; };
 		BC99E0B129E27F99003E4C10 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99E0B029E27F99003E4C10 /* CoreDataStorage.swift */; };
 		BC9F23822997730B00BB812E /* LayoutAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9F23812997730B00BB812E /* LayoutAdvanced.swift */; };
 		BC9FF81C29F3EB6700BF5597 /* CoreDataStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9FF81B29F3EB6700BF5597 /* CoreDataStream.swift */; };
@@ -210,7 +209,7 @@
 		BC5E479F29D8636D00989516 /* PlanDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDatabase.swift; sourceTree = "<group>"; };
 		BC6ABF2A29E28E210017E85B /* CoreDataRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRecord.swift; sourceTree = "<group>"; };
 		BC6E4F8629D0400E006E9554 /* UniversalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalButton.swift; sourceTree = "<group>"; };
-		BC7506D029F54145001B542F /* SingleRecordStorageEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRecordStorageEngine.swift; sourceTree = "<group>"; };
+		BC7506D029F54145001B542F /* SingleRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRecord.swift; sourceTree = "<group>"; };
 		BC7CD9AA26AEC44100FB1EA7 /* CreateCategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreen.swift; sourceTree = "<group>"; };
 		BC7CD9AC26AEC60400FB1EA7 /* CreateCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewModel.swift; sourceTree = "<group>"; };
 		BC7D218626E4851B009CDBF3 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
@@ -257,7 +256,6 @@
 		BC9443BB26B3114C0056D341 /* RegisterPurchase1Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchase1Screen.swift; sourceTree = "<group>"; };
 		BC9443BD26B313C30056D341 /* RegisterPurchase1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPurchase1ViewModel.swift; sourceTree = "<group>"; };
 		BC9443C026B3147F0056D341 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		BC99E0AD29E27970003E4C10 /* SingleRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRecord.swift; sourceTree = "<group>"; };
 		BC99E0B029E27F99003E4C10 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		BC9F23812997730B00BB812E /* LayoutAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAdvanced.swift; sourceTree = "<group>"; };
 		BC9F23832997769B00BB812E /* DigitalKeyboardKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalKeyboardKey.swift; sourceTree = "<group>"; };
@@ -869,6 +867,7 @@
 			isa = PBXGroup;
 			children = (
 				BC99E0AC29E2795A003E4C10 /* SingleRecord */,
+				BCD211FB2A1100DE006A9052 /* JsonSingleRecord */,
 				BC99E0AF29E279FD003E4C10 /* CoreDataStorage */,
 			);
 			path = Storages;
@@ -877,8 +876,7 @@
 		BC99E0AC29E2795A003E4C10 /* SingleRecord */ = {
 			isa = PBXGroup;
 			children = (
-				BC99E0AD29E27970003E4C10 /* SingleRecord.swift */,
-				BC7506D029F54145001B542F /* SingleRecordStorageEngine.swift */,
+				BC7506D029F54145001B542F /* SingleRecord.swift */,
 			);
 			path = SingleRecord;
 			sourceTree = "<group>";
@@ -1148,6 +1146,13 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		BCD211FB2A1100DE006A9052 /* JsonSingleRecord */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JsonSingleRecord;
+			sourceTree = "<group>";
+		};
 		BCE89F8E29A0EFB100BE2C43 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1267,7 +1272,7 @@
 				BC7F9DC126B70FE2004247EF /* CategoryDetailsViewModel.swift in Sources */,
 				BCA334A226A6B2BF0039D4E3 /* Purchase1.swift in Sources */,
 				BC8A8CF726BAAAD9000DE9CF /* CategoryDetailsAmountCard.swift in Sources */,
-				BC7506D129F54145001B542F /* SingleRecordStorageEngine.swift in Sources */,
+				BC7506D129F54145001B542F /* SingleRecord.swift in Sources */,
 				BC52369B29854A5B00045014 /* DateContributions.swift in Sources */,
 				BC5E47A029D8636D00989516 /* PlanDatabase.swift in Sources */,
 				BCAB2846298E343100B29EB0 /* TextResources.swift in Sources */,
@@ -1351,7 +1356,6 @@
 				BC8ABFDE2998E26200348425 /* PublisherAdvanced.swift in Sources */,
 				BC7D21A426E48DD3009CDBF3 /* CategoriesStorageEngine.swift in Sources */,
 				BC5E479E29D85F9800989516 /* CategoryDatabase.swift in Sources */,
-				BC99E0AE29E27970003E4C10 /* SingleRecord.swift in Sources */,
 				BC8A8D1026BAB37C000DE9CF /* CentralDatabaseAutoincrementId.swift in Sources */,
 				BCF48CA729E2B60B005DFA24 /* Types.swift in Sources */,
 				BC5E479129D83C3800989516 /* Category.swift in Sources */,
