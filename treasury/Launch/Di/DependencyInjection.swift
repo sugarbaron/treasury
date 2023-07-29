@@ -6,6 +6,7 @@
 //
 
 import Swinject
+import Bumblebee
 
 extension Di {
     
@@ -25,9 +26,6 @@ extension Di {
         Di.Assembly(),
         Log.Assembly(),
         Themes.Assembly(),
-        /* fixme: legacy */
-        CentralDatabase.Assembly(),
-        PlanningPeriodsInspector.Assembly()
     ])
     
 }

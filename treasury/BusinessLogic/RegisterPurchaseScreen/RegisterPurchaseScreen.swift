@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import Bumblebee
 
 // MARK: constructor
 extension RegisterPurchase {
     
     struct Screen {
         
-        @StateObject private var viewModel: RegisterPurchase.ViewModel
+        @StateObject private var viewModel: ViewModel
         
         init() {
-            Log("[RegisterPurchase.Screen] reconstructing")
-            self._viewModel = RegisterPurchase.ViewModel().stateObject
+            log("[RegisterPurchase.Screen] reconstructing")
+            self._viewModel = ViewModel().stateObject
         }
         
     }

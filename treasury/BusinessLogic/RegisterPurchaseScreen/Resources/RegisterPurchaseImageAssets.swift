@@ -5,6 +5,8 @@
 //  Created by sugarbaron on 18.02.2023.
 //
 
+import Bumblebee
+
 extension RegisterPurchase { final class ImageAssets { } }
 
 extension RegisterPurchase.ImageAssets {

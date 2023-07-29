@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Bumblebee
 
 // MARK: constructor
 extension DigitalKeyboard {
@@ -15,7 +16,7 @@ extension DigitalKeyboard {
         @StateObject private var viewModel: DigitalKeyboard.ViewModel = .init()
         @EnvironmentObject private var datastream: DigitalKeyboard.Datastream
         
-        init() { Log("[DigitalKeyboard.Ui] reconstructing") }
+        init() { log("[DigitalKeyboard.Ui] reconstructing") }
         
     }
     

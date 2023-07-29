@@ -30,9 +30,9 @@ extension DigitalKeyboard.Ui {
             let panelH: CGFloat = allH - 2 * spacing.h
             var x: CGFloat = bounds.minX + spacing.w
             let y: CGFloat = bounds.minY + spacing.h
-            subviews.at(0)?.place(at: CGPoint(x: x, y: y), proposal: .size(w: digitPanelW, h: panelH))
+            subviews[safe: 0]?.place(at: CGPoint(x: x, y: y), proposal: .size(w: digitPanelW, h: panelH))
             x += (digitPanelW + spacing.w)
-            subviews.at(1)?.place(at: CGPoint(x: x, y: y), proposal: .size(w: controlPanelW, h: panelH))
+            subviews[safe: 1]?.place(at: CGPoint(x: x, y: y), proposal: .size(w: controlPanelW, h: panelH))
         }
         
     }
@@ -61,13 +61,13 @@ extension DigitalKeyboard.Ui {
             for row in (0..<(rows - 1)) {
                 for column in (0..<columns) {
                     let index: Int = column + (row * columns)
-                    subviews.at(index)?.place(at: CGPoint(x: x, y: y), proposal: .size(w: keyW, h: keyH))
+                    subviews[safe: index]?.place(at: CGPoint(x: x, y: y), proposal: .size(w: keyW, h: keyH))
                     x += (keyW + spacing.w)
                 }
                 y += (keyH + spacing.h)
                 x = bounds.minX
             }
-            subviews.at(zeroKeyIndex)?.place(at: CGPoint(x: x, y: y), proposal: .size(w: allW, h: keyH))
+            subviews[safe: zeroKeyIndex]?.place(at: CGPoint(x: x, y: y), proposal: .size(w: allW, h: keyH))
         }
         
     }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Bumblebee
 
 extension Text {
     

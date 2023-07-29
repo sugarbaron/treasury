@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import Bumblebee
 
 // MARK: constructor
 extension DigitalKeyboard {
@@ -19,10 +20,10 @@ extension DigitalKeyboard {
         private var amount: Int
         private var subscriptions: [AnyCancellable]
         
-        deinit { Log("[DigitalKeyboard.ViewModel] deallocating") }
+        deinit { log("[DigitalKeyboard.ViewModel] deallocating") }
         
         init() {
-            Log("[DigitalKeyboard.ViewModel] reconstructing")
+            log("[DigitalKeyboard.ViewModel] reconstructing")
             self.keyTapped = .keyNone
             self.datastream = nil
             self.amount = 0

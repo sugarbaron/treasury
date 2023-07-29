@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import Bumblebee
 
 // MARK: constructor
 extension RegisterPurchase {
@@ -19,10 +20,10 @@ extension RegisterPurchase {
         
         private var subscriptions: [AnyCancellable]
         
-        deinit { Log("[RegisterPurchase.ViewModel] deallocating") }
+        deinit { log("[RegisterPurchase.ViewModel] deallocating") }
         
         init() {
-            Log("[RegisterPurchase.ViewModel] reconstructing")
+            log("[RegisterPurchase.ViewModel] reconstructing")
             let keyboard: DigitalKeyboard.Datastream = .init()
             self.keyboard = keyboard
             self.available = 100500
@@ -30,7 +31,7 @@ extension RegisterPurchase {
             self.subscriptions = [ ]
             
             keyboard.$entered
-                .subscribe { Log("[RegisterPurchase.ViewModel] entered:[\($0)]") }
+                .subscribe { log("[RegisterPurchase.ViewModel] entered:[\($0)]") }
                 .store { subscriptions += $0 }
             keyboard.$current
                 .subscribe { [weak self] in self?.watch(displayed: $0) }
@@ -47,7 +48,7 @@ extension RegisterPurchase {
 private extension RegisterPurchase.ViewModel {
     
     func watch(displayed: Int) {
-        Log("[RegisterPurchase.ViewModel] displayed:[\(displayed)]")
+        log("[RegisterPurchase.ViewModel] displayed:[\(displayed)]")
         self.displayed = displayed
         self.available = 100500 - displayed
     }

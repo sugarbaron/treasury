@@ -5,6 +5,8 @@
 //  Created by sugarbaron on 04.02.2023.
 //
 
+import Bumblebee
+
 extension RegisterPurchase { final class TextAssets { } }
 
 extension RegisterPurchase.TextAssets {

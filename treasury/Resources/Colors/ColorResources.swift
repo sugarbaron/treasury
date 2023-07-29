@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Bumblebee
 
 extension Resources.Color.Asset {
     static let red: Resources.Color.Asset = .init("red")

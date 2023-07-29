@@ -20,7 +20,7 @@ public extension LayoutSubviews {
     
     var lastIndex: Int? { (count > 0) ? count - 1 : nil }
     
-    func at(_ index: Int?) -> Element? { unwrap(index) { $0.isOne(of: indices) ? self[$0] : nil } }
+    subscript(safe index: Int?) -> Element? { unwrap(index) { $0.isOne(of: indices) ? self[$0] : nil } }
     
 }
 
